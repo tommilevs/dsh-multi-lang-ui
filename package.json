@@ -1,0 +1,82 @@
+{
+  "name": "@tommilevs/dsh-multi-lang-ui",
+  "version": "0.1.0",
+  "description": "Community-extensible translations for DeepSeek Harness core and plugins, with safe scoped adapters for UI that has no locale API.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "bin",
+    "cordis.patch.yml",
+    "contributions",
+    "CONTRIBUTING.md",
+    "README.md",
+    "README.en.md",
+    "THIRD_PARTY_NOTICES.md",
+    "LICENSE",
+    "licenses"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "i18n",
+    "locale",
+    "localization",
+    "community-translations",
+    "russian",
+    "english"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/embed-multilang.mjs",
+    "check": "npm test && npm run validate-locales && node --check lib/client.js",
+    "test": "node --test test/*.test.mjs",
+    "validate-locales": "node scripts/validate-locales.mjs",
+    "lint": "npm run validate-locales",
+    "prepack": "node scripts/embed-multilang.mjs && node --test && node scripts/validate-locales.mjs"
+  },
+  "devDependencies": {
+    "terser": "^5.51.2"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.1"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-settings": "^0.1.2-alpha.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tommilevs/dsh-multi-lang-ui.git"
+  },
+  "homepage": "https://github.com/tommilevs/dsh-multi-lang-ui#readme",
+  "bugs": {
+    "url": "https://github.com/tommilevs/dsh-multi-lang-ui/issues"
+  },
+  "bin": {
+    "dsh-i18n": "./bin/dsh-i18n.mjs"
+  }
+}

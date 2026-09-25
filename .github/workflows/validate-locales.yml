@@ -1,0 +1,37 @@
+name: Validate community locale packs
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - 'contributions/**'
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out trusted validator from the target branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: trusted-validator
+          persist-credentials: false
+
+      - name: Check out contribution data only
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: candidate-data
+          sparse-checkout: contributions
+          sparse-checkout-cone-mode: true
+          persist-credentials: false
+          submodules: false
+          lfs: false
+
+      - name: Validate all submitted locale packs
+        run: node trusted-validator/scripts/validate-locales.mjs candidate-data/contributions

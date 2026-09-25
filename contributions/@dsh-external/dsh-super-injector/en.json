@@ -1,0 +1,111 @@
+{
+  "plugin": {
+    "id": "@dsh-external/dsh-super-injector",
+    "version": "0.3.3",
+    "source": "https://github.com/yjh051108/dsh-routing-suite",
+    "license": "BSD-3-Clause"
+  },
+  "locale": "en",
+  "sourceLocale": "zh",
+  "namespaces": {
+    "community.dsh-super-injector": {
+      "text.0001": "Plugin manager (dsh-super-injector)",
+      "text.0002": "Drop a folder or enter its path. “Turn into plugin” starts a new session for AI to package its contents; “Inject” loads an existing plugin package directly.",
+      "text.0003": "Turn into plugin (AI)",
+      "text.0004": "Inject directly",
+      "text.0005": "The browser cannot read the full path of a dropped folder. Paste the path or use the folder picker.",
+      "text.0006": "(No injected plugins yet — drop a folder or enter a path to begin)",
+      "text.0007": "Running",
+      "text.0008": "Inactive",
+      "text.0009": "Unload",
+      "text.0010": "Unloading…",
+      "text.0011": "Enter a folder path first",
+      "text.0012": "Working…",
+      "text.0013": "Plugin manager"
+    }
+  },
+  "source": {
+    "community.dsh-super-injector": {
+      "text.0001": "插件管理（dsh-super-injector）",
+      "text.0002": "拖入文件夹，或输入路径——「内化」= 新建会话让 AI 把内容变成插件；「注入」= 目录已是插件包直接注入",
+      "text.0003": "内化（AI 造插件）",
+      "text.0004": "直接注入",
+      "text.0005": "浏览器无法读取拖入文件夹的绝对路径——请粘贴路径或使用选择器",
+      "text.0006": "（暂无注入插件——拖入文件夹或输入路径开始）",
+      "text.0007": "运行中",
+      "text.0008": "未激活",
+      "text.0009": "卸载",
+      "text.0010": "卸载中…",
+      "text.0011": "请先输入文件夹路径",
+      "text.0012": "处理中…",
+      "text.0013": "插件管理"
+    }
+  },
+  "dom": [
+    {
+      "selector": ".spi-page",
+      "source": "插件管理（dsh-super-injector）",
+      "target": "Plugin manager (dsh-super-injector)"
+    },
+    {
+      "selector": ".spi-page",
+      "source": "拖入文件夹，或输入路径——「内化」= 新建会话让 AI 把内容变成插件；「注入」= 目录已是插件包直接注入",
+      "target": "Drop a folder or enter its path. “Turn into plugin” starts a new session for AI to package its contents; “Inject” loads an existing plugin package directly."
+    },
+    {
+      "selector": ".spi-page",
+      "source": "内化（AI 造插件）",
+      "target": "Turn into plugin (AI)"
+    },
+    {
+      "selector": ".spi-page",
+      "source": "直接注入",
+      "target": "Inject directly"
+    },
+    {
+      "selector": ".spi-page",
+      "source": "浏览器无法读取拖入文件夹的绝对路径——请粘贴路径或使用选择器",
+      "target": "The browser cannot read the full path of a dropped folder. Paste the path or use the folder picker."
+    },
+    {
+      "selector": ".spi-page",
+      "source": "（暂无注入插件——拖入文件夹或输入路径开始）",
+      "target": "(No injected plugins yet — drop a folder or enter a path to begin)"
+    },
+    {
+      "selector": ".spi-page",
+      "source": "运行中",
+      "target": "Running"
+    },
+    {
+      "selector": ".spi-page",
+      "source": "未激活",
+      "target": "Inactive"
+    },
+    {
+      "selector": ".spi-page",
+      "source": "卸载",
+      "target": "Unload"
+    },
+    {
+      "selector": ".spi-page",
+      "source": "卸载中…",
+      "target": "Unloading…"
+    },
+    {
+      "selector": ".spi-page",
+      "source": "请先输入文件夹路径",
+      "target": "Enter a folder path first"
+    },
+    {
+      "selector": ".spi-page",
+      "source": "处理中…",
+      "target": "Working…"
+    },
+    {
+      "selector": ".spi-page",
+      "source": "插件管理",
+      "target": "Plugin manager"
+    }
+  ]
+}

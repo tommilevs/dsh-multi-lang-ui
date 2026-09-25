@@ -1,0 +1,1229 @@
+{
+  "plugin": {
+    "id": "dsh-mcp-manager-ui",
+    "version": "1.4.0",
+    "source": "https://github.com/Imzl-zl/dsh-mcp-manager-ui",
+    "license": "MIT"
+  },
+  "locale": "en",
+  "sourceLocale": "zh",
+  "namespaces": {
+    "community.dsh-mcp-manager-ui": {
+      "text.0001": "•••••• (keep current value)",
+      "text.0002": "Filesystem · Local file access",
+      "text.0003": "Memory · Knowledge graph",
+      "text.0004": "Sequential Thinking · Step-by-step reasoning",
+      "text.0005": "Time · Time-zone tools (requires uvx)",
+      "text.0006": "Git · Version control (requires uvx)",
+      "text.0007": "Collapse parameters",
+      "text.0008": "Show parameters",
+      "text.0009": "Required",
+      "text.0010": "Optional",
+      "text.0013": "Hide raw JSON",
+      "text.0014": "Show raw JSON",
+      "text.0015": "Mount failed",
+      "text.0016": "Scope isolation failed",
+      "text.0017": "Connection failed",
+      "text.0018": "Connecting",
+      "text.0019": "Connecting…",
+      "text.0020": "Disabled",
+      "text.0021": "Unknown status",
+      "text.0022": "Waiting for session mount",
+      "text.0023": "Search MCP…",
+      "text.0024": "Filter by transport",
+      "text.0025": "All transports",
+      "text.0026": "Filter by status",
+      "text.0027": "All statuses",
+      "text.0028": "Connected",
+      "text.0029": "Failed",
+      "text.0030": "No matching MCP servers",
+      "text.0031": "Scope error",
+      "text.0032": "Configuration pending",
+      "text.0033": "Disable",
+      "text.0034": "Enable",
+      "text.0035": "Managed by another configuration layer; read-only",
+      "text.0036": "Hidden in this project; click to show",
+      "text.0037": "Visible in this project; click to hide",
+      "text.0038": "Search global MCP servers…",
+      "text.0039": "No global MCP servers",
+      "text.0040": "No matching global MCP servers",
+      "text.0041": "Hidden",
+      "text.0042": "Select an MCP server to view details",
+      "text.0043": "Connected (shared by this project’s sessions)",
+      "text.0044": "Stopped",
+      "text.0045": "Project configuration",
+      "text.0046": "Global configuration",
+      "text.0047": "Duplicate serverName conflict",
+      "text.0048": "Hidden in this project",
+      "text.0049": "Visible in this project",
+      "text.0050": "Edit",
+      "text.0051": "Project MCP servers share one connection across this project’s sessions; mcp-client reconnects automatically",
+      "text.0052": "Reconnect",
+      "text.0053": "Remove",
+      "text.0054": "This MCP server comes from global configuration. Switch to the “Global” tab to edit its connection settings; here you can only control whether it is visible in this project.",
+      "text.0055": "From the latest mcp-client log",
+      "text.0056": "Tool names overlap another serverName prefix, so ownership is ambiguous. Avoid double underscores in serverName.",
+      "text.0057": "Connection details",
+      "text.0058": "Transport",
+      "text.0059": "Command",
+      "text.0060": "Arguments",
+      "text.0061": "Working directory",
+      "text.0062": "Yes",
+      "text.0063": "No (disabled: true in patch)",
+      "text.0064": "Configuration source",
+      "text.0065": "Duplicate serverName (conflict; read-only)",
+      "text.0066": "Global configuration (editable in the “Global” tab)",
+      "text.0067": "Project configuration .dsh/mcp.json (editable; one connection shared by this project’s sessions)",
+      "text.0068": "Current Web profile (editable)",
+      "text.0069": "Other bundle / Agent (read-only)",
+      "text.0070": "Call timeout",
+      "text.0071": "Startup failure policy",
+      "text.0072": "Prevent plugin startup",
+      "text.0073": "Log the error and continue",
+      "text.0074": "Automatic reconnect",
+      "text.0075": "Off",
+      "text.0076": "Environment variables",
+      "text.0077": "Tool ownership is ambiguous",
+      "text.0078": "No session owns this project connection yet, or the connection is not ready",
+      "text.0079": "No tools available",
+      "text.0080": "Enter an MCP server name",
+      "text.0081": "Tool timeout and maximum attempts must be positive integers",
+      "text.0082": "Reconnect delays must be positive numbers no greater than 2147483647 ms",
+      "text.0083": "Initial delay cannot exceed the maximum delay",
+      "text.0086": "Edit MCP server",
+      "text.0087": "Add MCP server",
+      "text.0088": "Global",
+      "text.0089": "Fill quickly from a preset (optional; commands require local npx/uvx)",
+      "text.0090": "Choose a preset",
+      "text.0091": "— Select a preset —",
+      "text.0092": "MCP server name (unique ID; cannot be changed)",
+      "text.0093": "Transport type",
+      "text.0094": "HTTP (remote)",
+      "text.0095": "stdio (local process)",
+      "text.0096": "Arguments (one per line; passed to the process as entered)",
+      "text.0097": "Working directory cwd (optional)",
+      "text.0098": "Headers (optional)",
+      "text.0099": "Environment variables (optional; use !!js process.env.KEY to reference a secret)",
+      "text.0100": "Bearer … or !!js process.env.KEY",
+      "text.0101": "Delete this entry",
+      "text.0103": "+ Add",
+      "text.0104": "Runtime policy",
+      "text.0105": "Tool-call timeout (ms)",
+      "text.0106": "Prevent plugin startup if the initial connection fails",
+      "text.0107": "Reconnect automatically after disconnection",
+      "text.0108": "Initial delay (ms)",
+      "text.0109": "Maximum delay (ms)",
+      "text.0110": "Maximum attempts",
+      "text.0111": "Cancel",
+      "text.0112": "Saving…",
+      "text.0113": "Save",
+      "text.0114": "Add",
+      "text.0115": "Could not read built-in MCP servers",
+      "text.0116": "Could not install built-in MCP servers",
+      "text.0117": "Choose built-in MCP servers",
+      "text.0118": "Select all installable",
+      "text.0119": "Loading built-in catalog…",
+      "text.0120": "Configured",
+      "text.0121": "Available to install",
+      "text.0122": "Retrying…",
+      "text.0123": "Retry",
+      "text.0124": "Installing…",
+      "text.0125": "Could not read local client configuration",
+      "text.0126": "This configuration contains no MCP servers to import",
+      "text.0127": "Preview failed",
+      "text.0128": "Could not parse JSON",
+      "text.0129": "Import failed",
+      "text.0134": "None",
+      "text.0138": "No project-level MCP configuration was detected (.mcp.json / .codex/config.toml / .pi/mcp.json / opencode.json, etc.). You can paste it below.",
+      "text.0139": "No global MCP configuration was detected for local clients (~/.claude.json / ~/.codex/config.toml / ~/.config/opencode/opencode.json, etc.). You can paste it below.",
+      "text.0140": "Import MCP servers",
+      "text.0141": "Scanning local client configurations…",
+      "text.0142": "No MCP servers to import",
+      "text.0148": "Or paste JSON: supports Claude/Cursor/Cline/Roo mcpServers, VS Code servers, or a single MCP object",
+      "text.0149": "Merge (update matching names)",
+      "text.0150": "Clear source selection",
+      "text.0151": "Importing…",
+      "text.0152": "Confirm import from source",
+      "text.0153": "Parsing…",
+      "text.0154": "Preview",
+      "text.0155": "Confirm import",
+      "text.0156": "Parse and preview",
+      "text.0157": "Loading failed",
+      "text.0159": "This MCP server comes from another configuration layer. Its settings are read-only, so values cannot be viewed.",
+      "text.0160": "Could not read configuration",
+      "text.0161": "Copied to clipboard",
+      "text.0162": "Copy failed",
+      "text.0163": "Save failed",
+      "text.0164": "Add failed",
+      "text.0165": "MCP servers imported",
+      "text.0166": "Selected built-in MCP servers installed",
+      "text.0167": "MCP manager",
+      "text.0168": "Refreshing…",
+      "text.0169": "Refresh",
+      "text.0170": "Built-in MCP servers",
+      "text.0171": "Add project MCP server",
+      "text.0172": "View update instructions",
+      "text.0173": "Dismiss update notice",
+      "text.0174": "Do not show again for this version",
+      "text.0175": "Project MCP servers",
+      "text.0176": "This project has no MCP servers yet. Use “Add project MCP server” or “Built-in MCP servers” at the top right to add one to .dsh/mcp.json.",
+      "text.0177": "Global MCP servers",
+      "text.0178": "MCP manager panel",
+      "text.0179": "MCP manager panel (drag to move)",
+      "text.0180": "Open MCP manager panel",
+      "text.0181": "What’s new in this update",
+      "text.0182": "Here are a few changes you may want to know about",
+      "text.0183": "Got it",
+      "text.0184": "MCP manager service is unavailable (the panel is still usable)",
+      "text.0185": "Call failed"
+    }
+  },
+  "source": {
+    "community.dsh-mcp-manager-ui": {
+      "text.0001": "••••••（保留原值）",
+      "text.0002": "Filesystem · 本地文件读写",
+      "text.0003": "Memory · 知识图谱记忆",
+      "text.0004": "Sequential Thinking · 分步推理",
+      "text.0005": "Time · 时区时间工具（需 uvx）",
+      "text.0006": "Git · 版本控制（需 uvx）",
+      "text.0007": "收起参数",
+      "text.0008": "查看参数",
+      "text.0009": "必填",
+      "text.0010": "可选",
+      "text.0013": "收起原始 JSON",
+      "text.0014": "查看原始 JSON",
+      "text.0015": "挂载失败",
+      "text.0016": "作用域隔离失败",
+      "text.0017": "连接失败",
+      "text.0018": "连接中",
+      "text.0019": "连接中…",
+      "text.0020": "已禁用",
+      "text.0021": "状态未知",
+      "text.0022": "待会话挂载",
+      "text.0023": "搜索 MCP…",
+      "text.0024": "按传输过滤",
+      "text.0025": "全部传输",
+      "text.0026": "按状态过滤",
+      "text.0027": "全部状态",
+      "text.0028": "已连接",
+      "text.0029": "失败",
+      "text.0030": "没有匹配的 MCP",
+      "text.0031": "作用域故障",
+      "text.0032": "配置待生效",
+      "text.0033": "禁用",
+      "text.0034": "启用",
+      "text.0035": "来自其他配置层，只读",
+      "text.0036": "已在此项目屏蔽，点击恢复可见",
+      "text.0037": "在此项目可见，点击屏蔽",
+      "text.0038": "搜索全局 MCP…",
+      "text.0039": "没有全局 MCP",
+      "text.0040": "没有匹配的全局 MCP",
+      "text.0041": "已屏蔽",
+      "text.0042": "选择一个 MCP 查看详情",
+      "text.0043": "已连接（本项目会话共享）",
+      "text.0044": "已停止",
+      "text.0045": "项目配置",
+      "text.0046": "全局配置",
+      "text.0047": "serverName 同名冲突",
+      "text.0048": "已在此项目屏蔽",
+      "text.0049": "在此项目可见",
+      "text.0050": "编辑",
+      "text.0051": "项目 MCP 由本项目会话共享一份连接，由 mcp-client 自动重连",
+      "text.0052": "重连",
+      "text.0053": "移除",
+      "text.0054": "此 MCP 由全局配置提供。要改它的连接配置，请切到「全局」标签页；在这里只能决定它对本项目是否可见。",
+      "text.0055": "来自 mcp-client 最近日志",
+      "text.0056": "工具命名与其他 serverName 前缀重叠，无法可靠判断归属；请避免在 serverName 中使用双下划线。",
+      "text.0057": "连接信息",
+      "text.0058": "传输",
+      "text.0059": "命令",
+      "text.0060": "参数",
+      "text.0061": "工作目录",
+      "text.0062": "是",
+      "text.0063": "否（补丁中 disabled: true）",
+      "text.0064": "配置来源",
+      "text.0065": "存在重复 serverName（冲突，只读）",
+      "text.0066": "全局配置（在「全局」标签页可编辑）",
+      "text.0067": "项目配置 .dsh/mcp.json（可编辑，本项目会话共享一份连接）",
+      "text.0068": "当前 Web profile（可编辑）",
+      "text.0069": "其他 bundle / Agent（只读）",
+      "text.0070": "调用超时",
+      "text.0071": "启动失败策略",
+      "text.0072": "阻止插件启动",
+      "text.0073": "记录错误并继续",
+      "text.0074": "自动重连",
+      "text.0075": "关闭",
+      "text.0076": "环境变量",
+      "text.0077": "工具归属存在命名歧义",
+      "text.0078": "尚无会话持有该项目连接，或连接尚未就绪",
+      "text.0079": "暂无工具",
+      "text.0080": "请填写 MCP 名称",
+      "text.0081": "工具超时和最大尝试次数必须是正整数",
+      "text.0082": "重连延迟必须是有效正数且不超过 2147483647 ms",
+      "text.0083": "首次延迟不能大于最大延迟",
+      "text.0086": "编辑 MCP",
+      "text.0087": "添加 MCP",
+      "text.0088": "全局",
+      "text.0089": "从预设模板快速填充（可选，命令需本机 npx/uvx）",
+      "text.0090": "选择预设模板",
+      "text.0091": "— 选择预设 —",
+      "text.0092": "MCP 名称（唯一标识，不可改）",
+      "text.0093": "传输类型",
+      "text.0094": "HTTP（远程）",
+      "text.0095": "stdio（本地进程）",
+      "text.0096": "参数（每行一个，原样传给进程）",
+      "text.0097": "工作目录 cwd（可选）",
+      "text.0098": "Headers（可选）",
+      "text.0099": "环境变量（可选，值写 !!js process.env.KEY 引用密钥）",
+      "text.0100": "Bearer … 或 !!js process.env.KEY",
+      "text.0101": "删除此项",
+      "text.0103": "+ 添加",
+      "text.0104": "运行策略",
+      "text.0105": "工具调用超时（毫秒）",
+      "text.0106": "首次连接失败时阻止插件启动",
+      "text.0107": "断开后自动重连",
+      "text.0108": "首次延迟 ms",
+      "text.0109": "最大延迟 ms",
+      "text.0110": "最大尝试次数",
+      "text.0111": "取消",
+      "text.0112": "保存中…",
+      "text.0113": "保存",
+      "text.0114": "添加",
+      "text.0115": "读取内置 MCP 失败",
+      "text.0116": "安装内置 MCP 失败",
+      "text.0117": "选择内置 MCP",
+      "text.0118": "全选可安装",
+      "text.0119": "正在读取内置目录…",
+      "text.0120": "已配置",
+      "text.0121": "可安装",
+      "text.0122": "重试中…",
+      "text.0123": "重试",
+      "text.0124": "安装中…",
+      "text.0125": "读取本机客户端配置失败",
+      "text.0126": "这条配置里没有可导入的 MCP",
+      "text.0127": "预览失败",
+      "text.0128": "JSON 解析失败",
+      "text.0129": "导入失败",
+      "text.0134": "无",
+      "text.0138": "没检测到这个项目的项目级 MCP 配置（.mcp.json / .codex/config.toml / .pi/mcp.json / opencode.json 等），可在下面手动粘贴",
+      "text.0139": "没检测到本机客户端的全局 MCP 配置（~/.claude.json / ~/.codex/config.toml / ~/.config/opencode/opencode.json 等），可在下面手动粘贴",
+      "text.0140": "导入 MCP",
+      "text.0141": "正在扫描本机客户端配置…",
+      "text.0142": "没有可导入的 MCP",
+      "text.0148": "或粘贴 JSON：支持 Claude/Cursor/Cline/Roo 的 mcpServers、VS Code 的 servers，以及单个 MCP 对象",
+      "text.0149": "合并（同名更新）",
+      "text.0150": "取消选择来源",
+      "text.0151": "导入中…",
+      "text.0152": "确认从来源导入",
+      "text.0153": "解析中…",
+      "text.0154": "预览",
+      "text.0155": "确认导入",
+      "text.0156": "解析并预览",
+      "text.0157": "加载失败",
+      "text.0159": "该 MCP 来自其他配置层，配置只读，无法查看具体值",
+      "text.0160": "读取配置失败",
+      "text.0161": "已复制到剪贴板",
+      "text.0162": "复制失败",
+      "text.0163": "保存失败",
+      "text.0164": "添加失败",
+      "text.0165": "已导入 MCP",
+      "text.0166": "已安装所选内置 MCP",
+      "text.0167": "MCP 管理",
+      "text.0168": "刷新中…",
+      "text.0169": "刷新",
+      "text.0170": "内置 MCP",
+      "text.0171": "添加项目 MCP",
+      "text.0172": "查看更新方式",
+      "text.0173": "关闭更新提示",
+      "text.0174": "本版本内不再提示",
+      "text.0175": "此项目的 MCP",
+      "text.0176": "此项目还没有 MCP。用右上角「添加项目 MCP」或「内置 MCP」写入 .dsh/mcp.json",
+      "text.0177": "全局 MCP",
+      "text.0178": "MCP 管理面板",
+      "text.0179": "MCP 管理面板（可拖拽移动）",
+      "text.0180": "打开 MCP 管理面板",
+      "text.0181": "本次更新内容",
+      "text.0182": "这些变化你可能想知道",
+      "text.0183": "知道了",
+      "text.0184": "MCP 管理服务未连接（面板仍可用）",
+      "text.0185": "调用失败"
+    }
+  },
+  "dom": [
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "••••••（保留原值）",
+      "target": "•••••• (keep current value)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "Filesystem · 本地文件读写",
+      "target": "Filesystem · Local file access"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "Memory · 知识图谱记忆",
+      "target": "Memory · Knowledge graph"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "Sequential Thinking · 分步推理",
+      "target": "Sequential Thinking · Step-by-step reasoning"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "Time · 时区时间工具（需 uvx）",
+      "target": "Time · Time-zone tools (requires uvx)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "Git · 版本控制（需 uvx）",
+      "target": "Git · Version control (requires uvx)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "收起参数",
+      "target": "Collapse parameters"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "查看参数",
+      "target": "Show parameters"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "必填",
+      "target": "Required"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "可选",
+      "target": "Optional"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "收起原始 JSON",
+      "target": "Hide raw JSON"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "查看原始 JSON",
+      "target": "Show raw JSON"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "挂载失败",
+      "target": "Mount failed"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "作用域隔离失败",
+      "target": "Scope isolation failed"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "连接失败",
+      "target": "Connection failed"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "连接中",
+      "target": "Connecting"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "连接中…",
+      "target": "Connecting…"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "已禁用",
+      "target": "Disabled"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "状态未知",
+      "target": "Unknown status"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "待会话挂载",
+      "target": "Waiting for session mount"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "搜索 MCP…",
+      "target": "Search MCP…"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "按传输过滤",
+      "target": "Filter by transport"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "全部传输",
+      "target": "All transports"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "按状态过滤",
+      "target": "Filter by status"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "全部状态",
+      "target": "All statuses"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "已连接",
+      "target": "Connected"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "失败",
+      "target": "Failed"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "没有匹配的 MCP",
+      "target": "No matching MCP servers"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "作用域故障",
+      "target": "Scope error"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "配置待生效",
+      "target": "Configuration pending"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "禁用",
+      "target": "Disable"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "启用",
+      "target": "Enable"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "来自其他配置层，只读",
+      "target": "Managed by another configuration layer; read-only"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "已在此项目屏蔽，点击恢复可见",
+      "target": "Hidden in this project; click to show"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "在此项目可见，点击屏蔽",
+      "target": "Visible in this project; click to hide"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "搜索全局 MCP…",
+      "target": "Search global MCP servers…"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "没有全局 MCP",
+      "target": "No global MCP servers"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "没有匹配的全局 MCP",
+      "target": "No matching global MCP servers"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "已屏蔽",
+      "target": "Hidden"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "选择一个 MCP 查看详情",
+      "target": "Select an MCP server to view details"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "已连接（本项目会话共享）",
+      "target": "Connected (shared by this project’s sessions)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "已停止",
+      "target": "Stopped"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "项目配置",
+      "target": "Project configuration"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "全局配置",
+      "target": "Global configuration"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "serverName 同名冲突",
+      "target": "Duplicate serverName conflict"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "已在此项目屏蔽",
+      "target": "Hidden in this project"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "在此项目可见",
+      "target": "Visible in this project"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "编辑",
+      "target": "Edit"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "项目 MCP 由本项目会话共享一份连接，由 mcp-client 自动重连",
+      "target": "Project MCP servers share one connection across this project’s sessions; mcp-client reconnects automatically"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "重连",
+      "target": "Reconnect"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "移除",
+      "target": "Remove"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "此 MCP 由全局配置提供。要改它的连接配置，请切到「全局」标签页；在这里只能决定它对本项目是否可见。",
+      "target": "This MCP server comes from global configuration. Switch to the “Global” tab to edit its connection settings; here you can only control whether it is visible in this project."
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "来自 mcp-client 最近日志",
+      "target": "From the latest mcp-client log"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "工具命名与其他 serverName 前缀重叠，无法可靠判断归属；请避免在 serverName 中使用双下划线。",
+      "target": "Tool names overlap another serverName prefix, so ownership is ambiguous. Avoid double underscores in serverName."
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "连接信息",
+      "target": "Connection details"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "传输",
+      "target": "Transport"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "命令",
+      "target": "Command"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "参数",
+      "target": "Arguments"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "工作目录",
+      "target": "Working directory"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "是",
+      "target": "Yes"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "否（补丁中 disabled: true）",
+      "target": "No (disabled: true in patch)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "配置来源",
+      "target": "Configuration source"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "存在重复 serverName（冲突，只读）",
+      "target": "Duplicate serverName (conflict; read-only)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "全局配置（在「全局」标签页可编辑）",
+      "target": "Global configuration (editable in the “Global” tab)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "项目配置 .dsh/mcp.json（可编辑，本项目会话共享一份连接）",
+      "target": "Project configuration .dsh/mcp.json (editable; one connection shared by this project’s sessions)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "当前 Web profile（可编辑）",
+      "target": "Current Web profile (editable)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "其他 bundle / Agent（只读）",
+      "target": "Other bundle / Agent (read-only)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "调用超时",
+      "target": "Call timeout"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "启动失败策略",
+      "target": "Startup failure policy"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "阻止插件启动",
+      "target": "Prevent plugin startup"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "记录错误并继续",
+      "target": "Log the error and continue"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "自动重连",
+      "target": "Automatic reconnect"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "环境变量",
+      "target": "Environment variables"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "工具归属存在命名歧义",
+      "target": "Tool ownership is ambiguous"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "尚无会话持有该项目连接，或连接尚未就绪",
+      "target": "No session owns this project connection yet, or the connection is not ready"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "暂无工具",
+      "target": "No tools available"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "请填写 MCP 名称",
+      "target": "Enter an MCP server name"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "工具超时和最大尝试次数必须是正整数",
+      "target": "Tool timeout and maximum attempts must be positive integers"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "重连延迟必须是有效正数且不超过 2147483647 ms",
+      "target": "Reconnect delays must be positive numbers no greater than 2147483647 ms"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "首次延迟不能大于最大延迟",
+      "target": "Initial delay cannot exceed the maximum delay"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "编辑 MCP",
+      "target": "Edit MCP server"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "添加 MCP",
+      "target": "Add MCP server"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "全局",
+      "target": "Global"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "从预设模板快速填充（可选，命令需本机 npx/uvx）",
+      "target": "Fill quickly from a preset (optional; commands require local npx/uvx)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "选择预设模板",
+      "target": "Choose a preset"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "— 选择预设 —",
+      "target": "— Select a preset —"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "MCP 名称（唯一标识，不可改）",
+      "target": "MCP server name (unique ID; cannot be changed)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "传输类型",
+      "target": "Transport type"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "HTTP（远程）",
+      "target": "HTTP (remote)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "stdio（本地进程）",
+      "target": "stdio (local process)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "参数（每行一个，原样传给进程）",
+      "target": "Arguments (one per line; passed to the process as entered)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "工作目录 cwd（可选）",
+      "target": "Working directory cwd (optional)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "Headers（可选）",
+      "target": "Headers (optional)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "环境变量（可选，值写 !!js process.env.KEY 引用密钥）",
+      "target": "Environment variables (optional; use !!js process.env.KEY to reference a secret)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "Bearer … 或 !!js process.env.KEY",
+      "target": "Bearer … or !!js process.env.KEY"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "删除此项",
+      "target": "Delete this entry"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "+ 添加",
+      "target": "+ Add"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "运行策略",
+      "target": "Runtime policy"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "工具调用超时（毫秒）",
+      "target": "Tool-call timeout (ms)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "首次连接失败时阻止插件启动",
+      "target": "Prevent plugin startup if the initial connection fails"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "断开后自动重连",
+      "target": "Reconnect automatically after disconnection"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "首次延迟 ms",
+      "target": "Initial delay (ms)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "最大延迟 ms",
+      "target": "Maximum delay (ms)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "最大尝试次数",
+      "target": "Maximum attempts"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "取消",
+      "target": "Cancel"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "保存中…",
+      "target": "Saving…"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "保存",
+      "target": "Save"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "添加",
+      "target": "Add"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "读取内置 MCP 失败",
+      "target": "Could not read built-in MCP servers"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "安装内置 MCP 失败",
+      "target": "Could not install built-in MCP servers"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "选择内置 MCP",
+      "target": "Choose built-in MCP servers"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "全选可安装",
+      "target": "Select all installable"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "正在读取内置目录…",
+      "target": "Loading built-in catalog…"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "已配置",
+      "target": "Configured"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "可安装",
+      "target": "Available to install"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "重试中…",
+      "target": "Retrying…"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "重试",
+      "target": "Retry"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "安装中…",
+      "target": "Installing…"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "读取本机客户端配置失败",
+      "target": "Could not read local client configuration"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "这条配置里没有可导入的 MCP",
+      "target": "This configuration contains no MCP servers to import"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "预览失败",
+      "target": "Preview failed"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "JSON 解析失败",
+      "target": "Could not parse JSON"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "导入失败",
+      "target": "Import failed"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "无",
+      "target": "None"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "没检测到这个项目的项目级 MCP 配置（.mcp.json / .codex/config.toml / .pi/mcp.json / opencode.json 等），可在下面手动粘贴",
+      "target": "No project-level MCP configuration was detected (.mcp.json / .codex/config.toml / .pi/mcp.json / opencode.json, etc.). You can paste it below."
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "没检测到本机客户端的全局 MCP 配置（~/.claude.json / ~/.codex/config.toml / ~/.config/opencode/opencode.json 等），可在下面手动粘贴",
+      "target": "No global MCP configuration was detected for local clients (~/.claude.json / ~/.codex/config.toml / ~/.config/opencode/opencode.json, etc.). You can paste it below."
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "导入 MCP",
+      "target": "Import MCP servers"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "正在扫描本机客户端配置…",
+      "target": "Scanning local client configurations…"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "没有可导入的 MCP",
+      "target": "No MCP servers to import"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "或粘贴 JSON：支持 Claude/Cursor/Cline/Roo 的 mcpServers、VS Code 的 servers，以及单个 MCP 对象",
+      "target": "Or paste JSON: supports Claude/Cursor/Cline/Roo mcpServers, VS Code servers, or a single MCP object"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "合并（同名更新）",
+      "target": "Merge (update matching names)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "取消选择来源",
+      "target": "Clear source selection"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "导入中…",
+      "target": "Importing…"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "确认从来源导入",
+      "target": "Confirm import from source"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "解析中…",
+      "target": "Parsing…"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "预览",
+      "target": "Preview"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "确认导入",
+      "target": "Confirm import"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "解析并预览",
+      "target": "Parse and preview"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "加载失败",
+      "target": "Loading failed"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "该 MCP 来自其他配置层，配置只读，无法查看具体值",
+      "target": "This MCP server comes from another configuration layer. Its settings are read-only, so values cannot be viewed."
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "读取配置失败",
+      "target": "Could not read configuration"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "已复制到剪贴板",
+      "target": "Copied to clipboard"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "复制失败",
+      "target": "Copy failed"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "保存失败",
+      "target": "Save failed"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "添加失败",
+      "target": "Add failed"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "已导入 MCP",
+      "target": "MCP servers imported"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "已安装所选内置 MCP",
+      "target": "Selected built-in MCP servers installed"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "MCP 管理",
+      "target": "MCP manager"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "刷新中…",
+      "target": "Refreshing…"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "刷新",
+      "target": "Refresh"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "内置 MCP",
+      "target": "Built-in MCP servers"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "添加项目 MCP",
+      "target": "Add project MCP server"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "查看更新方式",
+      "target": "View update instructions"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "关闭更新提示",
+      "target": "Dismiss update notice"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "本版本内不再提示",
+      "target": "Do not show again for this version"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "此项目的 MCP",
+      "target": "Project MCP servers"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "此项目还没有 MCP。用右上角「添加项目 MCP」或「内置 MCP」写入 .dsh/mcp.json",
+      "target": "This project has no MCP servers yet. Use “Add project MCP server” or “Built-in MCP servers” at the top right to add one to .dsh/mcp.json."
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "全局 MCP",
+      "target": "Global MCP servers"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "MCP 管理面板",
+      "target": "MCP manager panel"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "本次更新内容",
+      "target": "What’s new in this update"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "这些变化你可能想知道",
+      "target": "Here are a few changes you may want to know about"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "知道了",
+      "target": "Got it"
+    },
+    {
+      "selector": ".dsh-mcp-toast",
+      "source": "MCP 管理服务未连接（面板仍可用）",
+      "target": "MCP manager service is unavailable (the panel is still usable)"
+    },
+    {
+      "selector": ".dsh-mcp-toast",
+      "source": "调用失败",
+      "target": "Call failed"
+    },
+    {
+      "selector": ".dsh-mcp-footer-action",
+      "source": "MCP 管理面板",
+      "target": "MCP manager panel"
+    },
+    {
+      "selector": ".dsh-mcp-footer-action",
+      "source": "打开 MCP 管理面板",
+      "target": "Open MCP manager panel"
+    },
+    {
+      "selector": ".dsh-mcp-fab",
+      "source": "MCP 管理面板（可拖拽移动）",
+      "target": "MCP manager panel (drag to move)"
+    },
+    {
+      "selector": ".dsh-mcp-fab",
+      "source": "打开 MCP 管理面板",
+      "target": "Open MCP manager panel"
+    },
+    {
+      "selector": ".dsh-mcp-toast",
+      "source": "已复制到剪贴板",
+      "target": "Copied to clipboard"
+    },
+    {
+      "selector": ".dsh-mcp-toast",
+      "source": "复制失败",
+      "target": "Copy failed"
+    },
+    {
+      "selector": ".dsh-mcp-toast",
+      "source": "已导入 MCP",
+      "target": "MCP servers imported"
+    },
+    {
+      "selector": ".dsh-mcp-toast",
+      "source": "已安装所选内置 MCP",
+      "target": "Selected built-in MCP servers installed"
+    },
+    {
+      "selector": ".dsh-mcp-toast",
+      "source": "保存失败",
+      "target": "Save failed"
+    },
+    {
+      "selector": ".dsh-mcp-toast",
+      "source": "添加失败",
+      "target": "Add failed"
+    },
+    {
+      "selector": ".dsh-mcp-toast",
+      "source": "读取配置失败",
+      "target": "Could not read configuration"
+    }
+  ]
+}
