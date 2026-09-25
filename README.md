@@ -16,24 +16,21 @@ English version: [README.en.md](README.en.md).
 
 ## Установка
 
-Сейчас проект подготовлен локально, но ещё не опубликован на GitHub или npm. Профиль `desktop` принадлежит DSH Desktop: управляйте им через штатную страницу **Plugins** в приложении. Команда `dsh plugin --profile desktop` намеренно запрещена самим DSH.
+Установка из DSH: откройте **Plugins → Add** и укажите источник GitHub:
+
+```text
+github:tommilevs/dsh-multi-lang-ui
+```
+
+Перед установкой удалите `@goodandready/dsh-russian-lang`: оба пакета добавляют русские словари и конфликтуют по локали `ru`. Настройки остаются в пространстве `russian-lang`; DSH 0.1.7 отображает их как параметры профиля. После замены перезапустите DSH Desktop.
+
+Для разработки и проверки локально используйте:
 
 ```bash
 node scripts/embed-multilang.mjs
-node --test
+node --test test/*.test.mjs
 node scripts/validate-locales.mjs
-
 ```
-
-Затем на странице **Plugins** удалите `@goodandready/dsh-russian-lang` и установите локальный архив, указав его как `file:`-источник. Для этого checkout путь такой:
-
-```text
-file:C:/absolute/path/to/tommilevs-dsh-multi-lang-ui-0.1.0.tgz
-```
-
-Пакеты `dsh-russian-lang` и `dsh-multi-lang-ui` нельзя загружать одновременно: оба регистрируют locale `ru`. Настройки сохраняют прежнее пространство `russian-lang`, поэтому существующие параметры остаются доступны. После замены перезапустите DSH Desktop.
-
-После публикации команды будут заменены на ссылку репозитория/релиза. Для применения изменений перезапустите DSH Desktop.
 
 ## Добавление перевода
 

@@ -1,6 +1,6 @@
 {
   "name": "@tommilevs/dsh-multi-lang-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Community-extensible translations for DeepSeek Harness core and plugins, with safe scoped adapters for UI that has no locale API.",
   "type": "module",
   "main": "lib/index.js",

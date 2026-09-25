@@ -4,5 +4,5 @@
 # живёт в браузере (lib/client.js). Строка нужна, чтобы сканер клиентских бандлов
 # увидел пакет и отдал его странице.
 - insert:
-    - id: dsh-multi-lang-ui
+    - id: russian-lang
       name: '@tommilevs/dsh-multi-lang-ui'

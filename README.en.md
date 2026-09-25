@@ -16,22 +16,21 @@ DSH's native English remains the default and fallback language. Packs add missin
 
 ## Install
 
-The project is currently a local development build and is not yet published on GitHub or npm. The `desktop` profile is owned by DSH Desktop, so manage it through the app's **Plugins** page. DSH intentionally refuses `dsh plugin --profile desktop` CLI operations.
+To install from DSH, open **Plugins → Add** and enter this GitHub source:
+
+```text
+github:tommilevs/dsh-multi-lang-ui
+```
+
+Remove `@goodandready/dsh-russian-lang` before installation because both packages register Russian locale dictionaries. Settings keep the `russian-lang` profile entry and appear in DSH 0.1.7's profile configuration form. Restart DSH Desktop after replacement.
+
+For local development and checks, run:
 
 ```bash
 node scripts/embed-multilang.mjs
-node --test
+node --test test/*.test.mjs
 node scripts/validate-locales.mjs
-
 ```
-
-Then remove `@goodandready/dsh-russian-lang` from **Plugins** and install the local archive using its `file:` source. For this checkout, the path is:
-
-```text
-file:C:/absolute/path/to/tommilevs-dsh-multi-lang-ui-0.1.0.tgz
-```
-
-Do not load both packages together: both register the `ru` locale. Existing preferences keep the `russian-lang` namespace. Restart DSH Desktop after replacement.
 
 ## Contribute a translation
 
