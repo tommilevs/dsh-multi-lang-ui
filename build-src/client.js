@@ -390,7 +390,7 @@ if (!hasRu && hasEn) {return { key: trimmed, value: trimmed, source: 'untranslat
 }
 return null
 }
-const generateBugReportSnippet = (info = {}) => {const { key, ns, original, current, override, pkgVersion = '0.3.1' } = info
+const generateBugReportSnippet = (info = {}) => {const { key, ns, original, current, override, pkgVersion = '__PKG_VERSION__' } = info
 const lines = [
 '### 🌐 Неточность перевода / Пользовательское предложение','- **Пакет:** `@tommilevs/dsh-multi-lang-ui@v' + pkgVersion + '`',ns ? '- **Пространство имён:** `' + ns + '`' : null,key ? '- **Ключ:** `' + key + '`' : null,original ? '- **Оригинальный текст:** `' + original + '`' : null,current ? '- **Текущий перевод:** `' + current + '`' : null,override ? '- **Предлагаемый перевод:** `' + override + '`' : null,].filter(Boolean)
 return lines.join('\n')
@@ -1270,7 +1270,7 @@ setTimeout(() => { copyKeyBtn.textContent = '📋' }, 1500)
 }
 const copyReportBtn = modal.querySelector('.rl-copy-report-btn')
 if (copyReportBtn) {copyReportBtn.onclick = () => {const snippet = typeof generateBugReportSnippet === 'function'
-? generateBugReportSnippet({ key: k, ns, original: origText || rawText, current: rawText, override: textarea.value.trim(), pkgVersion: '0.3.9' })
+? generateBugReportSnippet({ key: k, ns, original: origText || rawText, current: rawText, override: textarea.value.trim(), pkgVersion: '__PKG_VERSION__' })
 : ('### Репорт: ' + (k || rawText) + '\n- Исходный: ' + (origText || rawText) + '\n- Перевод: ' + textarea.value.trim())
 try { navigator.clipboard.writeText(snippet) } catch (err) {  void err; }
 copyReportBtn.textContent = '✓ Скопировано'
@@ -1803,7 +1803,7 @@ scope.set('overrides', merged)
 ),React.createElement('div', { className: 'rl-stat-box' },React.createElement('div', { className: 'rl-stat-val' }, '1 225'),React.createElement('div', { className: 'rl-stat-label' }, t('statCoreKeys'))
 ),React.createElement('div', { className: 'rl-stat-box' },React.createElement('div', { className: 'rl-stat-val' }, '5 924'),React.createElement('div', { className: 'rl-stat-label' }, t('statPluginKeys'))
 )
-),React.createElement('div', { className: 'rl-actions-row' },React.createElement('a', {href: makeIssueUrl({}, '0.3.9'),target: '_blank',rel: 'noopener noreferrer',className: 'rl-btn rl-btn-primary'
+),React.createElement('div', { className: 'rl-actions-row' },React.createElement('a', {href: makeIssueUrl({}, '__PKG_VERSION__'),target: '_blank',rel: 'noopener noreferrer',className: 'rl-btn rl-btn-primary'
 }, '💬 ' + t('reportIssue')),React.createElement('div', { className: 'rl-hint-text', style: { flex: 1 } },t('exportMdHint')
 )
 )
