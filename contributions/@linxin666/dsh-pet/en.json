@@ -70,6 +70,11 @@
       "target": "Blue-throated bee-eater"
     },
     {
+      "selector": "#settings-pet-pet",
+      "source": "OUO Neko",
+      "target": "OUO Neko"
+    },
+    {
       "selector": "[data-dsh-pet-root]",
       "source": "蓝喉蜂虎",
       "target": "Blue-throated bee-eater"

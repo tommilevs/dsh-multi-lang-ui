@@ -175,6 +175,11 @@
     },
     {
       "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "控制 `purpose: compaction` 摘要调用是否改用独立的 compact 模型路由。",
+      "target": "Controls whether summary requests with `purpose: compaction` are routed to a separate compact model."
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
       "source": "Enable auxiliary compaction route",
       "target": "Enable auxiliary compaction route"
     },

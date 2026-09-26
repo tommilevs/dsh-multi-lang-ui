@@ -117,6 +117,11 @@
       "target": "Синегорлая щурка"
     },
     {
+      "selector": "#settings-pet-pet",
+      "source": "OUO Neko",
+      "target": "Кошка OUO"
+    },
+    {
       "selector": "[data-dsh-pet-root]",
       "source": "蓝喉蜂虎",
       "target": "Синегорлая щурка"

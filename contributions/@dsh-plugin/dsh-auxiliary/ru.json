@@ -225,6 +225,11 @@
     },
     {
       "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "控制 `purpose: compaction` 摘要调用是否改用独立的 compact 模型路由。",
+      "target": "Определяет, будет ли для кратких сводок с `purpose: compaction` использоваться отдельный маршрут к модели сжатия контекста."
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
       "source": "Enable auxiliary compaction route",
       "target": "Включить отдельный маршрут для сжатия контекста"
     },

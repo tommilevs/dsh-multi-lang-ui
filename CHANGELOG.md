@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.9
+
+- Translate the auxiliary compaction explanation when its host renders the Chinese source string.
+- Translate the `OUO Neko` pet choice into Russian while preserving its English display name.
+- Refine the Russian skin-card descriptions and add screenshot regression coverage for both gaps.
+
 ## 0.1.8
 
 - Normalize a partially translated DeepSeek usage message that DSH could render after other locale adapters ran first.
