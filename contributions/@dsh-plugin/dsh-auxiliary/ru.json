@@ -1,0 +1,51 @@
+{
+  "plugin": {
+    "id": "@dsh-plugin/dsh-auxiliary",
+    "version": "0.6.4",
+    "source": "https://github.com/dsh-plugins/dsh-auxiliary",
+    "license": "LGPL-3.0-only"
+  },
+  "locale": "ru",
+  "sourceLocale": "en",
+  "namespaces": {
+    "dsh-auxiliary": {
+      "nav": "Вспомогательные модели",
+      "intro": "Настройте анализ изображений и сжатие контекста независимо друг от друга. Для каждой функции предусмотрены свой переключатель и маршрут модели; используются провайдеры со страницы «Модели».",
+      "catalogFailure": "Не удалось загрузить каталог моделей для:",
+      "visionTitle": "Анализ изображений",
+      "visionDescription": "Настраивает инструмент `inspect_image` и модель для анализа изображений. Функцию можно включить и без выбранной модели; при вызове инструмента будет сообщено, что маршрут не настроен.",
+      "visionToggle": "Включить inspect_image",
+      "visionPickerLabel": "Модель для изображений (должна поддерживать их ввод)",
+      "visionHandoff": "Если основная модель работает только с текстом, изображения чата передаются как ссылки, а инструмент describe_image отправляет их содержимое модели для анализа.",
+      "visionSkipWhenImageCapable": "Если основная модель поддерживает изображения, инструменты inspect_image/describe_image и пояснения к ним не добавляются в эту сессию.",
+      "visionUsage": "Этот маршрут обслуживает inspect_image и describe_image: первый читает локальные изображения на Host, второй — изображения, прикреплённые к чату. Если основная модель работает только с текстом, изображения отображаются как ссылки [image: …], после чего модель вызывает describe_image и добавляет их содержимое в контекст. Поддержку изображений для каждой модели укажите в разделе «Настройки → Модели → Провайдер → Пользовательские настройки → Модели»; основной чат использует эту же настройку для выбранной модели.",
+      "compactTitle": "Сжатие контекста",
+      "compactDescription": "Определяет, будет ли для краткого пересказа с целью `compaction` использоваться отдельный маршрут модели.",
+      "compactToggle": "Включить отдельный маршрут для сжатия контекста"
+    }
+  },
+  "source": {
+    "dsh-auxiliary": {
+      "nav": "Auxiliary Models",
+      "intro": "Configure vision understanding and context compaction independently. Each feature has its own switch and model route, reusing providers configured on the Models page.",
+      "catalogFailure": "Model catalog lookup failed for:",
+      "visionTitle": "Vision understanding",
+      "visionDescription": "Controls the `inspect_image` tool and its vision model. Enabling it without a selected model remains valid; a tool call reports that the vision route is missing.",
+      "visionToggle": "Enable inspect_image",
+      "visionPickerLabel": "Vision model (must support image input)",
+      "visionHandoff": "When the main model is text-only, chat images are sent as references and describe_image hands them to the vision model for their content",
+      "visionSkipWhenImageCapable": "When the main model supports image input, do not inject the inspect_image/describe_image tools or their prompt guidance into that session",
+      "visionUsage": "This route serves inspect_image and describe_image: the former reads local images on the Host, the latter reads images attached to the chat (when the main model is text-only they appear as [image: …] references, and the main model calls describe_image to fetch their content into the context). Declare image input per model under Settings → Models → Provider → Customized settings → Models; main chat uses the same declaration when that model is selected.",
+      "compactTitle": "Context compaction",
+      "compactDescription": "Controls whether `purpose: compaction` summaries use the independent compact model route.",
+      "compactToggle": "Enable auxiliary compaction route"
+    }
+  },
+  "dom": [
+    {
+      "selector": "p[role=\"alert\"]",
+      "source": "{provider} ({id}): model \"{model}\" declares native image input, so its \"{alias}\" entry no longer applies. Select the same model from the provider group without \"{alias}\".",
+      "target": "{provider} ({id}): модель «{model}» сообщает о поддержке изображений, поэтому вариант «{alias}» к ней неприменим. Выберите эту же модель в группе провайдера без варианта «{alias}»."
+    }
+  ]
+}

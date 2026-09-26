@@ -9,6 +9,7 @@
 - The base and user-facing features of [`GooDAnDReaDY/dsh-russian-lang`](https://github.com/GooDAnDReaDY/dsh-russian-lang): Russian core/plugin dictionaries, RU/EN switching, plural forms, typography, keyboard-layout correction, overrides, inspector, and the existing `russian-lang` settings namespace.
 - The source dictionary set plus missing core keys from the author's installed 0.3.7 package: 56 core namespaces, 130 plugin namespaces, and 365 exact Chinese UI strings. These are dictionary counts, not a claim of complete coverage for every DSH release.
 - Russian dictionaries for usage statistics and session archive in `@linxin666/dsh-web-all` 0.4.1.
+- English and Russian labels for the `dsh-web-all` usage and archive views, pet widget, MCP filters, model capability selector, update screen and every v0.4.2 release bullet. Desktop settings, the plugin manager tab and Auxiliary Models are localized too; dynamic errors preserve provider and model names.
 - Russian and English UI adapters for the hardcoded Chinese interfaces in `dsh-mcp-manager-ui` 1.4.0 and `@dsh-external/dsh-super-injector` 0.3.3. Adapters only replace known exact strings within plugin-owned root classes. The ambiguous string `关闭` is intentionally left untranslated because it means both “Close” and “Off” in different controls.
 - A **Community translations** settings section to import and export JSON packs. Translation packs contain data only and are never executed as code.
 

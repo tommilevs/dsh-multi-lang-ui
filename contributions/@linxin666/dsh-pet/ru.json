@@ -1,0 +1,105 @@
+{
+  "plugin": {
+    "id": "@linxin666/dsh-pet",
+    "version": "0.3.25",
+    "source": "https://github.com/zhu1090093659/dsh-pet",
+    "license": "Apache-2.0"
+  },
+  "locale": "ru",
+  "sourceLocale": "en",
+  "namespaces": {
+    "pet": {
+      "pet.feed": "Покормить",
+      "pet.hide": "Скрыть",
+      "pet.rename": "Переименовать",
+      "pet.rank": "Уровень привязанности: {rank}",
+      "pet.points": "{points} очков",
+      "pet.treats": "Сушёная рыбка ×{n}",
+      "settings.title": "Питомец",
+      "settings.description": "Выберите питомца и настройте его расположение.",
+      "settings.pet": "Питомец",
+      "settings.petHint": "Выберите отображаемого питомца. Имена задаются отдельно; изменить имя можно во всплывающей панели питомца.",
+      "settings.enabled": "Включить питомца",
+      "settings.enabledHint": "Если выключить, питомец скроется, а опрос остановится. Включить его снова можно здесь.",
+      "settings.decoration": "Украшения статуса",
+      "settings.visible": "Показывать питомца",
+      "settings.size": "Размер (пикс.)",
+      "settings.right": "Отступ справа (пикс.)",
+      "settings.bottom": "Отступ снизу (пикс.)",
+      "settings.save": "Сохранить",
+      "settings.saving": "Сохранение…",
+      "settings.discard": "Отменить изменения"
+    }
+  },
+  "source": {
+    "pet": {
+      "pet.feed": "Feed",
+      "pet.hide": "Hide",
+      "pet.rename": "Rename",
+      "pet.rank": "Affinity {rank}",
+      "pet.points": "{points} pts",
+      "pet.treats": "Treats ×{n}",
+      "settings.title": "Pet",
+      "settings.description": "Pick a pet and tune its display layout.",
+      "settings.pet": "Pet",
+      "settings.petHint": "Choose which pet shows. Names are stored per pet; rename from the pet hover panel.",
+      "settings.enabled": "Enable the pet",
+      "settings.enabledHint": "When off, the pet hides and polling stops; re-enable it here.",
+      "settings.decoration": "Status decoration",
+      "settings.visible": "Show the pet",
+      "settings.size": "Size (px)",
+      "settings.right": "Right inset (px)",
+      "settings.bottom": "Bottom inset (px)",
+      "settings.save": "Save",
+      "settings.saving": "Saving…",
+      "settings.discard": "Discard"
+    }
+  },
+  "dom": [
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "亲密度",
+      "target": "Уровень привязанности"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "小鱼干 ×{n}",
+      "target": "Сушёная рыбка ×{n}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "{points}点",
+      "target": "{points} очков"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "喂食",
+      "target": "Покормить"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "改名",
+      "target": "Переименовать"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "隐藏",
+      "target": "Скрыть"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "鲸鱼娘",
+      "target": "Девушка-кит"
+    },
+    {
+      "selector": "#settings-pet-pet",
+      "source": "鲸鱼娘（原版）",
+      "target": "Девушка-кит (оригинал)"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "鲸鱼娘（原版）",
+      "target": "Девушка-кит (оригинал)"
+    }
+  ]
+}

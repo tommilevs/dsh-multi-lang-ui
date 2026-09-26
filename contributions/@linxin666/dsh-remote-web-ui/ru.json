@@ -1,0 +1,121 @@
+{
+  "plugin": {
+    "id": "@linxin666/dsh-remote-web-ui",
+    "version": "0.4.1",
+    "source": "https://github.com/zhu1090093659/dsh-web/tree/main/packages/dsh-remote-web-ui",
+    "license": "Apache-2.0"
+  },
+  "locale": "ru",
+  "sourceLocale": "en",
+  "namespaces": {
+    "remote": {
+      "update.label": "Проверить обновления",
+      "update.title": "Проверить обновления",
+      "update.found": "Доступна новая версия",
+      "update.foundDetail": "Для {name} доступна новая версия v{version}. Подтвердите запуск обновления.",
+      "update.start": "Обновить сейчас",
+      "update.cooldownNotice": "Это обновление запущено вами, поэтому 24-часовая задержка публикации в pnpm (мера защиты цепочки поставок) пропускается и выбранная версия устанавливается сразу.",
+      "update.releaseNotes": "Список изменений v{version}",
+      "update.releaseFeatures": "Новые функции",
+      "update.releaseFixes": "Исправления",
+      "update.releaseOther": "Другие изменения",
+      "update.componentVersions": "Посмотреть версии компонентов",
+      "update.retry": "Проверить ещё раз",
+      "update.close": "Закрыть панель обновления"
+    }
+  },
+  "source": {
+    "remote": {
+      "update.label": "Check for updates",
+      "update.title": "Check for updates",
+      "update.found": "A new version is available",
+      "update.foundDetail": "{name} has a newer release v{version}. Confirm to start the update.",
+      "update.start": "Update now",
+      "update.cooldownNotice": "This user-initiated update bypasses pnpm's 24-hour release cooldown (supply-chain protection) and installs the selected version immediately.",
+      "update.releaseNotes": "v{version} release notes",
+      "update.releaseFeatures": "New Features",
+      "update.releaseFixes": "Bug Fixes",
+      "update.releaseOther": "Other Changes",
+      "update.componentVersions": "View component versions",
+      "update.retry": "Check again",
+      "update.close": "Close update panel"
+    }
+  },
+  "dom": [
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[task-board] 子任务、Agent 工具与 Agent Team 执行：看板支持父子任务与并发级联执行，新增八个模型可调用的看板工具，并支持以 Agent Team 方式执行（由 Host 为每个子任务拉起队友）",
+      "target": "[task-board] Подзадачи, инструменты агента и запуск Agent Team: доска поддерживает родительские и дочерние задачи с параллельным каскадным выполнением, предоставляет восемь инструментов, доступных моделям, и позволяет выполнять задачу командой Agent Team (Host запускает отдельного участника для каждой подзадачи)."
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[market] 市场内容改为经卫星仓 submodule 固定内容提交，构建读取 gitlink 指向的目录",
+      "target": "[market] Содержимое Market закреплено за конкретными коммитами подмодулей-спутников; при сборке используются каталоги, на которые указывают gitlink."
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[scripts] `link-profile` 同时链接卫星包到本地 DSH profile",
+      "target": "[scripts] `link-profile` также добавляет ссылки на пакеты-спутники в локальный профиль DSH."
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[remote-web-ui] 应用投放的每一类页面都不再落入配对围栏；LAN 必需提示同时指明两处设置位置",
+      "target": "[remote-web-ui] Страницы всех типов, предоставляемые приложением, больше не попадают под ограничение сопряжения; уведомление о необходимости LAN теперь указывает оба места настройки."
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[task-board] 失败的会话复用执行如实记录，并断言固定的 agent preset",
+      "target": "[task-board] Неудачные запуски с повторным использованием сессии теперь корректно записываются; проверяется закреплённый пресет агента."
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[client] 插件路由按文档相对路径投递，子路径部署不再拼错地址",
+      "target": "[client] Маршруты плагинов формируются относительно пути документа, поэтому при развёртывании во вложенном пути адрес строится правильно."
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[dsh-web-all] 原地重载后家族页签与看板入口保持可用；带壳家族行改为可配置",
+      "target": "[dsh-web-all] Вкладки семейства плагинов и переход к доске сохраняются после перезагрузки на месте; строки семейных плагинов с оболочкой теперь можно настраивать."
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[usage] 余额探测限定在自身账号 origin",
+      "target": "[usage] Запрос баланса провайдера ограничен доменом (origin) его аккаунта."
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[desktop] profile 重播种时保留每个插件的 bundle patch 文件（随桌面端移除一并退役）",
+      "target": "[desktop] При повторном создании профиля сохраняются bundle patch-файлы всех плагинов (эта функция выведена из эксплуатации вместе с приложением Desktop)."
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[market] 移除部署 lane 的部署后资产校验；边缘资产状态按实际重复状态判定并重试瞬时状态",
+      "target": "[market] В сценарии развёртывания удалена проверка ресурсов после публикации; проверка статуса на граничном узле учитывает повторно получаемые состояния и повторяет запрос при временных статусах."
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[preset-center] 改为消费拆出的预设中心包，不再在本仓内置",
+      "target": "[preset-center] Теперь используется выделенный пакет Preset Center; встроенные пресеты больше не хранятся в этом репозитории."
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[scripts] PR 评审与皮肤/pet 流程指向卫星仓；退掉本仓不再服务的 renderer 路由与皮肤评审 lane",
+      "target": "[scripts] Проверка PR и процессы для оформления и питомца теперь ведут в репозитории-спутники; удалены маршруты renderer и этап проверки оформления, которые этот репозиторий больше не обслуживает."
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[ci] 特权 workflow 只在规范仓库运行；路由 glob 与配置文档一致",
+      "target": "[ci] Workflow с повышенными правами запускаются только в основном репозитории; шаблоны маршрутов соответствуют документации по настройке."
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[test] 重录当前测试舰队实际测得的覆盖率基线；家族测试环境提供可用的 localStorage",
+      "target": "[test] Базовый уровень покрытия записан заново по результатам текущего набора тестов; тестовое окружение семейства плагинов теперь предоставляет рабочий localStorage."
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[docs] 补齐卫星仓关系、四仓措辞与发布准备说明",
+      "target": "[docs] Актуализирована документация о связях с репозиториями-спутниками, терминологии для четырёх репозиториев и подготовке к выпуску."
+    }
+  ]
+}

@@ -376,5 +376,237 @@
       "arch.time.unknown": "未知",
       "arch.current.badge": "当前"
     }
-  }
+  },
+  "dom": [
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "用量",
+      "target": "Использование"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "个人套餐",
+      "target": "Личные тарифы"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "Token 银行",
+      "target": "Банк токенов"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "更新于 {time}",
+      "target": "Обновлено: {time}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "今日用量",
+      "target": "Использование за сегодня"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "今日消费（估算）",
+      "target": "Расход за сегодня (оценка)"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "余额",
+      "target": "Баланс"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "没有已配置的提供方",
+      "target": "Провайдеры не настроены"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "近 30 天",
+      "target": "Последние 30 дней"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "暂无用量数据（统计自插件启用起）",
+      "target": "Нет данных об использовании (статистика ведётся с момента включения плагина)"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "设置",
+      "target": "Настройки"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "启用插件",
+      "target": "Включить плагин"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "轮询间隔（秒）",
+      "target": "Интервал опроса (секунды)"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "今日消费",
+      "target": "Расход за сегодня"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "今日暂无用量",
+      "target": "Сегодня данных об использовании пока нет"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "{n} 次调用",
+      "target": "Вызовов: {n}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "统计",
+      "target": "Статистика"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "刷新",
+      "target": "Обновить"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "会话归档管理",
+      "target": "Управление архивом диалогов"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "共 {n} 条会话",
+      "target": "Всего диалогов: {n}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "全部",
+      "target": "Все"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "未归档",
+      "target": "Неархивированные"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "已归档",
+      "target": "В архиве"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "全部工作区",
+      "target": "Все рабочие области"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "搜索标题或会话 ID",
+      "target": "Поиск по названию или ID диалога"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "最新优先",
+      "target": "Сначала новые"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "仅看异常会话",
+      "target": "Только проблемные диалоги"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "全选当前结果",
+      "target": "Выбрать все результаты"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "清空选择",
+      "target": "Снять выделение"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "已选 {n} 项",
+      "target": "Выбрано: {n}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "普通",
+      "target": "Обычный"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "归档时间未知",
+      "target": "Время архивации неизвестно"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "预览",
+      "target": "Предпросмотр"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "取消归档",
+      "target": "Разархивировать"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "删除",
+      "target": "Удалить"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "（无标题）",
+      "target": "(Без названия)"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "刷新",
+      "target": "Обновить"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "排序",
+      "target": "Сортировка"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "批量归档",
+      "target": "Архивировать выбранные"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "批量取消归档",
+      "target": "Разархивировать выбранные"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "批量删除",
+      "target": "Удалить выбранные"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "最后活动：{time}",
+      "target": "Последняя активность: {time}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "最后活动：未知",
+      "target": "Последняя активность: неизвестна"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "归档时间：{time}",
+      "target": "Время архивации: {time}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "归档时间：未知",
+      "target": "Время архивации неизвестно"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "大小：{size}",
+      "target": "Размер: {size}"
+    }
+  ]
 }

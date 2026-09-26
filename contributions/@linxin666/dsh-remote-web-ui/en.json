@@ -1,0 +1,88 @@
+{
+  "plugin": {
+    "id": "@linxin666/dsh-remote-web-ui",
+    "version": "0.4.1",
+    "source": "https://github.com/zhu1090093659/dsh-web/tree/main/packages/dsh-remote-web-ui",
+    "license": "Apache-2.0"
+  },
+  "locale": "en",
+  "sourceLocale": "zh",
+  "namespaces": {},
+  "dom": [
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[task-board] 子任务、Agent 工具与 Agent Team 执行：看板支持父子任务与并发级联执行，新增八个模型可调用的看板工具，并支持以 Agent Team 方式执行（由 Host 为每个子任务拉起队友）",
+      "target": "[task-board] Subtasks, agent tools and Agent Team runs: the board supports parent/child tasks with concurrent cascade execution, adds eight model-facing board tools, and can run a task as an Agent Team (the host spawns a teammate per subtask)"
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[market] 市场内容改为经卫星仓 submodule 固定内容提交，构建读取 gitlink 指向的目录",
+      "target": "[market] Market content is pinned through the satellite submodules, and the build reads the directories the gitlinks name"
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[scripts] `link-profile` 同时链接卫星包到本地 DSH profile",
+      "target": "[scripts] `link-profile` links the satellite packages into the local DSH profile too"
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[remote-web-ui] 应用投放的每一类页面都不再落入配对围栏；LAN 必需提示同时指明两处设置位置",
+      "target": "[remote-web-ui] Every application-delivered page stays out of the pairing fence, and the LAN-required hint names both settings locations"
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[task-board] 失败的会话复用执行如实记录，并断言固定的 agent preset",
+      "target": "[task-board] Failed session-reuse executions are recorded honestly, and the pinned agent preset is asserted"
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[client] 插件路由按文档相对路径投递，子路径部署不再拼错地址",
+      "target": "[client] Plugin routes post document-relative, so sub-path deployments no longer build the wrong address"
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[dsh-web-all] 原地重载后家族页签与看板入口保持可用；带壳家族行改为可配置",
+      "target": "[dsh-web-all] Family surfaces and the board entry survive an in-place reload, and shelled family rows become configurable"
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[usage] 余额探测限定在自身账号 origin",
+      "target": "[usage] A provider balance probe is scoped to its own account origin"
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[desktop] profile 重播种时保留每个插件的 bundle patch 文件（随桌面端移除一并退役）",
+      "target": "[desktop] Every plugin bundle patch file survives a profile reseed (retired together with the desktop app)"
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[market] 移除部署 lane 的部署后资产校验；边缘资产状态按实际重复状态判定并重试瞬时状态",
+      "target": "[market] The deploy lane drops its post-deploy asset verification, and the asset sweep judges edge statuses by what the edge repeats and retries transient ones"
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[preset-center] 改为消费拆出的预设中心包，不再在本仓内置",
+      "target": "[preset-center] Consumes the extracted preset center package instead of carrying it here"
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[scripts] PR 评审与皮肤/pet 流程指向卫星仓；退掉本仓不再服务的 renderer 路由与皮肤评审 lane",
+      "target": "[scripts] PR review and the skin/pet flows point at the satellite repositories; the renderer route and skin-review lane this repository no longer serves are withdrawn"
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[ci] 特权 workflow 只在规范仓库运行；路由 glob 与配置文档一致",
+      "target": "[ci] Privileged workflows run only in the canonical repository, and the routing globs match the documented paths"
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[test] 重录当前测试舰队实际测得的覆盖率基线；家族测试环境提供可用的 localStorage",
+      "target": "[test] The coverage baseline is re-recorded from what the current fleet measures, and the family test setups get a usable localStorage"
+    },
+    {
+      "selector": ".fThDlq_updateNotes",
+      "source": "[docs] 补齐卫星仓关系、四仓措辞与发布准备说明",
+      "target": "[docs] The satellite relationship, the four-repository wording and the release-preparation notes are brought up to date"
+    }
+  ]
+}

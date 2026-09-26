@@ -1,0 +1,70 @@
+{
+  "plugin": {
+    "id": "dsh-plugin-desktop",
+    "version": "2.0.14",
+    "source": "https://github.com/anywhere-labs/deepseek-harness-desktop",
+    "license": "MIT"
+  },
+  "locale": "ru",
+  "sourceLocale": "en",
+  "namespaces": {
+    "desktop.settings": {
+      "nav": "Настройки DSH Desktop",
+      "title": "Настройки DSH Desktop",
+      "intro": "Управляйте профилями и настраивайте внешний вид окна, подключения и уведомления.",
+      "exportDiagnostics": "Экспортировать диагностику",
+      "openTerminal": "Открыть терминал DSH",
+      "restartDesktop": "Перезапустить",
+      "profileTitle": "Профиль",
+      "profileIntro": "Профиль — это отдельная среда конфигурации. Выберите профиль, который будет использоваться при запуске, или создайте новый.",
+      "profileReady": "Доступен",
+      "activeProfile": "Текущий",
+      "profileName": "Название профиля",
+      "profileNamePlaceholder": "Например: work",
+      "create": "Создать",
+      "marketTitle": "Маркет плагинов",
+      "marketIntro": "Выберите маркет плагинов. Одновременно можно включить только один.",
+      "marketDisabled": "Отключить маркет плагинов",
+      "marketDisabledBody": "Не загружать интерфейс маркета плагинов.",
+      "communityMarket": "dsh-community-market",
+      "communityMarketBody": "Открытый маркет плагинов, встроенный в DSH Desktop и поддерживающий пользовательские источники данных.",
+      "dshMarket": "dsh-market",
+      "dshMarketBody": "Популярный маркет плагинов сообщества на основе данных из",
+      "legacyMarketNotice": "После обновления с прежней версии маркет плагинов останется выключенным, пока вы не выберете его здесь.",
+      "selected": "Выбран",
+      "beta": "Бета-версия",
+      "aaTitle": "Agents-Anywhere",
+      "aaIntro": "Используйте Agents-Anywhere, чтобы подключаться к DSH на этом компьютере с телефона или через браузер."
+    }
+  },
+  "source": {
+    "desktop.settings": {
+      "nav": "Desktop settings",
+      "title": "DSH Desktop settings",
+      "intro": "Manage Profiles and set up window appearance, connections, and notifications.",
+      "exportDiagnostics": "Export Diagnostics",
+      "openTerminal": "Open DSH Terminal",
+      "restartDesktop": "Restart",
+      "profileTitle": "Profile",
+      "profileIntro": "A Profile is a configuration environment. Choose the Profile used at startup or create a new one.",
+      "profileReady": "Available",
+      "activeProfile": "Current",
+      "profileName": "Profile name",
+      "profileNamePlaceholder": "For example: work",
+      "create": "Create",
+      "marketTitle": "Plugin market",
+      "marketIntro": "Choose a plugin market. Only one can be enabled at a time.",
+      "marketDisabled": "Turn off plugin market",
+      "marketDisabledBody": "Do not load a plugin market interface.",
+      "communityMarket": "dsh-community-market",
+      "communityMarketBody": "The open plugin market built into DSH Desktop, with support for custom plugin data sources.",
+      "dshMarket": "dsh-market",
+      "dshMarketBody": "A popular community plugin market powered by data from",
+      "legacyMarketNotice": "After upgrading from an earlier version, the plugin market stays off until you explicitly choose one here.",
+      "selected": "Selected",
+      "beta": "Beta",
+      "aaTitle": "Agents-Anywhere",
+      "aaIntro": "Use Agents-Anywhere to access DSH on this computer from your phone or a browser."
+    }
+  }
+}

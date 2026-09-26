@@ -27,6 +27,14 @@ function placeholdersMatch(source, target) {
   return left.length === right.length && left.every((value, index) => value === right[index])
 }
 
+function isSafeDomSelector(selector) {
+  if (typeof selector !== 'string' || selector.length > 300) return false
+  const value = selector.trim()
+  const root = /^(?:\.[A-Za-z_][\w-]*|\[data-dsh-plugin="[A-Za-z0-9][A-Za-z0-9._-]*"\]|\[data-dsh-pet-root\]|#settings-pet-[A-Za-z0-9_-]+|section\[aria-labelledby="(?:vision|compact)-title"\]|p\[role="alert"\])/.exec(value)
+  if (!root || !/^[\s>+~.#:[\]="'()\w-]*$/.test(value.slice(root[0].length))) return false
+  return !/(?:^|[\s>+~])(?:body|html|\*)\b/i.test(value)
+}
+
 function walkContributionFiles(root, errors) {
   const files = []
 
@@ -127,8 +135,8 @@ function validateDomMappings(value, prefix, errors) {
     const validSelector = validateString(entry.selector, `${label}.selector`, errors)
     const validSource = validateString(entry.source, `${label}.source`, errors)
     const validTarget = validateString(entry.target, `${label}.target`, errors)
-    const scopedSelector = validSelector && entry.selector.length <= 300 && /^\.[A-Za-z_][\w-]*(?:[\s>+~.#:[\]="'()\w-]*)$/.test(entry.selector.trim()) && !/(?:^|[\s>+~])(?:body|html|\*)\b/i.test(entry.selector)
-    if (validSelector && !scopedSelector) errors.push(`${label}.selector must be a scoped CSS selector rooted at a class`)
+    const scopedSelector = validSelector && isSafeDomSelector(entry.selector)
+    if (validSelector && !scopedSelector) errors.push(`${label}.selector must be a scoped CSS selector rooted at a plugin marker`)
 
     const samePlaceholders = validSource && validTarget && placeholdersMatch(entry.source, entry.target)
     if (validSource && validTarget && !samePlaceholders) errors.push(`${label}: DOM placeholder mismatch`)

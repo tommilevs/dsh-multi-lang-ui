@@ -1,0 +1,18 @@
+{
+  "plugin": {
+    "id": "@dsh-plugin/dsh-auxiliary",
+    "version": "0.6.4",
+    "source": "https://github.com/dsh-plugins/dsh-auxiliary",
+    "license": "LGPL-3.0-only"
+  },
+  "locale": "en",
+  "sourceLocale": "en",
+  "namespaces": {},
+  "dom": [
+    {
+      "selector": "section[aria-labelledby=\"vision-title\"]",
+      "source": "Model catalog lookup failed for: {provider}: model \"{model}\" declares native image input, so its \"{alias}\" entry no longer applies. Select the same model from the provider group without \"{alias}\".",
+      "target": "Model catalog lookup failed for {provider}: model \"{model}\" already supports image input, so the \"{alias}\" variant does not apply. Select this model from the provider group without \"{alias}\"."
+    }
+  ]
+}

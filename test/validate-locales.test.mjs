@@ -80,6 +80,24 @@ test('accepts a DOM-only pack with empty namespaces and a valid mapping', (t) =>
   })
 })
 
+test('accepts stable DSH plugin roots and the pet root for scoped DOM mappings', (t) => {
+  withContributions(t, (contributions) => {
+    writePack(contributions, 'example-plugin', 'ru', makePack({
+      namespaces: {},
+      dom: [
+        { selector: '[data-dsh-plugin="usage"]', source: '今日消费', target: 'Расход за сегодня' },
+        { selector: '[data-dsh-plugin="session-archive"] .title', source: '会话归档管理', target: 'Управление архивом диалогов' },
+        { selector: '[data-dsh-pet-root]', source: '喂食', target: 'Покормить' },
+        { selector: 'section[aria-labelledby="vision-title"]', source: 'English error', target: 'Русская ошибка' },
+        { selector: 'p[role="alert"]', source: 'Provider {id} failed', target: 'Сбой провайдера {id}' },
+      ],
+    }))
+
+    const result = validate(contributions)
+    assert.equal(result.status, 0, result.stderr)
+  })
+})
+
 test('rejects empty namespaces when no DOM mapping is supplied', (t) => {
   withContributions(t, (contributions) => {
     writePack(contributions, 'example-plugin', 'ru', makePack({ namespaces: {} }))
@@ -206,7 +224,7 @@ test('rejects a DOM adapter target with different placeholders', (t) => {
   })
 })
 
-test('rejects a DOM selector that is not scoped to a plugin root class', (t) => {
+test('rejects a DOM selector that is not scoped to a plugin root', (t) => {
   withContributions(t, (contributions) => {
     writePack(contributions, 'example-plugin', 'ru', makePack({
       dom: [{ selector: 'body', source: 'Hello', target: 'Привет' }],

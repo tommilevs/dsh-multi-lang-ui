@@ -1,0 +1,20 @@
+{
+  "plugin": {
+    "id": "@linxin666/dsh-client-ui-plugin-manager",
+    "version": "0.4.1",
+    "source": "https://github.com/zhu1090093659/dsh-web/tree/main/packages/dsh-plugin-manager",
+    "license": "BSD-3-Clause"
+  },
+  "locale": "ru",
+  "sourceLocale": "zh",
+  "namespaces": {
+    "settings.pluginManager": {
+      "tab": "Менеджер плагинов"
+    }
+  },
+  "source": {
+    "settings.pluginManager": {
+      "tab": "插件管理"
+    }
+  }
+}

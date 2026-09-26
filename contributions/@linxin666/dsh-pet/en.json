@@ -1,0 +1,58 @@
+{
+  "plugin": {
+    "id": "@linxin666/dsh-pet",
+    "version": "0.3.25",
+    "source": "https://github.com/zhu1090093659/dsh-pet",
+    "license": "Apache-2.0"
+  },
+  "locale": "en",
+  "sourceLocale": "zh",
+  "namespaces": {},
+  "dom": [
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "亲密度",
+      "target": "Affinity"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "小鱼干 ×{n}",
+      "target": "Dried fish ×{n}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "{points}点",
+      "target": "{points} pts"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "喂食",
+      "target": "Feed"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "改名",
+      "target": "Rename"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "隐藏",
+      "target": "Hide"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "鲸鱼娘",
+      "target": "Whale Girl"
+    },
+    {
+      "selector": "#settings-pet-pet",
+      "source": "鲸鱼娘（原版）",
+      "target": "Whale Girl (Original)"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "鲸鱼娘（原版）",
+      "target": "Whale Girl (Original)"
+    }
+  ]
+}

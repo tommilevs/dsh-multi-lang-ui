@@ -1,0 +1,243 @@
+{
+  "plugin": {
+    "id": "@linxin666/dsh-web-all",
+    "version": "0.4.1",
+    "source": "https://github.com/zhu1090093659/dsh-web",
+    "license": "Apache-2.0"
+  },
+  "locale": "en",
+  "sourceLocale": "zh",
+  "namespaces": {},
+  "dom": [
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "用量",
+      "target": "Usage"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "个人套餐",
+      "target": "Personal plans"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "Token 银行",
+      "target": "Token Bank"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "更新于 {time}",
+      "target": "Updated: {time}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "今日用量",
+      "target": "Today’s usage"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "今日消费（估算）",
+      "target": "Today’s spend (estimated)"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "余额",
+      "target": "Balance"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "没有已配置的提供方",
+      "target": "No providers configured"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "近 30 天",
+      "target": "Last 30 days"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "暂无用量数据（统计自插件启用起）",
+      "target": "No usage data yet (statistics start when the plugin is enabled)"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "设置",
+      "target": "Settings"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "启用插件",
+      "target": "Enable plugin"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "轮询间隔（秒）",
+      "target": "Poll interval (seconds)"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "今日消费",
+      "target": "Today’s spend"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "今日暂无用量",
+      "target": "No usage yet today"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "{n} 次调用",
+      "target": "{n} calls"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "统计",
+      "target": "Statistics"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "刷新",
+      "target": "Refresh"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "会话归档管理",
+      "target": "Session archive manager"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "共 {n} 条会话",
+      "target": "{n} sessions total"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "全部",
+      "target": "All"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "未归档",
+      "target": "Active"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "已归档",
+      "target": "Archived"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "全部工作区",
+      "target": "All workspaces"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "搜索标题或会话 ID",
+      "target": "Search title or conversation ID"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "最新优先",
+      "target": "Newest first"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "仅看异常会话",
+      "target": "Show sessions with issues only"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "全选当前结果",
+      "target": "Select all current results"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "清空选择",
+      "target": "Clear selection"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "已选 {n} 项",
+      "target": "{n} selected"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "普通",
+      "target": "Regular"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "归档时间未知",
+      "target": "Archive time unknown"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "预览",
+      "target": "Preview"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "取消归档",
+      "target": "Unarchive"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "删除",
+      "target": "Delete"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "（无标题）",
+      "target": "(Untitled)"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "刷新",
+      "target": "Refresh"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "排序",
+      "target": "Sort"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "批量归档",
+      "target": "Archive selected"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "批量取消归档",
+      "target": "Unarchive selected"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "批量删除",
+      "target": "Delete selected"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "最后活动：{time}",
+      "target": "Last activity: {time}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "最后活动：未知",
+      "target": "Last activity: unknown"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "归档时间：{time}",
+      "target": "Archive time: {time}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "归档时间：未知",
+      "target": "Archive time: unknown"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "大小：{size}",
+      "target": "Size: {size}"
+    }
+  ]
+}

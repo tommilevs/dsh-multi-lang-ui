@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.3
+
+- Add bilingual screenshot coverage for MCP filters, usage statistics, session archive, pet UI, model capabilities, and the update modal.
+- Localize Desktop settings, plugin manager, and Auxiliary Models labels, including the dynamic provider catalog error.
+- Translate native select options and preserve runtime values when switching languages.
+- Add screenshot coverage and dynamic DOM translation regression tests.
+
 ## 0.1.2
 
 - Restore complete host and browser JavaScript artifacts that were truncated in 0.1.1.

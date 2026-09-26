@@ -1,0 +1,18 @@
+{
+  "plugin": {
+    "id": "@linxin666/dsh-client-ui-model-capabilities",
+    "version": "0.4.1",
+    "source": "https://github.com/zhu1090093659/dsh-web/tree/main/packages/dsh-model-capabilities",
+    "license": "Apache-2.0"
+  },
+  "locale": "en",
+  "sourceLocale": "zh",
+  "namespaces": {},
+  "dom": [
+    {
+      "selector": "[data-dsh-plugin=\"model-capabilities\"]",
+      "source": "模型能力",
+      "target": "Model capabilities"
+    }
+  ]
+}
