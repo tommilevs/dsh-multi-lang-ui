@@ -253,6 +253,56 @@
       "selector": "[data-dsh-plugin=\"usage\"]",
       "source": "展开用量卡片",
       "target": "Expand usage card"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "鲸元券",
+      "target": "Whale Yuan voucher"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "暂无 DeepSeek 官方用量数据（统计自插件启用起）",
+      "target": "No official DeepSeek usage data yet (tracked since the plugin was enabled)"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "没有已配置的套餐类 provider（如 Kimi、GLM、OpenCode Go、MiniMax、Codex 订阅）",
+      "target": "No subscription-based provider is configured (such as Kimi, GLM, OpenCode Go, MiniMax, or a Codex subscription)"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "最后活动时间",
+      "target": "Last activity"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "归档时间",
+      "target": "Archived at"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "创建时间",
+      "target": "Created at"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "标题",
+      "target": "Title"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "最早优先",
+      "target": "Oldest first"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "不属于任何工作区",
+      "target": "No workspace"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "{n} 个子会话",
+      "target": "Child sessions: {n}"
     }
   ]
 }

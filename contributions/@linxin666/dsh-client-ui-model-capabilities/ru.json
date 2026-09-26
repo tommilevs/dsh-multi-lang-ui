@@ -7,12 +7,40 @@
   },
   "locale": "ru",
   "sourceLocale": "zh",
-  "namespaces": {},
+  "namespaces": {
+    "model-caps": {
+      "caps.hint": "Для каждой модели из каталога задайте поддерживаемые уровни рассуждения. После сохранения изменения сразу записываются в настройки и применяются.",
+      "caps.save": "Сохранить",
+      "caps.discard": "Сбросить"
+    }
+  },
   "dom": [
     {
       "selector": "[data-dsh-plugin=\"model-capabilities\"]",
       "source": "模型能力",
       "target": "Возможности модели"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"model-capabilities\"]",
+      "source": "为目录里的每个模型声明推理档位，保存写入设置文档并立即生效。",
+      "target": "Для каждой модели из каталога задайте поддерживаемые уровни рассуждения. После сохранения изменения сразу записываются в настройки и применяются."
+    },
+    {
+      "selector": "[data-dsh-plugin=\"model-capabilities\"]",
+      "source": "保存",
+      "target": "Сохранить"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"model-capabilities\"]",
+      "source": "重置",
+      "target": "Сбросить"
     }
-  ]
+  ],
+  "source": {
+    "model-caps": {
+      "caps.hint": "为目录里的每个模型声明推理档位，保存写入设置文档并立即生效。",
+      "caps.save": "保存",
+      "caps.discard": "重置"
+    }
+  }
 }

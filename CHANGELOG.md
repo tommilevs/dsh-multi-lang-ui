@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.7
+
+- Complete the screenshot-reported Russian and English translations for DSH Desktop, auxiliary models, usage, archive, MCP import, model capabilities, pet choices, and skin cards.
+- Translate every DSH Desktop settings string from its 119-key source dictionary.
+- Extend safe scoped DOM translations to the auxiliary-model feature-card sections.
+- Add regression coverage for the newly localized controls and dynamic strings.
+
 ## 0.1.6
 
 - Fetch bundled community locale packs without reusing stale browser-cache responses after plugin updates.

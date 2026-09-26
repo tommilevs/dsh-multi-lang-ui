@@ -51,6 +51,10 @@ test('accepts every established plugin DOM root', () => {
     '#settings-pet-pet',
     'section[aria-labelledby="vision-title"]',
     'section[aria-labelledby="compact-title"]',
+    'section[aria-labelledby="approve-title"]',
+    'section[aria-labelledby="subagent-title"]',
+    'section[aria-labelledby="title-title"]',
+    'section[aria-labelledby="imagegen-title"]',
     'p[role="alert"]',
   ]
   for (const selector of selectors) {

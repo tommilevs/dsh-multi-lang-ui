@@ -49,9 +49,9 @@
       "usage.config.enabled": "Включить плагин",
       "usage.config.pollIntervalSec": "Интервал опроса (секунды)",
       "usage.config.saveFailed": "Не удалось сохранить: настройка не принята.",
-      "usage.bank.title": "Купон Whale Yuan",
+      "usage.bank.title": "Купон «Китовый юань»",
       "usage.bank.hint": "За каждый миллион токенов, потраченных через официальный API, начисляется один Whale Yuan. Купон можно сохранить или отправить.",
-      "usage.bank.noUsage": "Пока нет данных об использовании официального DeepSeek API (учёт с момента включения плагина)",
+      "usage.bank.noUsage": "Пока нет официальных данных об использовании DeepSeek (статистика ведётся с момента включения плагина)",
       "usage.bank.minted": "Начислено {minted} Whale Yuan ({tokens} токенов)",
       "usage.bank.spend.observed": "По официальному балансу потрачено ¥{cost} (наблюдение с {since})",
       "usage.bank.spend.estimated": "Расход (оценка): около ¥{cost}",
@@ -712,6 +712,56 @@
       "selector": "[data-dsh-plugin=\"usage\"]",
       "source": "展开用量卡片",
       "target": "Развернуть карточку статистики"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "鲸元券",
+      "target": "Купон «Китовый юань»"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "暂无 DeepSeek 官方用量数据（统计自插件启用起）",
+      "target": "Пока нет официальных данных об использовании DeepSeek (статистика ведётся с момента включения плагина)"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "没有已配置的套餐类 provider（如 Kimi、GLM、OpenCode Go、MiniMax、Codex 订阅）",
+      "target": "Не настроен провайдер с тарифным планом (например, Kimi, GLM, OpenCode Go, MiniMax или подписка Codex)"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "最后活动时间",
+      "target": "Последняя активность"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "归档时间",
+      "target": "Дата архивации"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "创建时间",
+      "target": "Дата создания"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "标题",
+      "target": "Название"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "最早优先",
+      "target": "Сначала старые"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "不属于任何工作区",
+      "target": "Без рабочей области"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"session-archive\"]",
+      "source": "{n} 个子会话",
+      "target": "Дочерние сессии: {n}"
     }
   ]
 }

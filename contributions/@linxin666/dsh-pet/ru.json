@@ -100,6 +100,26 @@
       "selector": "[data-dsh-pet-root]",
       "source": "鲸鱼娘（原版）",
       "target": "Девушка-кит (оригинал)"
+    },
+    {
+      "selector": "#settings-pet-pet",
+      "source": "鲸鱼娘（精致版）",
+      "target": "Девушка-кит (улучшенная версия)"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "鲸鱼娘（精致版）",
+      "target": "Девушка-кит (улучшенная версия)"
+    },
+    {
+      "selector": "#settings-pet-pet",
+      "source": "蓝喉蜂虎",
+      "target": "Синегорлая щурка"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "蓝喉蜂虎",
+      "target": "Синегорлая щурка"
     }
   ]
 }

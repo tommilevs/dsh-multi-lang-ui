@@ -7,12 +7,321 @@
   },
   "locale": "en",
   "sourceLocale": "en",
-  "namespaces": {},
+  "namespaces": {
+    "dsh-auxiliary": {
+      "nav": "Auxiliary Models",
+      "intro": "Configure vision understanding and context compaction independently. Each feature has its own switch and model route, reusing providers configured on the Models page.",
+      "catalogFailure": "Model catalog lookup failed for:",
+      "visionTitle": "Vision understanding",
+      "visionDescription": "Controls the `inspect_image` tool and its vision model. Enabling it without a selected model remains valid; a tool call reports that the vision route is missing.",
+      "visionToggle": "Enable inspect_image",
+      "visionPickerLabel": "Vision model (must support image input)",
+      "visionHandoff": "When the main model is text-only, chat images are sent as references and describe_image hands them to the vision model for their content",
+      "visionSkipWhenImageCapable": "When the main model supports image input, do not inject the inspect_image/describe_image tools or their prompt guidance into that session",
+      "visionUsage": "This route serves inspect_image and describe_image: the former reads local images on the Host, the latter reads images attached to the chat (when the main model is text-only they appear as [image: …] references, and the main model calls describe_image to fetch their content into the context). Declare image input per model under Settings → Models → Provider → Customized settings → Models; main chat uses the same declaration when that model is selected.",
+      "compactTitle": "Context compaction",
+      "compactDescription": "Controls whether `purpose: compaction` summaries use the independent compact model route.",
+      "compactToggle": "Enable auxiliary compaction route",
+      "subagentTitle": "Subagent model",
+      "subagentDescription": "Set a dedicated model route for delegated child agents.",
+      "subagentToggle": "Enable subagent model",
+      "subagentPickerLabel": "Subagent model",
+      "subagentUsage": "When enabled, every delegated child (one-shot spawn/fork runs and continuable children) uses the selected model instead of inheriting the parent session; in-process cold-resumed children are covered too. Remote providers (ACP) never register a process-local agent and their children keep inheriting the parent route. Prefer a cheap, fast model to control delegation cost.",
+      "titleTitle": "Title model",
+      "titleDescription": "Set a dedicated model route for session-title generation.",
+      "titleToggle": "Enable title model",
+      "titlePickerLabel": "Title model",
+      "titleUsage": "When enabled, session-title generation calls (purpose: session-title) use the selected model instead of following the main session route. Titles are issued by the dsh-session-title-llm provider; this setting only overrides its model route and leaves its deployment-level config untouched. Prefer a cheap, fast model; titles are generated infrequently, so the cost impact is minimal.",
+      "imagegenTitle": "Image-generation model",
+      "imagegenDescription": "Pick a dedicated model route for auxiliary image generation; only models marked \"Allow image generation\" on the Models page are offered.",
+      "imagegenToggle": "Enable auxiliary image generation",
+      "imagegenPickerLabel": "Image-generation model",
+      "imagegenUsage": "When enabled, auxiliary image-generation work uses the selected model. The picker only lists models marked \"Allow image generation\" under Settings → Models → Provider → Customized settings → Models.",
+      "imagegenNoModels": "No image-generation model marked yet: check \"Allow image generation\" under Settings → Models → Provider → Customized settings → Models first.",
+      "compactPickerLabel": "Compaction model",
+      "compactUsage": "An enabled feature without a complete provider/model route keeps the existing pass-through behavior. `engine` has no third model picker; when enabled, the compression engine reuses this compact route.",
+      "compactThresholdLabel": "Compaction threshold",
+      "compactThresholdHint": "Compaction triggers when context usage reaches this threshold. Supported range: 17%–99% (must stay above the retention ratio, 16% by default). Saving enables the auxiliary compression engine; if the default compaction plugin is loaded, remove it first so this engine takes over.",
+      "approveTitle": "Approval model",
+      "approveDescription": "Hookup for the @dsh-plugin/dsh-approve-for-me plugin: once that plugin is installed and review mode is active, its approval reviews run on the dedicated model selected here instead of inheriting the session's main model.",
+      "approveToggle": "Enable approval-model routing",
+      "approvePickerLabel": "Approval model",
+      "approveUsage": "An enabled feature without a complete provider/model route keeps the original behavior (the reviewer keeps inheriting the session or the plugin's own reviewProvider/reviewModel config). Prefer a cheap, fast model; the review verdict only decides approval and never enters the session history.",
+      "approveNotInstalled": "The @dsh-plugin/dsh-approve-for-me plugin was not detected: install and enable it (review mode) first — until then, saving this configuration has no effect.",
+      "pickerPlaceholder": "Choose a provider and model",
+      "pickerEmpty": "No selectable models are available.",
+      "pickerUnavailable": "Saved route is currently unavailable",
+      "pickerListLabel": "Models grouped by provider",
+      "save": "Save",
+      "saving": "Saving…",
+      "saved": "Saved"
+    }
+  },
   "dom": [
     {
       "selector": "section[aria-labelledby=\"vision-title\"]",
       "source": "Model catalog lookup failed for: {provider}: model \"{model}\" declares native image input, so its \"{alias}\" entry no longer applies. Select the same model from the provider group without \"{alias}\".",
       "target": "Model catalog lookup failed for {provider}: model \"{model}\" already supports image input, so the \"{alias}\" variant does not apply. Select this model from the provider group without \"{alias}\"."
+    },
+    {
+      "selector": "section[aria-labelledby=\"subagent-title\"]",
+      "source": "Subagent model",
+      "target": "Subagent model"
+    },
+    {
+      "selector": "section[aria-labelledby=\"subagent-title\"]",
+      "source": "Set a dedicated model route for delegated child agents.",
+      "target": "Set a dedicated model route for delegated child agents."
+    },
+    {
+      "selector": "section[aria-labelledby=\"subagent-title\"]",
+      "source": "Enable subagent model",
+      "target": "Enable subagent model"
+    },
+    {
+      "selector": "section[aria-labelledby=\"subagent-title\"]",
+      "source": "When enabled, every delegated child (one-shot spawn/fork runs and continuable children) uses the selected model instead of inheriting the parent session; in-process cold-resumed children are covered too. Remote providers (ACP) never register a process-local agent and their children keep inheriting the parent route. Prefer a cheap, fast model to control delegation cost.",
+      "target": "When enabled, every delegated child (one-shot spawn/fork runs and continuable children) uses the selected model instead of inheriting the parent session; in-process cold-resumed children are covered too. Remote providers (ACP) never register a process-local agent and their children keep inheriting the parent route. Prefer a cheap, fast model to control delegation cost."
+    },
+    {
+      "selector": "section[aria-labelledby=\"subagent-title\"]",
+      "source": "Save",
+      "target": "Save"
+    },
+    {
+      "selector": "section[aria-labelledby=\"title-title\"]",
+      "source": "Title model",
+      "target": "Title model"
+    },
+    {
+      "selector": "section[aria-labelledby=\"title-title\"]",
+      "source": "Set a dedicated model route for session-title generation.",
+      "target": "Set a dedicated model route for session-title generation."
+    },
+    {
+      "selector": "section[aria-labelledby=\"title-title\"]",
+      "source": "Enable title model",
+      "target": "Enable title model"
+    },
+    {
+      "selector": "section[aria-labelledby=\"title-title\"]",
+      "source": "When enabled, session-title generation calls (purpose: session-title) use the selected model instead of following the main session route. Titles are issued by the dsh-session-title-llm provider; this setting only overrides its model route and leaves its deployment-level config untouched. Prefer a cheap, fast model; titles are generated infrequently, so the cost impact is minimal.",
+      "target": "When enabled, session-title generation calls (purpose: session-title) use the selected model instead of following the main session route. Titles are issued by the dsh-session-title-llm provider; this setting only overrides its model route and leaves its deployment-level config untouched. Prefer a cheap, fast model; titles are generated infrequently, so the cost impact is minimal."
+    },
+    {
+      "selector": "section[aria-labelledby=\"title-title\"]",
+      "source": "Save",
+      "target": "Save"
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "Image-generation model",
+      "target": "Image-generation model"
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "Pick a dedicated model route for auxiliary image generation; only models marked \"Allow image generation\" on the Models page are offered.",
+      "target": "Pick a dedicated model route for auxiliary image generation; only models marked \"Allow image generation\" on the Models page are offered."
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "Enable auxiliary image generation",
+      "target": "Enable auxiliary image generation"
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "When enabled, auxiliary image-generation work uses the selected model. The picker only lists models marked \"Allow image generation\" under Settings → Models → Provider → Customized settings → Models.",
+      "target": "When enabled, auxiliary image-generation work uses the selected model. The picker only lists models marked \"Allow image generation\" under Settings → Models → Provider → Customized settings → Models."
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "No image-generation model marked yet: check \"Allow image generation\" under Settings → Models → Provider → Customized settings → Models first.",
+      "target": "No image-generation model marked yet: check \"Allow image generation\" under Settings → Models → Provider → Customized settings → Models first."
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "Choose a provider and model",
+      "target": "Choose a provider and model"
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "No selectable models are available.",
+      "target": "No selectable models are available."
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "Saved route is currently unavailable",
+      "target": "Saved route is currently unavailable"
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "Models grouped by provider",
+      "target": "Models grouped by provider"
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "Save",
+      "target": "Save"
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Context compaction",
+      "target": "Context compaction"
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Controls whether `purpose: compaction` summaries use the independent compact model route.",
+      "target": "Controls whether `purpose: compaction` summaries use the independent compact model route."
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Enable auxiliary compaction route",
+      "target": "Enable auxiliary compaction route"
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Compaction model",
+      "target": "Compaction model"
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "An enabled feature without a complete provider/model route keeps the existing pass-through behavior. `engine` has no third model picker; when enabled, the compression engine reuses this compact route.",
+      "target": "An enabled feature without a complete provider/model route keeps the existing pass-through behavior. `engine` has no third model picker; when enabled, the compression engine reuses this compact route."
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Compaction threshold",
+      "target": "Compaction threshold"
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Compaction triggers when context usage reaches this threshold. Supported range: 17%–99% (must stay above the retention ratio, 16% by default). Saving enables the auxiliary compression engine; if the default compaction plugin is loaded, remove it first so this engine takes over.",
+      "target": "Compaction triggers when context usage reaches this threshold. Supported range: 17%–99% (must stay above the retention ratio, 16% by default). Saving enables the auxiliary compression engine; if the default compaction plugin is loaded, remove it first so this engine takes over."
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Choose a provider and model",
+      "target": "Choose a provider and model"
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "No selectable models are available.",
+      "target": "No selectable models are available."
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Saved route is currently unavailable",
+      "target": "Saved route is currently unavailable"
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Models grouped by provider",
+      "target": "Models grouped by provider"
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Save",
+      "target": "Save"
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "Approval model",
+      "target": "Approval model"
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "Hookup for the @dsh-plugin/dsh-approve-for-me plugin: once that plugin is installed and review mode is active, its approval reviews run on the dedicated model selected here instead of inheriting the session's main model.",
+      "target": "Hookup for the @dsh-plugin/dsh-approve-for-me plugin: once that plugin is installed and review mode is active, its approval reviews run on the dedicated model selected here instead of inheriting the session's main model."
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "Enable approval-model routing",
+      "target": "Enable approval-model routing"
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "An enabled feature without a complete provider/model route keeps the original behavior (the reviewer keeps inheriting the session or the plugin's own reviewProvider/reviewModel config). Prefer a cheap, fast model; the review verdict only decides approval and never enters the session history.",
+      "target": "An enabled feature without a complete provider/model route keeps the original behavior (the reviewer keeps inheriting the session or the plugin's own reviewProvider/reviewModel config). Prefer a cheap, fast model; the review verdict only decides approval and never enters the session history."
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "The @dsh-plugin/dsh-approve-for-me plugin was not detected: install and enable it (review mode) first — until then, saving this configuration has no effect.",
+      "target": "The @dsh-plugin/dsh-approve-for-me plugin was not detected: install and enable it (review mode) first — until then, saving this configuration has no effect."
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "Choose a provider and model",
+      "target": "Choose a provider and model"
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "No selectable models are available.",
+      "target": "No selectable models are available."
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "Saved route is currently unavailable",
+      "target": "Saved route is currently unavailable"
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "Models grouped by provider",
+      "target": "Models grouped by provider"
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "Save",
+      "target": "Save"
     }
-  ]
+  ],
+  "source": {
+    "dsh-auxiliary": {
+      "nav": "Auxiliary Models",
+      "intro": "Configure vision understanding and context compaction independently. Each feature has its own switch and model route, reusing providers configured on the Models page.",
+      "catalogFailure": "Model catalog lookup failed for:",
+      "visionTitle": "Vision understanding",
+      "visionDescription": "Controls the `inspect_image` tool and its vision model. Enabling it without a selected model remains valid; a tool call reports that the vision route is missing.",
+      "visionToggle": "Enable inspect_image",
+      "visionPickerLabel": "Vision model (must support image input)",
+      "visionHandoff": "When the main model is text-only, chat images are sent as references and describe_image hands them to the vision model for their content",
+      "visionSkipWhenImageCapable": "When the main model supports image input, do not inject the inspect_image/describe_image tools or their prompt guidance into that session",
+      "visionUsage": "This route serves inspect_image and describe_image: the former reads local images on the Host, the latter reads images attached to the chat (when the main model is text-only they appear as [image: …] references, and the main model calls describe_image to fetch their content into the context). Declare image input per model under Settings → Models → Provider → Customized settings → Models; main chat uses the same declaration when that model is selected.",
+      "compactTitle": "Context compaction",
+      "compactDescription": "Controls whether `purpose: compaction` summaries use the independent compact model route.",
+      "compactToggle": "Enable auxiliary compaction route",
+      "subagentTitle": "Subagent model",
+      "subagentDescription": "Set a dedicated model route for delegated child agents.",
+      "subagentToggle": "Enable subagent model",
+      "subagentPickerLabel": "Subagent model",
+      "subagentUsage": "When enabled, every delegated child (one-shot spawn/fork runs and continuable children) uses the selected model instead of inheriting the parent session; in-process cold-resumed children are covered too. Remote providers (ACP) never register a process-local agent and their children keep inheriting the parent route. Prefer a cheap, fast model to control delegation cost.",
+      "titleTitle": "Title model",
+      "titleDescription": "Set a dedicated model route for session-title generation.",
+      "titleToggle": "Enable title model",
+      "titlePickerLabel": "Title model",
+      "titleUsage": "When enabled, session-title generation calls (purpose: session-title) use the selected model instead of following the main session route. Titles are issued by the dsh-session-title-llm provider; this setting only overrides its model route and leaves its deployment-level config untouched. Prefer a cheap, fast model; titles are generated infrequently, so the cost impact is minimal.",
+      "imagegenTitle": "Image-generation model",
+      "imagegenDescription": "Pick a dedicated model route for auxiliary image generation; only models marked \"Allow image generation\" on the Models page are offered.",
+      "imagegenToggle": "Enable auxiliary image generation",
+      "imagegenPickerLabel": "Image-generation model",
+      "imagegenUsage": "When enabled, auxiliary image-generation work uses the selected model. The picker only lists models marked \"Allow image generation\" under Settings → Models → Provider → Customized settings → Models.",
+      "imagegenNoModels": "No image-generation model marked yet: check \"Allow image generation\" under Settings → Models → Provider → Customized settings → Models first.",
+      "compactPickerLabel": "Compaction model",
+      "compactUsage": "An enabled feature without a complete provider/model route keeps the existing pass-through behavior. `engine` has no third model picker; when enabled, the compression engine reuses this compact route.",
+      "compactThresholdLabel": "Compaction threshold",
+      "compactThresholdHint": "Compaction triggers when context usage reaches this threshold. Supported range: 17%–99% (must stay above the retention ratio, 16% by default). Saving enables the auxiliary compression engine; if the default compaction plugin is loaded, remove it first so this engine takes over.",
+      "approveTitle": "Approval model",
+      "approveDescription": "Hookup for the @dsh-plugin/dsh-approve-for-me plugin: once that plugin is installed and review mode is active, its approval reviews run on the dedicated model selected here instead of inheriting the session's main model.",
+      "approveToggle": "Enable approval-model routing",
+      "approvePickerLabel": "Approval model",
+      "approveUsage": "An enabled feature without a complete provider/model route keeps the original behavior (the reviewer keeps inheriting the session or the plugin's own reviewProvider/reviewModel config). Prefer a cheap, fast model; the review verdict only decides approval and never enters the session history.",
+      "approveNotInstalled": "The @dsh-plugin/dsh-approve-for-me plugin was not detected: install and enable it (review mode) first — until then, saving this configuration has no effect.",
+      "pickerPlaceholder": "Choose a provider and model",
+      "pickerEmpty": "No selectable models are available.",
+      "pickerUnavailable": "Saved route is currently unavailable",
+      "pickerListLabel": "Models grouped by provider",
+      "save": "Save",
+      "saving": "Saving…",
+      "saved": "Saved"
+    }
+  }
 }

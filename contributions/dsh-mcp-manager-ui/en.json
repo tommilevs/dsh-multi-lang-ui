@@ -1224,6 +1224,41 @@
       "selector": ".dsh-mcp-toast",
       "source": "读取配置失败",
       "target": "Could not read configuration"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "从本机客户端导入全局配置（只读，不修改它们的文件）",
+      "target": "Import global configuration from local clients (read-only; source files are not modified)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "从本机客户端导入项目级配置（只读，不修改它们的文件）",
+      "target": "Import project configuration from local clients (read-only; source files are not modified)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "{n} 个 MCP：{names}",
+      "target": "MCP servers ({n}): {names}"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "含需掩码字段：{fields}（导入后在详情页可用眼睛查看）",
+      "target": "Masked fields: {fields} (after import, use the eye icon in details to reveal them)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "{n} 条提示，导入时逐条列出",
+      "target": "Warnings: {n} (listed individually during import)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "替换当前 Profile",
+      "target": "Replace current profile"
+    },
+    {
+      "selector": ".dsh-mcp-entry",
+      "source": "入口",
+      "target": "Entry points"
     }
   ]
 }

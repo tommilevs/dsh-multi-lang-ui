@@ -53,6 +53,26 @@
       "selector": "[data-dsh-pet-root]",
       "source": "鲸鱼娘（原版）",
       "target": "Whale Girl (Original)"
+    },
+    {
+      "selector": "#settings-pet-pet",
+      "source": "鲸鱼娘（精致版）",
+      "target": "Whale Girl (Refined Version)"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "鲸鱼娘（精致版）",
+      "target": "Whale Girl (Refined Version)"
+    },
+    {
+      "selector": "#settings-pet-pet",
+      "source": "蓝喉蜂虎",
+      "target": "Blue-throated bee-eater"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "蓝喉蜂虎",
+      "target": "Blue-throated bee-eater"
     }
   ]
 }

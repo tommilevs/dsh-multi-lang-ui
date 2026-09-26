@@ -1,0 +1,52 @@
+{
+  "plugin": {
+    "id": "@linxin666/dsh-client-ui-skin-center",
+    "version": "0.3.25",
+    "source": "https://github.com/zhu1090093659/dsh-web/tree/main/packages/dsh-skin-center",
+    "license": "Apache-2.0"
+  },
+  "locale": "en",
+  "sourceLocale": "zh",
+  "namespaces": {
+    "skinCenter": {
+      "uninstall": "Uninstall"
+    }
+  },
+  "source": {
+    "skinCenter": {
+      "uninstall": "卸载"
+    }
+  },
+  "dom": [
+    {
+      "selector": ".TJMolG_card",
+      "source": "Blue Fantasy",
+      "target": "Blue Fantasy"
+    },
+    {
+      "selector": ".TJMolG_card",
+      "source": "Harbor",
+      "target": "Harbor"
+    },
+    {
+      "selector": ".TJMolG_card",
+      "source": "鲸鱼插画背景 · periwinkle 靛蓝调色板 · 半透明面板",
+      "target": "Whale illustration background · periwinkle-indigo palette · translucent panels"
+    },
+    {
+      "selector": ".TJMolG_card",
+      "source": "暮光蓝港 · 日落橙辉 · 半透明夜色面板",
+      "target": "Twilight-blue harbor · sunset-orange glow · translucent night panels"
+    },
+    {
+      "selector": ".TJMolG_card",
+      "source": "卸载",
+      "target": "Uninstall"
+    },
+    {
+      "selector": ".TJMolG_card",
+      "source": "Uninstall",
+      "target": "Uninstall"
+    }
+  ]
+}

@@ -7,12 +7,40 @@
   },
   "locale": "en",
   "sourceLocale": "zh",
-  "namespaces": {},
+  "namespaces": {
+    "model-caps": {
+      "caps.hint": "Declare reasoning efforts per catalog model; saving writes the settings document and applies immediately.",
+      "caps.save": "Save",
+      "caps.discard": "Reset"
+    }
+  },
   "dom": [
     {
       "selector": "[data-dsh-plugin=\"model-capabilities\"]",
       "source": "模型能力",
       "target": "Model capabilities"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"model-capabilities\"]",
+      "source": "为目录里的每个模型声明推理档位，保存写入设置文档并立即生效。",
+      "target": "Declare reasoning efforts per catalog model; saving writes the settings document and applies immediately."
+    },
+    {
+      "selector": "[data-dsh-plugin=\"model-capabilities\"]",
+      "source": "保存",
+      "target": "Save"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"model-capabilities\"]",
+      "source": "重置",
+      "target": "Reset"
     }
-  ]
+  ],
+  "source": {
+    "model-caps": {
+      "caps.hint": "为目录里的每个模型声明推理档位，保存写入设置文档并立即生效。",
+      "caps.save": "保存",
+      "caps.discard": "重置"
+    }
+  }
 }

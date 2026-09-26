@@ -20,8 +20,41 @@
       "visionSkipWhenImageCapable": "Если основная модель поддерживает изображения, инструменты inspect_image/describe_image и пояснения к ним не добавляются в эту сессию.",
       "visionUsage": "Этот маршрут обслуживает inspect_image и describe_image: первый читает локальные изображения на Host, второй — изображения, прикреплённые к чату. Если основная модель работает только с текстом, изображения отображаются как ссылки [image: …], после чего модель вызывает describe_image и добавляет их содержимое в контекст. Поддержку изображений для каждой модели укажите в разделе «Настройки → Модели → Провайдер → Пользовательские настройки → Модели»; основной чат использует эту же настройку для выбранной модели.",
       "compactTitle": "Сжатие контекста",
-      "compactDescription": "Определяет, будет ли для краткого пересказа с целью `compaction` использоваться отдельный маршрут модели.",
-      "compactToggle": "Включить отдельный маршрут для сжатия контекста"
+      "compactDescription": "Определяет, будет ли для краткого пересказа (purpose: compaction) использоваться отдельный маршрут модели.",
+      "compactToggle": "Включить отдельный маршрут для сжатия контекста",
+      "subagentTitle": "Модель субагентов",
+      "subagentDescription": "Назначить отдельную модель для делегированных дочерних агентов.",
+      "subagentToggle": "Использовать отдельную модель для субагентов",
+      "subagentPickerLabel": "Модель субагента",
+      "subagentUsage": "При включении все делегированные дочерние агенты — разовые запуски через spawn/fork и агенты, которых можно возобновить, — будут использовать выбранную модель вместо модели родительской сессии. Это также относится к дочерним агентам, восстановленным после перезапуска процесса. Удалённые провайдеры (ACP) создают агентов без локальной регистрации, поэтому их дочерние агенты по-прежнему наследуют маршрут родителя. Для экономии выбирайте быструю и недорогую модель.",
+      "titleTitle": "Модель для названий сессий",
+      "titleDescription": "Назначить отдельную модель для создания названий сессий.",
+      "titleToggle": "Использовать отдельную модель для названий",
+      "titlePickerLabel": "Модель для названий сессий",
+      "titleUsage": "Если включено, запросы для создания названий сессий (purpose: session-title) используют выбранную модель, а не маршрут основной сессии. Запросы отправляет провайдер dsh-session-title-llm. Настройка меняет только маршрут модели и не затрагивает параметры её развёртывания. Названия создаются редко, поэтому для этой задачи подойдёт быстрая и недорогая модель.",
+      "imagegenTitle": "Модель для генерации изображений",
+      "imagegenDescription": "Выберите отдельную модель для вспомогательной генерации изображений. Доступны только модели, для которых на странице «Модели» включён параметр «Разрешить генерацию изображений».",
+      "imagegenToggle": "Включить вспомогательную генерацию изображений",
+      "imagegenPickerLabel": "Модель для генерации изображений",
+      "imagegenUsage": "При включении вспомогательные запросы на генерацию изображений будут отправляться выбранной модели. В списке отображаются только модели с параметром «Разрешить генерацию изображений» в разделе Настройки → Модели → Провайдер → Пользовательские настройки → Модели.",
+      "imagegenNoModels": "Пока нет моделей, отмеченных для генерации изображений. Сначала включите параметр «Разрешить генерацию изображений» в разделе Настройки → Модели → Провайдер → Пользовательские настройки → Модели.",
+      "compactPickerLabel": "Модель для сжатия контекста",
+      "compactUsage": "Если включён отдельный механизм сжатия, но провайдер и модель заданы не полностью, сохраняется прежнее поведение. Для engine нет отдельного выбора модели: при включении он использует маршрут сжатия, указанный здесь.",
+      "compactThresholdLabel": "Порог сжатия контекста",
+      "compactThresholdHint": "Сжатие запускается, когда использование контекста достигает этого порога. Допустимый диапазон: 17–99%; порог должен быть выше доли сохраняемого контекста (по умолчанию 16%). Сохранение включит вспомогательный механизм сжатия. Если установлен стандартный плагин сжатия, сначала удалите его, чтобы этот механизм начал работать.",
+      "approveTitle": "Модель для проверки запросов",
+      "approveDescription": "Интеграция с плагином @dsh-plugin/dsh-approve-for-me: если плагин установлен и включён режим проверки, запросы на подтверждение будут обрабатываться назначенной здесь моделью, а не основной моделью сессии.",
+      "approveToggle": "Использовать отдельную модель для проверки",
+      "approvePickerLabel": "Модель проверки",
+      "approveUsage": "Если функция включена, но провайдер и модель заданы не полностью, сохраняется прежнее поведение: проверяющая модель наследует настройки сессии или использует reviewProvider/reviewModel из конфигурации плагина. Выбирайте быструю и недорогую модель: её решение влияет только на подтверждение и не добавляется в историю сессии.",
+      "approveNotInstalled": "Плагин @dsh-plugin/dsh-approve-for-me не найден. Сначала установите и включите его в режиме проверки — до этого сохранённая конфигурация не действует.",
+      "pickerPlaceholder": "Выберите провайдера и модель",
+      "pickerEmpty": "Нет доступных для выбора моделей.",
+      "pickerUnavailable": "Сохранённый маршрут сейчас недоступен",
+      "pickerListLabel": "Модели по провайдерам",
+      "save": "Сохранить",
+      "saving": "Сохранение…",
+      "saved": "Сохранено"
     }
   },
   "source": {
@@ -38,7 +71,40 @@
       "visionUsage": "This route serves inspect_image and describe_image: the former reads local images on the Host, the latter reads images attached to the chat (when the main model is text-only they appear as [image: …] references, and the main model calls describe_image to fetch their content into the context). Declare image input per model under Settings → Models → Provider → Customized settings → Models; main chat uses the same declaration when that model is selected.",
       "compactTitle": "Context compaction",
       "compactDescription": "Controls whether `purpose: compaction` summaries use the independent compact model route.",
-      "compactToggle": "Enable auxiliary compaction route"
+      "compactToggle": "Enable auxiliary compaction route",
+      "subagentTitle": "Subagent model",
+      "subagentDescription": "Set a dedicated model route for delegated child agents.",
+      "subagentToggle": "Enable subagent model",
+      "subagentPickerLabel": "Subagent model",
+      "subagentUsage": "When enabled, every delegated child (one-shot spawn/fork runs and continuable children) uses the selected model instead of inheriting the parent session; in-process cold-resumed children are covered too. Remote providers (ACP) never register a process-local agent and their children keep inheriting the parent route. Prefer a cheap, fast model to control delegation cost.",
+      "titleTitle": "Title model",
+      "titleDescription": "Set a dedicated model route for session-title generation.",
+      "titleToggle": "Enable title model",
+      "titlePickerLabel": "Title model",
+      "titleUsage": "When enabled, session-title generation calls (purpose: session-title) use the selected model instead of following the main session route. Titles are issued by the dsh-session-title-llm provider; this setting only overrides its model route and leaves its deployment-level config untouched. Prefer a cheap, fast model; titles are generated infrequently, so the cost impact is minimal.",
+      "imagegenTitle": "Image-generation model",
+      "imagegenDescription": "Pick a dedicated model route for auxiliary image generation; only models marked \"Allow image generation\" on the Models page are offered.",
+      "imagegenToggle": "Enable auxiliary image generation",
+      "imagegenPickerLabel": "Image-generation model",
+      "imagegenUsage": "When enabled, auxiliary image-generation work uses the selected model. The picker only lists models marked \"Allow image generation\" under Settings → Models → Provider → Customized settings → Models.",
+      "imagegenNoModels": "No image-generation model marked yet: check \"Allow image generation\" under Settings → Models → Provider → Customized settings → Models first.",
+      "compactPickerLabel": "Compaction model",
+      "compactUsage": "An enabled feature without a complete provider/model route keeps the existing pass-through behavior. `engine` has no third model picker; when enabled, the compression engine reuses this compact route.",
+      "compactThresholdLabel": "Compaction threshold",
+      "compactThresholdHint": "Compaction triggers when context usage reaches this threshold. Supported range: 17%–99% (must stay above the retention ratio, 16% by default). Saving enables the auxiliary compression engine; if the default compaction plugin is loaded, remove it first so this engine takes over.",
+      "approveTitle": "Approval model",
+      "approveDescription": "Hookup for the @dsh-plugin/dsh-approve-for-me plugin: once that plugin is installed and review mode is active, its approval reviews run on the dedicated model selected here instead of inheriting the session's main model.",
+      "approveToggle": "Enable approval-model routing",
+      "approvePickerLabel": "Approval model",
+      "approveUsage": "An enabled feature without a complete provider/model route keeps the original behavior (the reviewer keeps inheriting the session or the plugin's own reviewProvider/reviewModel config). Prefer a cheap, fast model; the review verdict only decides approval and never enters the session history.",
+      "approveNotInstalled": "The @dsh-plugin/dsh-approve-for-me plugin was not detected: install and enable it (review mode) first — until then, saving this configuration has no effect.",
+      "pickerPlaceholder": "Choose a provider and model",
+      "pickerEmpty": "No selectable models are available.",
+      "pickerUnavailable": "Saved route is currently unavailable",
+      "pickerListLabel": "Models grouped by provider",
+      "save": "Save",
+      "saving": "Saving…",
+      "saved": "Saved"
     }
   },
   "dom": [
@@ -46,6 +112,216 @@
       "selector": "p[role=\"alert\"]",
       "source": "{provider} ({id}): model \"{model}\" declares native image input, so its \"{alias}\" entry no longer applies. Select the same model from the provider group without \"{alias}\".",
       "target": "{provider} ({id}): модель «{model}» сообщает о поддержке изображений, поэтому вариант «{alias}» к ней неприменим. Выберите эту же модель в группе провайдера без варианта «{alias}»."
+    },
+    {
+      "selector": "section[aria-labelledby=\"subagent-title\"]",
+      "source": "Subagent model",
+      "target": "Модель субагента"
+    },
+    {
+      "selector": "section[aria-labelledby=\"subagent-title\"]",
+      "source": "Set a dedicated model route for delegated child agents.",
+      "target": "Назначить отдельную модель для делегированных дочерних агентов."
+    },
+    {
+      "selector": "section[aria-labelledby=\"subagent-title\"]",
+      "source": "Enable subagent model",
+      "target": "Использовать отдельную модель для субагентов"
+    },
+    {
+      "selector": "section[aria-labelledby=\"subagent-title\"]",
+      "source": "When enabled, every delegated child (one-shot spawn/fork runs and continuable children) uses the selected model instead of inheriting the parent session; in-process cold-resumed children are covered too. Remote providers (ACP) never register a process-local agent and their children keep inheriting the parent route. Prefer a cheap, fast model to control delegation cost.",
+      "target": "При включении все делегированные дочерние агенты — разовые запуски через spawn/fork и агенты, которых можно возобновить, — будут использовать выбранную модель вместо модели родительской сессии. Это также относится к дочерним агентам, восстановленным после перезапуска процесса. Удалённые провайдеры (ACP) создают агентов без локальной регистрации, поэтому их дочерние агенты по-прежнему наследуют маршрут родителя. Для экономии выбирайте быструю и недорогую модель."
+    },
+    {
+      "selector": "section[aria-labelledby=\"subagent-title\"]",
+      "source": "Save",
+      "target": "Сохранить"
+    },
+    {
+      "selector": "section[aria-labelledby=\"title-title\"]",
+      "source": "Title model",
+      "target": "Модель для названий сессий"
+    },
+    {
+      "selector": "section[aria-labelledby=\"title-title\"]",
+      "source": "Set a dedicated model route for session-title generation.",
+      "target": "Назначить отдельную модель для создания названий сессий."
+    },
+    {
+      "selector": "section[aria-labelledby=\"title-title\"]",
+      "source": "Enable title model",
+      "target": "Использовать отдельную модель для названий"
+    },
+    {
+      "selector": "section[aria-labelledby=\"title-title\"]",
+      "source": "When enabled, session-title generation calls (purpose: session-title) use the selected model instead of following the main session route. Titles are issued by the dsh-session-title-llm provider; this setting only overrides its model route and leaves its deployment-level config untouched. Prefer a cheap, fast model; titles are generated infrequently, so the cost impact is minimal.",
+      "target": "Если включено, запросы для создания названий сессий (purpose: session-title) используют выбранную модель, а не маршрут основной сессии. Запросы отправляет провайдер dsh-session-title-llm. Настройка меняет только маршрут модели и не затрагивает параметры её развёртывания. Названия создаются редко, поэтому для этой задачи подойдёт быстрая и недорогая модель."
+    },
+    {
+      "selector": "section[aria-labelledby=\"title-title\"]",
+      "source": "Save",
+      "target": "Сохранить"
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "Image-generation model",
+      "target": "Модель для генерации изображений"
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "Pick a dedicated model route for auxiliary image generation; only models marked \"Allow image generation\" on the Models page are offered.",
+      "target": "Выберите отдельную модель для вспомогательной генерации изображений. Доступны только модели, для которых на странице «Модели» включён параметр «Разрешить генерацию изображений»."
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "Enable auxiliary image generation",
+      "target": "Включить вспомогательную генерацию изображений"
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "When enabled, auxiliary image-generation work uses the selected model. The picker only lists models marked \"Allow image generation\" under Settings → Models → Provider → Customized settings → Models.",
+      "target": "При включении вспомогательные запросы на генерацию изображений будут отправляться выбранной модели. В списке отображаются только модели с параметром «Разрешить генерацию изображений» в разделе Настройки → Модели → Провайдер → Пользовательские настройки → Модели."
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "No image-generation model marked yet: check \"Allow image generation\" under Settings → Models → Provider → Customized settings → Models first.",
+      "target": "Пока нет моделей, отмеченных для генерации изображений. Сначала включите параметр «Разрешить генерацию изображений» в разделе Настройки → Модели → Провайдер → Пользовательские настройки → Модели."
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "Choose a provider and model",
+      "target": "Выберите провайдера и модель"
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "No selectable models are available.",
+      "target": "Нет доступных для выбора моделей."
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "Saved route is currently unavailable",
+      "target": "Сохранённый маршрут сейчас недоступен"
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "Models grouped by provider",
+      "target": "Модели по провайдерам"
+    },
+    {
+      "selector": "section[aria-labelledby=\"imagegen-title\"]",
+      "source": "Save",
+      "target": "Сохранить"
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Context compaction",
+      "target": "Сжатие контекста"
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Controls whether `purpose: compaction` summaries use the independent compact model route.",
+      "target": "Определяет, будет ли для краткого пересказа (purpose: compaction) использоваться отдельный маршрут модели."
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Enable auxiliary compaction route",
+      "target": "Включить отдельный маршрут для сжатия контекста"
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Compaction model",
+      "target": "Модель для сжатия контекста"
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "An enabled feature without a complete provider/model route keeps the existing pass-through behavior. `engine` has no third model picker; when enabled, the compression engine reuses this compact route.",
+      "target": "Если включён отдельный механизм сжатия, но провайдер и модель заданы не полностью, сохраняется прежнее поведение. Для engine нет отдельного выбора модели: при включении он использует маршрут сжатия, указанный здесь."
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Compaction threshold",
+      "target": "Порог сжатия контекста"
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Compaction triggers when context usage reaches this threshold. Supported range: 17%–99% (must stay above the retention ratio, 16% by default). Saving enables the auxiliary compression engine; if the default compaction plugin is loaded, remove it first so this engine takes over.",
+      "target": "Сжатие запускается, когда использование контекста достигает этого порога. Допустимый диапазон: 17–99%; порог должен быть выше доли сохраняемого контекста (по умолчанию 16%). Сохранение включит вспомогательный механизм сжатия. Если установлен стандартный плагин сжатия, сначала удалите его, чтобы этот механизм начал работать."
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Choose a provider and model",
+      "target": "Выберите провайдера и модель"
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "No selectable models are available.",
+      "target": "Нет доступных для выбора моделей."
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Saved route is currently unavailable",
+      "target": "Сохранённый маршрут сейчас недоступен"
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Models grouped by provider",
+      "target": "Модели по провайдерам"
+    },
+    {
+      "selector": "section[aria-labelledby=\"compact-title\"]",
+      "source": "Save",
+      "target": "Сохранить"
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "Approval model",
+      "target": "Модель проверки"
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "Hookup for the @dsh-plugin/dsh-approve-for-me plugin: once that plugin is installed and review mode is active, its approval reviews run on the dedicated model selected here instead of inheriting the session's main model.",
+      "target": "Интеграция с плагином @dsh-plugin/dsh-approve-for-me: если плагин установлен и включён режим проверки, запросы на подтверждение будут обрабатываться назначенной здесь моделью, а не основной моделью сессии."
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "Enable approval-model routing",
+      "target": "Использовать отдельную модель для проверки"
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "An enabled feature without a complete provider/model route keeps the original behavior (the reviewer keeps inheriting the session or the plugin's own reviewProvider/reviewModel config). Prefer a cheap, fast model; the review verdict only decides approval and never enters the session history.",
+      "target": "Если функция включена, но провайдер и модель заданы не полностью, сохраняется прежнее поведение: проверяющая модель наследует настройки сессии или использует reviewProvider/reviewModel из конфигурации плагина. Выбирайте быструю и недорогую модель: её решение влияет только на подтверждение и не добавляется в историю сессии."
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "The @dsh-plugin/dsh-approve-for-me plugin was not detected: install and enable it (review mode) first — until then, saving this configuration has no effect.",
+      "target": "Плагин @dsh-plugin/dsh-approve-for-me не найден. Сначала установите и включите его в режиме проверки — до этого сохранённая конфигурация не действует."
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "Choose a provider and model",
+      "target": "Выберите провайдера и модель"
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "No selectable models are available.",
+      "target": "Нет доступных для выбора моделей."
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "Saved route is currently unavailable",
+      "target": "Сохранённый маршрут сейчас недоступен"
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "Models grouped by provider",
+      "target": "Модели по провайдерам"
+    },
+    {
+      "selector": "section[aria-labelledby=\"approve-title\"]",
+      "source": "Save",
+      "target": "Сохранить"
     }
   ]
 }
