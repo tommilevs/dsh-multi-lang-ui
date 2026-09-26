@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.8
+
+- Normalize a partially translated DeepSeek usage message that DSH could render after other locale adapters ran first.
+- Translate the Skin Center item in the DSH Desktop navigation in both locales.
+- Add live-screen regression coverage for the mixed-language usage message.
+
 ## 0.1.7
 
 - Complete the screenshot-reported Russian and English translations for DSH Desktop, auxiliary models, usage, archive, MCP import, model capabilities, pet choices, and skin cards.

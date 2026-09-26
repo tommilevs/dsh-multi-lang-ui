@@ -103,6 +103,7 @@ test('new screenshots: MCP import, usage/archive controls, model capability and 
   const usage = [
     '鲸元券',
     '暂无 DeepSeek 官方用量数据（统计自插件启用起）',
+    '暂无 DeepSeek 官方用量数据（统计自插件Включить起）',
     '没有已配置的套餐类 provider（如 Kimi、GLM、OpenCode Go、MiniMax、Codex 订阅）',
   ]
   const archive = [
@@ -112,6 +113,7 @@ test('new screenshots: MCP import, usage/archive controls, model capability and 
   for (const locale of ['en', 'ru']) {
     assertDomTranslations('@linxin666/dsh-web-all', locale, '[data-dsh-plugin="usage"]', usage)
     assertDomTranslations('@linxin666/dsh-web-all', locale, '[data-dsh-plugin="session-archive"]', archive)
+    assertDomTranslations('dsh-plugin-desktop', locale, '.zOa2rq_navCell', ['Skin Center'])
   }
 
   for (const locale of ['en', 'ru']) {

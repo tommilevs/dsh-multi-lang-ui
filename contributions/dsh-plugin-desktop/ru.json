@@ -145,6 +145,11 @@
       "selector": ".zOa2rq_navCell",
       "source": "Workshop",
       "target": "Мастерская"
+    },
+    {
+      "selector": ".zOa2rq_navCell",
+      "source": "Skin Center",
+      "target": "Центр оформления"
     }
   ],
   "source": {

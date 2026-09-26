@@ -266,6 +266,11 @@
     },
     {
       "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "暂无 DeepSeek 官方用量数据（统计自插件Включить起）",
+      "target": "No official DeepSeek usage data yet (tracked since the plugin was enabled)"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
       "source": "没有已配置的套餐类 provider（如 Kimi、GLM、OpenCode Go、MiniMax、Codex 订阅）",
       "target": "No subscription-based provider is configured (such as Kimi, GLM, OpenCode Go, MiniMax, or a Codex subscription)"
     },
