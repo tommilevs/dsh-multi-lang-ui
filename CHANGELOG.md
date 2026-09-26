@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.11
+
+- Translate the Server Deck native sidebar tab, standalone-panel controls, common API errors, SSH failure messages, and delete confirmation.
+- Add narrowly allowlisted roots for the right-sidebar tab title and Server Deck standalone host panel.
+- Translate supported native `window.confirm` prompts from community packs and restore the original handler when the plugin unloads.
+- Cover the latest MCP import strings and add regression tests for mixed-language and dynamic Server Deck content.
+
 ## 0.1.10
 
 - Complete screenshot-driven English and Russian coverage for the remaining pet settings, MCP forms, Skin Center, DSH Desktop, and plugin-manager cards.

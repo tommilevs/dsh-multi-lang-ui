@@ -100,6 +100,47 @@ test('translates dynamic usage token units and switches back to English', () => 
   assert.equal(resolveDomTranslation(selector, '808k токенов', 'en', entries), '808k tokens')
 })
 
+test('translates Server Deck screenshot content and restores Chinese when locale changes', () => {
+  const packs = ['en', 'ru'].map((language) => JSON.parse(readFileSync(new URL(`../contributions/dsh-server-deck/${language}.json`, import.meta.url), 'utf8')))
+  const combined = new Map()
+  for (const pack of packs) for (const item of pack.dom || []) {
+    const key = `${item.selector}:${item.source}`
+    if (!combined.has(key)) combined.set(key, { selector: item.selector, source: item.source, targets: {} })
+    combined.get(key).targets[pack.locale] = item.target
+  }
+  const entries = [...combined.values()]
+  const selector = '.sd-app'
+  const source = '点右上角「＋ 添加」手工录入,或用「⤓ 导入 ssh config」一键导入。'
+  assert.equal(resolveDomTranslation(selector, source, 'ru', entries), 'Нажмите «＋ Добавить» в правом верхнем углу, чтобы добавить сервер вручную, или используйте «⤓ Импорт ssh config» для импорта в один шаг.')
+  assert.equal(resolveDomTranslation(selector, source, 'en', entries), 'Click “＋ Add” in the upper-right to enter a server manually, or use “⤓ Import SSH config” to import it in one step.')
+  assert.equal(resolveDomTranslation(selector, 'No servers yet.', 'ru', entries), 'Серверов пока нет.')
+  assert.equal(resolveDomTranslation(selector, 'Серверов пока нет.', 'zh', entries), '还没有服务器。')
+})
+
+test('translates the dynamic Server Deck trend summary and MCP import details', () => {
+  const readPacks = (id) => ['en', 'ru'].map((language) => JSON.parse(readFileSync(new URL(`../contributions/${id}/${language}.json`, import.meta.url), 'utf8')))
+  const indexPacks = (packs) => {
+    const combined = new Map()
+    for (const pack of packs) for (const item of pack.dom || []) {
+      const key = `${item.selector}:${item.source}`
+      if (!combined.has(key)) combined.set(key, { selector: item.selector, source: item.source, targets: {} })
+      combined.get(key).targets[pack.locale] = item.target
+    }
+    return [...combined.values()]
+  }
+  const serverEntries = indexPacks(readPacks('dsh-server-deck'))
+  const trend = '09:00 → 10:00 · 实际粒度 1 分钟 · 记录已暂停'
+  assert.equal(resolveDomTranslation('.sd-app', trend, 'ru', serverEntries), '09:00 → 10:00 · Шаг графика: 1 мин · Запись приостановлена')
+  assert.equal(resolveDomTranslation('.sd-app', '09:00 → 10:00 · Шаг графика: 1 мин · Запись приостановлена', 'en', serverEntries), '09:00 → 10:00 · Actual granularity: 1 min · Recording is paused')
+
+  const mcpEntries = indexPacks(readPacks('dsh-mcp-manager-ui'))
+  const count = '服务器 MCP (2): node_repl, cua_repl'
+  assert.equal(resolveDomTranslation('.dsh-mcp-overlay', count, 'en', mcpEntries), 'MCP servers (2): node_repl, cua_repl')
+  assert.equal(resolveDomTranslation('.dsh-mcp-overlay', count, 'ru', mcpEntries), 'MCP-серверы (2): node_repl, cua_repl')
+  const masked = '含需掩码字段: env (Import后在详情页可用眼睛查看)'
+  assert.equal(resolveDomTranslation('.dsh-mcp-overlay', masked, 'ru', mcpEntries), 'Поля со скрытыми значениями: env (после импорта значения можно показать в сведениях, нажав значок глаза)')
+})
+
 test('translates the combined dynamic usage footer in English, Chinese, and Russian source forms', () => {
   const packs = ['en', 'ru'].map((language) => JSON.parse(readFileSync(new URL(`../contributions/@linxin666/dsh-web-all/${language}.json`, import.meta.url), 'utf8')))
   const combined = new Map()
@@ -155,7 +196,34 @@ test('retains implicit native option values when translating their visible text'
   assert.equal(option.value, '全部状态')
 })
 
+test('translates Server Deck native tab title and standalone panel controls', () => {
+  const packs = ['en', 'ru'].map((language) => JSON.parse(readFileSync(new URL(`../contributions/dsh-server-deck/${language}.json`, import.meta.url), 'utf8')))
+  const combined = new Map()
+  for (const pack of packs) for (const item of pack.dom || []) {
+    const key = `${item.selector}:${item.source}`
+    if (!combined.has(key)) combined.set(key, { selector: item.selector, source: item.source, targets: {} })
+    combined.get(key).targets[pack.locale] = item.target
+  }
+  const entries = [...combined.values()]
+  const tabSelector = '[data-sidebar-right-panel] [data-dockkit-strip] [role="tab"][data-dockkit-tab] [data-dockkit-tab-title]'
+  assert.equal(resolveDomTranslation(tabSelector, '服务器', 'ru', entries), 'Серверы')
+  assert.equal(resolveDomTranslation(tabSelector, 'Серверы', 'en', entries), 'Servers')
+  assert.equal(resolveDomTranslation('[data-serverdeck-host]', '收起服务器面板', 'ru', entries), 'Свернуть панель серверов')
+  assert.equal(resolveDomTranslation('[data-serverdeck-host]', '展开服务器面板', 'en', entries), 'Expand the server panel')
+  assert.equal(resolveDomTranslation('.sd-app', '✗ proxmox:连接失败', 'ru', entries), '✗ proxmox: ошибка подключения')
+  assert.equal(resolveDomTranslation('.sd-app', '✗ proxmox:该主机未保存密码', 'ru', entries), '✗ proxmox: для сервера не сохранён пароль')
+  assert.equal(resolveDomTranslation('.sd-app', '自定义周期最长 31 天', 'en', entries), 'The custom time range cannot exceed 31 days')
+  const deletePrompt = '确定删除「proxmox」?台账与其历史趋势记录将一并移除,不会登录服务器执行任何操作。'
+  assert.equal(resolveDomTranslation('.sd-app', deletePrompt, 'ru', entries), 'Удалить сервер «proxmox»? Запись и история графиков тоже будут удалены. На сам сервер это не повлияет: вход в него не выполняется, команды не запускаются.')
+  assert.equal(resolveDomTranslation('.sd-app', deletePrompt, 'en', entries), 'Delete “proxmox”? This will also remove the server entry and its historical trend data. No actions will be performed on the server.')
+})
+
 test('allows only established plugin-root selectors', () => {
+  assert.equal(isSafeDomSelector('.sd-app'), true)
+  assert.equal(isSafeDomSelector('[data-serverdeck-host]'), true)
+  assert.equal(isSafeDomSelector('[data-sidebar-right-panel] [data-dockkit-strip] [role="tab"][data-dockkit-tab] [data-dockkit-tab-title]'), true)
+  assert.equal(isSafeDomSelector('[data-sidebar-right-panel] [data-dockkit-strip] [role="tab"]'), false)
+  assert.equal(isSafeDomSelector('[data-serverdeck-host] body'), false)
   assert.equal(isSafeDomSelector('[data-dsh-plugin="usage"]'), true)
   assert.equal(isSafeDomSelector('[data-conversation-tabs]'), true)
   assert.equal(isSafeDomSelector('[data-dsh-plugin="session-archive"] .title'), true)

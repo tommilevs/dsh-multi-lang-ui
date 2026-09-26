@@ -1347,8 +1347,18 @@
     },
     {
       "selector": ".dsh-mcp-overlay",
+      "source": "服务器 MCP ({n}): {names}",
+      "target": "MCP servers ({n}): {names}"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
       "source": "含需掩码字段: {fields} (Import 后在详情页可用眼睛查看)",
       "target": "Masked fields: {fields} (after import, use the eye icon in the details to reveal them)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "含需掩码字段: {fields} (Import后在详情页可用眼睛查看)",
+      "target": "Masked fields: {fields} (after import, use the eye icon in details to reveal them)"
     },
     {
       "selector": ".dsh-mcp-overlay",

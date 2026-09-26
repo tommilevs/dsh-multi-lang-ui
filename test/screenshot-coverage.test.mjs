@@ -216,6 +216,158 @@ test('MCP add and built-in dialogs cover the exact untranslated screenshot strin
   }
 })
 
+test('MCP import screenshot variants cover mixed-language labels exactly', () => {
+  const sources = [
+    '服务器 MCP ({n}): {names}',
+    '含需掩码字段: {fields} (Import后在详情页可用眼睛查看)',
+  ]
+  for (const locale of ['en', 'ru']) {
+    assertDomTranslations('dsh-mcp-manager-ui', locale, '.dsh-mcp-overlay', sources)
+  }
+  assertDomTranslationTarget('dsh-mcp-manager-ui', 'en', '.dsh-mcp-overlay', sources[0], 'MCP servers ({n}): {names}')
+  assertDomTranslationTarget('dsh-mcp-manager-ui', 'ru', '.dsh-mcp-overlay', sources[0], 'MCP-серверы ({n}): {names}')
+})
+
+test('Server Deck native tab title and standalone panel controls are translated', () => {
+  const tabSelector = '[data-sidebar-right-panel] [data-dockkit-strip] [role="tab"][data-dockkit-tab] [data-dockkit-tab-title]'
+  assertDomTranslations('dsh-server-deck', 'en', tabSelector, ['服务器'])
+  assertDomTranslations('dsh-server-deck', 'ru', tabSelector, ['服务器'])
+  assertDomTranslationTarget('dsh-server-deck', 'en', tabSelector, '服务器', 'Servers')
+  assertDomTranslationTarget('dsh-server-deck', 'ru', tabSelector, '服务器', 'Серверы')
+  for (const locale of ['en', 'ru']) {
+    assertDomTranslations('dsh-server-deck', locale, '[data-serverdeck-host]', ['服务器', '收起服务器面板', '展开服务器面板'])
+  }
+})
+
+test('Server Deck common errors and failed SSH test fallbacks are translated', () => {
+  const sources = [
+    '连接失败', '该主机未保存密码', '该主机未配置私钥路径',
+    '读取私钥失败 {keyPath}:{error}', 'SSH 连接失败:{error}', 'exec 失败:{error}', '打开 shell 失败:{error}',
+    '主机不存在', '自定义周期无效', '自定义周期最长 31 天', '主机 id 无效', '请求体过大', 'JSON 解析失败',
+    'name 无效', 'host 无效', 'port 无效', 'username 无效', 'auth 必须是 password | key | agent',
+    'keyPath 无效', 'tags 必须是字符串数组', 'notes 无效', 'host / username / auth 为必填',
+    '仅允许本机访问', '未知路由 {method} {path}',
+    '✗ {name}:连接失败', '✗ {name}:该主机未保存密码', '✗ {name}:该主机未配置私钥路径', '✗ {name}:SSH 连接失败:{error}',
+    '确定删除「{name}」?台账与其历史趋势记录将一并移除,不会登录服务器执行任何操作。',
+    '[server-deck] 正在连接 {name}({endpoint}) …', '[server-deck] 连接已关闭',
+    '[server-deck] 连接已关闭:{reason}', '[server-deck] WebSocket 错误',
+  ]
+  for (const locale of ['en', 'ru']) assertDomTranslations('dsh-server-deck', locale, '.sd-app', sources)
+  const ru = pack('dsh-server-deck', 'ru')
+  assertDomTranslationTarget('dsh-server-deck', 'ru', '.sd-app', '✗ {name}:连接失败', '✗ {name}: ошибка подключения')
+  assertDomTranslationTarget('dsh-server-deck', 'ru', '.sd-app', '✗ {name}:该主机未保存密码', '✗ {name}: для сервера не сохранён пароль')
+  assertDomTranslationTarget('dsh-server-deck', 'en', '.sd-app', '✗ {name}:连接失败', '✗ {name}: connection failed')
+  assert.ok(ru.dom.filter((entry) => sources.includes(entry.source)).every((entry) => !/[\u4e00-\u9fff]/.test(entry.target)))
+})
+
+test('Server Deck screenshot labels and empty state have English and Russian translations', () => {
+  const sources = [
+    '服务器',
+    '趋势',
+    '📈 趋势',
+    '编辑主机',
+    '添加服务器',
+    '手动',
+    '探测中',
+    '加载中',
+    '加载中…',
+    '10 秒',
+    '30 秒',
+    '1 分钟',
+    '5 分钟',
+    '15 分钟',
+    '1 小时',
+    '← 卡片',
+    '状态刷新周期(读主机侧快照)',
+    '⟳ 刷新',
+    '解析 ~/.ssh/config 并导入新主机',
+    '⤓ 导入',
+    '＋ 添加',
+    '窗口',
+    '24 小时',
+    '一周',
+    '一个月',
+    '自定义',
+    '粒度',
+    '自动',
+    '起',
+    '止',
+    '主机侧采集周期(常驻,与面板是否打开无关)',
+    '采集',
+    '实际粒度 {granularity}',
+    '· 记录已暂停',
+    '现',
+    '均',
+    '还没有服务器。先回卡片视图添加或导入。',
+    '还没有服务器。',
+    '点右上角「＋ 添加」手工录入,或用「⤓ 导入 ssh config」一键导入。',
+    '✓ 已保存 {name}',
+    '系统未知',
+    '· 已运行 {uptime}',
+    '· {cores} 核',
+    '内存',
+    '磁盘',
+    '主机当前离线',
+    '打开交互终端',
+    '⌨ 终端',
+    '测试',
+    '最高 {max} · 最低 {min} · 样本 {samples}',
+    '暂无历史样本(记录开启后约一个采集周期出现第一个点)',
+    '(留空 = 不修改已存密码)',
+    '(留空 = 不修改已存口令)',
+    '主机地址与用户名为必填',
+    '端口必须是 1-65535 的整数',
+    '展示名',
+    '如 生产网关(留空则用 user@host)',
+    '主机地址 *',
+    'IP 或域名',
+    '端口',
+    '用户名 *',
+    '认证方式',
+    '私钥文件',
+    '密码',
+    '私钥路径',
+    '私钥口令',
+    '标签(逗号分隔)',
+    '保存中',
+    '保存',
+    '取消',
+    '密码/口令只保存在本机 ~/.dsh/server-deck.secrets.json(0600),不随台账回传。',
+    '✓ {name} 连接成功({latency}ms)',
+    '✗ {name}:{error}',
+    'ssh config 解析完成:发现 {found} 条,新导入 {imported} 台,跳过 {skipped} 条',
+    '✓ 采集周期已改为 {seconds} 秒,主机侧立即生效',
+  ]
+  const periods = ['10 秒', '30 秒', '1 分钟', '5 分钟', '15 分钟', '1 小时']
+  const dynamicTrendSummaries = periods.flatMap((period) => {
+    const prefix = `{from} → {to} · 实际粒度 ${period}`
+    return [
+      prefix,
+      `${prefix} · 数据自 {dataStart} 起(更早无记录)`,
+      `${prefix} · 记录已暂停`,
+      `${prefix} · 数据自 {dataStart} 起(更早无记录) · 记录已暂停`,
+    ]
+  })
+  for (const locale of ['en', 'ru']) {
+    assertDomTranslations('dsh-server-deck', locale, '.sd-app', [...sources, ...dynamicTrendSummaries])
+  }
+  assertDomTranslationTarget('dsh-server-deck', 'en', '.sd-app', '还没有服务器。', 'No servers yet.')
+  assertDomTranslationTarget('dsh-server-deck', 'ru', '.sd-app', '还没有服务器。', 'Серверов пока нет.')
+  assertDomTranslationTarget(
+    'dsh-server-deck',
+    'ru',
+    '.sd-app',
+    '点右上角「＋ 添加」手工录入,或用「⤓ 导入 ssh config」一键导入。',
+    'Нажмите «＋ Добавить» в правом верхнем углу, чтобы добавить сервер вручную, или используйте «⤓ Импорт ssh config» для импорта в один шаг.',
+  )
+  assertDomTranslationTarget('dsh-server-deck', 'en', '.sd-app', '点右上角「＋ 添加」手工录入,或用「⤓ 导入 ssh config」一键导入。', 'Click “＋ Add” in the upper-right to enter a server manually, or use “⤓ Import SSH config” to import it in one step.')
+  for (const locale of ['en', 'ru']) {
+    for (const entry of pack('dsh-server-deck', locale).dom) {
+      assert.doesNotMatch(entry.target, /[\u4e00-\u9fff]/, `dsh-server-deck/${locale} leaves CJK in ${JSON.stringify(entry.source)}`)
+    }
+  }
+})
+
 test('plugin manager cards translate screenshot-visible headings, names, and manifest descriptions', () => {
   const cardSources = [
     'Official', 'Installed', 'Официальные', 'Установленные',

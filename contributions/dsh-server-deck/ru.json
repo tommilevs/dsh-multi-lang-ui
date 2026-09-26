@@ -1,0 +1,713 @@
+{
+  "plugin": {
+    "id": "dsh-server-deck",
+    "version": "0.3.0",
+    "source": "https://github.com/meyaomiao/dsh-server-deck",
+    "license": "MIT"
+  },
+  "locale": "ru",
+  "sourceLocale": "zh",
+  "namespaces": {},
+  "dom": [
+    {
+      "selector": "[data-sidebar-right-panel] [data-dockkit-strip] [role=\"tab\"][data-dockkit-tab] [data-dockkit-tab-title]",
+      "source": "服务器",
+      "target": "Серверы"
+    },
+    {
+      "selector": "[data-serverdeck-host]",
+      "source": "服务器",
+      "target": "Серверы"
+    },
+    {
+      "selector": "[data-serverdeck-host]",
+      "source": "收起服务器面板",
+      "target": "Свернуть панель серверов"
+    },
+    {
+      "selector": "[data-serverdeck-host]",
+      "source": "展开服务器面板",
+      "target": "Развернуть панель серверов"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "← 返回",
+      "target": "← Назад"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "连接失败",
+      "target": "Ошибка подключения"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "确定删除「{name}」?台账与其历史趋势记录将一并移除,不会登录服务器执行任何操作。",
+      "target": "Удалить сервер «{name}»? Запись и история графиков тоже будут удалены. На сам сервер это не повлияет: вход в него не выполняется, команды не запускаются."
+    },
+    {
+      "selector": ".sd-app",
+      "source": "服务器",
+      "target": "Серверы"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "趋势",
+      "target": "Тренд"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "编辑主机",
+      "target": "Редактировать сервер"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "添加服务器",
+      "target": "Добавить сервер"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "10 秒",
+      "target": "10 сек"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "30 秒",
+      "target": "30 сек"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "1 分钟",
+      "target": "1 мин"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "5 分钟",
+      "target": "5 мин"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "15 分钟",
+      "target": "15 мин"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "1 小时",
+      "target": "1 ч"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "← 卡片",
+      "target": "← Карточки"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "📈 趋势",
+      "target": "📈 Тренды"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "状态刷新周期(读主机侧快照)",
+      "target": "Интервал обновления (данные из снимка на сервере)"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "手动",
+      "target": "Вручную"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "探测中",
+      "target": "Проверка…"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "⟳ 刷新",
+      "target": "⟳ Обновить"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "解析 ~/.ssh/config 并导入新主机",
+      "target": "Разобрать ~/.ssh/config и импортировать серверы"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "⤓ 导入",
+      "target": "⤓ Импорт"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "＋ 添加",
+      "target": "＋ Добавить"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "加载中",
+      "target": "Загрузка"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "窗口",
+      "target": "Период"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "24 小时",
+      "target": "24 часа"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "一周",
+      "target": "Неделя"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "一个月",
+      "target": "Месяц"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "自定义",
+      "target": "Свой период"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "粒度",
+      "target": "Шаг графика"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "自动",
+      "target": "Автоматически"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "起",
+      "target": "С"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "止",
+      "target": "По"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "主机侧采集周期(常驻,与面板是否打开无关)",
+      "target": "Интервал сбора данных на сервере (работает постоянно, даже когда панель закрыта)"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "采集",
+      "target": "Сбор данных"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "实际粒度 {granularity}",
+      "target": "Фактический шаг: {granularity}"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "记录已暂停",
+      "target": "Запись приостановлена"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "· 记录已暂停",
+      "target": "· Запись приостановлена"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "加载中…",
+      "target": "Загрузка…"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "请选择有效的自定义起止时间",
+      "target": "Укажите допустимые начальную и конечную даты"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "还没有服务器。",
+      "target": "Серверов пока нет."
+    },
+    {
+      "selector": ".sd-app",
+      "source": "点右上角「＋ 添加」手工录入,或用「⤓ 导入 ssh config」一键导入。",
+      "target": "Нажмите «＋ Добавить» в правом верхнем углу, чтобы добавить сервер вручную, или используйте «⤓ Импорт ssh config» для импорта в один шаг."
+    },
+    {
+      "selector": ".sd-app",
+      "source": "还没有服务器。先回卡片视图添加或导入。",
+      "target": "Серверов пока нет. Вернитесь к карточкам, чтобы добавить сервер или импортировать его."
+    },
+    {
+      "selector": ".sd-app",
+      "source": "✓ 已保存 {name}",
+      "target": "✓ Сохранён сервер: {name}"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "系统未知",
+      "target": "Система неизвестна"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "· 已运行 {uptime}",
+      "target": "· Время работы: {uptime}"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "· {cores} 核",
+      "target": "· Ядер: {cores}"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "内存",
+      "target": "Память"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "磁盘",
+      "target": "Диск"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "主机当前离线",
+      "target": "Сервер сейчас недоступен"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "打开交互终端",
+      "target": "Открыть интерактивный терминал"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "⌨ 终端",
+      "target": "⌨ Терминал"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "测试",
+      "target": "Проверить"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "最高 {max} · 最低 {min} · 样本 {samples}",
+      "target": "Макс. {max} · мин. {min} · замеров: {samples}"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "暂无历史样本(记录开启后约一个采集周期出现第一个点)",
+      "target": "Исторических данных пока нет (первая точка появится примерно через один интервал после включения записи)"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "现",
+      "target": "Сейчас"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "均",
+      "target": "Среднее"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "(留空 = 不修改已存密码)",
+      "target": "(Оставьте пустым, чтобы сохранить прежний пароль)"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "(留空 = 不修改已存口令)",
+      "target": "(Оставьте пустым, чтобы сохранить прежнюю парольную фразу)"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "主机地址与用户名为必填",
+      "target": "Адрес сервера и имя пользователя обязательны."
+    },
+    {
+      "selector": ".sd-app",
+      "source": "端口必须是 1-65535 的整数",
+      "target": "Порт должен быть целым числом от 1 до 65535"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "展示名",
+      "target": "Отображаемое имя"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "如 生产网关(留空则用 user@host)",
+      "target": "Например, prod-gateway (оставьте пустым, чтобы использовать user@host)"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "主机地址 *",
+      "target": "Адрес сервера *"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "IP 或域名",
+      "target": "IP-адрес или доменное имя"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "端口",
+      "target": "Порт"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "用户名 *",
+      "target": "Имя пользователя *"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "认证方式",
+      "target": "Способ входа"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "私钥文件",
+      "target": "Файл закрытого ключа"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "密码",
+      "target": "Пароль"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "私钥路径",
+      "target": "Путь к закрытому ключу"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "私钥口令",
+      "target": "Парольная фраза ключа"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "标签(逗号分隔)",
+      "target": "Метки (через запятую)"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "生产, 华东",
+      "target": "Продакшен, Восточный Китай"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "保存中",
+      "target": "Сохранение"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "保存",
+      "target": "Сохранить"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "取消",
+      "target": "Отмена"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "密码/口令只保存在本机 ~/.dsh/server-deck.secrets.json(0600),不随台账回传。",
+      "target": "Пароли и парольные фразы хранятся только на этом компьютере в ~/.dsh/server-deck.secrets.json (0600) и не передаются вместе со списком серверов."
+    },
+    {
+      "selector": ".sd-app",
+      "source": "✓ {name} 连接成功({latency}ms)",
+      "target": "✓ Подключение к {name} успешно ({latency} мс)"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "✗ {name}:连接失败",
+      "target": "✗ {name}: ошибка подключения"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "✗ {name}:该主机未保存密码",
+      "target": "✗ {name}: для сервера не сохранён пароль"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "✗ {name}:该主机未配置私钥路径",
+      "target": "✗ {name}: не указан путь к закрытому ключу сервера"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "✗ {name}:SSH 连接失败:{error}",
+      "target": "✗ {name}: ошибка SSH-подключения: {error}"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "✗ {name}:{error}",
+      "target": "✗ {name}: {error}"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "该主机未保存密码",
+      "target": "Для этого сервера не сохранён пароль"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "该主机未配置私钥路径",
+      "target": "Для этого сервера не указан путь к закрытому ключу"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "读取私钥失败 {keyPath}:{error}",
+      "target": "Не удалось прочитать закрытый ключ {keyPath}: {error}"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "SSH 连接失败:{error}",
+      "target": "Ошибка SSH-подключения: {error}"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "exec 失败:{error}",
+      "target": "Не удалось выполнить команду: {error}"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "打开 shell 失败:{error}",
+      "target": "Не удалось открыть оболочку: {error}"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "主机不存在",
+      "target": "Сервер не найден"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "自定义周期无效",
+      "target": "Некорректный пользовательский период"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "自定义周期最长 31 天",
+      "target": "Пользовательский период не может превышать 31 день"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "主机 id 无效",
+      "target": "Недопустимый идентификатор сервера"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "请求体过大",
+      "target": "Слишком большой размер тела запроса"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "JSON 解析失败",
+      "target": "Не удалось разобрать JSON"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "name 无效",
+      "target": "Недопустимое имя"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "host 无效",
+      "target": "Недопустимый адрес сервера"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "port 无效",
+      "target": "Недопустимый порт"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "username 无效",
+      "target": "Недопустимое имя пользователя"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "auth 必须是 password | key | agent",
+      "target": "Для auth укажите password, key или agent"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "keyPath 无效",
+      "target": "Недопустимый путь keyPath"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "tags 必须是字符串数组",
+      "target": "Теги должны быть массивом строк"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "notes 无效",
+      "target": "Недопустимые заметки"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "host / username / auth 为必填",
+      "target": "Адрес сервера, имя пользователя и способ входа обязательны"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "仅允许本机访问",
+      "target": "Разрешён доступ только с этого компьютера"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "未知路由 {method} {path}",
+      "target": "Неизвестный маршрут: {method} {path}"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "[server-deck] 正在连接 {name}({endpoint}) …",
+      "target": "[server-deck] Подключение к {name} ({endpoint})…"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "[server-deck] 连接已关闭",
+      "target": "[server-deck] Соединение закрыто"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "[server-deck] 连接已关闭:{reason}",
+      "target": "[server-deck] Соединение закрыто: {reason}"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "[server-deck] WebSocket 错误",
+      "target": "[server-deck] Ошибка WebSocket"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "ssh config 解析完成:发现 {found} 条,新导入 {imported} 台,跳过 {skipped} 条",
+      "target": "SSH config разобран: найдено записей — {found}, добавлено серверов — {imported}, пропущено — {skipped}"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "✓ 采集周期已改为 {seconds} 秒,主机侧立即生效",
+      "target": "✓ Интервал сбора изменён на {seconds} с и сразу применён на сервере"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 10 秒",
+      "target": "{from} → {to} · Шаг графика: 10 сек"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 10 秒 · 数据自 {dataStart} 起(更早无记录)",
+      "target": "{from} → {to} · Шаг графика: 10 сек · Данные с {dataStart} (более ранних записей нет)"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 10 秒 · 记录已暂停",
+      "target": "{from} → {to} · Шаг графика: 10 сек · Запись приостановлена"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 10 秒 · 数据自 {dataStart} 起(更早无记录) · 记录已暂停",
+      "target": "{from} → {to} · Шаг графика: 10 сек · Данные с {dataStart} (более ранних записей нет) · Запись приостановлена"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 30 秒",
+      "target": "{from} → {to} · Шаг графика: 30 сек"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 30 秒 · 数据自 {dataStart} 起(更早无记录)",
+      "target": "{from} → {to} · Шаг графика: 30 сек · Данные с {dataStart} (более ранних записей нет)"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 30 秒 · 记录已暂停",
+      "target": "{from} → {to} · Шаг графика: 30 сек · Запись приостановлена"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 30 秒 · 数据自 {dataStart} 起(更早无记录) · 记录已暂停",
+      "target": "{from} → {to} · Шаг графика: 30 сек · Данные с {dataStart} (более ранних записей нет) · Запись приостановлена"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 1 分钟",
+      "target": "{from} → {to} · Шаг графика: 1 мин"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 1 分钟 · 数据自 {dataStart} 起(更早无记录)",
+      "target": "{from} → {to} · Шаг графика: 1 мин · Данные с {dataStart} (более ранних записей нет)"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 1 分钟 · 记录已暂停",
+      "target": "{from} → {to} · Шаг графика: 1 мин · Запись приостановлена"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 1 分钟 · 数据自 {dataStart} 起(更早无记录) · 记录已暂停",
+      "target": "{from} → {to} · Шаг графика: 1 мин · Данные с {dataStart} (более ранних записей нет) · Запись приостановлена"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 5 分钟",
+      "target": "{from} → {to} · Шаг графика: 5 мин"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 5 分钟 · 数据自 {dataStart} 起(更早无记录)",
+      "target": "{from} → {to} · Шаг графика: 5 мин · Данные с {dataStart} (более ранних записей нет)"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 5 分钟 · 记录已暂停",
+      "target": "{from} → {to} · Шаг графика: 5 мин · Запись приостановлена"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 5 分钟 · 数据自 {dataStart} 起(更早无记录) · 记录已暂停",
+      "target": "{from} → {to} · Шаг графика: 5 мин · Данные с {dataStart} (более ранних записей нет) · Запись приостановлена"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 15 分钟",
+      "target": "{from} → {to} · Шаг графика: 15 мин"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 15 分钟 · 数据自 {dataStart} 起(更早无记录)",
+      "target": "{from} → {to} · Шаг графика: 15 мин · Данные с {dataStart} (более ранних записей нет)"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 15 分钟 · 记录已暂停",
+      "target": "{from} → {to} · Шаг графика: 15 мин · Запись приостановлена"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 15 分钟 · 数据自 {dataStart} 起(更早无记录) · 记录已暂停",
+      "target": "{from} → {to} · Шаг графика: 15 мин · Данные с {dataStart} (более ранних записей нет) · Запись приостановлена"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 1 小时",
+      "target": "{from} → {to} · Шаг графика: 1 ч"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 1 小时 · 数据自 {dataStart} 起(更早无记录)",
+      "target": "{from} → {to} · Шаг графика: 1 ч · Данные с {dataStart} (более ранних записей нет)"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 1 小时 · 记录已暂停",
+      "target": "{from} → {to} · Шаг графика: 1 ч · Запись приостановлена"
+    },
+    {
+      "selector": ".sd-app",
+      "source": "{from} → {to} · 实际粒度 1 小时 · 数据自 {dataStart} 起(更早无记录) · 记录已暂停",
+      "target": "{from} → {to} · Шаг графика: 1 ч · Данные с {dataStart} (более ранних записей нет) · Запись приостановлена"
+    }
+  ]
+}
