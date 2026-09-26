@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.5
+
+- Translate the Trajectory tab on the initial Russian render, before its locale namespace becomes available.
+- Localize usage-card accessibility labels in English and Russian.
+- Keep the conversation-tabs fallback scoped to its dedicated root.
+
 ## 0.1.4
 
 - Align host validation with browser selectors so every bundled locale pack reaches the UI.

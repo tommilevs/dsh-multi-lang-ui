@@ -55,6 +55,7 @@ test('archive and model-capability labels visible in screenshots have both local
 
 test('desktop, plugin-manager, and auxiliary-model settings translate their visible controls', () => {
   assertNamespaceTranslations('@deepseek-ai/dsh-client-ui-trajectory', 'ru', 'trajectory', ['view.trajectory', 'toolbar.aria', 'toolbar.duration', 'toolbar.calls'])
+  assertDomTranslations('@deepseek-ai/dsh-client-ui-trajectory', 'ru', '[data-conversation-tabs]', ['Trajectory'])
   const bundledMarket = JSON.parse(readFileSync(new URL('../lib/locales/plugins/54-workshop-market.json', import.meta.url), 'utf8'))
   assert.equal(bundledMarket['dsh-web-ui-market']['settings.title'], 'Витрина сообщества')
   assert.ok(bundledMarket['dsh-web-ui-market']['tab.skin'])
@@ -63,6 +64,9 @@ test('desktop, plugin-manager, and auxiliary-model settings translate their visi
     assert.equal(bundledMarket[namespace].title, 'Мастерская плагинов')
   }
   assertNamespaceTranslations('@linxin666/dsh-web-all', 'ru', 'dsh-web-ui-market', ['tab.preset', 'filter.category', 'category.tools', 'subcategory.browser', 'installs'])
+  const usageAccessibility = ['打开使用统计设置', '收起用量卡片', '展开用量卡片']
+  assertDomTranslations('@linxin666/dsh-web-all', 'en', '[data-dsh-plugin="usage"]', usageAccessibility)
+  assertDomTranslations('@linxin666/dsh-web-all', 'ru', '[data-dsh-plugin="usage"]', usageAccessibility)
   assertNamespaceTranslations('dsh-plugin-desktop', 'ru', 'desktop.settings', [
     'nav', 'title', 'intro', 'exportDiagnostics', 'openTerminal', 'restartDesktop', 'profileTitle',
     'profileIntro', 'profileReady', 'activeProfile', 'profileName', 'profileNamePlaceholder', 'create',

@@ -697,6 +697,21 @@
       "selector": "[data-dsh-plugin=\"session-archive\"]",
       "source": "大小：{size}",
       "target": "Размер: {size}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "打开使用统计设置",
+      "target": "Открыть настройки статистики использования"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "收起用量卡片",
+      "target": "Свернуть карточку статистики"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "展开用量卡片",
+      "target": "Развернуть карточку статистики"
     }
   ]
 }

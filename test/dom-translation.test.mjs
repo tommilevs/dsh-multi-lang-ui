@@ -121,6 +121,7 @@ test('retains implicit native option values when translating their visible text'
 
 test('allows only established plugin-root selectors', () => {
   assert.equal(isSafeDomSelector('[data-dsh-plugin="usage"]'), true)
+  assert.equal(isSafeDomSelector('[data-conversation-tabs]'), true)
   assert.equal(isSafeDomSelector('[data-dsh-plugin="session-archive"] .title'), true)
   assert.equal(isSafeDomSelector('[data-dsh-pet-root]'), true)
   assert.equal(isSafeDomSelector('p[role="alert"]'), true)

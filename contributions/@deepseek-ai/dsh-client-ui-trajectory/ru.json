@@ -382,5 +382,12 @@
       "layout.systemPromptAndToolsUpdated": "System Prompt and Tools Updated",
       "layout.compactionInterrupted": "Compaction was interrupted before completion."
     }
-  }
+  },
+  "dom": [
+    {
+      "selector": "[data-conversation-tabs]",
+      "source": "Trajectory",
+      "target": "Ход выполнения"
+    }
+  ]
 }

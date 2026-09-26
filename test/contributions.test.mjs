@@ -44,6 +44,7 @@ test('rejects placeholder mismatches and unsafe DOM selectors', () => {
 test('accepts every established plugin DOM root', () => {
   const selectors = [
     '.example-root',
+    '[data-conversation-tabs]',
     '[data-dsh-plugin="usage"]',
     '[data-dsh-plugin="session-archive"] .title',
     '[data-dsh-pet-root]',

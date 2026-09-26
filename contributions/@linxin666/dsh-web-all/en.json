@@ -238,6 +238,21 @@
       "selector": "[data-dsh-plugin=\"session-archive\"]",
       "source": "大小：{size}",
       "target": "Size: {size}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "打开使用统计设置",
+      "target": "Open usage statistics settings"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "收起用量卡片",
+      "target": "Collapse usage card"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "展开用量卡片",
+      "target": "Expand usage card"
     }
   ]
 }
