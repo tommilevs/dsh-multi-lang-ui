@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.6
+
+- Fetch bundled community locale packs without reusing stale browser-cache responses after plugin updates.
+- Add a regression test for fresh pack loading.
+
 ## 0.1.5
 
 - Translate the Trajectory tab on the initial Russian render, before its locale namespace becomes available.
