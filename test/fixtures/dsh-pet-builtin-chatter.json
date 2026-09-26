@@ -1,0 +1,1178 @@
+{
+  "sourcePlugin": "@linxin666/dsh-pet",
+  "sourceVersion": "0.3.25",
+  "uniquePoolStrings": [
+    {
+      "category": "STATUS_POOLS.prepare",
+      "source": "准备开始"
+    },
+    {
+      "category": "STATUS_POOLS.prepare",
+      "source": "撸起袖子开工啦"
+    },
+    {
+      "category": "STATUS_POOLS.prepare",
+      "source": "新一轮，出发～"
+    },
+    {
+      "category": "STATUS_POOLS.prepare",
+      "source": "打起精神，开干！"
+    },
+    {
+      "category": "STATUS_POOLS.prepare",
+      "source": "整理一下桌面，开始吧"
+    },
+    {
+      "category": "STATUS_POOLS.prepare",
+      "source": "氧气充满，下潜开始～"
+    },
+    {
+      "category": "STATUS_POOLS.prepare",
+      "source": "热身完毕，跃跃欲试"
+    },
+    {
+      "category": "STATUS_POOLS.prepare",
+      "source": "开工仪式感已就位"
+    },
+    {
+      "category": "STATUS_POOLS.waiting",
+      "source": "等待模型响应"
+    },
+    {
+      "category": "STATUS_POOLS.waiting",
+      "source": "呼叫大脑中，请稍等"
+    },
+    {
+      "category": "STATUS_POOLS.waiting",
+      "source": "信号发射中，等一个回音"
+    },
+    {
+      "category": "STATUS_POOLS.waiting",
+      "source": "灵感正在路上～"
+    },
+    {
+      "category": "STATUS_POOLS.waiting",
+      "source": "竖起耳朵等回复"
+    },
+    {
+      "category": "STATUS_POOLS.waiting",
+      "source": "大脑在咕噜咕噜加载"
+    },
+    {
+      "category": "STATUS_POOLS.waiting",
+      "source": "等它伸个懒腰再开口"
+    },
+    {
+      "category": "STATUS_POOLS.waiting",
+      "source": "模型：来了来了"
+    },
+    {
+      "category": "STATUS_POOLS.waiting",
+      "source": "等一个灵感砸中我"
+    },
+    {
+      "category": "STATUS_POOLS.waiting",
+      "source": "滴——等待连线中"
+    },
+    {
+      "category": "STATUS_POOLS.waiting",
+      "source": "它在组织语言，别催"
+    },
+    {
+      "category": "STATUS_POOLS.waiting",
+      "source": "等它热身完毕"
+    },
+    {
+      "category": "STATUS_POOLS.waiting",
+      "source": "灵感快递派送中"
+    },
+    {
+      "category": "STATUS_POOLS.waiting",
+      "source": "屏住呼吸等回复"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "正在思考"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "嗯……让我想一想"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "脑内风暴进行中"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "思绪咕噜咕噜冒泡"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "灵光集结中～"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "眉头一皱，认真分析"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "左脑右脑一起开会"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "答案正在浮出水面"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "盘一下，盘一下逻辑"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "让子弹再飞一会儿"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "别催别催，在想呢"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "大脑转起来了"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "让我把线索捋一捋"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "脑内跑火车中"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "小脑瓜高速运转"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "让我琢磨琢磨"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "翻翻脑子里的藏书"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "让我嚼一嚼这个问题"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "脑子在煮咖啡，马上好"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "思考的鱼游来了"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "让我康康这里面的门道"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "正在盘逻辑链"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "思绪整理收纳中"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "嗯？有点意思……"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "让思路沉淀一下"
+    },
+    {
+      "category": "STATUS_POOLS.thinking",
+      "source": "脑内弹幕飞速滚动"
+    },
+    {
+      "category": "STATUS_POOLS.review",
+      "source": "整理回复中"
+    },
+    {
+      "category": "STATUS_POOLS.review",
+      "source": "把想法写下来"
+    },
+    {
+      "category": "STATUS_POOLS.review",
+      "source": "组织语言中～"
+    },
+    {
+      "category": "STATUS_POOLS.review",
+      "source": "落笔成文，请稍候"
+    },
+    {
+      "category": "STATUS_POOLS.review",
+      "source": "字斟句酌中"
+    },
+    {
+      "category": "STATUS_POOLS.review",
+      "source": "把答案装进信封里"
+    },
+    {
+      "category": "STATUS_POOLS.review",
+      "source": "遣词造句打磨中"
+    },
+    {
+      "category": "STATUS_POOLS.review",
+      "source": "把思绪码成整整齐齐的字"
+    },
+    {
+      "category": "STATUS_POOLS.review",
+      "source": "奋笔疾书中"
+    },
+    {
+      "category": "STATUS_POOLS.review",
+      "source": "把最好的表达挑出来"
+    },
+    {
+      "category": "STATUS_POOLS.review",
+      "source": "文字排版美容师上线"
+    },
+    {
+      "category": "STATUS_POOLS.review",
+      "source": "收尾润色一下下"
+    },
+    {
+      "category": "STATUS_POOLS.toolResult",
+      "source": "处理工具结果"
+    },
+    {
+      "category": "STATUS_POOLS.toolResult",
+      "source": "看看带回了什么"
+    },
+    {
+      "category": "STATUS_POOLS.toolResult",
+      "source": "消化一下刚到的结果"
+    },
+    {
+      "category": "STATUS_POOLS.toolResult",
+      "source": "结果解读中～"
+    },
+    {
+      "category": "STATUS_POOLS.toolResult",
+      "source": "验收工具的成果"
+    },
+    {
+      "category": "STATUS_POOLS.toolResult",
+      "source": "把线索拼接起来"
+    },
+    {
+      "category": "STATUS_POOLS.toolResult",
+      "source": "战利品清点中"
+    },
+    {
+      "category": "STATUS_POOLS.toolResult",
+      "source": "这份结果有点东西"
+    },
+    {
+      "category": "STATUS_POOLS.toolResult",
+      "source": "把新情报归档"
+    },
+    {
+      "category": "STATUS_POOLS.toolResult",
+      "source": "结果到手，继续前进"
+    },
+    {
+      "category": "STATUS_POOLS.done",
+      "source": "完成啦"
+    },
+    {
+      "category": "STATUS_POOLS.done",
+      "source": "搞定收工～"
+    },
+    {
+      "category": "STATUS_POOLS.done",
+      "source": "任务达成，耶！"
+    },
+    {
+      "category": "STATUS_POOLS.done",
+      "source": "这一轮圆满完成"
+    },
+    {
+      "category": "STATUS_POOLS.done",
+      "source": "顺利抵达终点"
+    },
+    {
+      "category": "STATUS_POOLS.done",
+      "source": "收工！求摸摸奖励"
+    },
+    {
+      "category": "STATUS_POOLS.done",
+      "source": "交差！下一位"
+    },
+    {
+      "category": "STATUS_POOLS.done",
+      "source": "齐活，漂亮收官"
+    },
+    {
+      "category": "STATUS_POOLS.done",
+      "source": "拿下！击掌～"
+    },
+    {
+      "category": "STATUS_POOLS.done",
+      "source": "稳了，满分交卷"
+    },
+    {
+      "category": "STATUS_POOLS.done",
+      "source": "搞定，去喝口水"
+    },
+    {
+      "category": "STATUS_POOLS.done",
+      "source": "完工咯，转个圈圈"
+    },
+    {
+      "category": "STATUS_POOLS.done",
+      "source": "这一轮，我们配合满分"
+    },
+    {
+      "category": "STATUS_POOLS.done",
+      "source": "妥了妥了，收工收工"
+    },
+    {
+      "category": "STATUS_POOLS.failed",
+      "source": "执行失败"
+    },
+    {
+      "category": "STATUS_POOLS.failed",
+      "source": "哎呀，中途卡住了"
+    },
+    {
+      "category": "STATUS_POOLS.failed",
+      "source": "这一步没能走完"
+    },
+    {
+      "category": "STATUS_POOLS.failed",
+      "source": "被小石头绊倒了"
+    },
+    {
+      "category": "STATUS_POOLS.failed",
+      "source": "半路翻车了，揉揉膝盖"
+    },
+    {
+      "category": "STATUS_POOLS.failed",
+      "source": "出了点岔子，缓缓再来"
+    },
+    {
+      "category": "STATUS_POOLS.toolFailed",
+      "source": "工具执行失败"
+    },
+    {
+      "category": "STATUS_POOLS.toolFailed",
+      "source": "工具闹脾气了，哄哄它"
+    },
+    {
+      "category": "STATUS_POOLS.toolFailed",
+      "source": "哎呀，工具掉链子了"
+    },
+    {
+      "category": "STATUS_POOLS.toolFailed",
+      "source": "这个工具今天不太听话"
+    },
+    {
+      "category": "STATUS_POOLS.toolFailed",
+      "source": "工具翻车了，扶起来继续"
+    },
+    {
+      "category": "STATUS_POOLS.toolFailed",
+      "source": "没跑通，再来一次"
+    },
+    {
+      "category": "STATUS_POOLS.toolFailed",
+      "source": "工具：我罢工三秒钟"
+    },
+    {
+      "category": "STATUS_POOLS.toolFailed",
+      "source": "这一步摔了一跤，没事"
+    },
+    {
+      "category": "STATUS_POOLS.maxTokens",
+      "source": "达到输出上限"
+    },
+    {
+      "category": "STATUS_POOLS.maxTokens",
+      "source": "话说到一半被截断了"
+    },
+    {
+      "category": "STATUS_POOLS.maxTokens",
+      "source": "字数用完了，喘口气"
+    },
+    {
+      "category": "STATUS_POOLS.maxTokens",
+      "source": "一口气说太满，缓缓"
+    },
+    {
+      "category": "STATUS_POOLS.interrupted",
+      "source": "执行意外中断"
+    },
+    {
+      "category": "STATUS_POOLS.interrupted",
+      "source": "哎呀，被意外打断了"
+    },
+    {
+      "category": "STATUS_POOLS.interrupted",
+      "source": "半路踩了急刹车"
+    },
+    {
+      "category": "STATUS_POOLS.interrupted",
+      "source": "被迫停下，意犹未尽"
+    },
+    {
+      "category": "STATUS_POOLS.blocked",
+      "source": "等待继续"
+    },
+    {
+      "category": "STATUS_POOLS.blocked",
+      "source": "在这里等你发令"
+    },
+    {
+      "category": "STATUS_POOLS.blocked",
+      "source": "暂停待命，随时出发"
+    },
+    {
+      "category": "STATUS_POOLS.blocked",
+      "source": "蹲一个继续的指令"
+    },
+    {
+      "category": "TOOL_POOLS.read",
+      "source": "正在使用 {tool}"
+    },
+    {
+      "category": "TOOL_POOLS.read",
+      "source": "翻翻 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.read",
+      "source": "读一下 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.read",
+      "source": "让我康康这个文件"
+    },
+    {
+      "category": "TOOL_POOLS.read",
+      "source": "逐行品味 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.read",
+      "source": "翻阅资料中～"
+    },
+    {
+      "category": "TOOL_POOLS.read",
+      "source": "瞄一眼 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.read",
+      "source": "把文件摊开看一看"
+    },
+    {
+      "category": "TOOL_POOLS.read",
+      "source": "认真研读 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.write",
+      "source": "写写写，写 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.write",
+      "source": "下笔中～"
+    },
+    {
+      "category": "TOOL_POOLS.write",
+      "source": "码字呢，别催"
+    },
+    {
+      "category": "TOOL_POOLS.write",
+      "source": "写下 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.write",
+      "source": "落笔成章"
+    },
+    {
+      "category": "TOOL_POOLS.write",
+      "source": "把想法存进 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.write",
+      "source": "开写开写"
+    },
+    {
+      "category": "TOOL_POOLS.write",
+      "source": "存个文件压压惊"
+    },
+    {
+      "category": "TOOL_POOLS.edit",
+      "source": "改改 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.edit",
+      "source": "修修补补中"
+    },
+    {
+      "category": "TOOL_POOLS.edit",
+      "source": "润色一下 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.edit",
+      "source": "改两行，就两行"
+    },
+    {
+      "category": "TOOL_POOLS.edit",
+      "source": "补一刀 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.edit",
+      "source": "动动手指改一改"
+    },
+    {
+      "category": "TOOL_POOLS.edit",
+      "source": "精雕细琢 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.edit",
+      "source": "微调一下下"
+    },
+    {
+      "category": "TOOL_POOLS.shell",
+      "source": "跑跑 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.shell",
+      "source": "敲几行命令试试"
+    },
+    {
+      "category": "TOOL_POOLS.shell",
+      "source": "命令行走起：{hint}"
+    },
+    {
+      "category": "TOOL_POOLS.shell",
+      "source": "使唤终端跑个腿"
+    },
+    {
+      "category": "TOOL_POOLS.shell",
+      "source": "终端全速运转中"
+    },
+    {
+      "category": "TOOL_POOLS.shell",
+      "source": "敲回车！{hint}"
+    },
+    {
+      "category": "TOOL_POOLS.shell",
+      "source": "让命令飞一会儿"
+    },
+    {
+      "category": "TOOL_POOLS.shell",
+      "source": "去终端里探个究竟"
+    },
+    {
+      "category": "TOOL_POOLS.grep",
+      "source": "搜搜 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.grep",
+      "source": "找找匹配：{hint}"
+    },
+    {
+      "category": "TOOL_POOLS.grep",
+      "source": "关键词走你"
+    },
+    {
+      "category": "TOOL_POOLS.grep",
+      "source": "在代码里挖一挖"
+    },
+    {
+      "category": "TOOL_POOLS.grep",
+      "source": "检索小雷达启动"
+    },
+    {
+      "category": "TOOL_POOLS.grep",
+      "source": "顺着 {hint} 追下去"
+    },
+    {
+      "category": "TOOL_POOLS.grep",
+      "source": "掘地三尺找一找"
+    },
+    {
+      "category": "TOOL_POOLS.grep",
+      "source": "过滤筛选中～"
+    },
+    {
+      "category": "TOOL_POOLS.find",
+      "source": "找找文件 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.find",
+      "source": "寻宝中～"
+    },
+    {
+      "category": "TOOL_POOLS.find",
+      "source": "文件在哪里呀"
+    },
+    {
+      "category": "TOOL_POOLS.find",
+      "source": "找啊找啊找文件"
+    },
+    {
+      "category": "TOOL_POOLS.find",
+      "source": "把 {hint} 揪出来"
+    },
+    {
+      "category": "TOOL_POOLS.find",
+      "source": "查找模式中"
+    },
+    {
+      "category": "TOOL_POOLS.ls",
+      "source": "列个清单看看"
+    },
+    {
+      "category": "TOOL_POOLS.ls",
+      "source": "看看目录里有啥"
+    },
+    {
+      "category": "TOOL_POOLS.ls",
+      "source": "目录走起～"
+    },
+    {
+      "category": "TOOL_POOLS.ls",
+      "source": "瞟一眼文件夹"
+    },
+    {
+      "category": "TOOL_POOLS.ls",
+      "source": "数数这里有几个文件"
+    },
+    {
+      "category": "TOOL_POOLS.webSearch",
+      "source": "网上搜搜 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.webSearch",
+      "source": "网络冲浪中"
+    },
+    {
+      "category": "TOOL_POOLS.webSearch",
+      "source": "帮你问问互联网"
+    },
+    {
+      "category": "TOOL_POOLS.webSearch",
+      "source": "搜一圈 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.webSearch",
+      "source": "去外面的世界打听打听"
+    },
+    {
+      "category": "TOOL_POOLS.webSearch",
+      "source": "查找资料中～"
+    },
+    {
+      "category": "TOOL_POOLS.webSearch",
+      "source": "情报收集模式开启"
+    },
+    {
+      "category": "TOOL_POOLS.webFetch",
+      "source": "抓个页面看看"
+    },
+    {
+      "category": "TOOL_POOLS.webFetch",
+      "source": "拉取 {hint}"
+    },
+    {
+      "category": "TOOL_POOLS.webFetch",
+      "source": "扒拉一下网页"
+    },
+    {
+      "category": "TOOL_POOLS.webFetch",
+      "source": "取点内容回来"
+    },
+    {
+      "category": "TOOL_POOLS.webFetch",
+      "source": "打开 {hint} 瞅瞅"
+    },
+    {
+      "category": "TOOL_POOLS.mcp",
+      "source": "连一下外部服务"
+    },
+    {
+      "category": "TOOL_POOLS.mcp",
+      "source": "喊个外援来"
+    },
+    {
+      "category": "TOOL_POOLS.mcp",
+      "source": "接个工具用用"
+    },
+    {
+      "category": "TOOL_POOLS.mcp",
+      "source": "问问插件小助手"
+    },
+    {
+      "category": "TOOL_POOLS.mcp",
+      "source": "外部力量接入中"
+    },
+    {
+      "category": "TOOL_POOLS.memory",
+      "source": "翻翻小本本"
+    },
+    {
+      "category": "TOOL_POOLS.memory",
+      "source": "回想一下之前的事"
+    },
+    {
+      "category": "TOOL_POOLS.memory",
+      "source": "在记忆里挖一挖"
+    },
+    {
+      "category": "TOOL_POOLS.memory",
+      "source": "提取记忆碎片～"
+    },
+    {
+      "category": "TOOL_POOLS.memory",
+      "source": "我们之前的约定是……"
+    },
+    {
+      "category": "TOOL_POOLS.subagent",
+      "source": "派个小弟去跑腿"
+    },
+    {
+      "category": "TOOL_POOLS.subagent",
+      "source": "小助手出动！"
+    },
+    {
+      "category": "TOOL_POOLS.subagent",
+      "source": "交给分身去办"
+    },
+    {
+      "category": "TOOL_POOLS.subagent",
+      "source": "多线作战，分身出击"
+    },
+    {
+      "category": "TOOL_POOLS.subagent",
+      "source": "召唤队友支援"
+    },
+    {
+      "category": "TOOL_POOLS.subagent",
+      "source": "集思广益中～"
+    },
+    {
+      "category": "TOOL_POOLS.todo",
+      "source": "列个待办清单"
+    },
+    {
+      "category": "TOOL_POOLS.todo",
+      "source": "写个小计划"
+    },
+    {
+      "category": "TOOL_POOLS.todo",
+      "source": "待办安排得明明白白"
+    },
+    {
+      "category": "TOOL_POOLS.todo",
+      "source": "打个勾，继续"
+    },
+    {
+      "category": "TOOL_POOLS.todo",
+      "source": "把任务排排坐"
+    },
+    {
+      "category": "TOOL_POOLS.browser",
+      "source": "开个浏览器看看"
+    },
+    {
+      "category": "TOOL_POOLS.browser",
+      "source": "网页操作小能手"
+    },
+    {
+      "category": "TOOL_POOLS.browser",
+      "source": "替你点点页面"
+    },
+    {
+      "category": "TOOL_POOLS.browser",
+      "source": "浏览器跑腿中"
+    },
+    {
+      "category": "TOOL_POOLS.git",
+      "source": "提交一下代码"
+    },
+    {
+      "category": "TOOL_POOLS.git",
+      "source": "版本控制走起"
+    },
+    {
+      "category": "TOOL_POOLS.git",
+      "source": "管管仓库"
+    },
+    {
+      "category": "TOOL_POOLS.git",
+      "source": "给改动安个家"
+    },
+    {
+      "category": "TOOL_POOLS.ask",
+      "source": "问你个事儿"
+    },
+    {
+      "category": "TOOL_POOLS.ask",
+      "source": "请教一下下"
+    },
+    {
+      "category": "TOOL_POOLS.ask",
+      "source": "等等，我需要确认"
+    },
+    {
+      "category": "TOOL_POOLS.ask",
+      "source": "这个问题得你拍板"
+    },
+    {
+      "category": "TOOL_POOLS.generic",
+      "source": "召唤 {tool} 出击"
+    },
+    {
+      "category": "TOOL_POOLS.generic",
+      "source": "{tool} 工作中"
+    },
+    {
+      "category": "TOOL_POOLS.generic",
+      "source": "借助 {tool} 的力量"
+    },
+    {
+      "category": "TOOL_POOLS.generic",
+      "source": "拜托 {tool} 一下"
+    },
+    {
+      "category": "TOOL_POOLS.generic",
+      "source": "{tool}，启动！"
+    },
+    {
+      "category": "TOOL_REMAINING_POOL",
+      "source": "还有 {n} 个工具运行中"
+    },
+    {
+      "category": "TOOL_REMAINING_POOL",
+      "source": "{n} 路并进，分身们还在忙"
+    },
+    {
+      "category": "TOOL_REMAINING_POOL",
+      "source": "还有 {n} 位小助手在加班"
+    },
+    {
+      "category": "TOOL_REMAINING_POOL",
+      "source": "{n} 条战线同时推进中"
+    },
+    {
+      "category": "TOOL_REMAINING_POOL",
+      "source": "另 {n} 个工具在后台跑"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.thinking",
+      "source": "先在脑子里搭个框架"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.thinking",
+      "source": "它在心里打草稿，我垫着脚看"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.thinking",
+      "source": "思路在一颗一颗冒泡"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.thinking",
+      "source": "脑内开会中，都别抢话筒"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.thinking",
+      "source": "先想清楚，再动手不迟"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.thinking",
+      "source": "草稿纸已经画满了"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.thinking",
+      "source": "让我听听它下一步打算"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.thinking",
+      "source": "嗯，方案在成型了"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.writing",
+      "source": "落笔成文，我旁边听着"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.writing",
+      "source": "句子排着队往外走"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.writing",
+      "source": "把想法一句句摆整齐"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.writing",
+      "source": "它在组织语言，我打打气"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.writing",
+      "source": "写回复呢，不催"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.writing",
+      "source": "字斟句酌，快好了"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.reading",
+      "source": "翻资料呢，我保持安静"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.reading",
+      "source": "一行一行读，不跳页"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.reading",
+      "source": "在纸堆里找线索"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.reading",
+      "source": "眼珠子跟着字跑"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.reading",
+      "source": "边读边做记号"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.reading",
+      "source": "翻箱倒柜找重点"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.editing",
+      "source": "动手改起来了，手稳一点"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.editing",
+      "source": "这里补一笔，那边修一修"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.editing",
+      "source": "在改东西，听不到声音才怪"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.editing",
+      "source": "落笔小心，别有错别字"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.editing",
+      "source": "改写的节奏，我听得见"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.editing",
+      "source": "刷刷地改，一行都没跑"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.running",
+      "source": "跑起来了跑起来了"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.running",
+      "source": "命令敲出去，等个回响"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.running",
+      "source": "在跑什么呢，我踮脚看"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.running",
+      "source": "输出开始冒烟了"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.running",
+      "source": "它在跑活，我不吵"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.running",
+      "source": "盯着输出，蹲一个结果"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.running",
+      "source": "这波跑完就靠它了"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.searching",
+      "source": "去外面捞点信息"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.searching",
+      "source": "翻翻记忆库，等我一小会儿"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.searching",
+      "source": "顺着网线找线索"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.searching",
+      "source": "把老账翻出来对一对"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.searching",
+      "source": "情报在路上了"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.searching",
+      "source": "搜索引擎当跑腿"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.git",
+      "source": "版本在往前迈步"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.git",
+      "source": "改动排队上车"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.git",
+      "source": "提交历史在长个子"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.git",
+      "source": "分支合并，神清气爽"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.git",
+      "source": "记录都焊在时间线上"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.delegating",
+      "source": "派了活儿出去，等回话"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.delegating",
+      "source": "清单列好，一件件来"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.delegating",
+      "source": "任务拆开分了组"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.delegating",
+      "source": "手下的伙计在远处跑着"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.delegating",
+      "source": "分工完毕，各司其职"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.browsing",
+      "source": "它在看网页，我偷瞄两眼"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.browsing",
+      "source": "页面一张张翻过去"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.browsing",
+      "source": "网页里翻答案呢"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.browsing",
+      "source": "这网速，我先歇会儿"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.generic",
+      "source": "这波活儿，我陪着"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.generic",
+      "source": "又开工了，我盯梢"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.generic",
+      "source": "它忙它的，我守着"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.generic",
+      "source": "不打扰，就安静待着"
+    },
+    {
+      "category": "WHISPER_CATEGORY_POOLS.generic",
+      "source": "有活儿就有我"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.pass",
+      "source": "全绿！亮瞎我眼了"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.pass",
+      "source": "测试过了，击掌～"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.pass",
+      "source": "绿灯一排排，看着就舒坦"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.pass",
+      "source": "稳了稳了，这波稳得很"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.pass",
+      "source": "全绿，奖励自己一口小鱼干"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.pass",
+      "source": "这波测试，赢得干脆"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.fail",
+      "source": "哎呀，踩到小石子了"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.fail",
+      "source": "这报错我盯上它了"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.fail",
+      "source": "别慌，先看它在喊什么"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.fail",
+      "source": "修好它，今天才不算白干"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.fail",
+      "source": "又一次踩坑，老熟人了"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.fail",
+      "source": "问题不大，就是有点问题"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.done",
+      "source": "搞定，收工～"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.done",
+      "source": "又翻过一页，踏实"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.done",
+      "source": "努力没白费，开心"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.done",
+      "source": "任务清零，舒服"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.done",
+      "source": "攻下一城，转个圈"
+    },
+    {
+      "category": "WHISPER_RESULT_POOLS.done",
+      "source": "收工收工，今天圆满"
+    }
+  ]
+}

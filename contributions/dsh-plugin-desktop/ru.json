@@ -1920,6 +1920,11 @@
       "selector": ".dshDesktopModePopover",
       "source": "Background job failed",
       "target": "Ошибка фоновой задачи"
+    },
+    {
+      "selector": "p[role=\"alert\"]",
+      "source": "{provider} ({alias}) не загрузился: model \"{model}\" declares native image input, so its \"({alias})\" entry no longer applies. Select the same model from the provider group without \"({alias})\".",
+      "target": "Не удалось запустить {provider} ({alias}): модель «{model}» принимает изображения напрямую, поэтому вариант «({alias})» для неё неприменим. Выберите ту же модель в группе провайдера без записи «({alias})»."
     }
   ],
   "source": {

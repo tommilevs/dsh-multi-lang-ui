@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.13
+
+- Translate all 293 built-in pet chatter lines in English and Russian, including status, tool, and whisper bubbles.
+- Add a versioned source snapshot and regression checks for complete pet chatter coverage, exact placeholders, and Chinese-free targets.
+
+## 0.1.12
+
+- Translate the remaining pet dialogue and composite affinity ranks in English and Russian.
+- Add translations for all visible built-in MCP catalogue descriptions, Server Deck and Browser Skill home-tab titles, and the mixed-language vision-model fallback error.
+- Reset the MCP floating button's persisted dragged position once so its default bottom-right placement is restored.
+- Add focused regression tests for the screenshot-reported strings, dynamic model IDs, and the one-time button-position migration.
+
 ## 0.1.11
 
 - Translate the Server Deck native sidebar tab, standalone-panel controls, common API errors, SSH failure messages, and delete confirmation.

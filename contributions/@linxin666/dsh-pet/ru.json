@@ -253,6 +253,51 @@
     },
     {
       "selector": "[data-dsh-pet-root]",
+      "source": "亲密度 幼鲸",
+      "target": "Уровень привязанности: Детёныш кита"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "亲密度 伙伴",
+      "target": "Уровень привязанности: Спутник"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "亲密度 挚友",
+      "target": "Уровень привязанности: Близкий друг"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "亲密度 深海羁绊",
+      "target": "Уровень привязанности: Связь глубин"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "亲密度 心有灵犀",
+      "target": "Уровень привязанности: Родственная душа"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "亲密度 传说羁绊",
+      "target": "Уровень привязанности: Легендарная связь"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "亲密度 神话羁绊",
+      "target": "Уровень привязанности: Мифическая связь"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "亲密度 永恒之契",
+      "target": "Уровень привязанности: Вечный союз"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "亲密度 鲸生共渡",
+      "target": "Уровень привязанности: Спутник на всю жизнь"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
       "source": "{points} 点",
       "target": "Баллы: {points}"
     },
@@ -285,6 +330,16 @@
       "selector": "[data-dsh-pet-root]",
       "source": "深海羁绊",
       "target": "Связь глубин"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "囤粮 +1，今天也有好好被爱！",
+      "target": "Запасы корма +1 — и сегодня меня любят!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "咕噜咕噜～被摸摸好舒服！",
+      "target": "Буль-буль~ Как приятно, когда меня гладят!"
     },
     {
       "selector": "[data-dsh-pet-root]",
@@ -645,6 +700,1471 @@
       "selector": ".KApx_W_card",
       "source": "OUO Neko",
       "target": "Кошка OUO"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "哎呀，踩到小石子了",
+      "target": "Ой, наступила на камешек."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "竖起耳朵等回复",
+      "target": "Навострила ушки и ждёт ответа."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这波活儿，我陪着",
+      "target": "Я побуду рядом, пока ты с этим справляешься."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "Уровень привязанности: 伙伴",
+      "target": "Уровень привязанности: Спутник"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "准备开始",
+      "target": "Готовлюсь"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "撸起袖子开工啦",
+      "target": "Закатав рукава, за работу!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "新一轮，出发～",
+      "target": "Новый раунд, поехали~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "打起精神，开干！",
+      "target": "Собравшись с духом, за дело!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "整理一下桌面，开始吧",
+      "target": "Навожу порядок, начинаем"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "氧气充满，下潜开始～",
+      "target": "Запас кислорода пополнен, ныряю~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "热身完毕，跃跃欲试",
+      "target": "Размялась, готова"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "开工仪式感已就位",
+      "target": "Рабочий настрой уже создан."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "呼叫大脑中，请稍等",
+      "target": "Вызываю мозг, подожди"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "信号发射中，等一个回音",
+      "target": "Сигнал отправлен, жду эхо"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "灵感正在路上～",
+      "target": "Вдохновение в пути~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "大脑在咕噜咕噜加载",
+      "target": "Мозг булькает и грузится"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "等它伸个懒腰再开口",
+      "target": "Жду, пока потянется"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "模型：来了来了",
+      "target": "Модель: сейчас отвечаю!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "等一个灵感砸中我",
+      "target": "Жду, когда меня осенит."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "滴——等待连线中",
+      "target": "Бип—жду соединения"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "它在组织语言，别催",
+      "target": "Оно собирает слова, не торопи"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "等它热身完毕",
+      "target": "Жду, пока разминка закончится"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "灵感快递派送中",
+      "target": "Доставка вдохновения"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "屏住呼吸等回复",
+      "target": "Задержала дыхание, жду ответ"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "正在思考",
+      "target": "Думаю"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "嗯……让我想一想",
+      "target": "Хм... дай подумать"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "脑内风暴进行中",
+      "target": "Мозговой штурм в процессе"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "思绪咕噜咕噜冒泡",
+      "target": "Мысли пузырятся"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "灵光集结中～",
+      "target": "Собираю искры~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "眉头一皱，认真分析",
+      "target": "Хмурюсь, анализирую серьёзно"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "左脑右脑一起开会",
+      "target": "Левое и правое полушарие на совещании"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "答案正在浮出水面",
+      "target": "Ответ всплывает"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "盘一下，盘一下逻辑",
+      "target": "Разбираю логику"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让子弹再飞一会儿",
+      "target": "Пусть пуля полетит ещё"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "别催别催，在想呢",
+      "target": "Не торопи, думаю"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "大脑转起来了",
+      "target": "Мозг крутится"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让我把线索捋一捋",
+      "target": "Дай-ка соберу все зацепки."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "脑内跑火车中",
+      "target": "Мозговой поезд едет"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "小脑瓜高速运转",
+      "target": "Маленький мозг работает быстро"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让我琢磨琢磨",
+      "target": "Дай поразмышляю"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "翻翻脑子里的藏书",
+      "target": "Листаю библиотеку в голове"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让我嚼一嚼这个问题",
+      "target": "Дай переварить этот вопрос."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "脑子在煮咖啡，马上好",
+      "target": "Мозг варит кофе, скоро будет готово"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "思考的鱼游来了",
+      "target": "Рыбка мысли подплыла"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让我康康这里面的门道",
+      "target": "Дай загляну в суть дела"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "正在盘逻辑链",
+      "target": "Прорабатываю цепочку логики"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "思绪整理收纳中",
+      "target": "Навожу порядок в мыслях"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "嗯？有点意思……",
+      "target": "Хм? Это интересно..."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让思路沉淀一下",
+      "target": "Дам мыслям осесть"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "脑内弹幕飞速滚动",
+      "target": "В голове быстро мелькают комментарии."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "整理回复中",
+      "target": "Формирую ответ"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把想法写下来",
+      "target": "Записываю свои идеи"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "组织语言中～",
+      "target": "Расставляю слова по местам~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "落笔成文，请稍候",
+      "target": "Переношу мысли на бумагу, подожди"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "字斟句酌中",
+      "target": "Взвешиваю каждое слово"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把答案装进信封里",
+      "target": "Укладываю ответ в конверт"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "遣词造句打磨中",
+      "target": "Шлифую формулировки"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把思绪码成整整齐齐的字",
+      "target": "Раскладываю мысли по полочкам"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "奋笔疾书中",
+      "target": "Пишу не покладая рук."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把最好的表达挑出来",
+      "target": "Выбираю лучший вариант"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "文字排版美容师上线",
+      "target": "Косметолог текста на связи"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "收尾润色一下下",
+      "target": "Чуть-чуть доведу до блеска"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "处理工具结果",
+      "target": "Обрабатываю результаты инструментов"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "看看带回了什么",
+      "target": "Смотрю, что вернулось"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "消化一下刚到的结果",
+      "target": "Перевариваю свежие результаты"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "结果解读中～",
+      "target": "Разбираюсь в результатах~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "验收工具的成果",
+      "target": "Проверяю работу инструмента"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把线索拼接起来",
+      "target": "Собираю зацепки воедино."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "战利品清点中",
+      "target": "Считаю добычу"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这份结果有点东西",
+      "target": "В этом результате есть что-то интересное"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把新情报归档",
+      "target": "Архивирую новую информацию"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "结果到手，继续前进",
+      "target": "Результаты получены, двигаемся дальше"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "完成啦",
+      "target": "Готово!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "搞定收工～",
+      "target": "Всё закончено~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "任务达成，耶！",
+      "target": "Задача выполнена, ура!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这一轮圆满完成",
+      "target": "Этот раунд пройден успешно"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "顺利抵达终点",
+      "target": "Добралась до финиша!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "收工！求摸摸奖励",
+      "target": "Готово! Погладь меня в награду."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "交差！下一位",
+      "target": "Сдано! Следующий, пожалуйста."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "齐活，漂亮收官",
+      "target": "Всё готово, прекрасное завершение."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "拿下！击掌～",
+      "target": "Сделано! Давай пять~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "稳了，满分交卷",
+      "target": "Уверенно и точно, сдаю на пятёрку."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "搞定，去喝口水",
+      "target": "Готово, пойду выпью водички."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "完工咯，转个圈圈",
+      "target": "Готово! Кружусь-кружусь."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这一轮，我们配合满分",
+      "target": "В этом раунде мы сработались на отлично."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "妥了妥了，收工收工",
+      "target": "Всё в порядке, всё в порядке, завершаем, завершаем."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "执行失败",
+      "target": "Ошибка выполнения."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "哎呀，中途卡住了",
+      "target": "Ой, застряла по дороге."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这一步没能走完",
+      "target": "Не смогла завершить этот шаг."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "被小石头绊倒了",
+      "target": "Споткнулась о камешек."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "半路翻车了，揉揉膝盖",
+      "target": "Ой, на полпути споткнулась — потираю коленку."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "出了点岔子，缓缓再来",
+      "target": "Небольшая заминка, выдохнем и попробуем снова."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "工具执行失败",
+      "target": "Ошибка выполнения инструмента."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "工具闹脾气了，哄哄它",
+      "target": "Инструмент капризничает, уговорим его."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "哎呀，工具掉链子了",
+      "target": "Ой, инструмент подвёл."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这个工具今天不太听话",
+      "target": "Этот инструмент сегодня не очень послушный."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "工具翻车了，扶起来继续",
+      "target": "Инструмент упал, поднимаем и продолжаем."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "没跑通，再来一次",
+      "target": "Не получилось, пробуем ещё раз."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "工具：我罢工三秒钟",
+      "target": "Инструмент: Я на забастовке три секунды."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这一步摔了一跤，没事",
+      "target": "Споткнулась на этом шаге, но всё в порядке."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "达到输出上限",
+      "target": "Достигнут лимит вывода."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "话说到一半被截断了",
+      "target": "Оборвалась на полуслове."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "字数用完了，喘口气",
+      "target": "Слова закончились, переведу дух."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "一口气说太满，缓缓",
+      "target": "Сказала слишком много за раз, замедляюсь."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "执行意外中断",
+      "target": "Выполнение неожиданно прервано."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "哎呀，被意外打断了",
+      "target": "Ой, неожиданно прервалась."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "半路踩了急刹车",
+      "target": "Резко затормозила по дороге."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "被迫停下，意犹未尽",
+      "target": "Пришлось остановиться, но хочется ещё."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "等待继续",
+      "target": "Жду продолжения."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "在这里等你发令",
+      "target": "Жду здесь твоей команды."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "暂停待命，随时出发",
+      "target": "Пока на паузе, но готова продолжить в любой момент."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "蹲一个继续的指令",
+      "target": "Жду команду «продолжить»."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "正在使用 {tool}",
+      "target": "Использую {tool}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "翻翻 {hint}",
+      "target": "Листаю {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "读一下 {hint}",
+      "target": "Читаю {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让我康康这个文件",
+      "target": "Загляну в этот файл"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "逐行品味 {hint}",
+      "target": "Наслаждаюсь {hint} построчно"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "翻阅资料中～",
+      "target": "Листаю материалы~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "瞄一眼 {hint}",
+      "target": "Бегло смотрю на {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把文件摊开看一看",
+      "target": "Раскладываю файл, чтобы посмотреть"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "认真研读 {hint}",
+      "target": "Внимательно изучаю {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "写写写，写 {hint}",
+      "target": "Пишу, пишу, пишу {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "下笔中～",
+      "target": "Беру перо~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "码字呢，别催",
+      "target": "Печатаю, не торопи"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "写下 {hint}",
+      "target": "Записываю {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "落笔成章",
+      "target": "Слова складываются в текст"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把想法存进 {hint}",
+      "target": "Сохраняю идеи в {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "开写开写",
+      "target": "Начинаем писать"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "存个文件压压惊",
+      "target": "Сохраняю файл, чтобы успокоиться"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "改改 {hint}",
+      "target": "Подправляю {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "修修补补中",
+      "target": "Подлатываю"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "润色一下 {hint}",
+      "target": "Шлифую {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "改两行，就两行",
+      "target": "Всего две строки, только две"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "补一刀 {hint}",
+      "target": "Ещё одна правка в {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "动动手指改一改",
+      "target": "Чуть-чуть поправлю пальчиками"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "精雕细琢 {hint}",
+      "target": "Тщательно дорабатываю {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "微调一下下",
+      "target": "Чуть-чуть подправлю"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "跑跑 {hint}",
+      "target": "Запускаю {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "敲几行命令试试",
+      "target": "Ввожу пару команд для проверки"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "命令行走起：{hint}",
+      "target": "Время команд: {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "使唤终端跑个腿",
+      "target": "Отправляю терминал по поручению"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "终端全速运转中",
+      "target": "Терминал работает на полной скорости"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "敲回车！{hint}",
+      "target": "Жми Enter! {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让命令飞一会儿",
+      "target": "Пусть команда полетит немного"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "去终端里探个究竟",
+      "target": "Загляну в терминал"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "搜搜 {hint}",
+      "target": "Ищу {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "找找匹配：{hint}",
+      "target": "Ищу совпадения: {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "关键词走你",
+      "target": "Вот и ключевое слово"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "在代码里挖一挖",
+      "target": "Копну в коде"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "检索小雷达启动",
+      "target": "Радар поиска активен"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "顺着 {hint} 追下去",
+      "target": "Иду по {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "掘地三尺找一找",
+      "target": "Коплю поглубже"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "过滤筛选中～",
+      "target": "Фильтрую и сортирую~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "找找文件 {hint}",
+      "target": "Ищу файл {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "寻宝中～",
+      "target": "Ищу сокровища~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "文件在哪里呀",
+      "target": "Где же файл?"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "找啊找啊找文件",
+      "target": "Ищу, ищу файлы"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把 {hint} 揪出来",
+      "target": "Вытаскиваю {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "查找模式中",
+      "target": "Режим поиска"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "列个清单看看",
+      "target": "Составлю список"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "看看目录里有啥",
+      "target": "Смотрю, что в каталоге"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "目录走起～",
+      "target": "Заглянем в каталог~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "瞟一眼文件夹",
+      "target": "Беглый взгляд на папку"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "数数这里有几个文件",
+      "target": "Считаю файлы здесь"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "网上搜搜 {hint}",
+      "target": "Ищу в сети {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "网络冲浪中",
+      "target": "Сёрфлю в интернете"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "帮你问问互联网",
+      "target": "Спрошу интернет за тебя"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "搜一圈 {hint}",
+      "target": "Ищу повсюду {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "去外面的世界打听打听",
+      "target": "Узнаю в большом мире"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "查找资料中～",
+      "target": "Ищу информацию~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "情报收集模式开启",
+      "target": "Режим сбора разведданных"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "抓个页面看看",
+      "target": "Заберу страницу"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "拉取 {hint}",
+      "target": "Получаю {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "扒拉一下网页",
+      "target": "Перебираю веб-страницу"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "取点内容回来",
+      "target": "Принесу немного контента"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "打开 {hint} 瞅瞅",
+      "target": "Открою {hint} и гляну"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "连一下外部服务",
+      "target": "Подключаюсь к внешнему сервису"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "喊个外援来",
+      "target": "Призову подмогу"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "接个工具用用",
+      "target": "Подключу инструмент"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "问问插件小助手",
+      "target": "Спрошу плагин-помощника"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "外部力量接入中",
+      "target": "Подключаю внешнюю силу"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "翻翻小本本",
+      "target": "Листаю свой блокнотик"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "回想一下之前的事",
+      "target": "Вспоминаю прошлое"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "在记忆里挖一挖",
+      "target": "Копну в памяти"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "提取记忆碎片～",
+      "target": "Достаю осколки памяти~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "我们之前的约定是……",
+      "target": "Наше прошлое обещание было..."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "派个小弟去跑腿",
+      "target": "Отправляю помощника за покупками"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "小助手出动！",
+      "target": "Помощник, вперёд!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "交给分身去办",
+      "target": "Отдаю это моему клону"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "多线作战，分身出击",
+      "target": "Бой на нескольких фронтах, клоны в деле!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "召唤队友支援",
+      "target": "Призываю напарников на помощь"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "集思广益中～",
+      "target": "Мозговой штурм в процессе~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "列个待办清单",
+      "target": "Составляю список дел"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "写个小计划",
+      "target": "Пишу небольшой план"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "待办安排得明明白白",
+      "target": "Дела расписаны идеально"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "打个勾，继续",
+      "target": "Отмечаю и продолжаю"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把任务排排坐",
+      "target": "Расставляю задачи по порядку"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "开个浏览器看看",
+      "target": "Открываю браузер, чтобы посмотреть"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "网页操作小能手",
+      "target": "Мастер веб-операций"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "替你点点页面",
+      "target": "Кликаю по страницам за тебя"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "浏览器跑腿中",
+      "target": "Браузер выполняет поручения"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "提交一下代码",
+      "target": "Коммичу код"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "版本控制走起",
+      "target": "Контроль версий, поехали"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "管管仓库",
+      "target": "Управляю репозиторием"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "给改动安个家",
+      "target": "Даю изменениям дом"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "问你个事儿",
+      "target": "Хочу тебя спросить"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "请教一下下",
+      "target": "Просто уточню"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "等等，我需要确认",
+      "target": "Подожди, мне нужно уточнить"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这个问题得你拍板",
+      "target": "Это решение за тобой"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "召唤 {tool} 出击",
+      "target": "Призываю {tool} в бой"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "{tool} 工作中",
+      "target": "{tool} работает"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "借助 {tool} 的力量",
+      "target": "Использую силу {tool}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "拜托 {tool} 一下",
+      "target": "Просьба к {tool}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "{tool}，启动！",
+      "target": "{tool}, старт!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "还有 {n} 个工具运行中",
+      "target": "Ещё {n} инструментов работают"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "{n} 路并进，分身们还在忙",
+      "target": "{n} направлений, клоны всё ещё заняты"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "还有 {n} 位小助手在加班",
+      "target": "{n} помощника ещё работают сверхурочно"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "{n} 条战线同时推进中",
+      "target": "{n} фронтов продвигаются одновременно"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "另 {n} 个工具在后台跑",
+      "target": "Ещё {n} инструментов работают в фоне"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "先在脑子里搭个框架",
+      "target": "Сначала выстраиваю каркас в голове"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "它在心里打草稿，我垫着脚看",
+      "target": "Модель набрасывает черновик, а я на цыпочках подглядываю."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "思路在一颗一颗冒泡",
+      "target": "Идеи всплывают одна за другой"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "脑内开会中，都别抢话筒",
+      "target": "Совещание в голове, не перебивайте"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "先想清楚，再动手不迟",
+      "target": "Сначала подумай, потом можно и действовать"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "草稿纸已经画满了",
+      "target": "Черновик уже весь исписан"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让我听听它下一步打算",
+      "target": "Дай послушать, что оно дальше задумало"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "嗯，方案在成型了",
+      "target": "Мм, план обретает форму"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "落笔成文，我旁边听着",
+      "target": "Слова превращаются в текст, я слушаю рядом"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "句子排着队往外走",
+      "target": "Предложения выстраиваются в очередь"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把想法一句句摆整齐",
+      "target": "Раскладываю идеи по полочкам, по одному предложению"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "它在组织语言，我打打气",
+      "target": "Оно подбирает слова, я подбадриваю"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "写回复呢，不催",
+      "target": "Пишу ответ, не тороплю"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "字斟句酌，快好了",
+      "target": "Подбираю каждое слово, скоро будет готово"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "翻资料呢，我保持安静",
+      "target": "Листаю материалы, я буду тихонько"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "一行一行读，不跳页",
+      "target": "Читаю построчно, не перескакиваю"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "在纸堆里找线索",
+      "target": "Ищу подсказки в куче бумаг"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "眼珠子跟着字跑",
+      "target": "Глаза бегают по строчкам"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "边读边做记号",
+      "target": "Читаю и делаю пометки"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "翻箱倒柜找重点",
+      "target": "Перебираю всё подряд, ищу главное"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "动手改起来了，手稳一点",
+      "target": "Начинаю править, руки не дрожат"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这里补一笔，那边修一修",
+      "target": "Тут добавлю, там поправлю"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "在改东西，听不到声音才怪",
+      "target": "Правлю, конечно, не слышу тебя"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "落笔小心，别有错别字",
+      "target": "Пишу аккуратно, без опечаток"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "改写的节奏，我听得见",
+      "target": "Слышу ритм переписывания"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "刷刷地改，一行都没跑",
+      "target": "Быстро правлю, ни строчки не пропущено"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "跑起来了跑起来了",
+      "target": "Запускается, запускается"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "命令敲出去，等个回响",
+      "target": "Команда отправлена, жду отклика"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "在跑什么呢，我踮脚看",
+      "target": "Что запускается? Я на цыпочках смотрю"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "输出开始冒烟了",
+      "target": "Вывод уже дымится"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "它在跑活，我不吵",
+      "target": "Оно работает, я не буду шуметь"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "盯着输出，蹲一个结果",
+      "target": "Смотрю на вывод, жду результат"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这波跑完就靠它了",
+      "target": "Как только закончится, всё на нём"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "去外面捞点信息",
+      "target": "Иду порыбачить информацию"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "翻翻记忆库，等我一小会儿",
+      "target": "Заглядываю в память, подожди чуть-чуть"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "顺着网线找线索",
+      "target": "Иду по ниточке, ищу подсказки"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把老账翻出来对一对",
+      "target": "Достаю старые записи, чтобы сверить"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "情报在路上了",
+      "target": "Инфа уже в пути"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "搜索引擎当跑腿",
+      "target": "Поисковик, беги по делам"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "版本在往前迈步",
+      "target": "Версии делают шаг вперёд"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "改动排队上车",
+      "target": "Изменения выстроились в очередь"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "提交历史在长个子",
+      "target": "История коммитов растёт"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "分支合并，神清气爽",
+      "target": "Ветки слиты, свежо на душе"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "记录都焊在时间线上",
+      "target": "Записи приварены к таймлайну"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "派了活儿出去，等回话",
+      "target": "Работа делегирована, жду ответа"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "清单列好，一件件来",
+      "target": "Список готов, по одному"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "任务拆开分了组",
+      "target": "Задачи разбиты и сгруппированы"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "手下的伙计在远处跑着",
+      "target": "Моя команда бегает вдали"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "分工完毕，各司其职",
+      "target": "Роли распределены, все на местах"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "它在看网页，我偷瞄两眼",
+      "target": "Оно листает, я подглядываю"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "页面一张张翻过去",
+      "target": "Страницы листаются одна за другой"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "网页里翻答案呢",
+      "target": "Ищу ответы в вебе"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这网速，我先歇会儿",
+      "target": "Такая скорость... отдохну чуть-чуть"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "又开工了，我盯梢",
+      "target": "Снова за работу, я слежу"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "它忙它的，我守着",
+      "target": "Оно занято, я на страже"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "不打扰，就安静待着",
+      "target": "Без помех, просто тихо сижу"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "有活儿就有我",
+      "target": "Есть работа — я тут"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "全绿！亮瞎我眼了",
+      "target": "Всё зелёное! Сияет"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "测试过了，击掌～",
+      "target": "Тесты прошли, пять~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "绿灯一排排，看着就舒坦",
+      "target": "Ряды зелёных огней, так успокаивает"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "稳了稳了，这波稳得很",
+      "target": "Уверенно, уверенно, очень надёжно"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "全绿，奖励自己一口小鱼干",
+      "target": "Всё зелёное, угощу себя рыбкой"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这波测试，赢得干脆",
+      "target": "Чистая победа в этих тестах"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这报错我盯上它了",
+      "target": "Я прицелилась в эту ошибку"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "别慌，先看它在喊什么",
+      "target": "Не паникуй, послушай, что оно говорит"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "修好它，今天才不算白干",
+      "target": "Почини, иначе день пропал"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "又一次踩坑，老熟人了",
+      "target": "Снова яма, старый знакомый"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "问题不大，就是有点问题",
+      "target": "Небольшая проблема, но всё же проблема"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "搞定，收工～",
+      "target": "Готово, закрываю~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "又翻过一页，踏实",
+      "target": "Ещё страница перевернута, спокойно"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "努力没白费，开心",
+      "target": "Усилия окупились, рада"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "任务清零，舒服",
+      "target": "Список задач пуст, комфортно"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "攻下一城，转个圈",
+      "target": "Город взят, кружусь от радости"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "收工收工，今天圆满",
+      "target": "Работа окончена, отличный день!"
     }
   ]
 }

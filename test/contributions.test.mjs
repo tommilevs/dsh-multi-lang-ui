@@ -49,6 +49,7 @@ test('accepts every established plugin DOM root', () => {
     '[data-dsh-plugin="usage"]',
     '[data-dsh-plugin="session-archive"] .title',
     '[data-dsh-pet-root]',
+    '[data-dockkit-tab-title]',
     '#settings-pet-pet',
     'section[aria-labelledby="vision-title"]',
     'section[aria-labelledby="compact-title"]',

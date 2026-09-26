@@ -10,6 +10,7 @@
   "namespaces": {},
   "dom": [
     { "selector": "[data-sidebar-right-panel] [data-dockkit-strip] [role=\"tab\"][data-dockkit-tab] [data-dockkit-tab-title]", "source": "服务器", "target": "Servers" },
+    { "selector": "[data-dockkit-tab-title]", "source": "服务器", "target": "Servers" },
     { "selector": "[data-serverdeck-host]", "source": "服务器", "target": "Servers" },
     { "selector": "[data-serverdeck-host]", "source": "收起服务器面板", "target": "Collapse the server panel" },
     { "selector": "[data-serverdeck-host]", "source": "展开服务器面板", "target": "Expand the server panel" },

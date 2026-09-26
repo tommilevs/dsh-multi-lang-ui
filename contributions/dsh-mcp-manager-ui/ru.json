@@ -1341,6 +1341,36 @@
       "target": "Требуются локальные npx и Node.js 20 или новее"
     },
     {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "免密限额；可添加 API Key 提升额度",
+      "target": "Бесплатный лимит без API-ключа; добавьте ключ, чтобы увеличить квоту"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "免密限额（Search / Extract）；可切换免费账号 API Key",
+      "target": "Бесплатный лимит (поиск / извлечение); можно использовать API-ключ бесплатного аккаунта"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "免密限额（Search / Scrape / Parse）；可添加 API Key",
+      "target": "Бесплатный лимит (поиск / загрузка страниц / разбор); можно добавить API-ключ"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "浏览器调试、网络检查与性能分析",
+      "target": "Отладка браузера, проверка сети и анализ производительности"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "本地 npx；需要 Node.js 与 Chrome",
+      "target": "Локальный запуск через npx; требуются Node.js и Chrome"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "本地 npx；需要 Node.js 20+",
+      "target": "Локальный запуск через npx; требуется Node.js 20 или новее"
+    },
+    {
       "selector": ".dsh-mcp-overlay",
       "source": "{n} 个 MCP: {names}",
       "target": "Серверов MCP: {n} — {names}"
@@ -2244,6 +2274,36 @@
       "selector": ".dsh-mcp-overlay",
       "source": "本地 npx / Node.js 20+",
       "target": "Требуются локальные npx и Node.js 20 или новее"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "免密限额；可添加 API Key 提升额度",
+      "target": "Бесплатный лимит без API-ключа; добавьте ключ, чтобы увеличить квоту"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "免密限额（Search / Extract）；可切换免费账号 API Key",
+      "target": "Бесплатный лимит (поиск / извлечение); можно использовать API-ключ бесплатного аккаунта"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "免密限额（Search / Scrape / Parse）；可添加 API Key",
+      "target": "Бесплатный лимит (поиск / загрузка страниц / разбор); можно добавить API-ключ"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "浏览器调试、网络检查与性能分析",
+      "target": "Отладка браузера, проверка сети и анализ производительности"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "本地 npx；需要 Node.js 与 Chrome",
+      "target": "Локальный запуск через npx; требуются Node.js и Chrome"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "本地 npx；需要 Node.js 20+",
+      "target": "Локальный запуск через npx; требуется Node.js 20 или новее"
     },
     {
       "selector": ".dsh-mcp-overlay",

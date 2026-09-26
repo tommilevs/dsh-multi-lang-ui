@@ -15,6 +15,11 @@
       "target": "Серверы"
     },
     {
+      "selector": "[data-dockkit-tab-title]",
+      "source": "服务器",
+      "target": "Серверы"
+    },
+    {
       "selector": "[data-serverdeck-host]",
       "source": "服务器",
       "target": "Серверы"

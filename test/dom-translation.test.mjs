@@ -83,6 +83,7 @@ test('translates a changing provider/model error while preserving identifiers', 
 test('runtime DOM selector guard accepts the plugin manager panel root', () => {
   assert.equal(isSafeDomSelector('section[data-plugin-panel]'), true)
   assert.equal(isSafeDomSelector('section[data-plugin-panel] .title'), true)
+  assert.equal(isSafeDomSelector('[data-dockkit-tab-title]'), true)
   assert.equal(isSafeDomSelector('section[data-plugin-panel] body'), false)
 })
 
