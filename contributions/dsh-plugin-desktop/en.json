@@ -273,6 +273,1776 @@
       "selector": ".zOa2rq_navCell",
       "source": "Skin Center",
       "target": "Skin Center"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Remote control",
+      "target": "Remote control"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Remote control",
+      "target": "Remote control"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Remote control",
+      "target": "Remote control"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "New feature",
+      "target": "New feature"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "New feature",
+      "target": "New feature"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "New feature",
+      "target": "New feature"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Saving phone connection settings…",
+      "target": "Saving phone connection settings…"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Saving phone connection settings…",
+      "target": "Saving phone connection settings…"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Saving phone connection settings…",
+      "target": "Saving phone connection settings…"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Phone connection could not start. Select Retry loading to try again. If it still fails, check the logs.",
+      "target": "Phone connection could not start. Select Retry loading to try again. If it still fails, check the logs."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Phone connection could not start. Select Retry loading to try again. If it still fails, check the logs.",
+      "target": "Phone connection could not start. Select Retry loading to try again. If it still fails, check the logs."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Phone connection could not start. Select Retry loading to try again. If it still fails, check the logs.",
+      "target": "Phone connection could not start. Select Retry loading to try again. If it still fails, check the logs."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Retry loading",
+      "target": "Retry loading"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Retry loading",
+      "target": "Retry loading"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Retry loading",
+      "target": "Retry loading"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Could not save phone connection settings. Please try again.",
+      "target": "Could not save phone connection settings. Please try again."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Could not save phone connection settings. Please try again.",
+      "target": "Could not save phone connection settings. Please try again."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Could not save phone connection settings. Please try again.",
+      "target": "Could not save phone connection settings. Please try again."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Phone connection settings saved.",
+      "target": "Phone connection settings saved."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Phone connection settings saved.",
+      "target": "Phone connection settings saved."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Phone connection settings saved.",
+      "target": "Phone connection settings saved."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Agents-Anywhere",
+      "target": "Agents-Anywhere"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Agents-Anywhere",
+      "target": "Agents-Anywhere"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Agents-Anywhere",
+      "target": "Agents-Anywhere"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Use Agents-Anywhere to access DSH on this computer from your phone or a browser.",
+      "target": "Use Agents-Anywhere to access DSH on this computer from your phone or a browser."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Use Agents-Anywhere to access DSH on this computer from your phone or a browser.",
+      "target": "Use Agents-Anywhere to access DSH on this computer from your phone or a browser."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Use Agents-Anywhere to access DSH on this computer from your phone or a browser.",
+      "target": "Use Agents-Anywhere to access DSH on this computer from your phone or a browser."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Turn off phone connection",
+      "target": "Turn off phone connection"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Turn off phone connection",
+      "target": "Turn off phone connection"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Turn off phone connection",
+      "target": "Turn off phone connection"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Do not use Agents-Anywhere to access this computer from a phone or browser.",
+      "target": "Do not use Agents-Anywhere to access this computer from a phone or browser."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Do not use Agents-Anywhere to access this computer from a phone or browser.",
+      "target": "Do not use Agents-Anywhere to access this computer from a phone or browser."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Do not use Agents-Anywhere to access this computer from a phone or browser.",
+      "target": "Do not use Agents-Anywhere to access this computer from a phone or browser."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Turn on phone connection",
+      "target": "Turn on phone connection"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Turn on phone connection",
+      "target": "Turn on phone connection"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Turn on phone connection",
+      "target": "Turn on phone connection"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "After enabling, open Phone connection in the sidebar to finish setup.",
+      "target": "After enabling, open Phone connection in the sidebar to finish setup."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "After enabling, open Phone connection in the sidebar to finish setup.",
+      "target": "After enabling, open Phone connection in the sidebar to finish setup."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "After enabling, open Phone connection in the sidebar to finish setup.",
+      "target": "After enabling, open Phone connection in the sidebar to finish setup."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Beta",
+      "target": "Beta"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Beta",
+      "target": "Beta"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Beta",
+      "target": "Beta"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Desktop settings",
+      "target": "Desktop settings"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Desktop settings",
+      "target": "Desktop settings"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Desktop settings",
+      "target": "Desktop settings"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "DSH Desktop settings",
+      "target": "DSH Desktop settings"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "DSH Desktop settings",
+      "target": "DSH Desktop settings"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "DSH Desktop settings",
+      "target": "DSH Desktop settings"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Manage Profiles and set up window appearance, connections, and notifications.",
+      "target": "Manage Profiles and set up window appearance, connections, and notifications."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Manage Profiles and set up window appearance, connections, and notifications.",
+      "target": "Manage Profiles and set up window appearance, connections, and notifications."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Manage Profiles and set up window appearance, connections, and notifications.",
+      "target": "Manage Profiles and set up window appearance, connections, and notifications."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Loading Desktop settings…",
+      "target": "Loading Desktop settings…"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Loading Desktop settings…",
+      "target": "Loading Desktop settings…"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Loading Desktop settings…",
+      "target": "Loading Desktop settings…"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Try again",
+      "target": "Try again"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Try again",
+      "target": "Try again"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Try again",
+      "target": "Try again"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Desktop settings are temporarily unavailable.",
+      "target": "Desktop settings are temporarily unavailable."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Desktop settings are temporarily unavailable.",
+      "target": "Desktop settings are temporarily unavailable."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Desktop settings are temporarily unavailable.",
+      "target": "Desktop settings are temporarily unavailable."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "This action could not be completed. Please try again shortly.",
+      "target": "This action could not be completed. Please try again shortly."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "This action could not be completed. Please try again shortly.",
+      "target": "This action could not be completed. Please try again shortly."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "This action could not be completed. Please try again shortly.",
+      "target": "This action could not be completed. Please try again shortly."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Export Diagnostics",
+      "target": "Export Diagnostics"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Export Diagnostics",
+      "target": "Export Diagnostics"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Export Diagnostics",
+      "target": "Export Diagnostics"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Preparing export…",
+      "target": "Preparing export…"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Preparing export…",
+      "target": "Preparing export…"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Preparing export…",
+      "target": "Preparing export…"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Could not prepare diagnostics. Please try again.",
+      "target": "Could not prepare diagnostics. Please try again."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Could not prepare diagnostics. Please try again.",
+      "target": "Could not prepare diagnostics. Please try again."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Could not prepare diagnostics. Please try again.",
+      "target": "Could not prepare diagnostics. Please try again."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Open DSH Terminal",
+      "target": "Open DSH Terminal"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Open DSH Terminal",
+      "target": "Open DSH Terminal"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Open DSH Terminal",
+      "target": "Open DSH Terminal"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Opening…",
+      "target": "Opening…"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Opening…",
+      "target": "Opening…"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Opening…",
+      "target": "Opening…"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Could not open DSH Terminal. Please try again. If it still fails, export diagnostics to investigate.",
+      "target": "Could not open DSH Terminal. Please try again. If it still fails, export diagnostics to investigate."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Could not open DSH Terminal. Please try again. If it still fails, export diagnostics to investigate.",
+      "target": "Could not open DSH Terminal. Please try again. If it still fails, export diagnostics to investigate."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Could not open DSH Terminal. Please try again. If it still fails, export diagnostics to investigate.",
+      "target": "Could not open DSH Terminal. Please try again. If it still fails, export diagnostics to investigate."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Version and updates",
+      "target": "Version and updates"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Version and updates",
+      "target": "Version and updates"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Version and updates",
+      "target": "Version and updates"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "See the installed version and check whether a newer release is available. When one is found, Desktop guides you through downloading and installing it.",
+      "target": "See the installed version and check whether a newer release is available. When one is found, Desktop guides you through downloading and installing it."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "See the installed version and check whether a newer release is available. When one is found, Desktop guides you through downloading and installing it.",
+      "target": "See the installed version and check whether a newer release is available. When one is found, Desktop guides you through downloading and installing it."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "See the installed version and check whether a newer release is available. When one is found, Desktop guides you through downloading and installing it.",
+      "target": "See the installed version and check whether a newer release is available. When one is found, Desktop guides you through downloading and installing it."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Current version",
+      "target": "Current version"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Current version",
+      "target": "Current version"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Current version",
+      "target": "Current version"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Check for updates",
+      "target": "Check for updates"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Check for updates",
+      "target": "Check for updates"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Check for updates",
+      "target": "Check for updates"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Checking…",
+      "target": "Checking…"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Checking…",
+      "target": "Checking…"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Checking…",
+      "target": "Checking…"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Updates could not be checked just now. Please try again shortly.",
+      "target": "Updates could not be checked just now. Please try again shortly."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Updates could not be checked just now. Please try again shortly.",
+      "target": "Updates could not be checked just now. Please try again shortly."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Updates could not be checked just now. Please try again shortly.",
+      "target": "Updates could not be checked just now. Please try again shortly."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Restart",
+      "target": "Restart"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Restart",
+      "target": "Restart"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Restart",
+      "target": "Restart"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Restarting…",
+      "target": "Restarting…"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Restarting…",
+      "target": "Restarting…"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Restarting…",
+      "target": "Restarting…"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Restart options",
+      "target": "Restart options"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Restart options",
+      "target": "Restart options"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Restart options",
+      "target": "Restart options"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Restart in Recovery Mode",
+      "target": "Restart in Recovery Mode"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Restart in Recovery Mode",
+      "target": "Restart in Recovery Mode"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Restart in Recovery Mode",
+      "target": "Restart in Recovery Mode"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "DSH Desktop could not be restarted just now. Please try again shortly.",
+      "target": "DSH Desktop could not be restarted just now. Please try again shortly."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "DSH Desktop could not be restarted just now. Please try again shortly.",
+      "target": "DSH Desktop could not be restarted just now. Please try again shortly."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "DSH Desktop could not be restarted just now. Please try again shortly.",
+      "target": "DSH Desktop could not be restarted just now. Please try again shortly."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Developer options",
+      "target": "Developer options"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Developer options",
+      "target": "Developer options"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Developer options",
+      "target": "Developer options"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Reload interface",
+      "target": "Reload interface"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Reload interface",
+      "target": "Reload interface"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Reload interface",
+      "target": "Reload interface"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Could not reload the interface. Please try again.",
+      "target": "Could not reload the interface. Please try again."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Could not reload the interface. Please try again.",
+      "target": "Could not reload the interface. Please try again."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Could not reload the interface. Please try again.",
+      "target": "Could not reload the interface. Please try again."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Toggle Developer Tools",
+      "target": "Toggle Developer Tools"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Toggle Developer Tools",
+      "target": "Toggle Developer Tools"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Toggle Developer Tools",
+      "target": "Toggle Developer Tools"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Developer Tools could not be toggled just now. Please try again shortly.",
+      "target": "Developer Tools could not be toggled just now. Please try again shortly."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Developer Tools could not be toggled just now. Please try again shortly.",
+      "target": "Developer Tools could not be toggled just now. Please try again shortly."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Developer Tools could not be toggled just now. Please try again shortly.",
+      "target": "Developer Tools could not be toggled just now. Please try again shortly."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "These settings are read-only. Changes cannot be saved.",
+      "target": "These settings are read-only. Changes cannot be saved."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "These settings are read-only. Changes cannot be saved.",
+      "target": "These settings are read-only. Changes cannot be saved."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "These settings are read-only. Changes cannot be saved.",
+      "target": "These settings are read-only. Changes cannot be saved."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Your choice was saved. DSH Desktop is restarting to apply the change.",
+      "target": "Your choice was saved. DSH Desktop is restarting to apply the change."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Your choice was saved. DSH Desktop is restarting to apply the change.",
+      "target": "Your choice was saved. DSH Desktop is restarting to apply the change."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Your choice was saved. DSH Desktop is restarting to apply the change.",
+      "target": "Your choice was saved. DSH Desktop is restarting to apply the change."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Your choice was saved and will take effect after DSH Desktop restarts.",
+      "target": "Your choice was saved and will take effect after DSH Desktop restarts."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Your choice was saved and will take effect after DSH Desktop restarts.",
+      "target": "Your choice was saved and will take effect after DSH Desktop restarts."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Your choice was saved and will take effect after DSH Desktop restarts.",
+      "target": "Your choice was saved and will take effect after DSH Desktop restarts."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Profile",
+      "target": "Profile"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Profile",
+      "target": "Profile"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Profile",
+      "target": "Profile"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "A Profile is a configuration environment. Choose the Profile used at startup or create a new one.",
+      "target": "A Profile is a configuration environment. Choose the Profile used at startup or create a new one."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "A Profile is a configuration environment. Choose the Profile used at startup or create a new one.",
+      "target": "A Profile is a configuration environment. Choose the Profile used at startup or create a new one."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "A Profile is a configuration environment. Choose the Profile used at startup or create a new one.",
+      "target": "A Profile is a configuration environment. Choose the Profile used at startup or create a new one."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Available",
+      "target": "Available"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Available",
+      "target": "Available"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Available",
+      "target": "Available"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Not compatible with Desktop",
+      "target": "Not compatible with Desktop"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Not compatible with Desktop",
+      "target": "Not compatible with Desktop"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Not compatible with Desktop",
+      "target": "Not compatible with Desktop"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Current",
+      "target": "Current"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Current",
+      "target": "Current"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Current",
+      "target": "Current"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Profile name",
+      "target": "Profile name"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Profile name",
+      "target": "Profile name"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Profile name",
+      "target": "Profile name"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "For example: work",
+      "target": "For example: work"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "For example: work",
+      "target": "For example: work"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "For example: work",
+      "target": "For example: work"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Creating…",
+      "target": "Creating…"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Creating…",
+      "target": "Creating…"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Creating…",
+      "target": "Creating…"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Create",
+      "target": "Create"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Create",
+      "target": "Create"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Create",
+      "target": "Create"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Delete",
+      "target": "Delete"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Delete",
+      "target": "Delete"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Delete",
+      "target": "Delete"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Delete Profile",
+      "target": "Delete Profile"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Delete Profile",
+      "target": "Delete Profile"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Delete Profile",
+      "target": "Delete Profile"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Cancel",
+      "target": "Cancel"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Cancel",
+      "target": "Cancel"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Cancel",
+      "target": "Cancel"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "This deletes the Profile’s local configuration and plugin files. This cannot be undone.",
+      "target": "This deletes the Profile’s local configuration and plugin files. This cannot be undone."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "This deletes the Profile’s local configuration and plugin files. This cannot be undone.",
+      "target": "This deletes the Profile’s local configuration and plugin files. This cannot be undone."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "This deletes the Profile’s local configuration and plugin files. This cannot be undone.",
+      "target": "This deletes the Profile’s local configuration and plugin files. This cannot be undone."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Deleting…",
+      "target": "Deleting…"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Deleting…",
+      "target": "Deleting…"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Deleting…",
+      "target": "Deleting…"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Plugin market",
+      "target": "Plugin market"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Plugin market",
+      "target": "Plugin market"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Plugin market",
+      "target": "Plugin market"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Choose a plugin market. Only one can be enabled at a time.",
+      "target": "Choose a plugin market. Only one can be enabled at a time."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Choose a plugin market. Only one can be enabled at a time.",
+      "target": "Choose a plugin market. Only one can be enabled at a time."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Choose a plugin market. Only one can be enabled at a time.",
+      "target": "Choose a plugin market. Only one can be enabled at a time."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Turn off plugin market",
+      "target": "Turn off plugin market"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Turn off plugin market",
+      "target": "Turn off plugin market"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Turn off plugin market",
+      "target": "Turn off plugin market"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Do not load a plugin market interface.",
+      "target": "Do not load a plugin market interface."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Do not load a plugin market interface.",
+      "target": "Do not load a plugin market interface."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Do not load a plugin market interface.",
+      "target": "Do not load a plugin market interface."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "dsh-community-market",
+      "target": "dsh-community-market"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "dsh-community-market",
+      "target": "dsh-community-market"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "dsh-community-market",
+      "target": "dsh-community-market"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "The open plugin market built into DSH Desktop, with support for custom plugin data sources.",
+      "target": "The open plugin market built into DSH Desktop, with support for custom plugin data sources."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "The open plugin market built into DSH Desktop, with support for custom plugin data sources.",
+      "target": "The open plugin market built into DSH Desktop, with support for custom plugin data sources."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "The open plugin market built into DSH Desktop, with support for custom plugin data sources.",
+      "target": "The open plugin market built into DSH Desktop, with support for custom plugin data sources."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "dsh-market",
+      "target": "dsh-market"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "dsh-market",
+      "target": "dsh-market"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "dsh-market",
+      "target": "dsh-market"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "A popular community plugin market powered by data from",
+      "target": "A popular community plugin market powered by data from"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "A popular community plugin market powered by data from",
+      "target": "A popular community plugin market powered by data from"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "A popular community plugin market powered by data from",
+      "target": "A popular community plugin market powered by data from"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "After upgrading from an earlier version, the plugin market stays off until you explicitly choose one here.",
+      "target": "After upgrading from an earlier version, the plugin market stays off until you explicitly choose one here."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "After upgrading from an earlier version, the plugin market stays off until you explicitly choose one here.",
+      "target": "After upgrading from an earlier version, the plugin market stays off until you explicitly choose one here."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "After upgrading from an earlier version, the plugin market stays off until you explicitly choose one here.",
+      "target": "After upgrading from an earlier version, the plugin market stays off until you explicitly choose one here."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "The selected plugin market could not load. Choose another market or select Retry loading.",
+      "target": "The selected plugin market could not load. Choose another market or select Retry loading."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "The selected plugin market could not load. Choose another market or select Retry loading.",
+      "target": "The selected plugin market could not load. Choose another market or select Retry loading."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "The selected plugin market could not load. Choose another market or select Retry loading.",
+      "target": "The selected plugin market could not load. Choose another market or select Retry loading."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Selected",
+      "target": "Selected"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Selected",
+      "target": "Selected"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Selected",
+      "target": "Selected"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Try loading again",
+      "target": "Try loading again"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Try loading again",
+      "target": "Try loading again"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Try loading again",
+      "target": "Try loading again"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Window mode",
+      "target": "Window mode"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Window mode",
+      "target": "Window mode"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Window mode",
+      "target": "Window mode"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Choose a window layout and desktop controls.",
+      "target": "Choose a window layout and desktop controls."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Choose a window layout and desktop controls.",
+      "target": "Choose a window layout and desktop controls."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Choose a window layout and desktop controls.",
+      "target": "Choose a window layout and desktop controls."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Compatibility mode",
+      "target": "Compatibility mode"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Compatibility mode",
+      "target": "Compatibility mode"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Compatibility mode",
+      "target": "Compatibility mode"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Use the official client layout with an independent Desktop control bar above it. This mode offers the best compatibility.",
+      "target": "Use the official client layout with an independent Desktop control bar above it. This mode offers the best compatibility."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Use the official client layout with an independent Desktop control bar above it. This mode offers the best compatibility.",
+      "target": "Use the official client layout with an independent Desktop control bar above it. This mode offers the best compatibility."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Use the official client layout with an independent Desktop control bar above it. This mode offers the best compatibility.",
+      "target": "Use the official client layout with an independent Desktop control bar above it. This mode offers the best compatibility."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Extended mode",
+      "target": "Extended mode"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Extended mode",
+      "target": "Extended mode"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Extended mode",
+      "target": "Extended mode"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Add an independent titlebar and sidebar around the official content area, with optional glass effects.",
+      "target": "Add an independent titlebar and sidebar around the official content area, with optional glass effects."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Add an independent titlebar and sidebar around the official content area, with optional glass effects.",
+      "target": "Add an independent titlebar and sidebar around the official content area, with optional glass effects."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Add an independent titlebar and sidebar around the official content area, with optional glass effects.",
+      "target": "Add an independent titlebar and sidebar around the official content area, with optional glass effects."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Extended mode is currently available on macOS and Windows.",
+      "target": "Extended mode is currently available on macOS and Windows."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Extended mode is currently available on macOS and Windows.",
+      "target": "Extended mode is currently available on macOS and Windows."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Extended mode is currently available on macOS and Windows.",
+      "target": "Extended mode is currently available on macOS and Windows."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Enhanced mode",
+      "target": "Enhanced mode"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Enhanced mode",
+      "target": "Enhanced mode"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Enhanced mode",
+      "target": "Enhanced mode"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Use a desktop layout with adjusted sidebars, content panels, and window controls.",
+      "target": "Use a desktop layout with adjusted sidebars, content panels, and window controls."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Use a desktop layout with adjusted sidebars, content panels, and window controls.",
+      "target": "Use a desktop layout with adjusted sidebars, content panels, and window controls."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Use a desktop layout with adjusted sidebars, content panels, and window controls.",
+      "target": "Use a desktop layout with adjusted sidebars, content panels, and window controls."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Enhanced mode is currently available on macOS and Windows.",
+      "target": "Enhanced mode is currently available on macOS and Windows."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Enhanced mode is currently available on macOS and Windows.",
+      "target": "Enhanced mode is currently available on macOS and Windows."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Enhanced mode is currently available on macOS and Windows.",
+      "target": "Enhanced mode is currently available on macOS and Windows."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Switch window mode",
+      "target": "Switch window mode"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Switch window mode",
+      "target": "Switch window mode"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Switch window mode",
+      "target": "Switch window mode"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Saving and preparing to restart…",
+      "target": "Saving and preparing to restart…"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Saving and preparing to restart…",
+      "target": "Saving and preparing to restart…"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Saving and preparing to restart…",
+      "target": "Saving and preparing to restart…"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Could not switch window mode. Please try again.",
+      "target": "Could not switch window mode. Please try again."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Could not switch window mode. Please try again.",
+      "target": "Could not switch window mode. Please try again."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Could not switch window mode. Please try again.",
+      "target": "Could not switch window mode. Please try again."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Window material",
+      "target": "Window material"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Window material",
+      "target": "Window material"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Window material",
+      "target": "Window material"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Set the window background effect. Restart the app to apply changes.",
+      "target": "Set the window background effect. Restart the app to apply changes."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Set the window background effect. Restart the app to apply changes.",
+      "target": "Set the window background effect. Restart the app to apply changes."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Set the window background effect. Restart the app to apply changes.",
+      "target": "Set the window background effect. Restart the app to apply changes."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Solid background",
+      "target": "Solid background"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Solid background",
+      "target": "Solid background"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Solid background",
+      "target": "Solid background"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Glass background",
+      "target": "Glass background"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Glass background",
+      "target": "Glass background"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Glass background",
+      "target": "Glass background"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Browser and local network",
+      "target": "Browser and local network"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Browser and local network",
+      "target": "Browser and local network"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Browser and local network",
+      "target": "Browser and local network"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Allow browser access to the current Profile and choose which devices can reach it.",
+      "target": "Allow browser access to the current Profile and choose which devices can reach it."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Allow browser access to the current Profile and choose which devices can reach it.",
+      "target": "Allow browser access to the current Profile and choose which devices can reach it."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Allow browser access to the current Profile and choose which devices can reach it.",
+      "target": "Allow browser access to the current Profile and choose which devices can reach it."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Allow opening this Profile in a browser",
+      "target": "Allow opening this Profile in a browser"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Allow opening this Profile in a browser",
+      "target": "Allow opening this Profile in a browser"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Allow opening this Profile in a browser",
+      "target": "Allow opening this Profile in a browser"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Browser access is only available in compatibility mode. Select compatibility mode first to enable it.",
+      "target": "Browser access is only available in compatibility mode. Select compatibility mode first to enable it."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Browser access is only available in compatibility mode. Select compatibility mode first to enable it.",
+      "target": "Browser access is only available in compatibility mode. Select compatibility mode first to enable it."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Browser access is only available in compatibility mode. Select compatibility mode first to enable it.",
+      "target": "Browser access is only available in compatibility mode. Select compatibility mode first to enable it."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Local-network access (HTTPS required)",
+      "target": "Local-network access (HTTPS required)"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Local-network access (HTTPS required)",
+      "target": "Local-network access (HTTPS required)"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Local-network access (HTTPS required)",
+      "target": "Local-network access (HTTPS required)"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Local-network HTTPS status",
+      "target": "Local-network HTTPS status"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Local-network HTTPS status",
+      "target": "Local-network HTTPS status"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Local-network HTTPS status",
+      "target": "Local-network HTTPS status"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Off",
+      "target": "Off"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Off",
+      "target": "Off"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Off",
+      "target": "Off"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Starting",
+      "target": "Starting"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Starting",
+      "target": "Starting"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Starting",
+      "target": "Starting"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Ready",
+      "target": "Ready"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Ready",
+      "target": "Ready"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Ready",
+      "target": "Ready"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Failed to start",
+      "target": "Failed to start"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Failed to start",
+      "target": "Failed to start"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Failed to start",
+      "target": "Failed to start"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Error code",
+      "target": "Error code"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Error code",
+      "target": "Error code"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Error code",
+      "target": "Error code"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Browser addresses",
+      "target": "Browser addresses"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Browser addresses",
+      "target": "Browser addresses"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Browser addresses",
+      "target": "Browser addresses"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Copy address",
+      "target": "Copy address"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Copy address",
+      "target": "Copy address"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Copy address",
+      "target": "Copy address"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Copied",
+      "target": "Copied"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Copied",
+      "target": "Copied"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Copied",
+      "target": "Copied"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Local-network HTTPS addresses",
+      "target": "Local-network HTTPS addresses"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Local-network HTTPS addresses",
+      "target": "Local-network HTTPS addresses"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Local-network HTTPS addresses",
+      "target": "Local-network HTTPS addresses"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Install and trust the certificate below on each device you use to connect. Bypassing a browser certificate warning does not guarantee that the page will work; some browsers may still restrict security-related features.",
+      "target": "Install and trust the certificate below on each device you use to connect. Bypassing a browser certificate warning does not guarantee that the page will work; some browsers may still restrict security-related features."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Install and trust the certificate below on each device you use to connect. Bypassing a browser certificate warning does not guarantee that the page will work; some browsers may still restrict security-related features.",
+      "target": "Install and trust the certificate below on each device you use to connect. Bypassing a browser certificate warning does not guarantee that the page will work; some browsers may still restrict security-related features."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Install and trust the certificate below on each device you use to connect. Bypassing a browser certificate warning does not guarantee that the page will work; some browsers may still restrict security-related features.",
+      "target": "Install and trust the certificate below on each device you use to connect. Bypassing a browser certificate warning does not guarantee that the page will work; some browsers may still restrict security-related features."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Trust the certificate",
+      "target": "Trust the certificate"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Trust the certificate",
+      "target": "Trust the certificate"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Trust the certificate",
+      "target": "Trust the certificate"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Local CA SHA-256 fingerprint",
+      "target": "Local CA SHA-256 fingerprint"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Local CA SHA-256 fingerprint",
+      "target": "Local CA SHA-256 fingerprint"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Local CA SHA-256 fingerprint",
+      "target": "Local CA SHA-256 fingerprint"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Download, install, and trust this certificate on each device that will access DSH Desktop:",
+      "target": "Download, install, and trust this certificate on each device that will access DSH Desktop:"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Download, install, and trust this certificate on each device that will access DSH Desktop:",
+      "target": "Download, install, and trust this certificate on each device that will access DSH Desktop:"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Download, install, and trust this certificate on each device that will access DSH Desktop:",
+      "target": "Download, install, and trust this certificate on each device that will access DSH Desktop:"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Enable local-network access?",
+      "target": "Enable local-network access?"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Enable local-network access?",
+      "target": "Enable local-network access?"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Enable local-network access?",
+      "target": "Enable local-network access?"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Anyone on the same local network who has the access link can use DSH to operate this computer. Share the link only with people you trust. Connections use HTTPS; each device must install and trust the certificate provided by this computer.",
+      "target": "Anyone on the same local network who has the access link can use DSH to operate this computer. Share the link only with people you trust. Connections use HTTPS; each device must install and trust the certificate provided by this computer."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Anyone on the same local network who has the access link can use DSH to operate this computer. Share the link only with people you trust. Connections use HTTPS; each device must install and trust the certificate provided by this computer.",
+      "target": "Anyone on the same local network who has the access link can use DSH to operate this computer. Share the link only with people you trust. Connections use HTTPS; each device must install and trust the certificate provided by this computer."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Anyone on the same local network who has the access link can use DSH to operate this computer. Share the link only with people you trust. Connections use HTTPS; each device must install and trust the certificate provided by this computer.",
+      "target": "Anyone on the same local network who has the access link can use DSH to operate this computer. Share the link only with people you trust. Connections use HTTPS; each device must install and trust the certificate provided by this computer."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Enable local-network access",
+      "target": "Enable local-network access"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Enable local-network access",
+      "target": "Enable local-network access"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Enable local-network access",
+      "target": "Enable local-network access"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Desktop notifications",
+      "target": "Desktop notifications"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Desktop notifications",
+      "target": "Desktop notifications"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Desktop notifications",
+      "target": "Desktop notifications"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Receive system notifications when tasks finish or fail. Notifications do not show conversation content.",
+      "target": "Receive system notifications when tasks finish or fail. Notifications do not show conversation content."
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Receive system notifications when tasks finish or fail. Notifications do not show conversation content.",
+      "target": "Receive system notifications when tasks finish or fail. Notifications do not show conversation content."
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Receive system notifications when tasks finish or fail. Notifications do not show conversation content.",
+      "target": "Receive system notifications when tasks finish or fail. Notifications do not show conversation content."
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Enable Desktop notifications",
+      "target": "Enable Desktop notifications"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Enable Desktop notifications",
+      "target": "Enable Desktop notifications"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Enable Desktop notifications",
+      "target": "Enable Desktop notifications"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Current turn completed",
+      "target": "Current turn completed"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Current turn completed",
+      "target": "Current turn completed"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Current turn completed",
+      "target": "Current turn completed"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Current turn failed",
+      "target": "Current turn failed"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Current turn failed",
+      "target": "Current turn failed"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Current turn failed",
+      "target": "Current turn failed"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Background job completed",
+      "target": "Background job completed"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Background job completed",
+      "target": "Background job completed"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Background job completed",
+      "target": "Background job completed"
+    },
+    {
+      "selector": ".dshDesktopSettings",
+      "source": "Background job failed",
+      "target": "Background job failed"
+    },
+    {
+      "selector": ".dshDesktopFrameTitlebar",
+      "source": "Background job failed",
+      "target": "Background job failed"
+    },
+    {
+      "selector": ".dshDesktopModePopover",
+      "source": "Background job failed",
+      "target": "Background job failed"
     }
   ]
 }

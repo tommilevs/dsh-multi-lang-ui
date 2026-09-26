@@ -10,10 +10,10 @@
   "namespaces": {
     "community.dsh-mcp-manager-ui": {
       "text.0001": "•••••• (оставить текущее значение)",
-      "text.0002": "Filesystem · Работа с локальными файлами",
-      "text.0003": "Memory · Граф памяти",
-      "text.0004": "Sequential Thinking · Пошаговое рассуждение",
-      "text.0005": "Time · Работа со временем и часовыми поясами (нужен uvx)",
+      "text.0002": "Файловая система · чтение и запись локальных файлов",
+      "text.0003": "Память · граф знаний",
+      "text.0004": "Последовательное мышление · пошаговое рассуждение",
+      "text.0005": "Время · работа со временем и часовыми поясами (нужен uvx)",
       "text.0006": "Git · Контроль версий (нужен uvx)",
       "text.0007": "Свернуть параметры",
       "text.0008": "Показать параметры",
@@ -74,8 +74,8 @@
       "text.0065": "Повторяющийся serverName (конфликт; только чтение)",
       "text.0066": "Глобальная конфигурация (изменяется на вкладке «Глобальная»)",
       "text.0067": "Конфигурация проекта .dsh/mcp.json (можно изменить; подключение общее для сессий проекта)",
-      "text.0068": "Текущий Web-профиль (можно изменить)",
-      "text.0069": "Другой bundle / Agent (только чтение)",
+      "text.0068": "Текущий веб-профиль (можно изменить)",
+      "text.0069": "Другой пакет или агент (только чтение)",
       "text.0070": "Тайм-аут вызова",
       "text.0071": "Действие при ошибке запуска",
       "text.0072": "Не запускать плагин",
@@ -102,7 +102,7 @@
       "text.0095": "stdio (локальный процесс)",
       "text.0096": "Аргументы (по одному в строке; передаются процессу без изменений)",
       "text.0097": "Рабочая папка cwd (необязательно)",
-      "text.0098": "Заголовки Headers (необязательно)",
+      "text.0098": "Заголовки (необязательно)",
       "text.0099": "Переменные среды (необязательно; используйте !!js process.env.KEY для ссылки на секрет)",
       "text.0100": "Bearer … или !!js process.env.KEY",
       "text.0101": "Удалить эту запись",
@@ -358,22 +358,22 @@
     {
       "selector": ".dsh-mcp-panel-overlay",
       "source": "Filesystem · 本地文件读写",
-      "target": "Filesystem · Работа с локальными файлами"
+      "target": "Файловая система · чтение и запись локальных файлов"
     },
     {
       "selector": ".dsh-mcp-panel-overlay",
       "source": "Memory · 知识图谱记忆",
-      "target": "Memory · Граф памяти"
+      "target": "Память · граф знаний"
     },
     {
       "selector": ".dsh-mcp-panel-overlay",
       "source": "Sequential Thinking · 分步推理",
-      "target": "Sequential Thinking · Пошаговое рассуждение"
+      "target": "Последовательное мышление · пошаговое рассуждение"
     },
     {
       "selector": ".dsh-mcp-panel-overlay",
       "source": "Time · 时区时间工具（需 uvx）",
-      "target": "Time · Работа со временем и часовыми поясами (нужен uvx)"
+      "target": "Время · работа со временем и часовыми поясами (нужен uvx)"
     },
     {
       "selector": ".dsh-mcp-panel-overlay",
@@ -678,12 +678,12 @@
     {
       "selector": ".dsh-mcp-panel-overlay",
       "source": "当前 Web profile（可编辑）",
-      "target": "Текущий Web-профиль (можно изменить)"
+      "target": "Текущий веб-профиль (можно изменить)"
     },
     {
       "selector": ".dsh-mcp-panel-overlay",
       "source": "其他 bundle / Agent（只读）",
-      "target": "Другой bundle / Agent (только чтение)"
+      "target": "Другой пакет или агент (только чтение)"
     },
     {
       "selector": ".dsh-mcp-panel-overlay",
@@ -813,7 +813,7 @@
     {
       "selector": ".dsh-mcp-panel-overlay",
       "source": "Headers（可选）",
-      "target": "Заголовки Headers (необязательно)"
+      "target": "Заголовки (необязательно)"
     },
     {
       "selector": ".dsh-mcp-panel-overlay",
@@ -1259,6 +1259,1041 @@
       "selector": ".dsh-mcp-entry",
       "source": "入口",
       "target": "Способы открытия"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "从本机客户端Import全局配置（只读，不修改它们的文件）",
+      "target": "Импорт глобальной конфигурации из локальных клиентов (только чтение; исходные файлы не изменяются)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "2 个 MCP: node_repl, cla_repl",
+      "target": "Серверов MCP: 2 — node_repl, cla_repl"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "含需掩码字段: env (Import 后在详情页可用眼睛查看)",
+      "target": "Скрытые поля: env (после импорта нажмите значок глаза в сведениях, чтобы посмотреть значение)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "1 条提示，Import时逐条列出",
+      "target": "Предупреждений: 1 (при импорте они показываются по отдельности)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "0 已配置 · 5 可安装",
+      "target": "Настроено: 0 · Доступно для установки: 5"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "安装选中（0）",
+      "target": "Установить выбранные (0)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "网页搜索、代码搜索与页面内容读取",
+      "target": "Поиск в интернете и коде, чтение содержимого страниц"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "免密额度，可添加 API Key 提升额度",
+      "target": "Есть бесплатный лимит без ключа; API-ключ увеличит доступную квоту"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "面向 Agent 的网页搜索与内容提取",
+      "target": "Поиск в интернете и извлечение содержимого для агента"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "免密额度（Search / Extract）；可切换免费账号 API Key",
+      "target": "Бесплатный лимит без ключа (поиск / извлечение); можно указать API-ключ бесплатного аккаунта"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "网页搜索、抓取与文档解析",
+      "target": "Поиск в интернете, загрузка страниц и разбор документов"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "免密额度（Search / Scrape / Parse）；可添加 API Key",
+      "target": "Бесплатный лимит без ключа (поиск / загрузка страниц / разбор); можно добавить API-ключ"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "浏览器调试、网络与性能分析",
+      "target": "Отладка браузера, анализ сети и производительности"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "本地 npx / Node.js / Chrome",
+      "target": "Требуются локальные npx, Node.js и Chrome"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "基于可访问性快照的浏览器自动化",
+      "target": "Автоматизация браузера на основе снимков дерева доступности"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "本地 npx / Node.js 20+",
+      "target": "Требуются локальные npx и Node.js 20 или новее"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "{n} 个 MCP: {names}",
+      "target": "Серверов MCP: {n} — {names}"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "含需掩码字段: {fields} (Import 后在详情页可用眼睛查看)",
+      "target": "Скрытые поля: {fields} (после импорта нажмите значок глаза в сведениях, чтобы посмотреть значения)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "{n} 条提示，Import时逐条列出",
+      "target": "Предупреждений: {n} (при импорте показываются по отдельности)"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "{configured} 已配置 · {available} 可安装",
+      "target": "Настроено: {configured} · Доступно для установки: {available}"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "安装选中（{n}）",
+      "target": "Установить выбранные ({n})"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "••••••（保留原值）",
+      "target": "•••••• (оставить текущее значение)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "Filesystem · 本地文件读写",
+      "target": "Файловая система · чтение и запись локальных файлов"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "Memory · 知识图谱记忆",
+      "target": "Память · граф знаний"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "Sequential Thinking · 分步推理",
+      "target": "Последовательное мышление · пошаговое рассуждение"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "Time · 时区时间工具（需 uvx）",
+      "target": "Время · работа со временем и часовыми поясами (нужен uvx)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "Git · 版本控制（需 uvx）",
+      "target": "Git · Контроль версий (нужен uvx)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "收起参数",
+      "target": "Свернуть параметры"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "查看参数",
+      "target": "Показать параметры"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "必填",
+      "target": "Обязательно"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "可选",
+      "target": "Необязательно"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "收起原始 JSON",
+      "target": "Скрыть исходный JSON"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "查看原始 JSON",
+      "target": "Показать исходный JSON"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "挂载失败",
+      "target": "Не удалось подключить"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "作用域隔离失败",
+      "target": "Не удалось изолировать область действия"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "连接失败",
+      "target": "Ошибка подключения"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "连接中",
+      "target": "Подключение…"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "连接中…",
+      "target": "Подключение…"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "已禁用",
+      "target": "Отключено"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "状态未知",
+      "target": "Неизвестный статус"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "待会话挂载",
+      "target": "Ожидает подключения к сессии"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "搜索 MCP…",
+      "target": "Поиск MCP…"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "按传输过滤",
+      "target": "Фильтр по типу подключения"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "全部传输",
+      "target": "Все типы"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "按状态过滤",
+      "target": "Фильтр по статусу"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "全部状态",
+      "target": "Все статусы"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "已连接",
+      "target": "Подключено"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "失败",
+      "target": "Ошибка"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "没有匹配的 MCP",
+      "target": "Подходящие MCP-серверы не найдены"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "作用域故障",
+      "target": "Ошибка области действия"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "配置待生效",
+      "target": "Ожидает применения конфигурации"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "禁用",
+      "target": "Отключить"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "启用",
+      "target": "Включить"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "来自其他配置层，只读",
+      "target": "Источник — другой уровень конфигурации; только чтение"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "已在此项目屏蔽，点击恢复可见",
+      "target": "Скрыто в этом проекте; нажмите, чтобы показать"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "在此项目可见，点击屏蔽",
+      "target": "Видно в этом проекте; нажмите, чтобы скрыть"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "搜索全局 MCP…",
+      "target": "Поиск глобальных MCP-серверов…"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "没有全局 MCP",
+      "target": "Глобальных MCP-серверов нет"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "没有匹配的全局 MCP",
+      "target": "Подходящие глобальные MCP-серверы не найдены"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "已屏蔽",
+      "target": "Скрыто"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "选择一个 MCP 查看详情",
+      "target": "Выберите MCP-сервер, чтобы посмотреть сведения"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "已连接（本项目会话共享）",
+      "target": "Подключено (общее для сессий проекта)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "已停止",
+      "target": "Остановлено"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "项目配置",
+      "target": "Конфигурация проекта"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "全局配置",
+      "target": "Глобальная конфигурация"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "serverName 同名冲突",
+      "target": "Конфликт одинаковых serverName"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "已在此项目屏蔽",
+      "target": "Скрыто в этом проекте"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "在此项目可见",
+      "target": "Видно в этом проекте"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "编辑",
+      "target": "Изменить"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "项目 MCP 由本项目会话共享一份连接，由 mcp-client 自动重连",
+      "target": "MCP-серверы проекта используют одно подключение для его сессий; mcp-client переподключается автоматически"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "重连",
+      "target": "Переподключить"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "移除",
+      "target": "Удалить"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "此 MCP 由全局配置提供。要改它的连接配置，请切到「全局」标签页；在这里只能决定它对本项目是否可见。",
+      "target": "Этот MCP-сервер задан в глобальной конфигурации. Чтобы изменить подключение, откройте вкладку «Глобальная»; здесь можно только включить или скрыть его в проекте."
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "来自 mcp-client 最近日志",
+      "target": "Из последней записи журнала mcp-client"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "工具命名与其他 serverName 前缀重叠，无法可靠判断归属；请避免在 serverName 中使用双下划线。",
+      "target": "Имена инструментов пересекаются с префиксом другого serverName, поэтому источник нельзя определить точно. Не используйте двойное подчёркивание в serverName."
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "连接信息",
+      "target": "Сведения о подключении"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "传输",
+      "target": "Тип подключения"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "命令",
+      "target": "Команда"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "参数",
+      "target": "Аргументы"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "工作目录",
+      "target": "Рабочая папка"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "是",
+      "target": "Да"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "否（补丁中 disabled: true）",
+      "target": "Нет (в патче указано disabled: true)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "配置来源",
+      "target": "Источник конфигурации"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "存在重复 serverName（冲突，只读）",
+      "target": "Повторяющийся serverName (конфликт; только чтение)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "全局配置（在「全局」标签页可编辑）",
+      "target": "Глобальная конфигурация (изменяется на вкладке «Глобальная»)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "项目配置 .dsh/mcp.json（可编辑，本项目会话共享一份连接）",
+      "target": "Конфигурация проекта .dsh/mcp.json (можно изменить; подключение общее для сессий проекта)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "当前 Web profile（可编辑）",
+      "target": "Текущий веб-профиль (можно изменить)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "其他 bundle / Agent（只读）",
+      "target": "Другой пакет или агент (только чтение)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "调用超时",
+      "target": "Тайм-аут вызова"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "启动失败策略",
+      "target": "Действие при ошибке запуска"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "阻止插件启动",
+      "target": "Не запускать плагин"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "记录错误并继续",
+      "target": "Записать ошибку и продолжить"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "自动重连",
+      "target": "Автоматическое переподключение"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "环境变量",
+      "target": "Переменные среды"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "工具归属存在命名歧义",
+      "target": "Источник инструмента определён неоднозначно"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "尚无会话持有该项目连接，或连接尚未就绪",
+      "target": "Пока ни одна сессия не использует подключение проекта либо оно ещё не готово"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "暂无工具",
+      "target": "Инструментов пока нет"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "请填写 MCP 名称",
+      "target": "Укажите имя MCP-сервера"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "工具超时和最大尝试次数必须是正整数",
+      "target": "Тайм-аут инструмента и максимальное число попыток должны быть положительными целыми числами"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "重连延迟必须是有效正数且不超过 2147483647 ms",
+      "target": "Задержки переподключения должны быть положительными числами и не превышать 2147483647 мс"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "首次延迟不能大于最大延迟",
+      "target": "Начальная задержка не может быть больше максимальной"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "编辑 MCP",
+      "target": "Изменить MCP-сервер"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "添加 MCP",
+      "target": "Добавить MCP-сервер"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "全局",
+      "target": "Глобальная"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "从预设模板快速填充（可选，命令需本机 npx/uvx）",
+      "target": "Быстро заполнить по шаблону (необязательно; для команд нужны локальные npx/uvx)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "选择预设模板",
+      "target": "Выберите шаблон"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "— 选择预设 —",
+      "target": "— Выберите шаблон —"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "MCP 名称（唯一标识，不可改）",
+      "target": "Имя MCP-сервера (уникальный идентификатор, его нельзя изменить)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "传输类型",
+      "target": "Тип подключения"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "HTTP（远程）",
+      "target": "HTTP (удалённый)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "stdio（本地进程）",
+      "target": "stdio (локальный процесс)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "参数（每行一个，原样传给进程）",
+      "target": "Аргументы (по одному в строке; передаются процессу без изменений)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "工作目录 cwd（可选）",
+      "target": "Рабочая папка cwd (необязательно)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "Headers（可选）",
+      "target": "Заголовки (необязательно)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "环境变量（可选，值写 !!js process.env.KEY 引用密钥）",
+      "target": "Переменные среды (необязательно; используйте !!js process.env.KEY для ссылки на секрет)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "Bearer … 或 !!js process.env.KEY",
+      "target": "Bearer … или !!js process.env.KEY"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "删除此项",
+      "target": "Удалить эту запись"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "+ 添加",
+      "target": "+ Добавить"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "运行策略",
+      "target": "Параметры работы"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "工具调用超时（毫秒）",
+      "target": "Тайм-аут вызова инструмента (мс)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "首次连接失败时阻止插件启动",
+      "target": "Не запускать плагин, если первое подключение не удалось"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "断开后自动重连",
+      "target": "Переподключаться автоматически после разрыва связи"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "首次延迟 ms",
+      "target": "Начальная задержка (мс)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "最大延迟 ms",
+      "target": "Максимальная задержка (мс)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "最大尝试次数",
+      "target": "Максимум попыток"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "取消",
+      "target": "Отмена"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "保存中…",
+      "target": "Сохранение…"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "保存",
+      "target": "Сохранить"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "添加",
+      "target": "Добавить"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "读取内置 MCP 失败",
+      "target": "Не удалось прочитать встроенные MCP-серверы"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "安装内置 MCP 失败",
+      "target": "Не удалось установить встроенные MCP-серверы"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "选择内置 MCP",
+      "target": "Выберите встроенные MCP-серверы"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "全选可安装",
+      "target": "Выбрать все доступные для установки"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "正在读取内置目录…",
+      "target": "Загрузка встроенного каталога…"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "已配置",
+      "target": "Настроено"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "可安装",
+      "target": "Можно установить"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "重试中…",
+      "target": "Повторная попытка…"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "重试",
+      "target": "Повторить"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "安装中…",
+      "target": "Установка…"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "读取本机客户端配置失败",
+      "target": "Не удалось прочитать локальную конфигурацию клиента"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "这条配置里没有可导入的 MCP",
+      "target": "В этой конфигурации нет MCP-серверов для импорта"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "预览失败",
+      "target": "Не удалось создать предварительный просмотр"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "JSON 解析失败",
+      "target": "Не удалось разобрать JSON"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "导入失败",
+      "target": "Ошибка импорта"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "无",
+      "target": "Нет"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "没检测到这个项目的项目级 MCP 配置（.mcp.json / .codex/config.toml / .pi/mcp.json / opencode.json 等），可在下面手动粘贴",
+      "target": "Конфигурация MCP на уровне проекта не найдена (.mcp.json / .codex/config.toml / .pi/mcp.json / opencode.json и др.). Её можно вставить ниже."
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "没检测到本机客户端的全局 MCP 配置（~/.claude.json / ~/.codex/config.toml / ~/.config/opencode/opencode.json 等），可在下面手动粘贴",
+      "target": "Глобальная конфигурация MCP для локальных клиентов не найдена (~/.claude.json / ~/.codex/config.toml / ~/.config/opencode/opencode.json и др.). Её можно вставить ниже."
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "导入 MCP",
+      "target": "Импортировать MCP-серверы"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "正在扫描本机客户端配置…",
+      "target": "Поиск конфигураций локальных клиентов…"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "没有可导入的 MCP",
+      "target": "Нет MCP-серверов для импорта"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "或粘贴 JSON：支持 Claude/Cursor/Cline/Roo 的 mcpServers、VS Code 的 servers，以及单个 MCP 对象",
+      "target": "Или вставьте JSON: поддерживаются mcpServers из Claude/Cursor/Cline/Roo, servers из VS Code и отдельный объект MCP"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "合并（同名更新）",
+      "target": "Объединить (обновить совпадающие имена)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "取消选择来源",
+      "target": "Сбросить выбор источника"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "导入中…",
+      "target": "Импорт…"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "确认从来源导入",
+      "target": "Подтвердить импорт из источника"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "解析中…",
+      "target": "Разбор…"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "预览",
+      "target": "Предпросмотр"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "确认导入",
+      "target": "Подтвердить импорт"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "解析并预览",
+      "target": "Разобрать и просмотреть"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "加载失败",
+      "target": "Ошибка загрузки"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "该 MCP 来自其他配置层，配置只读，无法查看具体值",
+      "target": "Этот MCP-сервер задан на другом уровне конфигурации. Параметры доступны только для чтения, поэтому значения нельзя посмотреть."
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "读取配置失败",
+      "target": "Не удалось прочитать конфигурацию"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "已复制到剪贴板",
+      "target": "Скопировано в буфер обмена"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "复制失败",
+      "target": "Не удалось скопировать"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "保存失败",
+      "target": "Не удалось сохранить"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "添加失败",
+      "target": "Не удалось добавить"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "已导入 MCP",
+      "target": "MCP-серверы импортированы"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "已安装所选内置 MCP",
+      "target": "Выбранные встроенные MCP-серверы установлены"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "MCP 管理",
+      "target": "Управление MCP"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "刷新中…",
+      "target": "Обновление…"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "刷新",
+      "target": "Обновить"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "内置 MCP",
+      "target": "Встроенные MCP-серверы"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "添加项目 MCP",
+      "target": "Добавить MCP-сервер проекта"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "查看更新方式",
+      "target": "Инструкция по обновлению"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "关闭更新提示",
+      "target": "Скрыть уведомление об обновлении"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "本版本内不再提示",
+      "target": "Больше не показывать для этой версии"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "此项目的 MCP",
+      "target": "MCP-серверы проекта"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "此项目还没有 MCP。用右上角「添加项目 MCP」或「内置 MCP」写入 .dsh/mcp.json",
+      "target": "В проекте пока нет MCP-серверов. Нажмите вверху справа «Добавить MCP-сервер проекта» или «Встроенные MCP-серверы», чтобы добавить их в .dsh/mcp.json."
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "全局 MCP",
+      "target": "Глобальные MCP-серверы"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "MCP 管理面板",
+      "target": "Панель управления MCP"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "本次更新内容",
+      "target": "Что нового в этом обновлении"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "这些变化你可能想知道",
+      "target": "Вот что нового в этой версии"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "知道了",
+      "target": "Понятно"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "0 已配置 · 5 可安装",
+      "target": "Настроено: 0 · Доступно для установки: 5"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "安装选中（0）",
+      "target": "Установить выбранные (0)"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "网页搜索、代码搜索与页面内容读取",
+      "target": "Поиск в интернете и коде, чтение содержимого страниц"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "免密额度，可添加 API Key 提升额度",
+      "target": "Есть бесплатный лимит без ключа; API-ключ увеличит доступную квоту"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "面向 Agent 的网页搜索与内容提取",
+      "target": "Поиск в интернете и извлечение содержимого для агента"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "免密额度（Search / Extract）；可切换免费账号 API Key",
+      "target": "Бесплатный лимит без ключа (поиск / извлечение); можно указать API-ключ бесплатного аккаунта"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "网页搜索、抓取与文档解析",
+      "target": "Поиск в интернете, загрузка страниц и разбор документов"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "免密额度（Search / Scrape / Parse）；可添加 API Key",
+      "target": "Бесплатный лимит без ключа (поиск / загрузка страниц / разбор); можно добавить API-ключ"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "浏览器调试、网络与性能分析",
+      "target": "Отладка браузера, анализ сети и производительности"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "本地 npx / Node.js / Chrome",
+      "target": "Требуются локальные npx, Node.js и Chrome"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "基于可访问性快照的浏览器自动化",
+      "target": "Автоматизация браузера на основе снимков дерева доступности"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "本地 npx / Node.js 20+",
+      "target": "Требуются локальные npx и Node.js 20 или новее"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "{configured} 已配置 · {available} 可安装",
+      "target": "Настроено: {configured} · Доступно для установки: {available}"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "安装选中（{n}）",
+      "target": "Установить выбранные ({n})"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "悬浮按钮 + 侧栏入口",
+      "target": "Плавающая кнопка + пункт боковой панели"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "仅悬浮按钮",
+      "target": "Только плавающая кнопка"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "仅侧栏入口",
+      "target": "Только пункт боковой панели"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "悬浮按钮 + 侧栏入口",
+      "target": "Плавающая кнопка + пункт боковой панели"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "仅悬浮按钮",
+      "target": "Только плавающая кнопка"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "仅侧栏入口",
+      "target": "Только пункт боковой панели"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "已保存 {name}",
+      "target": "Сохранено: {name}"
+    },
+    {
+      "selector": ".dsh-mcp-panel-overlay",
+      "source": "已添加 {name}",
+      "target": "Добавлено: {name}"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "已保存 {name}",
+      "target": "Сохранено: {name}"
+    },
+    {
+      "selector": ".dsh-mcp-overlay",
+      "source": "已添加 {name}",
+      "target": "Добавлено: {name}"
     }
   ]
 }

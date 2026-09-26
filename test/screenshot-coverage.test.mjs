@@ -40,17 +40,50 @@ test('all screenshot-visible MCP filter options have English and Russian labels'
 })
 
 test('pet widget, pet selector, usage card, and usage page cover screenshot text', () => {
-  const pet = ['亲密度', '小鱼干 ×{n}', '{points}点', '喂食', '改名', '隐藏', '鲸鱼娘', '鲸鱼娘（原版）']
+  const pet = [
+    '亲密度', '亲密度 {rank}', '小鱼干 ×{n}', '{points}点', '{points} 点', '喂食', '改名', '隐藏',
+    '等待模型响应', '点击跳转到对应会话', '幼鲸', '伙伴', '挚友', '深海羁绊', '心有灵犀',
+    '传说羁绊', '神话羁绊', '永恒之契', '鲸生共渡', '鲸鱼娘', '鲸鱼娘（原版）',
+  ]
   assertDomTranslations('@linxin666/dsh-pet', 'en', '[data-dsh-pet-root]', pet)
   assertDomTranslations('@linxin666/dsh-pet', 'ru', '[data-dsh-pet-root]', pet)
+  for (const locale of ['en', 'ru']) assert.equal(pack('@linxin666/dsh-pet', locale).sourceLocale, 'zh')
   assertDomTranslations('@linxin666/dsh-pet', 'en', '#settings-pet-pet', ['鲸鱼娘（原版）'])
   assertDomTranslations('@linxin666/dsh-pet', 'ru', '#settings-pet-pet', ['鲸鱼娘（原版）'])
   assertDomTranslations('@linxin666/dsh-pet', 'en', '#settings-pet-pet', ['蓝喉蜂虎', 'OUO Neko', '鲸鱼娘（精致版）'])
   assertDomTranslations('@linxin666/dsh-pet', 'ru', '#settings-pet-pet', ['蓝喉蜂虎', 'OUO Neko', '鲸鱼娘（精致版）'])
+  assertNamespaceTranslations('@linxin666/dsh-pet', 'ru', 'pet', [
+    'pet.openSessionHint', 'pet.rank.name.幼鲸', 'pet.rank.name.伙伴', 'pet.rank.name.挚友',
+    'pet.rank.name.深海羁绊', 'pet.rank.name.心有灵犀', 'pet.rank.name.传说羁绊',
+    'pet.rank.name.神话羁绊', 'pet.rank.name.永恒之契', 'pet.rank.name.鲸生共渡',
+    'settings.decorationHint', 'settings.visibleHint', 'settings.sizeHint', 'settings.bubbleScale',
+    'settings.bubbleScaleHint', 'settings.rightHint', 'settings.bottomHint', 'settings.inherit',
+    'settings.on', 'settings.off', 'settings.diagnosticsTitle', 'settings.overridden', 'settings.reset',
+    'settings.notExposed', 'settings.readOnly', 'settings.expand', 'settings.collapse', 'settings.unsaved',
+    'settings.saveFailed', 'settings.invalidNumber',
+  ])
+  assertDomTranslationTarget('@linxin666/dsh-pet', 'ru', '[data-dsh-pet-root]', '等待模型响应', 'Ожидание ответа модели')
+  assertDomTranslationTarget('@linxin666/dsh-pet', 'en', '[data-dsh-pet-root]', '点击跳转到对应会话', 'Click to jump to this session')
+  assertDomTranslationTarget('@linxin666/dsh-pet', 'ru', '[data-dsh-pet-root]', '{points} 点', 'Баллы: {points}')
 
-  const usage = ['今日消费', '今日暂无用量', '更新于 {time}', '今日用量', '个人套餐', 'Token 银行', '没有已配置的提供方', '近 30 天', '暂无用量数据（统计自插件启用起）', '轮询间隔（秒）']
+  const usage = [
+    '今日消费', '今日暂无用量', '更新于 {time}', '今日用量', '个人套餐', 'Token 银行',
+    '没有已配置的提供方', '近 30 天', '暂无用量数据（统计自插件启用起）', '轮询间隔（秒）',
+    '当前', '总 tokens', '输入', '输出', '缓存读', '缓存写',
+  ]
   assertDomTranslations('@linxin666/dsh-web-all', 'en', '[data-dsh-plugin="usage"]', usage)
   assertDomTranslations('@linxin666/dsh-web-all', 'ru', '[data-dsh-plugin="usage"]', usage)
+})
+
+test('pet settings copy accurately describes decorations, text scaling, and viewport in both locales', () => {
+  const en = pack('@linxin666/dsh-pet', 'en').namespaces.pet
+  const ru = pack('@linxin666/dsh-pet', 'ru').namespaces.pet
+  assert.equal(en['settings.petHint'], 'Choose which pet to display. Each pet keeps its own name; you can rename it from the pet hover panel.')
+  assert.equal(ru['settings.petHint'], 'Выберите, какого питомца показывать. Имя задаётся отдельно для каждого питомца; изменить его можно во всплывающей панели питомца.')
+  assert.equal(ru['settings.decorationHint'], 'Показывать в пузырях статуса питомца декоративные элементы — например, кита, выпускающего фонтан воды. Если выключить, в пузырях останется только текст.')
+  assert.equal(ru['settings.bubbleScaleHint'], 'Текст в пузырях статуса, реплик и расхода токенов автоматически масштабируется вместе с питомцем. Этот коэффициент дополнительно меняет его масштаб (0,5–2; по умолчанию 1). Размер текста — от 10 до 24 пикселей.')
+  assert.equal(ru['settings.rightHint'], 'Отступ по горизонтали от правого края области просмотра.')
+  assert.equal(ru['settings.bottomHint'], 'Отступ по вертикали от нижнего края области просмотра.')
 })
 
 test('archive and model-capability labels visible in screenshots have both locales', () => {
@@ -110,6 +143,9 @@ test('new screenshots: MCP import, usage/archive controls, model capability and 
     '鲸元券',
     '暂无 DeepSeek 官方用量数据（统计自插件启用起）',
     '暂无 DeepSeek 官方用量数据（统计自插件Включить起）',
+    '{tokens} tokens · {n} calls',
+    '{tokens} tokens · {n} 次调用',
+    '{tokens} tokens · Вызовов: {n}',
     '没有已配置的套餐类 provider（如 Kimi、GLM、OpenCode Go、MiniMax、Codex 订阅）',
   ]
   const archive = [
@@ -137,6 +173,113 @@ test('new screenshots: MCP import, usage/archive controls, model capability and 
       'Blue Fantasy', 'Harbor', '鲸鱼插画背景 · periwinkle 靛蓝调色板 · 半透明面板',
       '暮光蓝港 · 日落橙辉 · 半透明夜色面板',
     ])
+  }
+})
+
+test('MCP add and built-in dialogs cover the exact untranslated screenshot strings', () => {
+  const importSources = [
+    '从本机客户端Import全局配置（只读，不修改它们的文件）',
+    '{n} 个 MCP: {names}',
+    '含需掩码字段: {fields} (Import 后在详情页可用眼睛查看)',
+    '{n} 条提示，Import时逐条列出',
+    '替换当前 Profile',
+  ]
+  const addFormSources = [
+    '从预设模板快速填充（可选，命令需本机 npx/uvx）',
+    '传输类型',
+    '运行策略',
+    '环境变量（可选，值写 !!js process.env.KEY 引用密钥）',
+  ]
+  const builtInSources = [
+    '{configured} 已配置 · {available} 可安装',
+    '安装选中（{n}）',
+    '网页搜索、代码搜索与页面内容读取',
+    '免密额度，可添加 API Key 提升额度',
+    '面向 Agent 的网页搜索与内容提取',
+    '免密额度（Search / Extract）；可切换免费账号 API Key',
+    '网页搜索、抓取与文档解析',
+    '免密额度（Search / Scrape / Parse）；可添加 API Key',
+    '浏览器调试、网络与性能分析',
+    '本地 npx / Node.js / Chrome',
+    '基于可访问性快照的浏览器自动化',
+    '本地 npx / Node.js 20+',
+  ]
+  const modes = ['悬浮按钮 + 侧栏入口', '仅悬浮按钮', '仅侧栏入口']
+  for (const locale of ['en', 'ru']) {
+    assertDomTranslations('dsh-mcp-manager-ui', locale, '.dsh-mcp-overlay', importSources)
+    assertDomTranslations('dsh-mcp-manager-ui', locale, '.dsh-mcp-overlay', addFormSources)
+    assertDomTranslations('dsh-mcp-manager-ui', locale, '.dsh-mcp-overlay', builtInSources)
+    assertDomTranslations('dsh-mcp-manager-ui', locale, '.dsh-mcp-panel-overlay', addFormSources)
+    assertDomTranslations('dsh-mcp-manager-ui', locale, '.dsh-mcp-panel-overlay', builtInSources)
+    assertDomTranslations('dsh-mcp-manager-ui', locale, '.dsh-mcp-overlay', modes)
+    assertDomTranslations('dsh-mcp-manager-ui', locale, '.dsh-mcp-panel-overlay', modes)
+  }
+})
+
+test('plugin manager cards translate screenshot-visible headings, names, and manifest descriptions', () => {
+  const cardSources = [
+    'Official', 'Installed', 'Официальные', 'Установленные',
+    'Agent Teams', 'Enable team collaboration, team tools, the member roster, and the shared task board.',
+    'Beta', 'Voice input', 'Transcribe recordings locally with SenseVoice; first use requires installing dependencies',
+    'Russian language', 'Переводы интерфейса DSH и плагинов',
+    'Цикл агента', 'Управление диспетчеризацией вызовов инструментов агентом.',
+    'Субагент', 'Настройка глубины рекурсии, количества и моделей субагентов.',
+    'Веб-поиск', 'Настройка поискового провайдера DeepSeek.',
+    "Automated approval review for DeepSeek Harness: auto-approves safe tools, auto-denies dangerous command patterns, and can fully auto-approve in 'auto' mode. · DSH 自动审批审核插件：安全操作自动放行、危险命令自动拒绝、可配置全自动模式。",
+    'Opt-in DeepSeek Harness Skill-only bundle for the Archify architecture-diagram skill.',
+    'DeepSeek Harness plugin that uses configured model providers for image analysis and context compaction.',
+    'DeepSeek Harness tool plugin that exposes BrowserSkill browser automation (browser_* tools) to the model',
+    'Context (dsh-context)',
+    'A DeepSeek Harness plugin for context insight and management, with context dashboard and context command, for understanding how the context is made of, and how it evolves.',
+    'Visual plugin market inside DeepSeek Harness — browse, search, and one-click install community plugins. · DSH 可视化插件市场：逛一逛，点一下，装好。',
+    'Find DeepSeek Harness plugins inside the agent — live GitHub dsh-plugin topic search, ranked by stars.',
+    'GenUI for DeepSeek Harness: interactive UI components rendered inline in assistant replies via the ```dsh-ui fence — layout, charts, plots, forms, quizzes, mermaid, 3D scenes, and an action event loop back to the model. Ships the fence-teaching host plugin, the browser renderer (client half), and the genui skill.',
+    'Reflect-only Hindsight long-term memory for coding agents (harness-pluggable: opencode, …), with automatic background ingestion (no setup CLI).',
+    'Runtime compatibility shim for dsh (DeepSeek Harness) cordis bundle plugins: decouples third-party plugins from real dsh internal service names, module paths, and RPC details via a version-aware adapter registry.',
+    'OpenViking memory and context bundle for DeepSeek Harness',
+    'Plug-in vision for text-only LLMs, powered by the free Antigravity CLI',
+    'Community-extensible translations for DeepSeek Harness core and plugins, with safe scoped adapters for UI that has no locale API.',
+    'DSH 能力插件:服务器卡片仪表盘——实时状态/CPU/内存/磁盘 + 趋势记录与可视化(1h/24h/7d/30d) + 点卡片进入 xterm 交互终端',
+    'dsh-routing-suite 分发入口：DSH 超级模组注入器（BepInEx 式运行时注入，免重启）+ router-standard 预设仓库。插件入口为 injector/，预设位于 preset/。',
+    'A DSH port of obra/superpowers — the full multi-agent software-development methodology (TDD, planning, debugging, review) as native DSH skills',
+    'External dsh web GUI plugin: a blank-session git branch selector + Git graph, with real host-side git operations and guards, as a dsh profile bundle',
+    'DSH skill center: browse loaded skills by source (bundled / project / user / custom / runtime), enable or disable, create and delete, in a web GUI panel.',
+    'Host-authoritative task board for the DSH Web GUI with real session execution, Host cron scheduling, and optional cross-platform idle-sleep protection; mounted without DSH source changes.',
+    'DSH Web UI 全家桶聚合插件：一键安装全部功能插件（task-board / git-graph / pet / remote-web-ui / web-ui-settings / skin-center / community-plugins / compat shim）。compat 桥接层已并入本包（src/client），无需独立 compat npm 包。',
+    'WeKnora knowledge retrieval tools for DeepSeek Harness (dsh): semantic search, document reading and RAG/agent answers over your own knowledge bases.',
+  ]
+  for (const locale of ['en', 'ru']) {
+    assertDomTranslations('@linxin666/dsh-client-ui-plugin-manager', locale, 'section[data-plugin-panel]', cardSources)
+  }
+  assertDomTranslationTarget('@linxin666/dsh-client-ui-plugin-manager', 'ru', 'section[data-plugin-panel]', 'Agent Teams', 'Команды агентов')
+  assertDomTranslationTarget('@linxin666/dsh-client-ui-plugin-manager', 'ru', 'section[data-plugin-panel]', 'Beta', 'Бета')
+  assertDomTranslationTarget('@linxin666/dsh-client-ui-plugin-manager', 'ru', 'section[data-plugin-panel]', 'Russian language', 'Русский язык')
+  assertDomTranslationTarget('@linxin666/dsh-client-ui-plugin-manager', 'ru', 'section[data-plugin-panel]', 'Voice input', 'Голосовой ввод')
+  assertDomTranslationTarget('@linxin666/dsh-client-ui-plugin-manager', 'ru', 'section[data-plugin-panel]', 'OpenViking memory and context bundle for DeepSeek Harness', 'Пакет памяти и контекста OpenViking для DeepSeek Harness.')
+  for (const locale of ['en', 'ru']) {
+    const value = pack('@linxin666/dsh-client-ui-plugin-manager', locale)
+    assert.ok(value.dom?.some((entry) => entry.selector === 'section[data-plugin-panel]' && entry.source === 'dsh-routing-suite 分发入口：DSH 超级模组注入器（BepInEx 式运行时注入，免重启）+ router-standard 预设仓库。插件入口为 injector/，预设位于 preset/。'))
+  }
+})
+
+test('Skin Center has a complete 121-key English and Russian namespace, not only card labels', () => {
+  const visible = [
+    'title', 'cardDescription', 'enabled', 'enabledHint', 'intro', 'official', 'officialTagline',
+    'active', 'tryingOn', 'tryOn', 'exitTryOn', 'apply', 'restore', 'theme', 'themeLight', 'themeDark',
+    'verifyIntegrity', 'backgroundOpacity', 'backgroundHint', 'backgroundBlurEmpty', 'backgroundBlurContent',
+    'backgroundBlurHint', 'inputCardBlur', 'inputCardBlurHint', 'bubbleOpacity', 'bubbleOpacityHint',
+    'bubbleBlur', 'bubbleBlurHint', 'wallpaperTitle', 'wallpaperEnable', 'wallpaperHint',
+    'wallpaperLibraryManual', 'wallpaperEmpty', 'wallpaperDirs', 'wallpaperDirsEmpty', 'wallpaperDirsHint',
+    'customThemeTitle', 'customThemeTagline', 'customThemeEdit', 'uninstall',
+  ]
+  for (const locale of ['en', 'ru']) {
+    const value = pack('@linxin666/dsh-client-ui-skin-center', locale)
+    assert.equal(Object.keys(value.namespaces?.skinCenter ?? {}).length, 121)
+    assert.equal(Object.keys(value.source?.skinCenter ?? {}).length, 121)
+    for (const [key, target] of Object.entries(value.namespaces.skinCenter)) {
+      assert.doesNotMatch(target, /[\u3400-\u9fff]/, `Skin Center ${locale}.${key} still contains Chinese text`)
+    }
+    assertNamespaceTranslations('@linxin666/dsh-client-ui-skin-center', locale, 'skinCenter', visible)
   }
 })
 
@@ -186,6 +329,23 @@ test('new screenshots: DSH Desktop and auxiliary settings have complete screensh
   }
 })
 
+test('DSH Desktop settings and titlebar translate all locale strings through scoped roots', () => {
+  const sources = Object.values(pack('dsh-plugin-desktop', 'en').source?.['desktop.settings'] ?? {})
+  assert.equal(sources.length, 119)
+  for (const locale of ['en', 'ru']) {
+    assertDomTranslations('dsh-plugin-desktop', locale, '.dshDesktopSettings', sources)
+    assertDomTranslations('dsh-plugin-desktop', locale, '.dshDesktopFrameTitlebar', [
+      'Remote control', 'New feature', 'Compatibility mode',
+    ])
+    assertDomTranslations('dsh-plugin-desktop', locale, '.dshDesktopModePopover', [
+      'Window mode', 'Compatibility mode', 'Extended mode', 'Enhanced mode',
+    ])
+  }
+  assertDomTranslationTarget('dsh-plugin-desktop', 'ru', '.dshDesktopFrameTitlebar', 'Remote control', 'Удалённое управление')
+  assertDomTranslationTarget('dsh-plugin-desktop', 'ru', '.dshDesktopFrameTitlebar', 'Compatibility mode', 'Режим совместимости')
+  assertDomTranslationTarget('dsh-plugin-desktop', 'ru', '.dshDesktopSettings', 'Window mode', 'Режим окна')
+})
+
 test('screenshot translations keep the Chinese compaction note and skin taglines accurate', () => {
   const compactSource = '控制 `purpose: compaction` 摘要调用是否改用独立的 compact 模型路由。'
   assertDomTranslationTarget('@dsh-plugin/dsh-auxiliary', 'ru', 'section[aria-labelledby="compact-title"]', compactSource,
@@ -195,7 +355,7 @@ test('screenshot translations keep the Chinese compaction note and skin taglines
   assertDomTranslationTarget('@linxin666/dsh-pet', 'ru', '#settings-pet-pet', 'OUO Neko', 'Кошка OUO')
   assertDomTranslationTarget('@linxin666/dsh-client-ui-skin-center', 'ru', '.TJMolG_card',
     '鲸鱼插画背景 · periwinkle 靛蓝调色板 · 半透明面板',
-    'Иллюстрация кита на фоне · палитра индиго и барвинково-синих оттенков · полупрозрачные панели')
+    'Фон с иллюстрацией кита · сине-фиолетовая палитра · полупрозрачные панели')
   assertDomTranslationTarget('@linxin666/dsh-client-ui-skin-center', 'ru', '.TJMolG_card',
     '暮光蓝港 · 日落橙辉 · 半透明夜色面板',
     'Сумеречная синяя гавань · оранжевое сияние заката · полупрозрачные панели в ночных оттенках')

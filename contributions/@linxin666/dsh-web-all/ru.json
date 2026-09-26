@@ -50,9 +50,9 @@
       "usage.config.pollIntervalSec": "Интервал опроса (секунды)",
       "usage.config.saveFailed": "Не удалось сохранить: настройка не принята.",
       "usage.bank.title": "Купон «Китовый юань»",
-      "usage.bank.hint": "За каждый миллион токенов, потраченных через официальный API, начисляется один Whale Yuan. Купон можно сохранить или отправить.",
+      "usage.bank.hint": "За каждый миллион токенов, потраченных через официальный API, начисляется один китовый юань. Купон можно сохранить или отправить.",
       "usage.bank.noUsage": "Пока нет официальных данных об использовании DeepSeek (статистика ведётся с момента включения плагина)",
-      "usage.bank.minted": "Начислено {minted} Whale Yuan ({tokens} токенов)",
+      "usage.bank.minted": "Начислено {minted} китовых юаней ({tokens} токенов)",
       "usage.bank.spend.observed": "По официальному балансу потрачено ¥{cost} (наблюдение с {since})",
       "usage.bank.spend.estimated": "Расход (оценка): около ¥{cost}",
       "usage.bank.window": "Период учёта: {from} — {to}",
@@ -470,13 +470,28 @@
   "dom": [
     {
       "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "{tokens} tokens · {n} calls",
+      "target": "Токены: {tokens} · вызовы: {n}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "{tokens} tokens · {n} 次调用",
+      "target": "Токены: {tokens} · вызовы: {n}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "{tokens} tokens · Вызовов: {n}",
+      "target": "Токены: {tokens} · вызовы: {n}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
       "source": "用量",
       "target": "Использование"
     },
     {
       "selector": "[data-dsh-plugin=\"usage\"]",
       "source": "个人套餐",
-      "target": "Личные тарифы"
+      "target": "Тарифы"
     },
     {
       "selector": "[data-dsh-plugin=\"usage\"]",
@@ -486,12 +501,12 @@
     {
       "selector": "[data-dsh-plugin=\"usage\"]",
       "source": "更新于 {time}",
-      "target": "Обновлено: {time}"
+      "target": "Обновлено {time}"
     },
     {
       "selector": "[data-dsh-plugin=\"usage\"]",
       "source": "今日用量",
-      "target": "Использование за сегодня"
+      "target": "Сегодня"
     },
     {
       "selector": "[data-dsh-plugin=\"usage\"]",
@@ -506,17 +521,17 @@
     {
       "selector": "[data-dsh-plugin=\"usage\"]",
       "source": "没有已配置的提供方",
-      "target": "Провайдеры не настроены"
+      "target": "Нет настроенных провайдеров"
     },
     {
       "selector": "[data-dsh-plugin=\"usage\"]",
       "source": "近 30 天",
-      "target": "Последние 30 дней"
+      "target": "За последние 30 дней"
     },
     {
       "selector": "[data-dsh-plugin=\"usage\"]",
       "source": "暂无用量数据（统计自插件启用起）",
-      "target": "Нет данных об использовании (статистика ведётся с момента включения плагина)"
+      "target": "Пока нет данных (учёт ведётся с момента включения плагина)"
     },
     {
       "selector": "[data-dsh-plugin=\"usage\"]",
@@ -541,17 +556,12 @@
     {
       "selector": "[data-dsh-plugin=\"usage\"]",
       "source": "今日暂无用量",
-      "target": "Сегодня данных об использовании пока нет"
+      "target": "Сегодня данных пока нет"
     },
     {
       "selector": "[data-dsh-plugin=\"usage\"]",
       "source": "{n} 次调用",
       "target": "Вызовов: {n}"
-    },
-    {
-      "selector": "[data-dsh-plugin=\"usage\"]",
-      "source": "统计",
-      "target": "Статистика"
     },
     {
       "selector": "[data-dsh-plugin=\"usage\"]",
@@ -725,13 +735,8 @@
     },
     {
       "selector": "[data-dsh-plugin=\"usage\"]",
-      "source": "暂无 DeepSeek 官方用量数据（统计自插件Включить起）",
-      "target": "Пока нет официальных данных об использовании DeepSeek (статистика ведётся с момента включения плагина)"
-    },
-    {
-      "selector": "[data-dsh-plugin=\"usage\"]",
       "source": "没有已配置的套餐类 provider（如 Kimi、GLM、OpenCode Go、MiniMax、Codex 订阅）",
-      "target": "Не настроен провайдер с тарифным планом (например, Kimi, GLM, OpenCode Go, MiniMax или подписка Codex)"
+      "target": "Не настроен провайдер с тарифом (например, Kimi, GLM, OpenCode Go, MiniMax или подписка Codex)"
     },
     {
       "selector": "[data-dsh-plugin=\"session-archive\"]",
@@ -767,6 +772,176 @@
       "selector": "[data-dsh-plugin=\"session-archive\"]",
       "source": "{n} 个子会话",
       "target": "Дочерние сессии: {n}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "当前",
+      "target": "Сейчас"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "总 tokens",
+      "target": "Всего токенов"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "输入",
+      "target": "Ввод"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "输出",
+      "target": "Вывод"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "缓存读",
+      "target": "Чтение из кэша"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "缓存写",
+      "target": "Запись в кэш"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "使用统计",
+      "target": "Статистика использования"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "刷新中…",
+      "target": "Обновление…"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "正在加载用量数据…",
+      "target": "Загружаем статистику использования…"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "加载失败：{error}",
+      "target": "Не удалось загрузить: {error}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "插件已停用：勾选下方「启用插件」即可恢复统计。",
+      "target": "Плагин отключён. Включите его ниже, чтобы возобновить сбор статистики."
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "DeepSeek 高峰时段：计价 ×2，{time} 结束",
+      "target": "Пиковое время DeepSeek: цена ×2, закончится в {time}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "DeepSeek 空闲时段：计价为高峰一半，{time} 进入高峰",
+      "target": "Непиковое время DeepSeek: половина пиковой цены, пик начнётся в {time}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "暂不支持余额查询",
+      "target": "Запрос баланса не поддерживается"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "未配置凭据",
+      "target": "Учётные данные не настроены"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "OAuth 凭据，不做余额查询",
+      "target": "OAuth-учётные данные: запрос баланса недоступен"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "{date} 重置",
+      "target": "Сброс: {date}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "未检测到套餐数据",
+      "target": "Данные о тарифе не найдены"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "5 小时",
+      "target": "5 часов"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "每周",
+      "target": "За неделю"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "每月",
+      "target": "За месяц"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "查询失败：{error}",
+      "target": "Ошибка запроса: {error}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "；",
+      "target": "; "
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "保存失败：设置未被接受。",
+      "target": "Не удалось сохранить: настройка не принята."
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "官方 API 每消耗 100 万 tokens 铸造 1 鲸元；保存或分享这张票券。",
+      "target": "За каждый миллион токенов, потраченных через официальный API, начисляется один китовый юань. Купон можно сохранить или отправить."
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "累计铸造 {minted} 鲸元（{tokens} tokens）",
+      "target": "Начислено {minted} китовых юаней ({tokens} токенов)"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "官方余额实测花费 ¥{cost}（自 {since} 起）",
+      "target": "По официальному балансу потрачено ¥{cost} (наблюдение с {since})"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "消费估算：约 ¥{cost}",
+      "target": "Расход (оценка): около ¥{cost}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "统计窗口 {from} ~ {to}",
+      "target": "Период учёта: {from} — {to}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "保存图片",
+      "target": "Сохранить изображение"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "分享",
+      "target": "Поделиться"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "票券生成失败：{error}",
+      "target": "Не удалось создать купон: {error}"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "{count} tokens",
+      "target": "{count} токенов"
+    },
+    {
+      "selector": "[data-dsh-plugin=\"usage\"]",
+      "source": "暂无 DeepSeek 官方用量数据（统计自插件Включить起）",
+      "target": "Пока нет официальных данных об использовании DeepSeek (учёт ведётся с момента включения плагина)"
     }
   ]
 }

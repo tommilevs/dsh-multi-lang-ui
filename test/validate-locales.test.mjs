@@ -86,6 +86,7 @@ test('accepts stable DSH plugin roots and the pet root for scoped DOM mappings',
       namespaces: {},
       dom: [
         { selector: '[data-dsh-plugin="usage"]', source: '今日消费', target: 'Расход за сегодня' },
+        { selector: 'section[data-plugin-panel]', source: 'Installed', target: 'Установленные' },
         { selector: '[data-conversation-tabs]', source: 'Trajectory', target: 'Ход выполнения' },
         { selector: '[data-dsh-plugin="session-archive"] .title', source: '会话归档管理', target: 'Управление архивом диалогов' },
         { selector: '[data-dsh-pet-root]', source: '喂食', target: 'Покормить' },

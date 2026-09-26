@@ -80,6 +80,42 @@ test('translates a changing provider/model error while preserving identifiers', 
   assert.equal(resolveDomTranslation(entries[2].selector, source, 'ru', entries), russian)
 })
 
+test('runtime DOM selector guard accepts the plugin manager panel root', () => {
+  assert.equal(isSafeDomSelector('section[data-plugin-panel]'), true)
+  assert.equal(isSafeDomSelector('section[data-plugin-panel] .title'), true)
+  assert.equal(isSafeDomSelector('section[data-plugin-panel] body'), false)
+})
+
+test('translates dynamic usage token units and switches back to English', () => {
+  const packs = ['en', 'ru'].map((language) => JSON.parse(readFileSync(new URL(`../contributions/@linxin666/dsh-web-all/${language}.json`, import.meta.url), 'utf8')))
+  const combined = new Map()
+  for (const pack of packs) for (const item of pack.dom || []) {
+    const key = `${item.selector}:${item.source}`
+    if (!combined.has(key)) combined.set(key, { selector: item.selector, source: item.source, targets: {} })
+    combined.get(key).targets[pack.locale] = item.target
+  }
+  const entries = [...combined.values()]
+  const selector = '[data-dsh-plugin="usage"]'
+  assert.equal(resolveDomTranslation(selector, '808k tokens', 'ru', entries), '808k токенов')
+  assert.equal(resolveDomTranslation(selector, '808k токенов', 'en', entries), '808k tokens')
+})
+
+test('translates the combined dynamic usage footer in English, Chinese, and Russian source forms', () => {
+  const packs = ['en', 'ru'].map((language) => JSON.parse(readFileSync(new URL(`../contributions/@linxin666/dsh-web-all/${language}.json`, import.meta.url), 'utf8')))
+  const combined = new Map()
+  for (const pack of packs) for (const item of pack.dom || []) {
+    const key = `${item.selector}:${item.source}`
+    if (!combined.has(key)) combined.set(key, { selector: item.selector, source: item.source, targets: {} })
+    combined.get(key).targets[pack.locale] = item.target
+  }
+  const entries = [...combined.values()]
+  const selector = '[data-dsh-plugin="usage"]'
+  for (const source of ['808k tokens · 2 calls', '808k tokens · 2 次调用', '808k tokens · Вызовов: 2']) {
+    assert.equal(resolveDomTranslation(selector, source, 'ru', entries), 'Токены: 808k · вызовы: 2')
+  }
+  assert.equal(resolveDomTranslation(selector, 'Токены: 808k · вызовы: 2', 'en', entries), 'Tokens: 808k · calls: 2')
+})
+
 test('translates native select options without changing their values', () => {
   const options = [
     { textContent: '全部状态', value: 'all' },

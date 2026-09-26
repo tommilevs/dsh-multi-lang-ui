@@ -7,7 +7,90 @@
   },
   "locale": "en",
   "sourceLocale": "zh",
-  "namespaces": {},
+  "namespaces": {
+    "pet": {
+      "pet.feed": "Feed",
+      "pet.hide": "Hide",
+      "pet.rename": "Rename",
+      "pet.confirm": "OK",
+      "pet.namePlaceholder": "Enter a new name",
+      "pet.summon": "Summon {name}",
+      "pet.rank": "Affinity: {rank}",
+      "pet.rank.name.幼鲸": "Baby Whale",
+      "pet.rank.name.伙伴": "Companion",
+      "pet.rank.name.挚友": "Close Friend",
+      "pet.rank.name.深海羁绊": "Deep Sea Bond",
+      "pet.rank.name.心有灵犀": "Kindred Spirit",
+      "pet.rank.name.传说羁绊": "Legendary Bond",
+      "pet.rank.name.神话羁绊": "Mythic Bond",
+      "pet.rank.name.永恒之契": "Eternal Covenant",
+      "pet.rank.name.鲸生共渡": "Lifelong Companion",
+      "pet.points": "{points} pts",
+      "pet.treats": "Dried fish ×{n}",
+      "pet.state.loading": "The pet is on its way…",
+      "pet.state.error": "The pet is lost (connection failed)",
+      "pet.renderer.unavailable": "This pet needs a renderer ({renderer}) that is not available in this build.",
+      "pet.live2d.core-missing": "Live2D Cubism Core is not installed: place the official live2dcubismcore.min.js under $DSH_HOME/pets/.runtime/ and refresh (see the pet plugin README).",
+      "pet.live2d.vendor-missing": "The Live2D component is missing; please update the pet plugin.",
+      "pet.live2d.load-failed": "The Live2D model failed to load; check the pet directory is complete.",
+      "pet.openSessionHint": "Click to jump to this session",
+      "pet.gameplay.menu": "Play",
+      "pet.gameplay.work": "Work",
+      "pet.gameplay.stopWork": "Stop work",
+      "pet.gameplay.sleep": "Sleep",
+      "pet.gameplay.wake": "Wake up",
+      "pet.gameplay.shop": "Shop",
+      "pet.gameplay.skin": "Skin",
+      "pet.gameplay.skinDefault": "Default",
+      "pet.gameplay.back": "Back",
+      "pet.gameplay.buy": "Buy",
+      "pet.gameplay.insufficient": "Not enough {currency}",
+      "pet.gameplay.prize": "Prize +{amount} {currency}",
+      "pet.gameplay.working": "Working",
+      "pet.gameplay.sleeping": "Sleeping",
+      "pet.gameplay.stat.hunger": "Hunger",
+      "pet.gameplay.stat.mood": "Mood",
+      "pet.gameplay.stat.energy": "Energy",
+      "pet.gameplay.stat.affection": "Affection",
+      "pet.gameplay.currency.treats": "Treats",
+      "pet.moreSessions": "Expand {n} more session bubbles",
+      "pet.collapseSessions": "Collapse session bubbles",
+      "settings.title": "Pet",
+      "settings.diagnosticsTitle": "Pet directory diagnostics",
+      "settings.description": "Pick a pet and tune its display layout.",
+      "settings.pet": "Pet",
+      "settings.petHint": "Choose which pet to display. Each pet keeps its own name; you can rename it from the pet hover panel.",
+      "settings.enabled": "Enable the pet",
+      "settings.enabledHint": "When off, the pet hides and polling stops; re-enable it here.",
+      "settings.decoration": "Status decoration",
+      "settings.decorationHint": "Show ornaments like the spouting whale inside the pet status bubbles; when off, bubbles stay text-only.",
+      "settings.visible": "Show the pet",
+      "settings.visibleHint": "When off, the pet hides; summon it again from the input row.",
+      "settings.size": "Size (px)",
+      "settings.sizeHint": "Sprite cell height, 32–1024.",
+      "settings.bubbleScale": "Bubble text multiplier",
+      "settings.bubbleScaleHint": "Status, whisper, and usage bubbles scale with the pet automatically; this multiplies that result (0.5–2, default 1). The rendered text stays between 10px and 24px.",
+      "settings.right": "Right inset (px)",
+      "settings.rightHint": "Horizontal inset from the viewport right edge.",
+      "settings.bottom": "Bottom inset (px)",
+      "settings.bottomHint": "Vertical inset from the viewport bottom edge.",
+      "settings.inherit": "Inherit",
+      "settings.on": "On",
+      "settings.off": "Off",
+      "settings.overridden": "Overridden",
+      "settings.reset": "Reset to default",
+      "settings.notExposed": "This DSH version does not expose this plugin's settings namespace to the configuration page, so the form is unavailable. Edit $DSH_HOME/settings.yaml directly, or confirm that the plugin owning the namespace is mounted with its settings domain and restart.",
+      "settings.readOnly": "This deployment stores settings read-only.",
+      "settings.expand": "Show settings",
+      "settings.collapse": "Hide settings",
+      "settings.save": "Save",
+      "settings.saving": "Saving\\u2026",
+      "settings.discard": "Discard",
+      "settings.unsaved": "Unsaved",
+      "settings.saveFailed": "The deployment did not accept these values; they were left for you to correct.",
+      "settings.invalidNumber": "Enter a number, or leave blank to use the default."
+    }
+  },
   "dom": [
     {
       "selector": "[data-dsh-pet-root]",
@@ -78,6 +161,490 @@
       "selector": "[data-dsh-pet-root]",
       "source": "蓝喉蜂虎",
       "target": "Blue-throated bee-eater"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "亲密度 {rank}",
+      "target": "Affinity: {rank}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "{points} 点",
+      "target": "{points} pts"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "等待模型响应",
+      "target": "Waiting for a model response"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "点击跳转到对应会话",
+      "target": "Click to jump to this session"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "幼鲸",
+      "target": "Baby Whale"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "伙伴",
+      "target": "Companion"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "挚友",
+      "target": "Close Friend"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "深海羁绊",
+      "target": "Deep Sea Bond"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "心有灵犀",
+      "target": "Kindred Spirit"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "传说羁绊",
+      "target": "Legendary Bond"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "神话羁绊",
+      "target": "Mythic Bond"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "永恒之契",
+      "target": "Eternal Covenant"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "鲸生共渡",
+      "target": "Lifelong Companion"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "确定",
+      "target": "OK"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "输入新名字",
+      "target": "Enter a new name"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "召唤{name}",
+      "target": "Summon {name}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "宠物正在赶来…",
+      "target": "The pet is on its way…"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "宠物迷路了（连接失败）",
+      "target": "The pet is lost (connection failed)"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这只宠物需要的渲染器（{renderer}）在当前版本不可用。",
+      "target": "This pet needs a renderer ({renderer}) that is not available in this build."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "Live2D 核心未安装：请把官方 live2dcubismcore.min.js 放入 $DSH_HOME/pets/.runtime/ 后刷新（步骤见宠物插件 README）。",
+      "target": "Live2D Cubism Core is not installed: place the official live2dcubismcore.min.js under $DSH_HOME/pets/.runtime/ and refresh (see the pet plugin README)."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "Live2D 组件缺失，请升级宠物插件。",
+      "target": "The Live2D component is missing; please update the pet plugin."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "Live2D 模型加载失败，请检查该宠物目录的完整性。",
+      "target": "The Live2D model failed to load; check the pet directory is complete."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "玩法",
+      "target": "Play"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "打工",
+      "target": "Work"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "收工",
+      "target": "Stop work"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "休息",
+      "target": "Sleep"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "起床",
+      "target": "Wake up"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "商店",
+      "target": "Shop"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "皮肤",
+      "target": "Skin"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "默认",
+      "target": "Default"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "返回",
+      "target": "Back"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "购买",
+      "target": "Buy"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "{currency}不足",
+      "target": "Not enough {currency}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "中奖 +{amount} {currency}",
+      "target": "Prize +{amount} {currency}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "打工中",
+      "target": "Working"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "睡觉中",
+      "target": "Sleeping"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "饱食",
+      "target": "Hunger"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "心情",
+      "target": "Mood"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "精力",
+      "target": "Energy"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "好感",
+      "target": "Affection"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "小鱼干",
+      "target": "Treats"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "展开其余 {n} 个会话的气泡",
+      "target": "Expand {n} more session bubbles"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "收起会话气泡",
+      "target": "Collapse session bubbles"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "宠物",
+      "target": "Pet"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "宠物目录诊断",
+      "target": "Pet directory diagnostics"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "选择宠物并调整它的显示布局。",
+      "target": "Pick a pet and tune its display layout."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "选择显示哪只宠物；每只宠物独立命名，可在宠物悬浮面板改名。",
+      "target": "Choose which pet shows. Names are stored per pet; rename from the pet hover panel."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "启用宠物",
+      "target": "Enable the pet"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "关闭后隐藏宠物并停止轮询，可在设置里重新启用。",
+      "target": "When off, the pet hides and polling stops; re-enable it here."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "状态装饰",
+      "target": "Status decoration"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "在宠物状态气泡里显示喷水鲸鱼等状态装饰；关闭后气泡只剩文字。",
+      "target": "Show ornaments like the spouting whale inside the pet status bubbles; when off, bubbles stay text-only."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "显示宠物",
+      "target": "Show the pet"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "关闭后宠物隐藏，可从聊天输入区重新召唤。",
+      "target": "When off, the pet hides; summon it again from the input row."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "大小（px）",
+      "target": "Size (px)"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "精灵单元高度，范围 32–1024。",
+      "target": "Sprite cell height, 32–1024."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "气泡字号倍率",
+      "target": "Bubble text multiplier"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "状态、碎碎念与用量气泡的字号会随宠物大小自动缩放；这一项是在此基础上再乘一个倍率（0.5–2，默认 1）。字号本身不小于 10px、不大于 24px。",
+      "target": "Status, whisper, and usage bubbles scale with the pet automatically; this multiplies that result (0.5–2, default 1). The rendered text stays between 10px and 24px."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "距右侧（px）",
+      "target": "Right inset (px)"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "距视口右边缘的水平内缩距离。",
+      "target": "Horizontal inset from the viewport right edge."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "距底部（px）",
+      "target": "Bottom inset (px)"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "距视口底边的垂直内缩距离。",
+      "target": "Vertical inset from the viewport bottom edge."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "继承",
+      "target": "Inherit"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "开",
+      "target": "On"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "关",
+      "target": "Off"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "已覆盖",
+      "target": "Overridden"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "恢复默认",
+      "target": "Reset to default"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "当前 DSH 版本未向设置页暴露本插件的配置命名空间，表单不可用。可编辑 $DSH_HOME/settings.yaml 直接配置，或确认提供该命名空间的插件已挂载其设置域并重启。",
+      "target": "This DSH version does not expose this plugin's settings namespace to the configuration page, so the form is unavailable. Edit $DSH_HOME/settings.yaml directly, or confirm that the plugin owning the namespace is mounted with its settings domain and restart."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "当前部署的设置只读。",
+      "target": "This deployment stores settings read-only."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "展开设置",
+      "target": "Show settings"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "收起设置",
+      "target": "Hide settings"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "保存",
+      "target": "Save"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "保存中…",
+      "target": "Saving\\u2026"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "放弃",
+      "target": "Discard"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "未保存",
+      "target": "Unsaved"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "部署未接受这些值，已保留供你修改。",
+      "target": "The deployment did not accept these values; they were left for you to correct."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "请输入数字，留空则使用默认值。",
+      "target": "Enter a number, or leave blank to use the default."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "鲸鱼娘（原版）",
+      "target": "Whale Girl (Original)"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "鲸鱼娘（精致版）",
+      "target": "Whale Girl (Refined Version)"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "蓝喉蜂虎",
+      "target": "Blue-throated bee-eater"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "OUO Neko",
+      "target": "OUO Neko"
     }
-  ]
+  ],
+  "source": {
+    "pet": {
+      "pet.feed": "喂食",
+      "pet.hide": "隐藏",
+      "pet.rename": "改名",
+      "pet.confirm": "确定",
+      "pet.namePlaceholder": "输入新名字",
+      "pet.summon": "召唤{name}",
+      "pet.rank": "亲密度 {rank}",
+      "pet.rank.name.幼鲸": "幼鲸",
+      "pet.rank.name.伙伴": "伙伴",
+      "pet.rank.name.挚友": "挚友",
+      "pet.rank.name.深海羁绊": "深海羁绊",
+      "pet.rank.name.心有灵犀": "心有灵犀",
+      "pet.rank.name.传说羁绊": "传说羁绊",
+      "pet.rank.name.神话羁绊": "神话羁绊",
+      "pet.rank.name.永恒之契": "永恒之契",
+      "pet.rank.name.鲸生共渡": "鲸生共渡",
+      "pet.points": "{points} 点",
+      "pet.treats": "小鱼干 ×{n}",
+      "pet.state.loading": "宠物正在赶来…",
+      "pet.state.error": "宠物迷路了（连接失败）",
+      "pet.renderer.unavailable": "这只宠物需要的渲染器（{renderer}）在当前版本不可用。",
+      "pet.live2d.core-missing": "Live2D 核心未安装：请把官方 live2dcubismcore.min.js 放入 $DSH_HOME/pets/.runtime/ 后刷新（步骤见宠物插件 README）。",
+      "pet.live2d.vendor-missing": "Live2D 组件缺失，请升级宠物插件。",
+      "pet.live2d.load-failed": "Live2D 模型加载失败，请检查该宠物目录的完整性。",
+      "pet.openSessionHint": "点击跳转到对应会话",
+      "pet.gameplay.menu": "玩法",
+      "pet.gameplay.work": "打工",
+      "pet.gameplay.stopWork": "收工",
+      "pet.gameplay.sleep": "休息",
+      "pet.gameplay.wake": "起床",
+      "pet.gameplay.shop": "商店",
+      "pet.gameplay.skin": "皮肤",
+      "pet.gameplay.skinDefault": "默认",
+      "pet.gameplay.back": "返回",
+      "pet.gameplay.buy": "购买",
+      "pet.gameplay.insufficient": "{currency}不足",
+      "pet.gameplay.prize": "中奖 +{amount} {currency}",
+      "pet.gameplay.working": "打工中",
+      "pet.gameplay.sleeping": "睡觉中",
+      "pet.gameplay.stat.hunger": "饱食",
+      "pet.gameplay.stat.mood": "心情",
+      "pet.gameplay.stat.energy": "精力",
+      "pet.gameplay.stat.affection": "好感",
+      "pet.gameplay.currency.treats": "小鱼干",
+      "pet.moreSessions": "展开其余 {n} 个会话的气泡",
+      "pet.collapseSessions": "收起会话气泡",
+      "settings.title": "宠物",
+      "settings.diagnosticsTitle": "宠物目录诊断",
+      "settings.description": "选择宠物并调整它的显示布局。",
+      "settings.pet": "宠物",
+      "settings.petHint": "选择显示哪只宠物；每只宠物独立命名，可在宠物悬浮面板改名。",
+      "settings.enabled": "启用宠物",
+      "settings.enabledHint": "关闭后隐藏宠物并停止轮询，可在设置里重新启用。",
+      "settings.decoration": "状态装饰",
+      "settings.decorationHint": "在宠物状态气泡里显示喷水鲸鱼等状态装饰；关闭后气泡只剩文字。",
+      "settings.visible": "显示宠物",
+      "settings.visibleHint": "关闭后宠物隐藏，可从聊天输入区重新召唤。",
+      "settings.size": "大小（px）",
+      "settings.sizeHint": "精灵单元高度，范围 32–1024。",
+      "settings.bubbleScale": "气泡字号倍率",
+      "settings.bubbleScaleHint": "状态、碎碎念与用量气泡的字号会随宠物大小自动缩放；这一项是在此基础上再乘一个倍率（0.5–2，默认 1）。字号本身不小于 10px、不大于 24px。",
+      "settings.right": "距右侧（px）",
+      "settings.rightHint": "距视口右边缘的水平内缩距离。",
+      "settings.bottom": "距底部（px）",
+      "settings.bottomHint": "距视口底边的垂直内缩距离。",
+      "settings.inherit": "继承",
+      "settings.on": "开",
+      "settings.off": "关",
+      "settings.overridden": "已覆盖",
+      "settings.reset": "恢复默认",
+      "settings.notExposed": "当前 DSH 版本未向设置页暴露本插件的配置命名空间，表单不可用。可编辑 $DSH_HOME/settings.yaml 直接配置，或确认提供该命名空间的插件已挂载其设置域并重启。",
+      "settings.readOnly": "当前部署的设置只读。",
+      "settings.expand": "展开设置",
+      "settings.collapse": "收起设置",
+      "settings.save": "保存",
+      "settings.saving": "保存中…",
+      "settings.discard": "放弃",
+      "settings.unsaved": "未保存",
+      "settings.saveFailed": "部署未接受这些值，已保留供你修改。",
+      "settings.invalidNumber": "请输入数字，留空则使用默认值。"
+    }
+  }
 }

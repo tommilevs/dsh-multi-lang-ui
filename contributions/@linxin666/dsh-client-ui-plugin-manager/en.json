@@ -1,0 +1,222 @@
+{
+  "plugin": {
+    "id": "@linxin666/dsh-client-ui-plugin-manager",
+    "version": "0.4.1",
+    "source": "https://github.com/zhu1090093659/dsh-web/tree/main/packages/dsh-plugin-manager",
+    "license": "BSD-3-Clause"
+  },
+  "locale": "en",
+  "sourceLocale": "zh",
+  "namespaces": {
+    "settings.pluginManager": {
+      "tab": "Plugin Manager"
+    }
+  },
+  "source": {
+    "settings.pluginManager": {
+      "tab": "插件管理"
+    }
+  },
+  "dom": [
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Официальные",
+      "target": "Official"
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Установленные",
+      "target": "Installed"
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Official",
+      "target": "Официальные"
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Installed",
+      "target": "Установленные"
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Agent Teams",
+      "target": "Команды агентов"
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Enable team collaboration, team tools, the member roster, and the shared task board.",
+      "target": "Enable team collaboration, team tools, the member roster, and the shared task board."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Beta",
+      "target": "Beta"
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Voice input",
+      "target": "Voice input"
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Transcribe recordings locally with SenseVoice; first use requires installing dependencies",
+      "target": "Transcribe recordings locally with SenseVoice; first use requires installing dependencies"
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Russian language",
+      "target": "Russian language"
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Переводы интерфейса DSH и плагинов",
+      "target": "DSH and plugin interface translations"
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Цикл агента",
+      "target": "Agent Loop"
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Управление диспетчеризацией вызовов инструментов агентом.",
+      "target": "Manage how the agent dispatches tool calls."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Субагент",
+      "target": "Subagent"
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Настройка глубины рекурсии, количества и моделей субагентов.",
+      "target": "Configure the recursion depth, number, and models of subagents."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Веб-поиск",
+      "target": "Web Search"
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Настройка поискового провайдера DeepSeek.",
+      "target": "Configure the DeepSeek search provider."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Automated approval review for DeepSeek Harness: auto-approves safe tools, auto-denies dangerous command patterns, and can fully auto-approve in 'auto' mode. · DSH 自动审批审核插件：安全操作自动放行、危险命令自动拒绝、可配置全自动模式。",
+      "target": "Automated approval review for DeepSeek Harness: safe actions are approved automatically, dangerous command patterns are denied, and full auto-approval can be enabled with 'auto' mode."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Opt-in DeepSeek Harness Skill-only bundle for the Archify architecture-diagram skill.",
+      "target": "Optional DeepSeek Harness bundle containing only Archify's architecture diagram skill."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "DeepSeek Harness plugin that uses configured model providers for image analysis and context compaction.",
+      "target": "DeepSeek Harness plugin that uses configured model providers for image analysis and context compaction."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "DeepSeek Harness tool plugin that exposes BrowserSkill browser automation (browser_* tools) to the model",
+      "target": "DeepSeek Harness tool plugin that exposes BrowserSkill browser automation (browser_* tools) to the model"
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Context (dsh-context)",
+      "target": "Context (dsh-context)"
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "A DeepSeek Harness plugin for context insight and management, with context dashboard and context command, for understanding how the context is made of, and how it evolves.",
+      "target": "A DeepSeek Harness plugin for exploring and managing context. It provides a context dashboard and command to show what context contains and how it changes over time."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Visual plugin market inside DeepSeek Harness — browse, search, and one-click install community plugins. · DSH 可视化插件市场：逛一逛，点一下，装好。",
+      "target": "Visual plugin marketplace inside DeepSeek Harness: browse, search, and install community plugins with one click."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Find DeepSeek Harness plugins inside the agent — live GitHub dsh-plugin topic search, ranked by stars.",
+      "target": "Find DeepSeek Harness plugins inside the agent with live GitHub searches for the dsh-plugin topic, ranked by stars."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "GenUI for DeepSeek Harness: interactive UI components rendered inline in assistant replies via the ```dsh-ui fence — layout, charts, plots, forms, quizzes, mermaid, 3D scenes, and an action event loop back to the model. Ships the fence-teaching host plugin, the browser renderer (client half), and the genui skill.",
+      "target": "GenUI for DeepSeek Harness: interactive UI components rendered directly in assistant replies using the ```dsh-ui fence. Includes layouts, charts, plots, forms, quizzes, Mermaid diagrams, 3D scenes, and an action event loop back to the model. Includes the host plugin that teaches the fence format, the browser renderer (client side), and the GenUI skill."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Reflect-only Hindsight long-term memory for coding agents (harness-pluggable: opencode, …), with automatic background ingestion (no setup CLI).",
+      "target": "Reflect-only Hindsight long-term memory for coding agents, compatible with multiple harnesses such as OpenCode, with automatic background ingestion and no setup CLI."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Runtime compatibility shim for dsh (DeepSeek Harness) cordis bundle plugins: decouples third-party plugins from real dsh internal service names, module paths, and RPC details via a version-aware adapter registry.",
+      "target": "Runtime compatibility layer for cordis bundle plugins in dsh (DeepSeek Harness). A version-aware adapter registry keeps third-party plugins independent of DSH service names, module paths, and RPC details."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Responsive MCP management UI for DeepSeek Harness Web — floating panel, JSON import, and profile-backed Host Remote management.",
+      "target": "Responsive MCP management UI for DeepSeek Harness Web, with a floating panel, JSON import, and profile-based management of Host Remote connections."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "OpenViking memory and context bundle for DeepSeek Harness",
+      "target": "OpenViking memory and context bundle for DeepSeek Harness"
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Plug-in vision for text-only LLMs, powered by the free Antigravity CLI",
+      "target": "Visual capabilities for text-only LLMs, powered by the free Antigravity CLI."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Community-extensible translations for DeepSeek Harness core and plugins, with safe scoped adapters for UI that has no locale API.",
+      "target": "Community-extensible translations for DeepSeek Harness core and plugins, with safely scoped adapters for interfaces that have no localization API."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "DSH 能力插件:服务器卡片仪表盘——实时状态/CPU/内存/磁盘 + 趋势记录与可视化(1h/24h/7d/30d) + 点卡片进入 xterm 交互终端",
+      "target": "DSH server dashboard plugin: server cards with live status, CPU, memory, and disk usage; history and charts for 1h/24h/7d/30d; click a card to open an interactive xterm terminal."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "dsh-routing-suite 分发入口：DSH 超级模组注入器（BepInEx 式运行时注入，免重启）+ router-standard 预设仓库。插件入口为 injector/，预设位于 preset/。",
+      "target": "dsh-routing-suite distribution entry point: DSH Super Injector (BepInEx-style runtime injection without restarting) and the router-standard preset repository. The plugin entry point is injector/; presets are in preset/."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "A DSH port of obra/superpowers — the full multi-agent software-development methodology (TDD, planning, debugging, review) as native DSH skills",
+      "target": "A DSH port of obra/superpowers: a complete multi-agent software development workflow (TDD, planning, debugging, and review) provided as native DSH skills."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "External dsh web GUI plugin: a blank-session git branch selector + Git graph, with real host-side git operations and guards, as a dsh profile bundle",
+      "target": "External dsh web GUI plugin that adds a Git branch selector for blank sessions and a Git graph, with guarded Git operations on the host, distributed as a dsh profile bundle."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "DSH skill center: browse loaded skills by source (bundled / project / user / custom / runtime), enable or disable, create and delete, in a web GUI panel.",
+      "target": "DSH skill center: browse loaded skills by source (bundled / project / user / custom / runtime), enable or disable them, and create or delete skills in a web interface."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "Host-authoritative task board for the DSH Web GUI with real session execution, Host cron scheduling, and optional cross-platform idle-sleep protection; mounted without DSH source changes.",
+      "target": "Host-authoritative task board for the DSH Web GUI, with real session execution, host cron scheduling, and optional cross-platform prevention of idle sleep. Installs without changing DSH source code."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "DSH Web UI 全家桶聚合插件：一键安装全部功能插件（task-board / git-graph / pet / remote-web-ui / web-ui-settings / skin-center / community-plugins / compat shim）。compat 桥接层已并入本包（src/client），无需独立 compat npm 包。",
+      "target": "DSH Web UI bundle: install all feature plugins in one click (task board, Git graph, pet, remote web UI, web UI settings, Skin Center, community plugins, and compatibility shim). The compatibility layer is included in this package (src/client), so no separate compat npm package is needed."
+    },
+    {
+      "selector": "section[data-plugin-panel]",
+      "source": "WeKnora knowledge retrieval tools for DeepSeek Harness (dsh): semantic search, document reading and RAG/agent answers over your own knowledge bases.",
+      "target": "WeKnora knowledge retrieval tools for DeepSeek Harness (dsh): semantic search, document reading, and RAG or agent-generated answers from your own knowledge bases."
+    }
+  ]
+}

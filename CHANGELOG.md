@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.10
+
+- Complete screenshot-driven English and Russian coverage for the remaining pet settings, MCP forms, Skin Center, DSH Desktop, and plugin-manager cards.
+- Translate the dynamic usage footer with token and call totals while preserving counts and supporting English, Chinese, and mixed-language source forms.
+- Allow the runtime selector guard to load plugin-manager card translations.
+- Add regression checks for the new UI copy, DOM selectors, and language switching.
+
 ## 0.1.9
 
 - Translate the auxiliary compaction explanation when its host renders the Chinese source string.

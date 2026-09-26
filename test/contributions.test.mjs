@@ -45,6 +45,7 @@ test('accepts every established plugin DOM root', () => {
   const selectors = [
     '.example-root',
     '[data-conversation-tabs]',
+    'section[data-plugin-panel]',
     '[data-dsh-plugin="usage"]',
     '[data-dsh-plugin="session-archive"] .title',
     '[data-dsh-pet-root]',
@@ -65,7 +66,7 @@ test('accepts every established plugin DOM root', () => {
 test('rejects global and unrecognized DOM roots', () => {
   const selectors = [
     'body', 'html', '*', '.example-root body', '.example-root > html', '.example-root *',
-    '[data-arbitrary="usage"]', 'section[aria-labelledby="other-title"]', '#settings-other',
+    '[data-arbitrary="usage"]', 'section[data-arbitrary]', 'section[aria-labelledby="other-title"]', '#settings-other',
     'p[role="status"]', '[data-dsh-plugin="usage"],body',
   ]
   for (const selector of selectors) {
