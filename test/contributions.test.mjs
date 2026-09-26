@@ -1,8 +1,9 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
+import { mkdtempSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { mergeTranslationPacks, readTranslationPacks, validateTranslationPack } from '../lib/contributions.js'
 
 const pack = (overrides = {}) => ({
@@ -38,6 +39,54 @@ test('rejects placeholder mismatches and unsafe DOM selectors', () => {
   }))
   assert.ok(issues.some((issue) => issue.includes('placeholder')))
   assert.ok(issues.some((issue) => issue.includes('selector')))
+})
+
+test('accepts every established plugin DOM root', () => {
+  const selectors = [
+    '.example-root',
+    '[data-dsh-plugin="usage"]',
+    '[data-dsh-plugin="session-archive"] .title',
+    '[data-dsh-pet-root]',
+    '#settings-pet-pet',
+    'section[aria-labelledby="vision-title"]',
+    'section[aria-labelledby="compact-title"]',
+    'p[role="alert"]',
+  ]
+  for (const selector of selectors) {
+    assert.deepEqual(validateTranslationPack(pack({ dom: [{ selector, source: 'Open', target: 'Открыть' }] })), [], selector)
+  }
+})
+
+test('rejects global and unrecognized DOM roots', () => {
+  const selectors = [
+    'body', 'html', '*', '.example-root body', '.example-root > html', '.example-root *',
+    '[data-arbitrary="usage"]', 'section[aria-labelledby="other-title"]', '#settings-other',
+    'p[role="status"]', '[data-dsh-plugin="usage"],body',
+  ]
+  for (const selector of selectors) {
+    const issues = validateTranslationPack(pack({ dom: [{ selector, source: 'Open', target: 'Открыть' }] }))
+    assert.ok(issues.some((issue) => issue.includes('selector')), selector)
+  }
+})
+
+test('loads every shipped contribution JSON pack without skipping any', () => {
+  const root = fileURLToPath(new URL('../contributions/', import.meta.url))
+  const shipped = []
+  const walk = (directory) => {
+    for (const entry of readdirSync(directory, { withFileTypes: true })) {
+      const filename = path.join(directory, entry.name)
+      if (entry.isDirectory()) walk(filename)
+      else if (entry.isFile() && entry.name.endsWith('.json')) {
+        const value = JSON.parse(readFileSync(filename, 'utf8'))
+        assert.deepEqual(validateTranslationPack(value), [], path.relative(root, filename))
+        shipped.push(value)
+      }
+    }
+  }
+  walk(root)
+  assert.ok(shipped.length >= 18)
+  const identity = (value) => `${value.plugin.id}:${value.locale}`
+  assert.deepEqual(readTranslationPacks(root).map(identity).sort(), shipped.map(identity).sort())
 })
 
 test('merges matching locale packs and reports collisions deterministically', () => {

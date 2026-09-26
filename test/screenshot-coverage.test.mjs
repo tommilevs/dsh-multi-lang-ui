@@ -54,12 +54,22 @@ test('archive and model-capability labels visible in screenshots have both local
 })
 
 test('desktop, plugin-manager, and auxiliary-model settings translate their visible controls', () => {
+  assertNamespaceTranslations('@deepseek-ai/dsh-client-ui-trajectory', 'ru', 'trajectory', ['view.trajectory', 'toolbar.aria', 'toolbar.duration', 'toolbar.calls'])
+  const bundledMarket = JSON.parse(readFileSync(new URL('../lib/locales/plugins/54-workshop-market.json', import.meta.url), 'utf8'))
+  assert.equal(bundledMarket['dsh-web-ui-market']['settings.title'], 'Витрина сообщества')
+  assert.ok(bundledMarket['dsh-web-ui-market']['tab.skin'])
+  for (const namespace of ['@dsh-external/dsh-plugin-workshop', 'dsh-plugin-workshop']) {
+    assert.equal(bundledMarket[namespace]['settings.title'], 'Мастерская плагинов')
+    assert.equal(bundledMarket[namespace].title, 'Мастерская плагинов')
+  }
+  assertNamespaceTranslations('@linxin666/dsh-web-all', 'ru', 'dsh-web-ui-market', ['tab.preset', 'filter.category', 'category.tools', 'subcategory.browser', 'installs'])
   assertNamespaceTranslations('dsh-plugin-desktop', 'ru', 'desktop.settings', [
     'nav', 'title', 'intro', 'exportDiagnostics', 'openTerminal', 'restartDesktop', 'profileTitle',
     'profileIntro', 'profileReady', 'activeProfile', 'profileName', 'profileNamePlaceholder', 'create',
     'marketTitle', 'marketIntro', 'marketDisabled', 'marketDisabledBody', 'communityMarketBody', 'dshMarketBody',
     'selected', 'beta', 'aaIntro',
   ])
+  assertDomTranslations('dsh-plugin-desktop', 'ru', '.zOa2rq_navCell', ['Auxiliary Models', '插件管理', 'Workshop'])
   assertNamespaceTranslations('@linxin666/dsh-client-ui-plugin-manager', 'ru', 'settings.pluginManager', ['tab'])
   assertNamespaceTranslations('@dsh-plugin/dsh-auxiliary', 'ru', 'dsh-auxiliary', [
     'nav', 'intro', 'catalogFailure', 'visionTitle', 'visionDescription', 'visionToggle', 'visionPickerLabel',

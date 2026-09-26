@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.4
+
+- Align host validation with browser selectors so every bundled locale pack reaches the UI.
+- Translate accessibility attributes on plugin root controls, including MCP launch buttons.
+- Add Russian dictionaries for the complete Trajectory and Workshop surfaces.
+- Remove leftover English labels from the bundled Russian Workshop titles.
+- Verify all bundled packs load without skips and root controls survive language changes.
+
 ## 0.1.3
 
 - Add bilingual screenshot coverage for MCP filters, usage statistics, session archive, pet UI, model capabilities, and the update modal.

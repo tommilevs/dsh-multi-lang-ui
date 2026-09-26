@@ -37,6 +37,23 @@
       "aaIntro": "Используйте Agents-Anywhere, чтобы подключаться к DSH на этом компьютере с телефона или через браузер."
     }
   },
+  "dom": [
+    {
+      "selector": ".zOa2rq_navCell",
+      "source": "Auxiliary Models",
+      "target": "Вспомогательные модели"
+    },
+    {
+      "selector": ".zOa2rq_navCell",
+      "source": "插件管理",
+      "target": "Менеджер плагинов"
+    },
+    {
+      "selector": ".zOa2rq_navCell",
+      "source": "Workshop",
+      "target": "Мастерская"
+    }
+  ],
   "source": {
     "desktop.settings": {
       "nav": "Desktop settings",
