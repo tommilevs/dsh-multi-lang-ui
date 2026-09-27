@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 17332)
-Total output lines: 2250
-
 {
   "plugin": {
     "id": "@linxin666/dsh-pet",
@@ -441,7 +438,1441 @@ Total output lines: 2250
       "target": "Pet"
     },
     {
-      "selec…10332 tokens truncated…
+      "selector": ".KApx_W_card",
+      "source": "宠物目录诊断",
+      "target": "Pet directory diagnostics"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "选择宠物并调整它的显示布局。",
+      "target": "Pick a pet and tune its display layout."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "选择显示哪只宠物；每只宠物独立命名，可在宠物悬浮面板改名。",
+      "target": "Choose which pet shows. Names are stored per pet; rename from the pet hover panel."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "启用宠物",
+      "target": "Enable the pet"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "关闭后隐藏宠物并停止轮询，可在设置里重新启用。",
+      "target": "When off, the pet hides and polling stops; re-enable it here."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "状态装饰",
+      "target": "Status decoration"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "在宠物状态气泡里显示喷水鲸鱼等状态装饰；关闭后气泡只剩文字。",
+      "target": "Show ornaments like the spouting whale inside the pet status bubbles; when off, bubbles stay text-only."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "显示宠物",
+      "target": "Show the pet"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "关闭后宠物隐藏，可从聊天输入区重新召唤。",
+      "target": "When off, the pet hides; summon it again from the input row."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "大小（px）",
+      "target": "Size (px)"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "精灵单元高度，范围 32–1024。",
+      "target": "Sprite cell height, 32–1024."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "气泡字号倍率",
+      "target": "Bubble text multiplier"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "状态、碎碎念与用量气泡的字号会随宠物大小自动缩放；这一项是在此基础上再乘一个倍率（0.5–2，默认 1）。字号本身不小于 10px、不大于 24px。",
+      "target": "Status, whisper, and usage bubbles scale with the pet automatically; this multiplies that result (0.5–2, default 1). The rendered text stays between 10px and 24px."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "距右侧（px）",
+      "target": "Right inset (px)"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "距视口右边缘的水平内缩距离。",
+      "target": "Horizontal inset from the viewport right edge."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "距底部（px）",
+      "target": "Bottom inset (px)"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "距视口底边的垂直内缩距离。",
+      "target": "Vertical inset from the viewport bottom edge."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "继承",
+      "target": "Inherit"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "开",
+      "target": "On"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "关",
+      "target": "Off"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "已覆盖",
+      "target": "Overridden"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "恢复默认",
+      "target": "Reset to default"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "当前 DSH 版本未向设置页暴露本插件的配置命名空间，表单不可用。可编辑 $DSH_HOME/settings.yaml 直接配置，或确认提供该命名空间的插件已挂载其设置域并重启。",
+      "target": "This DSH version does not expose this plugin's settings namespace to the configuration page, so the form is unavailable. Edit $DSH_HOME/settings.yaml directly, or confirm that the plugin owning the namespace is mounted with its settings domain and restart."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "当前部署的设置只读。",
+      "target": "This deployment stores settings read-only."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "展开设置",
+      "target": "Show settings"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "收起设置",
+      "target": "Hide settings"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "保存",
+      "target": "Save"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "保存中…",
+      "target": "Saving\\u2026"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "放弃",
+      "target": "Discard"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "未保存",
+      "target": "Unsaved"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "部署未接受这些值，已保留供你修改。",
+      "target": "The deployment did not accept these values; they were left for you to correct."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "请输入数字，留空则使用默认值。",
+      "target": "Enter a number, or leave blank to use the default."
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "鲸鱼娘（原版）",
+      "target": "Whale Girl (Original)"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "鲸鱼娘（精致版）",
+      "target": "Whale Girl (Refined Version)"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "蓝喉蜂虎",
+      "target": "Blue-throated bee-eater"
+    },
+    {
+      "selector": ".KApx_W_card",
+      "source": "OUO Neko",
+      "target": "OUO Neko"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "哎呀，踩到小石子了",
+      "target": "Oops, I stepped on a little pebble."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "竖起耳朵等回复",
+      "target": "Perks up her ears, waiting for a reply."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这波活儿，我陪着",
+      "target": "I’ll stay with you through this."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "Уровень привязанности: 伙伴",
+      "target": "Affinity: Companion"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "准备开始",
+      "target": "Getting ready"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "撸起袖子开工啦",
+      "target": "Rolling up sleeves, let's go!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "新一轮，出发～",
+      "target": "New round, here we go~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "打起精神，开干！",
+      "target": "Perking up, let's do it!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "整理一下桌面，开始吧",
+      "target": "Tidying up, let's begin"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "氧气充满，下潜开始～",
+      "target": "Oxygen topped up, diving in~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "热身完毕，跃跃欲试",
+      "target": "Warmed up, ready to go"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "开工仪式感已就位",
+      "target": "The pre-work ritual is ready."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "呼叫大脑中，请稍等",
+      "target": "Calling the brain, hold on"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "信号发射中，等一个回音",
+      "target": "Signal sent, waiting for echo"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "灵感正在路上～",
+      "target": "Inspiration on its way~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "大脑在咕噜咕噜加载",
+      "target": "Brain bubbling and loading"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "等它伸个懒腰再开口",
+      "target": "Waiting for it to stretch"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "模型：来了来了",
+      "target": "Model: coming right up!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "等一个灵感砸中我",
+      "target": "Waiting for inspiration to hit"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "滴——等待连线中",
+      "target": "Beep—waiting to connect"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "它在组织语言，别催",
+      "target": "It's organizing words, don't rush"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "等它热身完毕",
+      "target": "Waiting for warm-up to finish"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "灵感快递派送中",
+      "target": "Inspiration delivery in progress"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "屏住呼吸等回复",
+      "target": "Holding breath for reply"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "正在思考",
+      "target": "Thinking"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "嗯……让我想一想",
+      "target": "Hmm... let me think"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "脑内风暴进行中",
+      "target": "Brainstorming in progress"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "思绪咕噜咕噜冒泡",
+      "target": "Thoughts bubbling up"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "灵光集结中～",
+      "target": "Gathering sparks~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "眉头一皱，认真分析",
+      "target": "Frowning, analyzing seriously"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "左脑右脑一起开会",
+      "target": "Left and right brain meeting"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "答案正在浮出水面",
+      "target": "Answer surfacing"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "盘一下，盘一下逻辑",
+      "target": "Sorting out the logic"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让子弹再飞一会儿",
+      "target": "Let the bullet fly a bit"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "别催别催，在想呢",
+      "target": "Don't rush, thinking"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "大脑转起来了",
+      "target": "Brain spinning"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让我把线索捋一捋",
+      "target": "Let me sort the clues"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "脑内跑火车中",
+      "target": "Brain train running"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "小脑瓜高速运转",
+      "target": "Little brain working fast"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让我琢磨琢磨",
+      "target": "Let me ponder"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "翻翻脑子里的藏书",
+      "target": "Flipping through my brain's library"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让我嚼一嚼这个问题",
+      "target": "Let me chew on this problem"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "脑子在煮咖啡，马上好",
+      "target": "Brain is brewing coffee, almost done"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "思考的鱼游来了",
+      "target": "The fish of thought has arrived"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让我康康这里面的门道",
+      "target": "Let me peek at the ins and outs here"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "正在盘逻辑链",
+      "target": "Working through the logic chain"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "思绪整理收纳中",
+      "target": "Organizing my thoughts"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "嗯？有点意思……",
+      "target": "Hm? That's interesting..."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让思路沉淀一下",
+      "target": "Letting my thoughts settle"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "脑内弹幕飞速滚动",
+      "target": "Comments are flying through my head."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "整理回复中",
+      "target": "Organizing my reply"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把想法写下来",
+      "target": "Writing down my ideas"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "组织语言中～",
+      "target": "Arranging my words~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "落笔成文，请稍候",
+      "target": "Putting pen to paper, please wait"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "字斟句酌中",
+      "target": "Choosing every word carefully"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把答案装进信封里",
+      "target": "Packing the answer into an envelope"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "遣词造句打磨中",
+      "target": "Polishing my phrasing"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把思绪码成整整齐齐的字",
+      "target": "Arranging thoughts into neat words"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "奋笔疾书中",
+      "target": "Writing furiously"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把最好的表达挑出来",
+      "target": "Picking the best way to say it"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "文字排版美容师上线",
+      "target": "Text beautician online"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "收尾润色一下下",
+      "target": "Just a little final polish"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "处理工具结果",
+      "target": "Processing tool results"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "看看带回了什么",
+      "target": "Seeing what came back"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "消化一下刚到的结果",
+      "target": "Digesting the fresh results"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "结果解读中～",
+      "target": "Interpreting results~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "验收工具的成果",
+      "target": "Checking the tool's work"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把线索拼接起来",
+      "target": "Connecting the clues"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "战利品清点中",
+      "target": "Counting my spoils"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这份结果有点东西",
+      "target": "This result has some substance"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把新情报归档",
+      "target": "Filing the new intel"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "结果到手，继续前进",
+      "target": "Got the results, moving on"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "完成啦",
+      "target": "All done!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "搞定收工～",
+      "target": "Wrapped up~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "任务达成，耶！",
+      "target": "Mission accomplished, yay!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这一轮圆满完成",
+      "target": "This round is a success"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "顺利抵达终点",
+      "target": "Made it to the finish line!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "收工！求摸摸奖励",
+      "target": "Done! Please pet me for a reward."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "交差！下一位",
+      "target": "Delivered! Next one, please."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "齐活，漂亮收官",
+      "target": "All done, what a beautiful finish."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "拿下！击掌～",
+      "target": "Got it! High five~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "稳了，满分交卷",
+      "target": "Steady and sure, submitting a perfect score."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "搞定，去喝口水",
+      "target": "Sorted, going for a sip of water."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "完工咯，转个圈圈",
+      "target": "Finished! Doing a little spin."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这一轮，我们配合满分",
+      "target": "This round, we worked perfectly together."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "妥了妥了，收工收工",
+      "target": "All set, all set, wrapping up, wrapping up."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "执行失败",
+      "target": "Execution failed."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "哎呀，中途卡住了",
+      "target": "Oops, got stuck halfway."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这一步没能走完",
+      "target": "Couldn't finish this step."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "被小石头绊倒了",
+      "target": "Tripped over a little pebble."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "半路翻车了，揉揉膝盖",
+      "target": "Crashed halfway, rubbing my knee."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "出了点岔子，缓缓再来",
+      "target": "A little hiccup, let's take a breath and try again."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "工具执行失败",
+      "target": "Tool execution failed."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "工具闹脾气了，哄哄它",
+      "target": "The tool is being stubborn, let's coax it."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "哎呀，工具掉链子了",
+      "target": "Oops, the tool let us down."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这个工具今天不太听话",
+      "target": "This tool isn't very obedient today."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "工具翻车了，扶起来继续",
+      "target": "The tool crashed, helping it up to continue."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "没跑通，再来一次",
+      "target": "Didn't work, trying once more."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "工具：我罢工三秒钟",
+      "target": "Tool: I'm on strike for three seconds."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这一步摔了一跤，没事",
+      "target": "Tripped on this step, but it's okay."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "达到输出上限",
+      "target": "Reached output limit."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "话说到一半被截断了",
+      "target": "Cut off mid-sentence."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "字数用完了，喘口气",
+      "target": "Ran out of words, taking a breath."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "一口气说太满，缓缓",
+      "target": "Said too much in one go, slowing down."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "执行意外中断",
+      "target": "Execution interrupted unexpectedly."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "哎呀，被意外打断了",
+      "target": "Oops, interrupted unexpectedly."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "半路踩了急刹车",
+      "target": "Hit the brakes halfway."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "被迫停下，意犹未尽",
+      "target": "Forced to stop, still wanting more."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "等待继续",
+      "target": "Waiting to continue."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "在这里等你发令",
+      "target": "Waiting here for your command."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "暂停待命，随时出发",
+      "target": "Paused and ready, set to go anytime."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "蹲一个继续的指令",
+      "target": "Waiting for the 'continue' command."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "正在使用 {tool}",
+      "target": "Using {tool}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "翻翻 {hint}",
+      "target": "Flipping through {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "读一下 {hint}",
+      "target": "Reading {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让我康康这个文件",
+      "target": "Let me peek at this file"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "逐行品味 {hint}",
+      "target": "Savoring {hint} line by line"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "翻阅资料中～",
+      "target": "Browsing materials~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "瞄一眼 {hint}",
+      "target": "Glancing at {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把文件摊开看一看",
+      "target": "Spreading the file out to look"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "认真研读 {hint}",
+      "target": "Studying {hint} carefully"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "写写写，写 {hint}",
+      "target": "Writing, writing, writing {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "下笔中～",
+      "target": "Putting pen to paper~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "码字呢，别催",
+      "target": "Typing away, don't rush me"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "写下 {hint}",
+      "target": "Writing down {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "落笔成章",
+      "target": "Words flowing into text"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把想法存进 {hint}",
+      "target": "Saving ideas into {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "开写开写",
+      "target": "Let's start writing"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "存个文件压压惊",
+      "target": "Saving a file to calm down"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "改改 {hint}",
+      "target": "Tweaking {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "修修补补中",
+      "target": "Patching things up"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "润色一下 {hint}",
+      "target": "Polishing {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "改两行，就两行",
+      "target": "Just two lines, only two"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "补一刀 {hint}",
+      "target": "One more tweak to {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "动动手指改一改",
+      "target": "A little finger work to fix it"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "精雕细琢 {hint}",
+      "target": "Refining {hint} meticulously"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "微调一下下",
+      "target": "Just a tiny tweak"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "跑跑 {hint}",
+      "target": "Running {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "敲几行命令试试",
+      "target": "Typing a few commands to try"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "命令行走起：{hint}",
+      "target": "Command time: {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "使唤终端跑个腿",
+      "target": "Sending the terminal on an errand"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "终端全速运转中",
+      "target": "Terminal running at full speed"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "敲回车！{hint}",
+      "target": "Hit Enter! {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让命令飞一会儿",
+      "target": "Let the command fly for a bit"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "去终端里探个究竟",
+      "target": "Checking things out in the terminal"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "搜搜 {hint}",
+      "target": "Searching for {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "找找匹配：{hint}",
+      "target": "Finding matches: {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "关键词走你",
+      "target": "Here comes the keyword"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "在代码里挖一挖",
+      "target": "Digging through the code"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "检索小雷达启动",
+      "target": "Search radar on"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "顺着 {hint} 追下去",
+      "target": "Following {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "掘地三尺找一找",
+      "target": "Digging deep to find it"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "过滤筛选中～",
+      "target": "Filtering and sorting~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "找找文件 {hint}",
+      "target": "Looking for file {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "寻宝中～",
+      "target": "Treasure hunting~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "文件在哪里呀",
+      "target": "Where is the file?"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "找啊找啊找文件",
+      "target": "Searching, searching for files"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把 {hint} 揪出来",
+      "target": "Pulling out {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "查找模式中",
+      "target": "Search mode active"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "列个清单看看",
+      "target": "Making a list to check"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "看看目录里有啥",
+      "target": "Checking what's in the directory"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "目录走起～",
+      "target": "Let's browse the directory~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "瞟一眼文件夹",
+      "target": "Glancing at the folder"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "数数这里有几个文件",
+      "target": "Counting the files here"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "网上搜搜 {hint}",
+      "target": "Searching online for {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "网络冲浪中",
+      "target": "Surfing the web"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "帮你问问互联网",
+      "target": "Asking the internet for you"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "搜一圈 {hint}",
+      "target": "Searching around for {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "去外面的世界打听打听",
+      "target": "Checking with the outside world"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "查找资料中～",
+      "target": "Looking up info~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "情报收集模式开启",
+      "target": "Intel gathering mode on"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "抓个页面看看",
+      "target": "Grabbing a page to look"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "拉取 {hint}",
+      "target": "Fetching {hint}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "扒拉一下网页",
+      "target": "Rummaging through the webpage"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "取点内容回来",
+      "target": "Bringing some content back"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "打开 {hint} 瞅瞅",
+      "target": "Opening {hint} to peek"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "连一下外部服务",
+      "target": "Connecting to an external service"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "喊个外援来",
+      "target": "Calling in some help"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "接个工具用用",
+      "target": "Plugging in a tool"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "问问插件小助手",
+      "target": "Asking the plugin helper"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "外部力量接入中",
+      "target": "External power connecting"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "翻翻小本本",
+      "target": "Flipping through my little notebook"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "回想一下之前的事",
+      "target": "Recalling what happened before"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "在记忆里挖一挖",
+      "target": "Digging through my memory"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "提取记忆碎片～",
+      "target": "Extracting memory shards~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "我们之前的约定是……",
+      "target": "Our previous promise was..."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "派个小弟去跑腿",
+      "target": "Sending a little helper to run errands"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "小助手出动！",
+      "target": "Little assistant, go go go!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "交给分身去办",
+      "target": "Leaving it to my clone"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "多线作战，分身出击",
+      "target": "Multi-front battle, clones deploy!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "召唤队友支援",
+      "target": "Summoning teammates for support"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "集思广益中～",
+      "target": "Brainstorming together~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "列个待办清单",
+      "target": "Making a to-do list"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "写个小计划",
+      "target": "Writing a little plan"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "待办安排得明明白白",
+      "target": "To-dos arranged perfectly"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "打个勾，继续",
+      "target": "Checkmark, moving on"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把任务排排坐",
+      "target": "Lining up the tasks"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "开个浏览器看看",
+      "target": "Opening a browser to check"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "网页操作小能手",
+      "target": "Web operation pro"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "替你点点页面",
+      "target": "Clicking pages for you"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "浏览器跑腿中",
+      "target": "Browser running errands"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "提交一下代码",
+      "target": "Committing the code"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "版本控制走起",
+      "target": "Version control, let's go"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "管管仓库",
+      "target": "Managing the repo"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "给改动安个家",
+      "target": "Giving changes a home"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "问你个事儿",
+      "target": "Asking you something"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "请教一下下",
+      "target": "Just a quick question"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "等等，我需要确认",
+      "target": "Wait, I need to confirm"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这个问题得你拍板",
+      "target": "You have to make this call"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "召唤 {tool} 出击",
+      "target": "Summoning {tool} to strike"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "{tool} 工作中",
+      "target": "{tool} is working"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "借助 {tool} 的力量",
+      "target": "Borrowing the power of {tool}"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "拜托 {tool} 一下",
+      "target": "Asking {tool} for a favor"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "{tool}，启动！",
+      "target": "{tool}, launch!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "还有 {n} 个工具运行中",
+      "target": "{n} tools still running"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "{n} 路并进，分身们还在忙",
+      "target": "{n} paths in parallel, clones still busy"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "还有 {n} 位小助手在加班",
+      "target": "{n} little assistants still working overtime"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "{n} 条战线同时推进中",
+      "target": "{n} fronts advancing simultaneously"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "另 {n} 个工具在后台跑",
+      "target": "{n} other tools running in the background"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "先在脑子里搭个框架",
+      "target": "Building a framework in my head first"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "它在心里打草稿，我垫着脚看",
+      "target": "The model's drafting a reply; I'm peeking on tiptoe."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "思路在一颗一颗冒泡",
+      "target": "Ideas are bubbling up one by one"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "脑内开会中，都别抢话筒",
+      "target": "Brain meeting in progress, no mic snatching"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "先想清楚，再动手不迟",
+      "target": "Think it through first, acting later is fine"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "草稿纸已经画满了",
+      "target": "The draft paper is already full"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "让我听听它下一步打算",
+      "target": "Let me hear what it plans next"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "嗯，方案在成型了",
+      "target": "Mm, the plan is taking shape"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "落笔成文，我旁边听着",
+      "target": "Words are being written, I'm listening nearby"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "句子排着队往外走",
+      "target": "Sentences are queuing up to leave"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "把想法一句句摆整齐",
+      "target": "Arranging ideas neatly, sentence by sentence"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "它在组织语言，我打打气",
+      "target": "It's organizing language, I'm cheering it on"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "写回复呢，不催",
+      "target": "Writing a reply, no rushing"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "字斟句酌，快好了",
+      "target": "Choosing words carefully, almost done"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "翻资料呢，我保持安静",
+      "target": "Flipping through materials, I'll stay quiet"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "一行一行读，不跳页",
+      "target": "Reading line by line, no skipping pages"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "在纸堆里找线索",
+      "target": "Finding clues in the pile of papers"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "眼珠子跟着字跑",
+      "target": "Eyes darting along the text"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "边读边做记号",
+      "target": "Reading and making marks"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "翻箱倒柜找重点",
+      "target": "Rummaging through everything for key points"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "动手改起来了，手稳一点",
+      "target": "Starting to edit, hands steady"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "这里补一笔，那边修一修",
+      "target": "Adding a bit here, fixing a bit there"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "在改东西，听不到声音才怪",
+      "target": "Editing things, of course I can't hear you"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "落笔小心，别有错别字",
+      "target": "Writing carefully, no typos please"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "改写的节奏，我听得见",
+      "target": "I can hear the rhythm of the rewriting"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "刷刷地改，一行都没跑",
+      "target": "Editing briskly, not a line missed"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "跑起来了跑起来了",
+      "target": "It's running, it's running"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "命令敲出去，等个回响",
+      "target": "Command sent, waiting for an echo"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "在跑什么呢，我踮脚看",
+      "target": "What's running? I'm tiptoeing to watch"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "输出开始冒烟了",
+      "target": "Output is starting to smoke"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "它在跑活，我不吵",
+      "target": "It's working, I won't make noise"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "盯着输出，蹲一个结果",
+      "target": "Staring at output, waiting for a result"
+    },
+    {
       "selector": "[data-dsh-pet-root]",
       "source": "这波跑完就靠它了",
       "target": "Once this run finishes, it's on it"
