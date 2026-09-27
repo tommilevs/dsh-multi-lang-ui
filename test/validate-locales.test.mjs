@@ -245,7 +245,8 @@ test('bounds non-JSON directory entries before retaining per-entry diagnostics',
     const result = validate(contributions)
     assert.notEqual(result.status, 0)
     assert.match(result.stderr, /contributions exceeds 7000 directory entries/i)
-    assert.doesNotMatch(result.stderr, /ignored-7000\.txt/)
+    assert.match(result.stderr, /additional directory-entry diagnostics omitted/i)
+    assert.equal((result.stderr.match(/only JSON locale packs are allowed under contributions/g) || []).length, 50)
   })
 })
 

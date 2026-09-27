@@ -13,6 +13,7 @@ const MAX_TOTAL_BYTES = 32 * 1024 * 1024
 const MAX_PACK_COUNT = 2000
 const MAX_DIRECTORY_DEPTH = 2
 const MAX_DIRECTORY_ENTRIES = 7000
+const MAX_DIRECTORY_ENTRY_DIAGNOSTICS = 50
 
 function isRecord(value) {
   return value !== null && typeof value === 'object' && !Array.isArray(value)
@@ -46,6 +47,17 @@ function walkContributionFiles(root, errors) {
   let totalBytes = 0
   let directoryEntryCount = 0
   let resourceLimitExceeded = false
+  let directoryEntryDiagnostics = 0
+  let omittedDirectoryEntryDiagnostics = 0
+
+  function reportDirectoryEntryError(message) {
+    if (directoryEntryDiagnostics < MAX_DIRECTORY_ENTRY_DIAGNOSTICS) {
+      errors.push(message)
+      directoryEntryDiagnostics += 1
+    } else {
+      omittedDirectoryEntryDiagnostics += 1
+    }
+  }
 
   let rootInfo
   try {
@@ -65,7 +77,7 @@ function walkContributionFiles(root, errors) {
     try {
       handle = opendirSync(directory)
     } catch (error) {
-      errors.push(`${path.relative(root, directory) || '.'}: cannot read directory: ${error.message}`)
+      reportDirectoryEntryError(`${path.relative(root, directory) || '.'}: cannot read directory: ${error.message}`)
       return
     }
 
@@ -75,7 +87,7 @@ function walkContributionFiles(root, errors) {
         try {
           entry = handle.readSync()
         } catch (error) {
-          errors.push(`${path.relative(root, directory) || '.'}: cannot read directory: ${error.message}`)
+          reportDirectoryEntryError(`${path.relative(root, directory) || '.'}: cannot read directory: ${error.message}`)
           return
         }
         if (!entry) break
@@ -89,7 +101,7 @@ function walkContributionFiles(root, errors) {
         const absolute = path.join(directory, entry.name)
         const relative = path.relative(root, absolute).split(path.sep).join('/')
         if (entry.isSymbolicLink()) {
-          errors.push(`${relative}: symbolic links are not allowed`)
+          reportDirectoryEntryError(`${relative}: symbolic links are not allowed`)
         } else if (entry.isDirectory()) {
           if (depth >= MAX_DIRECTORY_DEPTH) {
             errors.push(`contributions directory nesting exceeds ${MAX_DIRECTORY_DEPTH} levels at ${relative}`)
@@ -99,13 +111,13 @@ function walkContributionFiles(root, errors) {
           }
         } else if (entry.isFile()) {
           if (!entry.name.toLowerCase().endsWith('.json')) {
-            errors.push(`${relative}: only JSON locale packs are allowed under contributions`)
+            reportDirectoryEntryError(`${relative}: only JSON locale packs are allowed under contributions`)
           } else {
             let size
             try {
               size = lstatSync(absolute).size
             } catch (error) {
-              errors.push(`${relative}: cannot inspect file: ${error.message}`)
+              reportDirectoryEntryError(`${relative}: cannot inspect file: ${error.message}`)
               continue
             }
             if (size > MAX_PACK_BYTES) {
@@ -123,7 +135,7 @@ function walkContributionFiles(root, errors) {
             }
           }
         } else {
-          errors.push(`${relative}: unsupported filesystem entry`)
+          reportDirectoryEntryError(`${relative}: unsupported filesystem entry`)
         }
       }
     } finally {
@@ -132,6 +144,9 @@ function walkContributionFiles(root, errors) {
   }
 
   visit(root)
+  if (omittedDirectoryEntryDiagnostics > 0) {
+    errors.push(`additional directory-entry diagnostics omitted (${omittedDirectoryEntryDiagnostics})`)
+  }
   if (files.length === 0 && errors.length === 0) errors.push('no locale contribution JSON files found')
   return { files, resourceLimitExceeded }
 }
