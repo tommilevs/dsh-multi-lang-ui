@@ -18,7 +18,7 @@ jobs:
       pull: ${{ steps.resolve.outputs.pull }}
     steps:
       - name: Check out trusted resolver from the default branch
-        uses: actions/checkout@v4.4.0
+        uses: actions/checkout@v7.0.1
         with:
           ref: ${{ github.event.repository.default_branch }}
           path: trusted-resolver
@@ -47,7 +47,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Check out trusted approval policy from the default branch
-        uses: actions/checkout@v4.4.0
+        uses: actions/checkout@v7.0.1
         with:
           ref: ${{ github.event.repository.default_branch }}
           path: trusted-policy
@@ -60,7 +60,7 @@ jobs:
       - name: Check out candidate translation data only for the current main base
         if: ${{ fromJSON(needs.resolve.outputs.pull).baseRef == 'main' && fromJSON(needs.resolve.outputs.pull).baseSha == steps.trusted.outputs.sha }}
         continue-on-error: true
-        uses: actions/checkout@v4.4.0
+        uses: actions/checkout@v7.0.1
         with:
           # Candidate content is JSON input data only. The resolver and approval policy always
           # come from the default branch, never from a PR-controlled base or head commit.
