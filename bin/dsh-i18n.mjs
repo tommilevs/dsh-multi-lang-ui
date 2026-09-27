@@ -2,6 +2,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { buildCoverageInventory, readCoveragePacks } from '../lib/coverage.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
@@ -26,6 +27,7 @@ dsh-i18n (v${getPkgVersion()}) — Инструмент локализации �
   extract <каталог>            Извлечь ключи локализации (t('...'), translate('...')) из исходников
   validate <файл.json>         Проверить файл словаря на синтаксис, плейсхолдеры и глоссарий
   scaffold <имя-плагина>       Создать структуру и стартовый шаблон локализации для плагина
+  coverage [каталог] [--json]  Показать переводы сообщества по плагинам и языкам
 
 Опции:
   -o, --out <путь>             Путь для сохранения результата
@@ -38,7 +40,53 @@ dsh-i18n (v${getPkgVersion()}) — Инструмент локализации �
   dsh-i18n extract src/ -n my-plugin -o ru/my-plugin.json
   dsh-i18n validate ru/my-plugin.json
   dsh-i18n scaffold dsh-my-plugin --out ru/
+  dsh-i18n coverage contributions --json
 `)
+}
+
+function formatCoverageInventory(inventory) {
+  const lines = [
+    'Translation coverage',
+    `Locale packs: ${inventory.packCount}`,
+    `Plugins: ${inventory.pluginCount}`,
+  ]
+
+  for (const plugin of inventory.plugins) {
+    const pluginId = terminalSafe(plugin.id)
+    if (plugin.metadataConflict) {
+      lines.push(`\n${pluginId} — metadata differs between locale packs`)
+    } else {
+      lines.push(`\n${pluginId} v${terminalSafe(plugin.version)} — ${terminalSafe(plugin.license)} — ${terminalSafe(plugin.source)}`)
+    }
+    for (const pack of plugin.packs) {
+      const namespaceCount = Object.keys(pack.namespaces).length
+      const namespaceLabel = namespaceCount === 1 ? 'namespace' : 'namespaces'
+      const keyLabel = pack.namespaceKeyCount === 1 ? 'key' : 'keys'
+      const domLabel = pack.domMappingCount === 1 ? 'mapping' : 'mappings'
+      const sourceLabel = pack.sourceNamespaceMapAvailable ? 'available' : 'unknown'
+      const metadata = plugin.metadataConflict
+        ? `; metadata: v${terminalSafe(pack.version)} — ${terminalSafe(pack.license)} — ${terminalSafe(pack.source)}`
+        : ''
+      lines.push(`  ${terminalSafe(pack.locale)} (source: ${terminalSafe(pack.sourceLocale)}): ${pack.namespaceKeyCount} namespace ${keyLabel} across ${namespaceCount} ${namespaceLabel}; ${pack.domMappingCount} DOM ${domLabel}; source namespace map: ${sourceLabel}${metadata}`)
+    }
+  }
+
+  if (inventory.skippedPacks.length) {
+    lines.push(`\nSkipped or invalid packs: ${inventory.skippedPacks.length}`)
+    for (const item of inventory.skippedPacks) {
+      lines.push(`  ${terminalSafe(item.path)}: ${item.reasons.map(terminalSafe).join('; ')}`)
+    }
+  }
+
+  return lines.join('\n')
+}
+
+function terminalSafe(value) {
+  return String(value).replace(/[\u0000-\u001F\u007F-\u009F]/g, (character) => `\\u${character.codePointAt(0).toString(16).toUpperCase().padStart(4, '0')}`)
+}
+
+function stringifyCoverageJson(value) {
+  return JSON.stringify(value, null, 2).replace(/[\u007F-\u009F]/g, (character) => `\\u${character.codePointAt(0).toString(16).toUpperCase().padStart(4, '0')}`)
 }
 
 function extractKeys(targetDir, defaultNs = 'common') {
@@ -241,6 +289,33 @@ if (command === 'extract') {
     if ((args[i] === '-o' || args[i] === '--out') && args[i + 1]) out = args[++i]
   }
   scaffoldPlugin(name, out)
+} else if (command === 'coverage') {
+  let contributionsDir = path.join(ROOT, 'contributions')
+  let json = false
+  let directorySeen = false
+  for (const argument of args.slice(1)) {
+    if (argument === '--json') {
+      json = true
+    } else if (argument.startsWith('-')) {
+      console.error(`Ошибка: Неизвестная опция coverage: ${terminalSafe(argument)}`)
+      process.exit(1)
+    } else if (directorySeen) {
+      console.error('Ошибка: Укажите не более одного каталога contributions.')
+      process.exit(1)
+    } else {
+      contributionsDir = path.resolve(argument)
+      directorySeen = true
+    }
+  }
+
+  try {
+    const { packs, skippedPacks } = readCoveragePacks(contributionsDir)
+    const inventory = { ...buildCoverageInventory(packs), skippedPacks }
+    console.log(json ? stringifyCoverageJson(inventory) : formatCoverageInventory(inventory))
+  } catch (error) {
+    console.error(`Ошибка inventory переводов: ${terminalSafe(error.message)}`)
+    process.exit(1)
+  }
 } else {
   console.error(`Неизвестная команда: "${command}". Запустите "dsh-i18n --help" для справки.`)
   process.exit(1)

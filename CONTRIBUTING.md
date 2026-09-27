@@ -76,6 +76,8 @@ node scripts/validate-locales.mjs /path/to/contributions
 
 Then open a pull request containing only the new or changed JSON packs under `contributions/`. CI checks the entire submitted catalog for schema errors, filename/metadata mismatches, empty strings, placeholder mismatches, and duplicate namespace/key pairs for each locale.
 
+For predictable CI resource use, the catalog is limited to 2,000 packs, 7,000 directory entries and 32 MiB total; each pack may be up to 1 MiB. Directory paths may be one level for an unscoped plugin or two levels for `@scope/plugin`.
+
 ---
 
 # Переводы от сообщества
@@ -123,3 +125,101 @@ node scripts/validate-locales.mjs /путь/к/contributions
 ```
 
 Затем откройте pull request только с новыми или изменёнными JSON-пакетами в `contributions/`. CI проверит полный набор отправленных переводов: схему, соответствие имени файла и метаданных, пустые строки, плейсхолдеры и дубли namespace/key для каждого языка.
+
+Чтобы ограничить расход ресурсов CI, каталог может содержать не более 2 000 пакетов, 7 000 файловых записей и общий размер до 32 МиБ; каждый пакет — до 1 МиБ. Путь может включать один уровень для обычного плагина или два для `@scope/plugin`.
+
+## MCP setup
+
+### Let an AI translation agent help
+
+The optional stdio MCP server lets any MCP-capable AI client inspect the translation inventory, read source context, prepare a locale pack, validate it, and stage the JSON file in a local checkout. It does not need GitHub credentials and cannot publish, approve, or merge a pull request. Keep review and submission in the contributor's hands.
+
+Use Node.js 20 or newer. Clone the repository and install its locked dependencies with pnpm 9 via npm (contributors who already have a clone can run only the install command):
+
+```bash
+git clone https://github.com/tommilevs/dsh-multi-lang-ui.git
+cd dsh-multi-lang-ui
+npx --yes pnpm@9 install --frozen-lockfile
+```
+
+Then add a server entry to the AI client's MCP configuration. Use absolute paths for both the script and repository checkout:
+
+```json
+{
+  "mcpServers": {
+    "dsh-multi-lang-ui": {
+      "command": "node",
+      "args": [
+        "/absolute/path/to/dsh-multi-lang-ui/bin/dsh-i18n-mcp.mjs",
+        "--repo",
+        "/absolute/path/to/dsh-multi-lang-ui"
+      ]
+    }
+  }
+}
+```
+
+The tools are `list_translation_coverage`, `get_translation_source`, `stage_source_catalog`, `scaffold_translation_pack`, `validate_translation_pack`, and `stage_translation_pack`. A translator can ask an AI to list untranslated plugin/language pairs, retrieve available source context, draft translations while preserving placeholders, validate the draft, and stage it. If a plugin has more than one source locale, pass `sourceLocale` explicitly to the source and scaffold tools. The AI should then show the diff for human review before the contributor opens a PR. The server only writes to the selected checkout's `contributions/` directory; it does not execute contributed data.
+
+To add a plugin that has no translation pack yet, first collect its user-visible source strings and their namespace/key or DOM selectors. Ask the AI to call `stage_source_catalog` with `plugin` metadata (`id`, `version`, repository `source` URL, and `license`), the source language, the source strings in `namespaces`, and any selector/source pairs in `dom`. This records the source text as a source-language catalog; it does not scrape or execute the plugin. Then call `scaffold_translation_pack` for each target language (for example, `de`), passing `sourceLocale` when the plugin has multiple source languages. Fill the draft while preserving placeholders and markup, validate it, and stage it. Coverage will list the plugin and each contributed language. A maintainer manually reviews the initial source catalog and any new source keys or DOM selectors; later changes translating those established strings can qualify for auto-approval. Additions remain data-only JSON contributions and receive the same human-readable diff and CI validation as other packs.
+
+Use `dsh-i18n coverage` for a human-readable coverage report or `dsh-i18n coverage --json` for an inventory suitable for another tool. Coverage lists the packs present in this repository, locale, namespace/key and DOM mapping counts, and whether source text is available. It does not invent percentages for upstream strings we have not catalogued.
+
+### MCP-сервер для ИИ-переводчика
+
+Необязательный MCP-сервер со стандартным вводом и выводом можно подключить к любому MCP-совместимому ИИ-клиенту. Он показывает каталог переводов, выдаёт исходный контекст, подготавливает языковой пакет, проверяет его и помещает JSON-файл в локальную копию репозитория. Серверу не нужны учётные данные GitHub; он не может публиковать, одобрять или сливать pull request. Проверка изменений и отправка PR остаются за участником.
+
+Нужен Node.js версии 20 или новее. Клонируйте репозиторий и установите закреплённые версии зависимостей через pnpm 9 и npm (если клон уже есть, достаточно выполнить последнюю команду):
+
+```bash
+git clone https://github.com/tommilevs/dsh-multi-lang-ui.git
+cd dsh-multi-lang-ui
+npx --yes pnpm@9 install --frozen-lockfile
+```
+
+Затем добавьте сервер в конфигурацию MCP вашего ИИ-клиента. Укажите абсолютные пути к скрипту и клону:
+
+```json
+{
+  "mcpServers": {
+    "dsh-multi-lang-ui": {
+      "command": "node",
+      "args": [
+        "/абсолютный/путь/dsh-multi-lang-ui/bin/dsh-i18n-mcp.mjs",
+        "--repo",
+        "/абсолютный/путь/dsh-multi-lang-ui"
+      ]
+    }
+  }
+}
+```
+
+Инструменты: `list_translation_coverage`, `get_translation_source`, `stage_source_catalog`, `scaffold_translation_pack`, `validate_translation_pack` и `stage_translation_pack`. Попросите ИИ найти отсутствующие сочетания плагина и языка, получить исходный текст, подготовить перевод с сохранением плейсхолдеров и проверить его. Если у плагина несколько исходных языков, укажите `sourceLocale` в инструментах получения исходного текста и подготовки пакета. Перед отправкой покажите diff человеку. Сервер записывает JSON только в каталог `contributions/` выбранного клона и не исполняет данные перевода.
+
+Чтобы добавить плагин, которого ещё нет в каталоге, сначала соберите видимые пользователю исходные строки, их namespace/key или DOM-селекторы. Попросите ИИ вызвать `stage_source_catalog`, передав объект `plugin` с полями `id`, `version`, ссылкой на репозиторий `source` и лицензией `license`, исходный язык, тексты в `namespaces` и пары селектор/текст в `dom`. Инструмент добавит каталог исходного языка; он не скачивает и не запускает код плагина. Затем вызовите `scaffold_translation_pack` для каждого целевого языка (например, `de`), указав `sourceLocale`, если исходных языков несколько; заполните перевод, сохранив плейсхолдеры и разметку, проверьте и добавьте пакет. В таблице появятся плагин и каждый внесённый язык. Исходный каталог нового плагина и новые ключи/селекторы проверяет человек; последующие PR с переводом уже зарегистрированных строк могут получить автоодобрение. Перед отправкой ИИ должен показать человеку diff.
+
+Команда `dsh-i18n coverage` выводит покрытие для человека, а `dsh-i18n coverage --json` — каталог для других инструментов. Отчёт перечисляет существующие пакеты, языки, число ключей namespace и DOM-подстановок, а также наличие исходного текста. Проценты покрытия не выдумываются, если полный исходный каталог строк плагина неизвестен.
+
+## Automatic approval of translation-only PRs
+
+After validation succeeds, the GitHub workflows can automatically approve a pull request only when it targets `main`, is not a draft, changes no more than 50 files, and every changed path is an added or modified `contributions/<plugin-id>/<locale>.json` pack. Auto-approval is narrower still: the plugin and its source strings must already exist in the trusted base catalog, and a pack may only translate established namespace keys and DOM source mappings. New-plugin source catalogs, new source keys/selectors, metadata changes, deletions, renames, code, workflows, documentation, and all other paths require human review. The workflow approves but never merges. If a pull request becomes ineligible or is retargeted, it dismisses only approvals previously created by this workflow; it never dismisses human reviews. It pins comparisons and approvals to the validated base/head commits and treats pull request files only as JSON data. The unprivileged `pull_request` workflow validates with read-only permissions and cancels obsolete validation runs. A separate privileged `workflow_run` resolver and policy always come from the repository's default branch; they never check out PR-controlled code. The resolver finds a unique open PR for the exact source branch and commit. Candidate checkout and trusted revalidation happen only when the PR targets `main` and its base SHA exactly matches the trusted default-branch checkout. A retargeted PR bypasses candidate checkout and reaches only the trusted code that can withdraw this workflow's prior approval. The privileged workflow does not trust the first workflow's result or artifacts and never executes PR code. Keep both workflow files on the default branch: GitHub only starts a `workflow_run` handler when its file already exists there. Privileged approval jobs for the same PR queue without canceling an in-flight GitHub review call, and each rechecks the live PR state before acting. Toggling auto-merge reruns validation so the bot can remove or reconsider its approval.
+
+For a protected branch, add the **GitHub Actions** app to the allowed review dismissers so the workflow can withdraw only its own approval if the PR becomes ineligible; GitHub requires an administrator or an allowed reviewer/app to dismiss reviews on protected branches ([review dismissal permissions](https://docs.github.com/en/rest/pulls/reviews#dismiss-a-review-for-a-pull-request)). Also enable [**Dismiss stale pull request approvals when new commits are pushed**](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) and require branches to be up to date before merging. The stale-review rule invalidates an approval tied to an older PR-head SHA if a push races with the workflow's final API check; the up-to-date rule prevents merging against a base branch that advanced after validation, until the PR is updated and revalidated. Keep GitHub auto-merge disabled for these pull requests; the workflow does not call the merge API and skips approval whenever auto-merge is already enabled.
+
+To enable review submissions by `GITHUB_TOKEN`, a repository owner must enable **Settings → Actions → General → Workflow permissions → [Allow GitHub Actions to create and approve pull requests](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository)**. GitHub disables this setting by default in many repositories. Required reviews or branch protection remain in force.
+
+## Автоматическое одобрение PR только с переводами
+
+После успешной проверки GitHub Actions может автоматически одобрить pull request только при соблюдении всех условий: целевая ветка — `main`, PR не является черновиком, изменено не более 50 файлов, а каждый путь — новый или изменённый пакет `contributions/<plugin-id>/<locale>.json`. У автоподтверждения есть дополнительные ограничения: плагин и исходные строки должны уже быть в доверенном каталоге основной ветки, а пакет может переводить только существующие ключи namespace и DOM-пары. Исходные каталоги новых плагинов, новые ключи/селекторы, изменения метаданных, удаление и переименование файлов, код, workflow, документация и любые другие пути требуют ручной проверки. Workflow только одобряет PR и никогда не сливает изменения. Если PR перестал соответствовать правилам или был перенаправлен на другую ветку, workflow отзывает только собственные ранее созданные одобрения и никогда не снимает человеческие review. Проверка и одобрение привязаны к SHA проверенных веток; файлы PR обрабатываются только как JSON-данные. Непривилегированный `pull_request` выполняет проверку с правами только на чтение и отменяет устаревшие запуски валидации. Привилегированные `workflow_run` resolver и policy всегда загружаются из основной ветки репозитория; код из PR не checkout-ится и не исполняется. Resolver находит уникальный открытый PR по точной исходной ветке и коммиту. Данные PR checkout-ятся и доверенный валидатор запускается только для PR в `main`, если SHA базовой ветки совпадает с проверенной доверенной версией основной ветки. Если PR перенаправили на другую ветку, checkout данных пропускается; выполняется только доверенный код, который может отозвать прежнее автоодобрение этого workflow. Привилегированный workflow не доверяет результату или артефактам первого запуска и никогда не исполняет код PR. Оба workflow-файла должны находиться в основной ветке: GitHub запускает обработчик `workflow_run`, только если его файл уже есть там. Привилегированные запуски одного PR ожидают завершения текущей операции и не отменяют отправленный GitHub запрос на review; каждый запуск повторно проверяет актуальное состояние PR перед действием. Изменение состояния авто-слияния тоже запускает проверку: включение отзывает недопустимое одобрение, отключение позволяет перепроверить PR.
+
+В защите ветки добавьте приложение **GitHub Actions** к списку тех, кому разрешено снимать review: на защищённой ветке это действие доступно администратору или указанному участнику/приложению ([права на снятие review](https://docs.github.com/en/rest/pulls/reviews#dismiss-a-review-for-a-pull-request)). Также включите [**Dismiss stale pull request approvals when new commits are pushed**](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) и требуйте актуальную относительно целевой ветки ветку PR перед слиянием. Первое снимает одобрение, привязанное к старому SHA PR, если push совпадёт по времени с последней проверкой API; второе не позволит слить PR на устаревшей базе до его обновления и повторной проверки. Для этих PR оставьте GitHub auto-merge выключенным: workflow не вызывает API слияния и пропускает автоодобрение, если авто-слияние уже включено.
+
+Чтобы `GITHUB_TOKEN` мог отправлять одобрения, владелец репозитория должен включить **Settings → Actions → General → Workflow permissions → [Allow GitHub Actions to create and approve pull requests](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository)**. GitHub часто выключает эту настройку по умолчанию. Обязательные проверки и защита ветки продолжают действовать.
+
+## Releases
+
+For a release, update `package.json`'s version and add a matching `## 0.2.1`-style section at the top of `CHANGELOG.md`, with notes in English and Russian. Pull requests run the full test, locale, syntax, and package checks. Once the versioned change reaches `main`, the release workflow repeats the checks, packs the installable npm archive, creates the `v0.2.1`-style GitHub Release, and attaches the archive with the matching bilingual changelog section. You can also run **Actions → Publish versioned GitHub Release** on `main`; an already-published version is skipped. Dependabot groups npm and GitHub Actions updates into weekly pull requests.
+
+## Релизы
+
+Для выпуска обновите версию в `package.json` и добавьте в начало `CHANGELOG.md` раздел вида `## 0.2.1` с заметками на русском и английском. Pull request проходит полные проверки тестов, языковых пакетов, синтаксиса и состава пакета. После попадания версии в `main` workflow повторно выполняет проверки, собирает устанавливаемый npm-архив, создаёт GitHub Release с тегом вида `v0.2.1` и прикладывает архив и двуязычные заметки из changelog. Workflow **Actions → Publish versioned GitHub Release** можно запустить вручную на ветке `main`; уже опубликованная версия будет пропущена. Dependabot объединяет обновления npm и GitHub Actions в еженедельные pull request.

@@ -1,10 +1,12 @@
 name: Validate community locale packs
 
 on:
-  pull_request_target:
-    types: [opened, synchronize, reopened, ready_for_review]
-    paths:
-      - 'contributions/**'
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, converted_to_draft, edited, auto_merge_enabled, auto_merge_disabled]
+
+concurrency:
+  group: locale-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -15,20 +17,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out trusted validator from the target branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.4.0
         with:
           ref: ${{ github.event.pull_request.base.sha }}
           path: trusted-validator
           persist-credentials: false
 
       - name: Check out contribution data only
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.4.0
         with:
+          # PRs only receive read-only permissions here. The separate trusted workflow independently
+          # resolves and validates the exact head before creating any review.
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.sha }}
           path: candidate-data
-          sparse-checkout: contributions
-          sparse-checkout-cone-mode: true
+          sparse-checkout: contributions/**
+          sparse-checkout-cone-mode: false
           persist-credentials: false
           submodules: false
           lfs: false

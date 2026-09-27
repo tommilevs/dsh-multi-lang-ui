@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.2.0
+
+- **EN:** Add per-plugin, per-language translation coverage and a `dsh-i18n coverage` CLI inventory.
+- **RU:** Добавлены таблица покрытия переводов по плагинам и языкам и команда `dsh-i18n coverage`.
+- **EN:** Add a stdio MCP server for translation discovery, source lookup, draft creation, validation, and safe local staging, including source catalogs for new plugins.
+- **RU:** Добавлен MCP-сервер stdio для поиска исходных строк и переводов, создания черновиков, проверки и безопасной подготовки языковых пакетов, в том числе каталогов новых плагинов.
+- **EN:** Show source-map availability from an embedded map or source-language pack, and limit CI catalog depth, pack count, and JSON size.
+- **RU:** Отображается наличие карты исходных строк во встроенной карте или языковом пакете; в CI ограничены глубина каталогов, число пакетов и размер JSON.
+- **EN:** Validate data-only language-pack pull requests with trusted base-branch code and approve eligible translations of cataloged source strings without merging them.
+- **RU:** Запросы на включение только с данными переводов проверяются доверенным кодом целевой ветки; подходящие переводы известных строк автоматически одобряются, но не сливаются.
+- **EN:** Document a bilingual workflow for human-reviewed community translations.
+- **RU:** Описан двуязычный процесс подготовки и проверки переводов сообщества.
+- **EN:** Translate all 16 built-in pet messages shown when its treat supply is empty.
+- **RU:** Переведены все 16 встроенных реплик питомца, которые появляются, когда лакомства закончились.
+- **EN:** Add pull-request CI for tests, locale validation, client syntax, and package contents.
+- **RU:** Добавлены проверки pull request: тесты, языковые пакеты, синтаксис клиентского кода и состав npm-пакета.
+- **EN:** Publish a versioned GitHub Release with the validated npm tarball and bilingual changelog notes.
+- **RU:** Настроена публикация GitHub Release с проверенным npm-архивом и двуязычными заметками из списка изменений.
+- **EN:** Configure weekly grouped Dependabot updates for npm dependencies and GitHub Actions.
+- **RU:** Настроены еженедельные сгруппированные обновления npm-зависимостей и GitHub Actions через Dependabot.
+
 ## 0.1.14
 
 - Prefer the most specific matching dynamic DOM template so broad labels cannot partially translate pet chatter.

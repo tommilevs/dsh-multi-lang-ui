@@ -1,7 +1,8 @@
 {
   "name": "@tommilevs/dsh-multi-lang-ui",
-  "version": "0.1.14",
-  "description": "Community-extensible translations for DeepSeek Harness core and plugins, with safe scoped adapters for UI that has no locale API.",
+  "version": "0.2.0",
+  "packageManager": "pnpm@9.15.9",
+  "description": "English/Russian UI translations for DeepSeek Harness and plugins, with safe adapters and community packs. / Английские и русские переводы интерфейса DeepSeek Harness и плагинов, безопасные адаптеры и пакеты сообщества.",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -13,6 +14,7 @@
   "files": [
     "lib",
     "bin",
+    "scripts/validate-locales.mjs",
     "cordis.patch.yml",
     "contributions",
     "CONTRIBUTING.md",
@@ -62,7 +64,9 @@
     "terser": "^5.51.2"
   },
   "dependencies": {
-    "@deepseek-ai/schemastery": "^3.18.1"
+    "@deepseek-ai/schemastery": "^3.18.1",
+    "@modelcontextprotocol/sdk": "^1.30.1",
+    "zod": "^4.6.5"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.1",
@@ -77,6 +81,7 @@
     "url": "https://github.com/tommilevs/dsh-multi-lang-ui/issues"
   },
   "bin": {
-    "dsh-i18n": "./bin/dsh-i18n.mjs"
+    "dsh-i18n": "./bin/dsh-i18n.mjs",
+    "dsh-i18n-mcp": "./bin/dsh-i18n-mcp.mjs"
   }
 }

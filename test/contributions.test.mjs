@@ -120,6 +120,12 @@ test('does not accept prototype-pollution keys', () => {
   assert.ok(validateTranslationPack(bad).some((issue) => issue.includes('unsafe key')))
 })
 
+test('rejects unsupported fields at pack, plugin, and DOM-entry levels', () => {
+  assert.ok(validateTranslationPack(pack({ executable: 'nope' })).some((issue) => /pack has unsupported properties.*executable/.test(issue)))
+  assert.ok(validateTranslationPack(pack({ plugin: { ...pack().plugin, script: 'nope' } })).some((issue) => /plugin has unsupported properties/.test(issue)))
+  assert.ok(validateTranslationPack(pack({ dom: [{ ...pack().dom[0], action: 'nope' }] })).some((issue) => /dom\[0\] has unsupported properties/.test(issue)))
+})
+
 test('reads scoped and unscoped locale packs from nested contribution folders', (t) => {
   const root = mkdtempSync(path.join(os.tmpdir(), 'dsh-i18n-runtime-'))
   t.after(() => rmSync(root, { recursive: true, force: true }))

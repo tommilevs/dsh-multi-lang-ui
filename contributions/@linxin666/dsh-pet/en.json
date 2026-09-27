@@ -2081,6 +2081,86 @@
       "selector": "[data-dsh-pet-root]",
       "source": "收工收工，今天圆满",
       "target": "All done for today, what a perfect day!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "没有小鱼干了，多陪我工作一会儿吧～",
+      "target": "I'm out of dried-fish treats. Stay and work with me a little longer~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "粮仓空空，陪我完成几轮任务就会有小鱼干啦～",
+      "target": "The pantry's empty. Finish a few tasks with me and we'll earn more dried-fish treats~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "小鱼干在路上啦，先一起加油工作！",
+      "target": "The dried fish is on its way! Let's keep working together for now!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "嘴巴寂寞了……快去完成一轮任务！",
+      "target": "I'm craving a snack… Let's hurry up and finish one more task!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "陪我多工作一会儿，鱼干自动到账～",
+      "target": "Work with me a little longer, and dried-fish treats will arrive automatically~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "现在喂我也只会饿着肚子说谢谢哦～",
+      "target": "For now, all I can do is say thank you on an empty stomach~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "粮仓见底啦，用几轮任务换一条鱼干吧～",
+      "target": "The pantry's nearly empty! Let's finish a few more tasks to earn a dried-fish treat~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "饿着肚子等你完成下一轮任务～",
+      "target": "I'll wait for you to finish the next task, even on an empty stomach~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "小鱼干藏在你的工作里，去找找看！",
+      "target": "Dried-fish treats are hiding in your work—go find them!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "先工作后干饭，我们的约定哦～",
+      "target": "Work first, snacks later. That's our deal~"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "粮仓见底，全靠感情撑着了",
+      "target": "The pantry's nearly empty, but we have each other."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "饿是真饿，活也是真得干",
+      "target": "I'm really hungry, but the work still needs doing."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "画饼充饥……不对，画鱼干充饥",
+      "target": "Drawing a pie to stave off hunger… no, a dried-fish treat instead!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "没鱼干的日子，靠意志力过",
+      "target": "On days without dried fish, I have to rely on willpower."
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "下一轮任务，我闻到了鱼干味",
+      "target": "I can smell dried fish in the next task!"
+    },
+    {
+      "selector": "[data-dsh-pet-root]",
+      "source": "先记账上，欠我两条，记住啦",
+      "target": "Put two dried-fish treats on my tab. I'll remember!"
     }
   ],
   "source": {
