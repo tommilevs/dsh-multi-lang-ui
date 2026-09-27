@@ -13,3 +13,11 @@ test('uploads the package archive on rerun when the GitHub Release exists withou
   assert.match(releaseWorkflow, /gh release view "\$tag" --json assets --jq '\.assets\[\]\.name'/)
   assert.match(releaseWorkflow, /gh release upload "\$tag" "\$tarball" --clobber/)
 })
+
+test('builds the generated client before packaging without lifecycle output corrupting pack JSON', () => {
+  const buildIndex = releaseWorkflow.indexOf('run: pnpm run build')
+  const packIndex = releaseWorkflow.indexOf('npm pack --ignore-scripts --json')
+  assert.notEqual(buildIndex, -1)
+  assert.notEqual(packIndex, -1)
+  assert.ok(buildIndex < packIndex)
+})

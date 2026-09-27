@@ -66,8 +66,11 @@ jobs:
       - name: Run release checks
         run: pnpm run check
 
+      - name: Build the generated client
+        run: pnpm run build
+
       - name: Build the installable npm archive
-        run: npm pack --json > "$RUNNER_TEMP/npm-pack.json"
+        run: npm pack --ignore-scripts --json > "$RUNNER_TEMP/npm-pack.json"
 
       - name: Create the GitHub Release if this version has not been published
         env:
