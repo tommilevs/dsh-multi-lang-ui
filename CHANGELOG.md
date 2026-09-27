@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.14
+
+- Prefer the most specific matching dynamic DOM template so broad labels cannot partially translate pet chatter.
+- Add a regression test for interpolated tool-summon dialogue in English and Russian.
+
 ## 0.1.13
 
 - Translate all 293 built-in pet chatter lines in English and Russian, including status, tool, and whisper bubbles.

@@ -38,6 +38,20 @@ test('translates dynamic values and can switch between rendered languages', () =
   assert.equal(resolveDomTranslation(entries[0].selector, '34 sessions total', 'ru-RU', entries), 'Всего: 34 диалогов')
 })
 
+test('specific interpolated pet chatter beats an overlapping broad template', () => {
+  const packs = ['en', 'ru'].map((locale) => JSON.parse(readFileSync(new URL(`../contributions/@linxin666/dsh-pet/${locale}.json`, import.meta.url), 'utf8')))
+  const combined = new Map()
+  for (const pack of packs) for (const item of pack.dom || []) {
+    const key = `${item.selector}:${item.source}`
+    if (!combined.has(key)) combined.set(key, { selector: item.selector, source: item.source, targets: {} })
+    combined.get(key).targets[pack.locale] = item.target
+  }
+  const petEntries = [...combined.values()]
+  const selector = '[data-dsh-pet-root]'
+  assert.equal(resolveDomTranslation(selector, '召唤 ZQWE123 出击', 'en', petEntries), 'Summoning ZQWE123 to strike')
+  assert.equal(resolveDomTranslation(selector, '召唤 ZQWE123 出击', 'ru', petEntries), 'Призываю ZQWE123 в бой')
+})
+
 test('translates exact entries and leaves unknown text unchanged', () => {
   assert.equal(resolveDomTranslation(entries[1].selector, '全部状态', 'en', entries), 'All statuses')
   assert.equal(resolveDomTranslation(entries[1].selector, 'Unknown label', 'ru', entries), 'Unknown label')
