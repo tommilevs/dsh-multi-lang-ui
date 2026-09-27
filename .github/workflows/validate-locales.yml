@@ -1,8 +1,8 @@
 name: Validate community locale packs
 
 on:
-  pull_request_target:
-    types: [opened, synchronize, reopened, ready_for_review, converted_to_draft, edited]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, converted_to_draft, edited, auto_merge_enabled, auto_merge_disabled]
 
 concurrency:
   group: locale-review-${{ github.event.pull_request.number }}
@@ -26,47 +26,16 @@ jobs:
       - name: Check out contribution data only
         uses: actions/checkout@v4.4.0
         with:
-          # Intentional opt-out: fork PR HEAD data is read only as JSON beneath contributions/.
-          # The trusted validator runs from the base SHA; no PR code, scripts, or workflows execute.
-          allow-unsafe-pr-checkout: true
+          # PRs only receive read-only permissions here. The separate trusted workflow independently
+          # resolves and validates the exact head before creating any review.
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.sha }}
           path: candidate-data
-          sparse-checkout: contributions
-          sparse-checkout-cone-mode: true
+          sparse-checkout: contributions/**
+          sparse-checkout-cone-mode: false
           persist-credentials: false
           submodules: false
           lfs: false
 
       - name: Validate all submitted locale packs
         run: node trusted-validator/scripts/validate-locales.mjs candidate-data/contributions
-
-  approve-translation-only:
-    needs: validate
-    if: always()
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
-    steps:
-      - name: Check out trusted policy from the target branch
-        uses: actions/checkout@v4.4.0
-        with:
-          ref: ${{ github.event.pull_request.base.sha }}
-          path: trusted-policy
-          persist-credentials: false
-
-      - name: Approve validated translation-only changes
-        uses: actions/github-script@v9
-        env:
-          VALIDATION_RESULT: ${{ needs.validate.result }}
-        with:
-          script: |
-            const { approveTranslationPullRequest } = require('./trusted-policy/lib/translation-pr-approval.cjs')
-            await approveTranslationPullRequest({
-              github,
-              context,
-              core,
-              validationResult: process.env.VALIDATION_RESULT,
-              trustedPolicyDirectory: 'trusted-policy',
-            })

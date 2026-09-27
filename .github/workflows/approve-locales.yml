@@ -1,0 +1,116 @@
+name: Approve trusted translation-only pull requests
+
+on:
+  workflow_run:
+    workflows: [Validate community locale packs]
+    types: [completed]
+
+permissions:
+  actions: read
+  contents: read
+  pull-requests: read
+
+jobs:
+  resolve:
+    if: github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    outputs:
+      pull: ${{ steps.resolve.outputs.pull }}
+    steps:
+      - name: Check out trusted resolver from the default branch
+        uses: actions/checkout@v4.4.0
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          path: trusted-resolver
+          persist-credentials: false
+
+      - name: Resolve the exact open PR associated with this workflow run
+        id: resolve
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const { resolveWorkflowRunPullRequest } = require('./trusted-resolver/lib/translation-pr-approval.cjs')
+            const pull = await resolveWorkflowRunPullRequest({ github, context, core })
+            core.setOutput('pull', pull ? JSON.stringify(pull) : '')
+
+  approve:
+    needs: resolve
+    if: needs.resolve.outputs.pull != ''
+    concurrency:
+      group: locale-approval-pr-${{ needs.resolve.outputs.pull != '' && fromJSON(needs.resolve.outputs.pull).number || github.run_id }}
+      # Never cancel a privileged job during an in-flight GitHub review API call.
+      # New runs queue and re-check the live PR state after this job finishes.
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Check out trusted approval policy from the default branch
+        uses: actions/checkout@v4.4.0
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          path: trusted-policy
+          persist-credentials: false
+
+      - name: Record the trusted policy revision
+        id: trusted
+        run: echo "sha=$(git -C trusted-policy rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Check out candidate translation data only for the current main base
+        if: ${{ fromJSON(needs.resolve.outputs.pull).baseRef == 'main' && fromJSON(needs.resolve.outputs.pull).baseSha == steps.trusted.outputs.sha }}
+        continue-on-error: true
+        uses: actions/checkout@v4.4.0
+        with:
+          # Candidate content is JSON input data only. The resolver and approval policy always
+          # come from the default branch, never from a PR-controlled base or head commit.
+          allow-unsafe-pr-checkout: true
+          repository: ${{ fromJSON(needs.resolve.outputs.pull).headRepository.fullName }}
+          ref: ${{ fromJSON(needs.resolve.outputs.pull).headSha }}
+          path: candidate-data
+          sparse-checkout: contributions/**
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+          submodules: false
+          lfs: false
+
+      - name: Independently validate the exact candidate data with trusted code
+        id: validate
+        if: ${{ fromJSON(needs.resolve.outputs.pull).baseRef == 'main' && fromJSON(needs.resolve.outputs.pull).baseSha == steps.trusted.outputs.sha }}
+        continue-on-error: true
+        run: node trusted-policy/scripts/validate-locales.mjs candidate-data/contributions
+
+      - name: Approve only if trusted validation and translation-only policy pass
+        if: always()
+        uses: actions/github-script@v9
+        env:
+          RESOLVED_PULL: ${{ needs.resolve.outputs.pull }}
+          VALIDATION_RESULT: ${{ steps.validate.outcome }}
+        with:
+          script: |
+            const { approveTranslationPullRequest } = require('./trusted-policy/lib/translation-pr-approval.cjs')
+            const pull = JSON.parse(process.env.RESOLVED_PULL)
+            const contextForApproval = {
+              repo: context.repo,
+              payload: {
+                pull_request: {
+                  number: pull.number,
+                  head: {
+                    sha: pull.headSha,
+                    repo: {
+                      owner: { login: pull.headRepository.owner },
+                      name: pull.headRepository.name,
+                    },
+                  },
+                  base: { sha: pull.baseSha, ref: pull.baseRef },
+                  draft: pull.draft,
+                },
+              },
+            }
+            await approveTranslationPullRequest({
+              github,
+              context: contextForApproval,
+              core,
+              validationResult: process.env.VALIDATION_RESULT === 'success' ? 'success' : 'failure',
+              trustedPolicyDirectory: 'trusted-policy',
+            })

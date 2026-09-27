@@ -29,7 +29,7 @@ function textContent(root) {
   return root.children.map((child) => child && typeof child === 'object' ? textContent(child) : String(child ?? '')).join('')
 }
 
-async function mountCommunityPanel(activeLocale = 'en', { deferPacks = false, sourceConflict = false, caseVariant = false } = {}) {
+async function mountCommunityPanel(activeLocale = 'en', { deferPacks = false, sourceConflict = false, caseVariant = false, additionalStoredPacks = [] } = {}) {
   const builtInPack = pack('builtin-plugin', 'en', {
     settings: { title: 'Title', save: 'Save' },
   }, {
@@ -52,7 +52,9 @@ async function mountCommunityPanel(activeLocale = 'en', { deferPacks = false, so
     settings: { save: 'Save' },
   }, { dom: [] })
   if (caseVariant) sourceCommunityPack.plugin.id = '@Community/locale-tools'
-  const storedValue = JSON.stringify([importedPack, sourceCommunityPack])
+  const storedValue = JSON.stringify([importedPack, sourceCommunityPack, ...additionalStoredPacks])
+  const registeredLanguages = []
+  const registeredDictionaries = []
   let communityComponent
   let resolvePackResponse
   let renderUpdates = 0
@@ -87,8 +89,11 @@ async function mountCommunityPanel(activeLocale = 'en', { deferPacks = false, so
       effect: () => {},
       locale: {
         getSnapshot: () => ({ active: activeLocale }),
-        addLanguage: () => () => {},
-        register: () => () => {},
+        addLanguage: (language) => { registeredLanguages.push(language); return () => {} },
+        register: (namespace, language, dictionary) => {
+          registeredDictionaries.push({ namespace, language, dictionary })
+          return () => {}
+        },
         subscribe: () => () => {},
       },
       slots: {
@@ -113,6 +118,8 @@ async function mountCommunityPanel(activeLocale = 'en', { deferPacks = false, so
     render,
     flushEffects: () => hookEffects.map((effect) => effect()),
     resolvePacks: () => resolvePackResponse({ ok: true, json: async () => ({ packs: [builtInPack] }) }),
+    registeredLanguages,
+    registeredDictionaries,
     get renderUpdates() { return renderUpdates },
   }
 }
@@ -200,6 +207,23 @@ test('coverage groups plugin IDs without regard to casing', async () => {
 
   assert.equal(pluginRows.length, 1)
   assert.equal(textContent(pluginRows[0].children[0]), '@community/locale-tools')
+})
+
+test('a new German community pack is registered with DSH and appears in per-plugin coverage', async () => {
+  const germanPack = pack('new-plugin', 'de', { common: { hello: 'Hallo' } })
+  const mounted = await mountCommunityPanel('en', { additionalStoredPacks: [germanPack] })
+  const panel = mounted.render()
+  const nodes = allElements(panel)
+  const table = nodes.find((node) => node.type === 'table')
+  const coverageHeader = table.children.find((node) => node.type === 'thead')
+  const body = table.children.find((node) => node.type === 'tbody')
+  const germanRow = body.children.find((row) => textContent(row.children[0]) === 'new-plugin')
+
+  assert.ok(mounted.registeredLanguages.some((language) => language.id === 'de' && language.label === 'de' && language.fallback === 'en'))
+  assert.ok(mounted.registeredDictionaries.some(({ namespace, language, dictionary }) =>
+    namespace === 'common' && language === 'de' && dictionary.hello === 'Hallo'))
+  assert.ok(coverageHeader.children[0].children.some((node) => textContent(node) === 'de'))
+  assert.deepEqual(germanRow.children.slice(-3).map(textContent), ['1', '0', 'not included'])
 })
 
 test('saved local-pack coverage appears before the built-in pack request settles', async () => {

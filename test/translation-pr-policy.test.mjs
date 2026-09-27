@@ -122,26 +122,40 @@ test('rejects malformed locale pack paths and duplicate paths', () => {
   }
 })
 
-test('GitHub workflow validates fork files as data before narrowly approving translation-only PRs', () => {
-  const workflow = readFileSync(new URL('../.github/workflows/validate-locales.yml', import.meta.url), 'utf8')
+test('GitHub validates untrusted contribution data separately from the privileged approval workflow', () => {
+  const validationWorkflow = readFileSync(new URL('../.github/workflows/validate-locales.yml', import.meta.url), 'utf8')
+  const approvalWorkflow = readFileSync(new URL('../.github/workflows/approve-locales.yml', import.meta.url), 'utf8')
   const approval = readFileSync(new URL('../lib/translation-pr-approval.cjs', import.meta.url), 'utf8')
-  const candidateCheckout = workflow.split('name: Check out contribution data only')[1]?.split('name: Validate all submitted locale packs')[0]
-  const validationJob = workflow.split('jobs:')[1]?.split('  approve-translation-only:')[0]
-  const approvalJob = workflow.split('  approve-translation-only:')[1]
+  const candidateCheckout = validationWorkflow.split('name: Check out contribution data only')[1]?.split('name: Validate all submitted locale packs')[0]
 
-  assert.match(workflow, /pull_request_target:/)
-  assert.equal((workflow.match(/uses: actions\/checkout@v4\.4\.0/g) || []).length, 3)
-  assert.match(candidateCheckout, /allow-unsafe-pr-checkout: true/)
+  assert.match(validationWorkflow, /pull_request:/)
+  assert.doesNotMatch(validationWorkflow, /pull_request_target|pull-requests: write/)
+  assert.match(validationWorkflow, /contents: read/)
+  assert.match(validationWorkflow, /pull-requests: read/)
+  assert.equal((validationWorkflow.match(/uses: actions\/checkout@v4\.4\.0/g) || []).length, 2)
   assert.match(candidateCheckout, /ref: \$\{\{ github\.event\.pull_request\.head\.sha \}\}/)
   assert.match(candidateCheckout, /sparse-checkout: contributions/)
   assert.match(candidateCheckout, /persist-credentials: false/)
-  assert.match(validationJob, /ref: \$\{\{ github\.event\.pull_request\.base\.sha \}\}/)
-  assert.match(validationJob, /run: node trusted-validator\/scripts\/validate-locales\.mjs candidate-data\/contributions/)
-  assert.doesNotMatch(validationJob, /node candidate-data\/|npm (?:install|run)|pnpm (?:install|run)/)
-  assert.match(approvalJob, /needs: validate/)
-  assert.match(approvalJob, /if: always\(\)/)
-  assert.match(approvalJob, /require\('\.\/trusted-policy\/lib\/translation-pr-approval\.cjs'\)/)
-  assert.match(approvalJob, /pull-requests: write/)
+  assert.doesNotMatch(candidateCheckout, /allow-unsafe-pr-checkout/)
+  assert.match(validationWorkflow, /ref: \$\{\{ github\.event\.pull_request\.base\.sha \}\}/)
+  assert.match(validationWorkflow, /run: node trusted-validator\/scripts\/validate-locales\.mjs candidate-data\/contributions/)
+  assert.doesNotMatch(validationWorkflow, /node candidate-data\/|npm (?:install|run)|pnpm (?:install|run)/)
+
+  assert.match(approvalWorkflow, /workflow_run:/)
+  assert.match(approvalWorkflow, /actions: read/)
+  assert.match(approvalWorkflow, /pull-requests: write/)
+  assert.match(approvalWorkflow, /github\.event\.repository\.default_branch/)
+  assert.match(approvalWorkflow, /group: locale-approval-pr-\$\{\{ .*fromJSON\(needs\.resolve\.outputs\.pull\)\.number/)
+  assert.match(approvalWorkflow, /ref: \$\{\{ github\.event\.repository\.default_branch \}\}/)
+  assert.match(approvalWorkflow, /sparse-checkout: contributions\/\*\*/)
+  assert.match(approvalWorkflow, /baseRef == 'main'.*baseSha == steps\.trusted\.outputs\.sha/)
+  assert.match(approvalWorkflow, /run: node trusted-policy\/scripts\/validate-locales\.mjs candidate-data\/contributions/)
+  assert.doesNotMatch(approvalWorkflow, /npm (?:install|ci|test)|node candidate-data\/|run: node candidate-data/)
+  assert.doesNotMatch(approvalWorkflow, /gh pr merge|mergePullRequest|enablePullRequestAutoMerge/)
+
+  assert.match(approval, /github\.rest\.pulls\.list/)
+  assert.match(approval, /pull\.head\?\.sha === run\.head_sha \|\| pull\.merge_commit_sha === run\.head_sha/)
+  assert.match(approval, /current\.head\?\.sha !== associatedPull\.head\?\.sha/)
   assert.match(approval, /compareCommitsWithBasehead/)
   assert.match(approval, /currentPull\.data\.head\.sha !== pull\.head\.sha/)
   assert.match(approval, /finalPull\.data\.base\.sha !== pull\.base\.sha/)

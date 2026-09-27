@@ -52,6 +52,35 @@ test('specific interpolated pet chatter beats an overlapping broad template', ()
   assert.equal(resolveDomTranslation(selector, '召唤 ZQWE123 出击', 'ru', petEntries), 'Призываю ZQWE123 в бой')
 })
 
+test('translates pet chatter wrapped in the Chinese quotation marks used by whisper bubbles', () => {
+  const packs = ['en', 'ru'].map((locale) => JSON.parse(readFileSync(new URL(`../contributions/@linxin666/dsh-pet/${locale}.json`, import.meta.url), 'utf8')))
+  const combined = new Map()
+  for (const pack of packs) for (const item of pack.dom || []) {
+    const key = `${item.selector}:${item.source}`
+    if (!combined.has(key)) combined.set(key, { selector: item.selector, source: item.source, targets: {} })
+    combined.get(key).targets[pack.locale] = item.target
+  }
+  const entries = [...combined.values()]
+  const selector = '[data-dsh-pet-root]'
+
+  assert.equal(
+    resolveDomTranslation(selector, '「哎呀，踩到小石子了」', 'ru', entries),
+    '«Ой, наступила на камешек.»',
+  )
+  assert.equal(
+    resolveDomTranslation(selector, '「这波活儿，我陪着」', 'en', entries),
+    '“I’ll stay with you through this.”',
+  )
+  assert.equal(
+    resolveDomTranslation(selector, '竖起耳朵等回复', 'ru', entries),
+    'Навострила ушки и ждёт ответа.',
+  )
+  assert.equal(
+    resolveDomTranslation(selector, '「未收录的原文」', 'ru', entries),
+    '「未收录的原文」',
+  )
+})
+
 test('translates exact entries and leaves unknown text unchanged', () => {
   assert.equal(resolveDomTranslation(entries[1].selector, '全部状态', 'en', entries), 'All statuses')
   assert.equal(resolveDomTranslation(entries[1].selector, 'Unknown label', 'ru', entries), 'Unknown label')

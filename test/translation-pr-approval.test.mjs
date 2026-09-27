@@ -4,7 +4,10 @@ import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'nod
 import os from 'node:os'
 import path from 'node:path'
 
-import { approveTranslationPullRequest } from '../lib/translation-pr-approval.cjs'
+import {
+  approveTranslationPullRequest,
+  resolveWorkflowRunPullRequest,
+} from '../lib/translation-pr-approval.cjs'
 
 const sourcePack = {
   plugin: { id: 'example-plugin', version: '1.0.0', source: 'https://github.com/example/plugin', license: 'MIT' },
@@ -24,7 +27,7 @@ const germanPack = {
 const localePath = 'contributions/example-plugin/de.json'
 const previousApproval = { id: 7, commit_id: 'old-head', state: 'APPROVED', body: 'Automatically approved: trusted validation passed and every changed pack only translates source strings and DOM mappings already cataloged for an existing plugin.', user: { login: 'github-actions[bot]' } }
 
-function fixture({ changedFiles = [{ filename: localePath, status: 'modified' }], validationResult = 'success', currentAutoMerge = false, finalAutoMerge = false, contentError, postApprovalGetError, createReviewError, currentHeadSha = 'head-sha', reviews = [previousApproval], headChangesAfterApproval, headChangesAfterFirstGet, baseRefChangesAfterFirstGet, baseRefChangesAfterApproval, currentBaseRef = 'main' } = {}) {
+function fixture({ changedFiles = [{ filename: localePath, status: 'modified' }], validationResult = 'success', currentAutoMerge = false, finalAutoMerge = false, contentError, postApprovalGetError, createReviewError, currentHeadSha = 'head-sha', currentBaseSha = 'base-sha', reviews = [previousApproval], headChangesAfterApproval, headChangesAfterFirstGet, baseRefChangesAfterFirstGet, baseRefChangesAfterApproval, currentBaseRef = 'main' } = {}) {
   const root = mkdtempSync(path.join(os.tmpdir(), 'translation-approval-'))
   const contributions = path.join(root, 'contributions', 'example-plugin')
   mkdirSync(contributions, { recursive: true })
@@ -43,7 +46,7 @@ function fixture({ changedFiles = [{ filename: localePath, status: 'modified' }]
           if (getPullCount === 3 && postApprovalGetError) throw postApprovalGetError
           const result = { data: {
             head: { sha: actualCurrentHeadSha },
-            base: { sha: 'base-sha', ref: actualBaseRef },
+            base: { sha: currentBaseSha, ref: actualBaseRef },
             draft: false,
             auto_merge: getPullCount === 1 ? currentAutoMerge : finalAutoMerge,
           } }
@@ -91,6 +94,174 @@ function fixture({ changedFiles = [{ filename: localePath, status: 'modified' }]
     run: () => approveTranslationPullRequest({ github, context, core, validationResult, trustedPolicyDirectory: root }),
   }
 }
+
+function workflowRunResolverFixture({ associatedPulls, currentPull, workflowRun = {}, workflowPath = '.github/workflows/validate-locales.yml' } = {}) {
+  const calls = { get: [], notices: [] }
+  const run = {
+    id: 55,
+    workflow_id: 321,
+    event: 'pull_request',
+    name: 'Validate community locale packs',
+    head_sha: 'head-sha',
+    head_branch: 'contrib/german',
+    head_repository: { full_name: 'contributor/locale-packs' },
+    repository: { full_name: 'owner/repo' },
+    ...workflowRun,
+  }
+  const defaultPull = {
+    number: 12,
+    state: 'open',
+    draft: false,
+    head: {
+      sha: 'head-sha',
+      ref: 'contrib/german',
+      repo: { full_name: 'contributor/locale-packs', owner: { login: 'contributor' }, name: 'locale-packs' },
+    },
+    base: { sha: 'base-sha', ref: 'main' },
+  }
+  const github = {
+    paginate: async (method, request) => (await method(request)).data,
+    rest: {
+      actions: {
+        getWorkflow: async (request) => {
+          calls.workflowRequest = request
+          return { data: { path: workflowPath, state: 'active' } }
+        },
+      },
+      pulls: {
+        list: async (request) => {
+          calls.listRequest = request
+          return { data: associatedPulls ?? [defaultPull] }
+        },
+        get: async (request) => {
+          calls.get.push(request)
+          return { data: currentPull ?? defaultPull }
+        },
+      },
+    },
+  }
+  const context = {
+    repo: { owner: 'owner', repo: 'repo' },
+    payload: { workflow_run: run },
+  }
+  const core = { notice: (message) => calls.notices.push(message) }
+  return { calls, github, context, core, run: () => resolveWorkflowRunPullRequest({ github, context, core }) }
+}
+
+test('resolves a fork pull request only when the workflow run and live PR head match exactly', async () => {
+  const testFixture = workflowRunResolverFixture()
+
+  const resolved = await testFixture.run()
+
+  assert.equal(testFixture.calls.listRequest.head, 'contributor:contrib/german')
+  assert.equal(testFixture.calls.listRequest.state, 'open')
+  assert.equal(testFixture.calls.workflowRequest.workflow_id, 321)
+  assert.deepEqual(resolved, {
+    number: 12,
+    headSha: 'head-sha',
+    headBranch: 'contrib/german',
+    headRepository: { owner: 'contributor', name: 'locale-packs', fullName: 'contributor/locale-packs' },
+    baseSha: 'base-sha',
+    baseRef: 'main',
+    draft: false,
+  })
+})
+
+test('refuses a workflow run from a different workflow file with the same display name', async () => {
+  const testFixture = workflowRunResolverFixture({ workflowPath: '.github/workflows/attacker.yml' })
+
+  const resolved = await testFixture.run()
+
+  assert.equal(resolved, null)
+  assert.equal(testFixture.calls.listRequest, undefined)
+  assert.match(testFixture.calls.notices.at(-1), /trusted locale-validation workflow file/i)
+})
+
+test('resolves pull_request workflow runs whose SHA is GitHub’s synthetic merge commit, then pins the actual PR head', async () => {
+  const head = 'source-branch-head'
+  const merge = 'synthetic-merge-commit'
+  const testFixture = workflowRunResolverFixture({
+    workflowRun: { head_sha: merge },
+    associatedPulls: [{
+      number: 12,
+      head: { sha: head, ref: 'contrib/german', repo: { full_name: 'contributor/locale-packs' } },
+      base: { ref: 'main' },
+      merge_commit_sha: merge,
+    }],
+    currentPull: {
+      number: 12,
+      state: 'open',
+      draft: false,
+      head: { sha: head, ref: 'contrib/german', repo: { full_name: 'contributor/locale-packs', owner: { login: 'contributor' }, name: 'locale-packs' } },
+      base: { sha: 'base-sha', ref: 'main' },
+      merge_commit_sha: merge,
+    },
+  })
+
+  const resolved = await testFixture.run()
+
+  assert.equal(resolved.headSha, head)
+  assert.equal(resolved.baseSha, 'base-sha')
+})
+
+test('resolves a PR retargeted away from main so the approval policy can withdraw its own review', async () => {
+  const testFixture = workflowRunResolverFixture({
+    associatedPulls: [{
+      number: 12,
+      head: { sha: 'head-sha', ref: 'contrib/german', repo: { full_name: 'contributor/locale-packs' } },
+      base: { ref: 'release' },
+    }],
+    currentPull: {
+      number: 12,
+      state: 'open',
+      draft: false,
+      head: { sha: 'head-sha', ref: 'contrib/german', repo: { full_name: 'contributor/locale-packs', owner: { login: 'contributor' }, name: 'locale-packs' } },
+      base: { sha: 'base-sha', ref: 'release' },
+    },
+  })
+
+  const resolved = await testFixture.run()
+
+  assert.equal(resolved.number, 12)
+  assert.equal(resolved.baseRef, 'release')
+})
+
+test('refuses an ambiguous workflow run associated with multiple matching pull requests', async () => {
+  const testFixture = workflowRunResolverFixture({ associatedPulls: [
+    { number: 12, head: { sha: 'head-sha', ref: 'contrib/german', repo: { full_name: 'contributor/locale-packs' } }, base: { ref: 'main' } },
+    { number: 13, head: { sha: 'head-sha', ref: 'contrib/german', repo: { full_name: 'contributor/locale-packs' } }, base: { ref: 'main' } },
+  ] })
+
+  const resolved = await testFixture.run()
+
+  assert.equal(resolved, null)
+  assert.equal(testFixture.calls.get.length, 0)
+  assert.match(testFixture.calls.notices.at(-1), /ambiguous/i)
+})
+
+test('refuses missing fork metadata instead of falling back to workflow_run.pull_requests', async () => {
+  const testFixture = workflowRunResolverFixture({
+    workflowRun: { head_repository: null, pull_requests: [{ number: 12 }] },
+  })
+
+  const resolved = await testFixture.run()
+
+  assert.equal(resolved, null)
+  assert.equal(testFixture.calls.listRequest, undefined)
+  assert.equal(testFixture.calls.get.length, 0)
+})
+
+test('refuses a stale workflow run head before checkout', async () => {
+  const staleHead = workflowRunResolverFixture({
+    currentPull: {
+      number: 12,
+      state: 'open',
+      head: { sha: 'newer-sha', ref: 'contrib/german', repo: { full_name: 'contributor/locale-packs' } },
+      base: { sha: 'base-sha', ref: 'main' },
+    },
+  })
+  assert.equal(await staleHead.run(), null)
+})
 
 test('approves only the validated event head commit when the current PR remains eligible', async (t) => {
   const testFixture = fixture()
@@ -215,6 +386,17 @@ test('an obsolete run never creates or dismisses an approval for another pull re
   assert.equal(testFixture.calls.create.length, 0)
 })
 
+test('an obsolete review run cannot approve after the PR base commit changed', async (t) => {
+  const testFixture = fixture({ currentBaseSha: 'newer-base-sha', reviews: [] })
+  t.after(() => rmSync(testFixture.root, { recursive: true, force: true }))
+
+  await testFixture.run()
+
+  assert.equal(testFixture.calls.create.length, 0)
+  assert.equal(testFixture.calls.dismiss.length, 0)
+  assert.match(testFixture.calls.notices.at(-1), /changed after this run started/i)
+})
+
 test('an obsolete validation failure cannot dismiss the newer head approval', async (t) => {
   const currentApproval = { id: 8, commit_id: 'newer-head', state: 'APPROVED', body: previousApproval.body, user: { login: 'github-actions[bot]' } }
   const testFixture = fixture({ validationResult: 'failure', currentHeadSha: 'newer-head', reviews: [previousApproval, currentApproval] })
@@ -249,11 +431,39 @@ test('keeps any new approval pinned to the reviewed SHA if the pull request head
   assert.match(testFixture.calls.notices.at(-1), /branch protection/i)
 })
 
-test('workflow runs on every pull request update and cancels obsolete runs', () => {
+test('the public pull-request validator is read-only and runs for every PR update', () => {
   const workflow = readFileSync(new URL('../.github/workflows/validate-locales.yml', import.meta.url), 'utf8')
 
   assert.match(workflow, /cancel-in-progress: true/)
   assert.match(workflow, /converted_to_draft/)
+  assert.match(workflow, /auto_merge_enabled/)
+  assert.match(workflow, /auto_merge_disabled/)
   assert.doesNotMatch(workflow, /paths:/)
-  assert.match(workflow, /if: always\(\)/)
+  assert.match(workflow, /pull_request:/)
+  assert.match(workflow, /contents: read/)
+  assert.doesNotMatch(workflow, /pull_request_target|pull-requests: write|createReview|APPROVE/)
+  assert.doesNotMatch(workflow, /allow-unsafe-pr-checkout: true/)
+})
+
+test('the privileged workflow revalidates JSON data from the associated PR head without executing PR code', () => {
+  const workflow = readFileSync(new URL('../.github/workflows/approve-locales.yml', import.meta.url), 'utf8')
+  const resolver = readFileSync(new URL('../lib/translation-pr-approval.cjs', import.meta.url), 'utf8')
+
+  assert.match(workflow, /workflow_run:/)
+  assert.match(workflow, /cancel-in-progress: false/)
+  assert.match(resolver, /github\.rest\.pulls\.list/)
+  assert.match(resolver, /head: `\$\{headRepository\.owner\}:\$\{run\.head_branch\}`/)
+  assert.match(workflow, /sparse-checkout: contributions\/\*\*/)
+  assert.match(workflow, /sparse-checkout-cone-mode: false/)
+  assert.match(workflow, /fromJSON\(needs\.resolve\.outputs\.pull\)\.baseSha == steps\.trusted\.outputs\.sha/)
+  assert.match(workflow, /group: locale-approval-pr-\$\{\{ .*fromJSON\(needs\.resolve\.outputs\.pull\)\.number/)
+  assert.doesNotMatch(workflow, /ref: \$\{\{ fromJSON\(steps\.resolve\.outputs\.pull\)\.baseSha \}\}/)
+  assert.doesNotMatch(workflow, /trusted-policy\/scripts.*checkout/i)
+  assert.match(workflow, /node trusted-policy\/scripts\/validate-locales\.mjs candidate-data\/contributions/)
+  assert.match(workflow, /steps\.validate\.outcome/)
+  assert.match(workflow, /pull-requests: write/)
+  assert.match(workflow, /actions: read/)
+  assert.doesNotMatch(workflow, /workflow_run\.conclusion/)
+  assert.doesNotMatch(workflow, /npm (?:install|ci|test)|node candidate-data\/|run: node candidate-data/)
+  assert.doesNotMatch(workflow, /gh pr merge|mergePullRequest|enablePullRequestAutoMerge/)
 })

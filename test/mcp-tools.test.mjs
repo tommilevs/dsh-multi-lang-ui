@@ -155,6 +155,51 @@ test('a new plugin source catalog can be staged and used to scaffold a target lo
   assert.match(draft.dom[0].target, /⟦TRANSLATE: Exact source \{name\}/)
 })
 
+test('a new plugin can go from source catalog through German validation and staging into coverage', (t) => {
+  const repo = makeRepository({ withSourcePack: false })
+  t.after(() => rmSync(repo, { recursive: true, force: true }))
+  const sourceCatalog = {
+    plugin: {
+      id: 'dsh-neues-plugin',
+      version: '1.0.0',
+      source: 'https://example.test/dsh-neues-plugin',
+      license: 'MIT'
+    },
+    sourceLocale: 'en',
+    namespaces: { settings: { greeting: 'Hello {name}', save: 'Save' } },
+    dom: [{ selector: '.dsh-neues-plugin', source: 'Open {name}' }]
+  }
+  const sourceResult = toolData(callMcp(repo, [toolRequest(2, 'stage_source_catalog', sourceCatalog)]).get(2))
+  assert.equal(sourceResult.staged, true)
+  assert.equal(sourceResult.path, 'contributions/dsh-neues-plugin/en.json')
+
+  const scaffolded = toolData(callMcp(repo, [toolRequest(2, 'scaffold_translation_pack', {
+    pluginId: 'dsh-neues-plugin',
+    locale: 'de',
+    sourceLocale: 'en'
+  })]).get(2))
+  const pack = scaffolded.pack
+  pack.namespaces.settings.greeting = 'Hallo {name}'
+  pack.namespaces.settings.save = 'Speichern'
+  pack.dom[0].target = 'Öffne {name}'
+
+  const validation = toolData(callMcp(repo, [toolRequest(2, 'validate_translation_pack', { pack })]).get(2))
+  assert.equal(validation.valid, true, JSON.stringify(validation.errors))
+  const staged = toolData(callMcp(repo, [toolRequest(2, 'stage_translation_pack', { pack })]).get(2))
+  assert.equal(staged.staged, true)
+  assert.equal(staged.path, 'contributions/dsh-neues-plugin/de.json')
+
+  const inventory = toolData(callMcp(repo, [toolRequest(2, 'list_translation_coverage')]).get(2))
+  assert.equal(inventory.pluginCount, 1)
+  assert.deepEqual(inventory.plugins[0].locales, ['de', 'en'])
+  assert.deepEqual(inventory.plugins[0].packs.map(({ locale, namespaceKeyCount, domMappingCount }) => ({
+    locale, namespaceKeyCount, domMappingCount,
+  })), [
+    { locale: 'de', namespaceKeyCount: 2, domMappingCount: 1 },
+    { locale: 'en', namespaceKeyCount: 2, domMappingCount: 1 },
+  ])
+})
+
 test('source catalog staging rejects unknown fields and refuses an existing source locale pack', (t) => {
   const repo = makeRepository({ withSourcePack: false })
   t.after(() => rmSync(repo, { recursive: true, force: true }))
@@ -232,6 +277,39 @@ test('validation reports placeholder mismatches and unsupported pack properties'
   assert.ok(result.errors.some((error) => /placeholder mismatch/i.test(error)))
   assert.ok(result.errors.some((error) => /source and translation keys differ/i.test(error)))
   assert.ok(result.errors.some((error) => /unsupported/i.test(error)))
+})
+
+test('validation and staging enforce the byte limit on the pretty-printed file written to disk', (t) => {
+  const repo = makeRepository({ withSourcePack: false })
+  t.after(() => rmSync(repo, { recursive: true, force: true }))
+  const entries = Object.fromEntries(Array.from({ length: 50000 }, (_, index) => [
+    `key${String(index).padStart(5, '0')}`,
+    'x',
+  ]))
+  const pack = {
+    plugin: {
+      id: 'large-plugin',
+      version: '1.0.0',
+      source: 'https://example.test/large-plugin',
+      license: 'MIT'
+    },
+    locale: 'de',
+    sourceLocale: 'en',
+    namespaces: { common: entries },
+  }
+  const compactBytes = Buffer.byteLength(JSON.stringify(pack), 'utf8')
+  const stagedBytes = Buffer.byteLength(`${JSON.stringify(pack, null, 2)}\n`, 'utf8')
+  assert.ok(compactBytes < 1024 * 1024)
+  assert.ok(stagedBytes > 1024 * 1024)
+
+  const validation = toolData(callMcp(repo, [toolRequest(2, 'validate_translation_pack', { pack })]).get(2))
+  assert.equal(validation.valid, false)
+  assert.ok(validation.errors.some((error) => /limit when serialized for staging/i.test(error)))
+
+  const staged = toolData(callMcp(repo, [toolRequest(2, 'stage_translation_pack', { pack })]).get(2))
+  assert.equal(staged.staged, false)
+  assert.ok(staged.errors.some((error) => /limit when serialized for staging/i.test(error)))
+  assert.equal(existsSync(path.join(repo, 'contributions', 'large-plugin', 'de.json')), false)
 })
 
 test('validation rejects a namespace key already used by another pack in the same locale', (t) => {

@@ -190,3 +190,18 @@ test('coverage reader stops before retaining diagnostics for an oversized direct
 
   assert.throws(() => readCoveragePacks(contributions), /7000 directory entries/i)
 })
+
+test('coverage excludes packs with unsupported executable metadata', (t) => {
+  const temp = mkdtempSync(path.join(os.tmpdir(), 'dsh-coverage-schema-'))
+  const contributions = path.join(temp, 'contributions')
+  const pluginDirectory = path.join(contributions, 'example-plugin')
+  mkdirSync(pluginDirectory, { recursive: true })
+  t.after(() => rmSync(temp, { recursive: true, force: true }))
+  writeFileSync(path.join(pluginDirectory, 'ru.json'), JSON.stringify(pack('example-plugin', 'ru', { executable: 'not allowed' })))
+
+  const result = readCoveragePacks(contributions)
+
+  assert.deepEqual(result.packs, [])
+  assert.equal(result.skippedPacks.length, 1)
+  assert.match(result.skippedPacks[0].reasons.join(' '), /unsupported properties.*executable/i)
+})
