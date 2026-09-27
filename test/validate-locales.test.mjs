@@ -68,6 +68,15 @@ test('accepts a well-formed locale pack with source text and matching placeholde
   })
 })
 
+test('reports a missing contributions directory without throwing a type error', () => {
+  const missing = path.join(os.tmpdir(), `dsh-missing-contributions-${process.pid}-${Date.now()}`)
+  const result = validate(missing)
+
+  assert.notEqual(result.status, 0)
+  assert.match(result.stderr, /contributions directory does not exist/i)
+  assert.doesNotMatch(result.stderr, /TypeError/i)
+})
+
 test('accepts a DOM-only pack with empty namespaces and a valid mapping', (t) => {
   withContributions(t, (contributions) => {
     writePack(contributions, 'example-plugin', 'ru', makePack({
@@ -163,6 +172,80 @@ test('requires the plugin source to be an HTTP or HTTPS URL', (t) => {
     const result = validate(contributions)
     assert.notEqual(result.status, 0)
     assert.match(result.stderr, /plugin\.source.*http/i)
+  })
+})
+
+test('rejects a locale pack larger than the per-file limit before parsing it', (t) => {
+  withContributions(t, (contributions) => {
+    const directory = path.join(contributions, 'example-plugin')
+    mkdirSync(directory)
+    writeFileSync(path.join(directory, 'ru.json'), Buffer.alloc(1024 * 1024 + 1))
+
+    const result = validate(contributions)
+    assert.notEqual(result.status, 0)
+    assert.match(result.stderr, /pack exceeds 1048576 bytes/i)
+    assert.doesNotMatch(result.stderr, /invalid json/i)
+  })
+})
+
+test('rejects the catalog when aggregate locale JSON exceeds the read limit', (t) => {
+  withContributions(t, (contributions) => {
+    const oneMiB = Buffer.alloc(1024 * 1024, 32)
+    for (let index = 0; index < 32; index += 1) {
+      const directory = path.join(contributions, `plugin-${String(index).padStart(2, '0')}`)
+      mkdirSync(directory)
+      writeFileSync(path.join(directory, 'ru.json'), oneMiB)
+    }
+    const lastDirectory = path.join(contributions, 'plugin-over-limit')
+    mkdirSync(lastDirectory)
+    writeFileSync(path.join(lastDirectory, 'ru.json'), ' ')
+
+    const result = validate(contributions)
+    assert.notEqual(result.status, 0)
+    assert.match(result.stderr, /contributions exceeds 33554432 bytes/i)
+    assert.doesNotMatch(result.stderr, /invalid json/i)
+  })
+})
+
+test('rejects more than 2000 locale packs without parsing the catalog', (t) => {
+  withContributions(t, (contributions) => {
+    const directory = path.join(contributions, 'example-plugin')
+    mkdirSync(directory)
+    for (let index = 0; index < 2001; index += 1) {
+      writeFileSync(path.join(directory, `locale-${String(index).padStart(4, '0')}.json`), '')
+    }
+
+    const result = validate(contributions)
+    assert.notEqual(result.status, 0)
+    assert.match(result.stderr, /contributions exceeds 2000 locale packs/i)
+    assert.doesNotMatch(result.stderr, /invalid json/i)
+  })
+})
+
+test('rejects contribution directory nesting deeper than scoped plugin paths', (t) => {
+  withContributions(t, (contributions) => {
+    const directory = path.join(contributions, 'scope', 'plugin', 'nested')
+    mkdirSync(directory, { recursive: true })
+    writeFileSync(path.join(directory, 'ru.json'), '{}')
+
+    const result = validate(contributions)
+    assert.notEqual(result.status, 0)
+    assert.match(result.stderr, /contributions directory nesting exceeds 2 levels/i)
+  })
+})
+
+test('bounds non-JSON directory entries before retaining per-entry diagnostics', (t) => {
+  withContributions(t, (contributions) => {
+    const directory = path.join(contributions, 'example-plugin')
+    mkdirSync(directory)
+    for (let index = 0; index < 7001; index += 1) {
+      writeFileSync(path.join(directory, `ignored-${String(index).padStart(4, '0')}.txt`), '')
+    }
+
+    const result = validate(contributions)
+    assert.notEqual(result.status, 0)
+    assert.match(result.stderr, /contributions exceeds 7000 directory entries/i)
+    assert.doesNotMatch(result.stderr, /ignored-7000\.txt/)
   })
 })
 

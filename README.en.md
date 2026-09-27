@@ -12,7 +12,9 @@
 - English and Russian labels for the `dsh-web-all` usage and archive views, pet widget, MCP filters, model capability selector, update screen and every v0.4.2 release bullet. Desktop settings, the plugin manager tab and Auxiliary Models are localized too; dynamic errors preserve provider and model names.
 - Complete English and Russian dictionaries for all 121 Skin Center strings, plus the remaining pet-settings and MCP-form labels. The usage DOM adapters translate the dynamic token-and-call summary and mixed-language source variants.
 - Russian and English UI adapters for the hardcoded Chinese interfaces in `dsh-mcp-manager-ui` 1.4.0 and `@dsh-external/dsh-super-injector` 0.3.3. Adapters only replace known exact strings within plugin-owned root classes. The ambiguous string `关闭` is intentionally left untranslated because it means both “Close” and “Off” in different controls.
-- A **Community translations** settings section to import and export JSON packs. Translation packs contain data only and are never executed as code.
+- A **Community translations** settings section with import/export and a live plugin-by-language inventory. It shows actual namespace-key and DOM-mapping counts from loaded built-in and imported packs, without claiming percentages against an unknown upstream catalog.
+- A stdio MCP server and `dsh-i18n coverage` CLI command so any MCP-capable AI can inspect coverage, prepare and validate translations, bootstrap a source catalog for a new plugin, and stage JSON locally. The server does not execute plugin code, publish PRs, or need GitHub credentials.
+- GitHub Actions validates community JSON and can approve translations of already cataloged source strings; new plugins and source keys require human review. Approval is pinned to the validated SHA. If a PR becomes ineligible, the workflow dismisses only its own approvals, never human reviews, and never merges PRs. Repository owners must allow GitHub Actions to create approvals and dismiss its own reviews on the protected branch, enable dismissal of stale approvals on new pushes, and keep auto-merge disabled. See the bilingual [contributor guide](CONTRIBUTING.md#mcp-setup) for MCP setup, safety rules, and repository settings.
 
 DSH's native English remains the default and fallback language. Packs add missing dictionaries and selectable locales; they do not replace DSH's core locale dictionaries.
 
@@ -38,7 +40,7 @@ node scripts/validate-locales.mjs
 
 Add `contributions/<package-id>/<locale>.json`; scoped package IDs use matching folders such as `contributions/@scope/plugin/ru.json`. Each JSON pack records package version, source URL, license, source text, translation, and optional exact-text DOM mappings restricted to plugin-owned CSS roots.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full bilingual schema, attribution rules, and local validation. Run:
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full bilingual schema, attribution rules, MCP client setup, automatic-approval rules, and local validation. Run:
 
 ```bash
 node --test

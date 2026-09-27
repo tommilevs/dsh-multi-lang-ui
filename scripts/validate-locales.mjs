@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { lstatSync, readFileSync, readdirSync } from 'node:fs'
+import { lstatSync, opendirSync, readFileSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 
@@ -8,6 +8,11 @@ const LOCALE_PATTERN = /^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$/
 const PLUGIN_ID_PATTERN = /^(?:@[a-z0-9._-]+\/)?[a-z0-9][a-z0-9._-]*$/i
 const PLACEHOLDER_PATTERN = /\{([A-Za-z0-9_]+)(?::[^{}]+)?\}/g
 const UNSAFE_KEYS = new Set(['__proto__', 'prototype', 'constructor'])
+const MAX_PACK_BYTES = 1024 * 1024
+const MAX_TOTAL_BYTES = 32 * 1024 * 1024
+const MAX_PACK_COUNT = 2000
+const MAX_DIRECTORY_DEPTH = 2
+const MAX_DIRECTORY_ENTRIES = 7000
 
 function isRecord(value) {
   return value !== null && typeof value === 'object' && !Array.isArray(value)
@@ -38,50 +43,97 @@ function isSafeDomSelector(selector) {
 
 function walkContributionFiles(root, errors) {
   const files = []
+  let totalBytes = 0
+  let directoryEntryCount = 0
+  let resourceLimitExceeded = false
 
   let rootInfo
   try {
     rootInfo = lstatSync(root)
   } catch {
     errors.push(`contributions directory does not exist: ${root}`)
-    return files
+    return { files, resourceLimitExceeded }
   }
   if (!rootInfo.isDirectory() || rootInfo.isSymbolicLink()) {
     errors.push(`contributions path must be a real directory: ${root}`)
-    return files
+    return { files, resourceLimitExceeded }
   }
 
-  function visit(directory) {
-    let entries
+  function visit(directory, depth = 0) {
+    if (resourceLimitExceeded) return
+    let handle
     try {
-      entries = readdirSync(directory, { withFileTypes: true })
+      handle = opendirSync(directory)
     } catch (error) {
       errors.push(`${path.relative(root, directory) || '.'}: cannot read directory: ${error.message}`)
       return
     }
 
-    for (const entry of entries) {
-      const absolute = path.join(directory, entry.name)
-      const relative = path.relative(root, absolute).split(path.sep).join('/')
-      if (entry.isSymbolicLink()) {
-        errors.push(`${relative}: symbolic links are not allowed`)
-      } else if (entry.isDirectory()) {
-        visit(absolute)
-      } else if (entry.isFile()) {
-        if (!entry.name.toLowerCase().endsWith('.json')) {
-          errors.push(`${relative}: only JSON locale packs are allowed under contributions`)
-        } else {
-          files.push({ absolute, relative })
+    try {
+      while (!resourceLimitExceeded) {
+        let entry
+        try {
+          entry = handle.readSync()
+        } catch (error) {
+          errors.push(`${path.relative(root, directory) || '.'}: cannot read directory: ${error.message}`)
+          return
         }
-      } else {
-        errors.push(`${relative}: unsupported filesystem entry`)
+        if (!entry) break
+        directoryEntryCount += 1
+        if (directoryEntryCount > MAX_DIRECTORY_ENTRIES) {
+          errors.push(`contributions exceeds ${MAX_DIRECTORY_ENTRIES} directory entries`)
+          resourceLimitExceeded = true
+          return
+        }
+
+        const absolute = path.join(directory, entry.name)
+        const relative = path.relative(root, absolute).split(path.sep).join('/')
+        if (entry.isSymbolicLink()) {
+          errors.push(`${relative}: symbolic links are not allowed`)
+        } else if (entry.isDirectory()) {
+          if (depth >= MAX_DIRECTORY_DEPTH) {
+            errors.push(`contributions directory nesting exceeds ${MAX_DIRECTORY_DEPTH} levels at ${relative}`)
+            resourceLimitExceeded = true
+          } else {
+            visit(absolute, depth + 1)
+          }
+        } else if (entry.isFile()) {
+          if (!entry.name.toLowerCase().endsWith('.json')) {
+            errors.push(`${relative}: only JSON locale packs are allowed under contributions`)
+          } else {
+            let size
+            try {
+              size = lstatSync(absolute).size
+            } catch (error) {
+              errors.push(`${relative}: cannot inspect file: ${error.message}`)
+              continue
+            }
+            if (size > MAX_PACK_BYTES) {
+              errors.push(`${relative}: pack exceeds ${MAX_PACK_BYTES} bytes`)
+              resourceLimitExceeded = true
+            } else if (files.length >= MAX_PACK_COUNT) {
+              errors.push(`contributions exceeds ${MAX_PACK_COUNT} locale packs`)
+              resourceLimitExceeded = true
+            } else if (totalBytes + size > MAX_TOTAL_BYTES) {
+              errors.push(`contributions exceeds ${MAX_TOTAL_BYTES} bytes`)
+              resourceLimitExceeded = true
+            } else {
+              totalBytes += size
+              files.push({ absolute, relative })
+            }
+          }
+        } else {
+          errors.push(`${relative}: unsupported filesystem entry`)
+        }
       }
+    } finally {
+      handle.closeSync()
     }
   }
 
   visit(root)
   if (files.length === 0 && errors.length === 0) errors.push('no locale contribution JSON files found')
-  return files
+  return { files, resourceLimitExceeded }
 }
 
 function validateString(value, label, errors) {
@@ -237,8 +289,8 @@ function validatePack(file, errors) {
 
 export function validateLocales(directory) {
   const errors = []
-  const files = walkContributionFiles(path.resolve(directory), errors)
-  const packs = files.map((file) => validatePack(file, errors)).filter(Boolean)
+  const { files, resourceLimitExceeded } = walkContributionFiles(path.resolve(directory), errors)
+  const packs = resourceLimitExceeded ? [] : files.map((file) => validatePack(file, errors)).filter(Boolean)
   const seen = new Map()
 
   for (const pack of packs) {

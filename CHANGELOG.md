@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0
+
+- Add a per-plugin, per-language community coverage table and a `dsh-i18n coverage` CLI inventory.
+- Add a stdio MCP server for translation discovery, source lookup, draft scaffolding, validation, and safe local staging, including source catalogs for new plugins.
+- Show source-map availability from either an embedded map or the plugin's source-language pack; bound CI catalog depth, pack count, and JSON bytes.
+- Validate data-only language-pack pull requests from trusted base-branch code and approve eligible translations of already cataloged source strings without merging them.
+- Document a bilingual workflow for human-reviewed community translation contributions.
+
 ## 0.1.14
 
 - Prefer the most specific matching dynamic DOM template so broad labels cannot partially translate pet chatter.
