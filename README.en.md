@@ -1,8 +1,8 @@
 # dsh-multi-lang-ui
 
-**Community-extensible translations for DeepSeek Harness (DSH).** This plugin preserves the Russian dictionaries and user-facing features from `dsh-russian-lang`, adds English strings for its own UI, and provides a contribution path for additional plugin translations.
+[English](README.en.md) · [Русский](README.md)
 
-Русская версия: [README.md](README.md).
+**Community-extensible translations for DeepSeek Harness (DSH).** This plugin preserves the Russian dictionaries and user-facing features from `dsh-russian-lang`, adds English strings for its own UI, and provides a contribution path for additional plugin translations.
 
 ## Included
 

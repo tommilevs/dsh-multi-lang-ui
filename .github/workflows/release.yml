@@ -1,0 +1,109 @@
+name: Publish versioned GitHub Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.package.outputs.version }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4.4.0
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Read package version
+        id: package
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+
+  release:
+    needs: prepare
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    concurrency:
+      group: release-${{ needs.prepare.outputs.version }}
+      cancel-in-progress: false
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4.4.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run release checks
+        run: pnpm run check
+
+      - name: Build the installable npm archive
+        run: npm pack --json > "$RUNNER_TEMP/npm-pack.json"
+
+      - name: Create the GitHub Release if this version has not been published
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          tag="v${version}"
+
+          awk -v heading="## ${version}" '
+            $0 == heading { found = 1; next }
+            /^## / && found { exit }
+            found { print }
+          ' CHANGELOG.md > "$RUNNER_TEMP/release-notes.md"
+
+          if [ ! -s "$RUNNER_TEMP/release-notes.md" ]; then
+            echo "No changelog section found for ${version}." >&2
+            exit 1
+          fi
+
+          tarball="$(node -p "JSON.parse(require('node:fs').readFileSync(process.argv[1], 'utf8'))[0].filename" "$RUNNER_TEMP/npm-pack.json")"
+          tarball_name="$(basename "$tarball")"
+
+          if gh release view "$tag" >/dev/null 2>&1; then
+            existing_assets="$(gh release view "$tag" --json assets --jq '.assets[].name')"
+            if printf '%s\n' "$existing_assets" | grep -Fqx "$tarball_name"; then
+              echo "${tag} already contains ${tarball_name}; nothing to publish."
+              exit 0
+            fi
+
+            echo "${tag} exists without ${tarball_name}; uploading the missing archive."
+            gh release upload "$tag" "$tarball" --clobber
+            exit 0
+          fi
+
+          gh release create "$tag" \
+            --target "$GITHUB_SHA" \
+            --title "dsh-multi-lang-ui ${tag}" \
+            --notes-file "$RUNNER_TEMP/release-notes.md"
+          gh release upload "$tag" "$tarball"

@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 7338)
+Total output lines: 225
+
 # Contributing translations
 
 Community translation packs are data-only JSON. A pull request must contain only files under `contributions/`; CI reads those files as data and runs the trusted locale validator from the target branch. It does not execute code from a contribution.
@@ -169,32 +172,7 @@ Use `dsh-i18n coverage` for a human-readable coverage report or `dsh-i18n covera
 
 Необязательный MCP-сервер со стандартным вводом и выводом можно подключить к любому MCP-совместимому ИИ-клиенту. Он показывает каталог переводов, выдаёт исходный контекст, подготавливает языковой пакет, проверяет его и помещает JSON-файл в локальную копию репозитория. Серверу не нужны учётные данные GitHub; он не может публиковать, одобрять или сливать pull request. Проверка изменений и отправка PR остаются за участником.
 
-Нужен Node.js версии 20 или новее. Клонируйте репозиторий и установите закреплённые версии зависимостей через pnpm 9 и npm (если клон уже есть, достаточно выполнить последнюю команду):
-
-```bash
-git clone https://github.com/tommilevs/dsh-multi-lang-ui.git
-cd dsh-multi-lang-ui
-npx --yes pnpm@9 install --frozen-lockfile
-```
-
-Затем добавьте сервер в конфигурацию MCP вашего ИИ-клиента. Укажите абсолютные пути к скрипту и клону:
-
-```json
-{
-  "mcpServers": {
-    "dsh-multi-lang-ui": {
-      "command": "node",
-      "args": [
-        "/абсолютный/путь/dsh-multi-lang-ui/bin/dsh-i18n-mcp.mjs",
-        "--repo",
-        "/абсолютный/путь/dsh-multi-lang-ui"
-      ]
-    }
-  }
-}
-```
-
-Инструменты: `list_translation_coverage`, `get_translation_source`, `stage_source_catalog`, `scaffold_translation_pack`, `validate_translation_pack` и `stage_translation_pack`. Попросите ИИ найти отсутствующие сочетания плагина и языка, получить исходный текст, подготовить перевод с сохранением плейсхолдеров и проверить его. Если у плагина несколько исходных языков, укажите `sourceLocale` в инструментах получения исходного текста и подготовки пакета. Перед отправкой покажите diff человеку. Сервер записывает JSON только в каталог `contributions/` выбранного клона и не исполняет данные перевода.
+Нужен Node.js версии 20 или новее. Клонируйте репозиторий и установите закреплённые версии з…338 tokens truncated…ументах получения исходного текста и подготовки пакета. Перед отправкой покажите diff человеку. Сервер записывает JSON только в каталог `contributions/` выбранного клона и не исполняет данные перевода.
 
 Чтобы добавить плагин, которого ещё нет в каталоге, сначала соберите видимые пользователю исходные строки, их namespace/key или DOM-селекторы. Попросите ИИ вызвать `stage_source_catalog`, передав объект `plugin` с полями `id`, `version`, ссылкой на репозиторий `source` и лицензией `license`, исходный язык, тексты в `namespaces` и пары селектор/текст в `dom`. Инструмент добавит каталог исходного языка; он не скачивает и не запускает код плагина. Затем вызовите `scaffold_translation_pack` для каждого целевого языка (например, `de`), указав `sourceLocale`, если исходных языков несколько; заполните перевод, сохранив плейсхолдеры и разметку, проверьте и добавьте пакет. В таблице появятся плагин и каждый внесённый язык. Исходный каталог нового плагина и новые ключи/селекторы проверяет человек; последующие PR с переводом уже зарегистрированных строк могут получить автоодобрение. Перед отправкой ИИ должен показать человеку diff.
 
@@ -215,3 +193,11 @@ To enable review submissions by `GITHUB_TOKEN`, a repository owner must enable *
 В защите ветки добавьте приложение **GitHub Actions** к списку тех, кому разрешено снимать review: на защищённой ветке это действие доступно администратору или указанному участнику/приложению ([права на снятие review](https://docs.github.com/en/rest/pulls/reviews#dismiss-a-review-for-a-pull-request)). Также включите [**Dismiss stale pull request approvals when new commits are pushed**](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) и требуйте актуальную относительно целевой ветки ветку PR перед слиянием. Первое снимает одобрение, привязанное к старому SHA PR, если push совпадёт по времени с последней проверкой API; второе не позволит слить PR на устаревшей базе до его обновления и повторной проверки. Для этих PR оставьте GitHub auto-merge выключенным: workflow не вызывает API слияния и пропускает автоодобрение, если авто-слияние уже включено.
 
 Чтобы `GITHUB_TOKEN` мог отправлять одобрения, владелец репозитория должен включить **Settings → Actions → General → Workflow permissions → [Allow GitHub Actions to create and approve pull requests](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository)**. GitHub часто выключает эту настройку по умолчанию. Обязательные проверки и защита ветки продолжают действовать.
+
+## Releases
+
+For a release, update `package.json`'s version and add a matching `## 0.2.1`-style section at the top of `CHANGELOG.md`, with notes in English and Russian. Pull requests run the full test, locale, syntax, and package checks. Once the versioned change reaches `main`, the release workflow repeats the checks, packs the installable npm archive, creates the `v0.2.1`-style GitHub Release, and attaches the archive with the matching bilingual changelog section. You can also run **Actions → Publish versioned GitHub Release** on `main`; an already-published version is skipped. Dependabot groups npm and GitHub Actions updates into weekly pull requests.
+
+## Релизы
+
+Для выпуска обновите версию в `package.json` и добавьте в начало `CHANGELOG.md` раздел вида `## 0.2.1` с заметками на русском и английском. Pull request проходит полные проверки тестов, языковых пакетов, синтаксиса и состава пакета. После попадания версии в `main` workflow повторно выполняет проверки, собирает устанавливаемый npm-архив, создаёт GitHub Release с тегом вида `v0.2.1` и прикладывает архив и двуязычные заметки из changelog. Workflow **Actions → Publish versioned GitHub Release** можно запустить вручную на ветке `main`; уже опубликованная версия будет пропущена. Dependabot объединяет обновления npm и GitHub Actions в еженедельные pull request.

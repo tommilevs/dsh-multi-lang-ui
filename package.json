@@ -1,7 +1,8 @@
 {
   "name": "@tommilevs/dsh-multi-lang-ui",
   "version": "0.2.0",
-  "description": "Community-extensible translations for DeepSeek Harness core and plugins, with safe scoped adapters for UI that has no locale API.",
+  "packageManager": "pnpm@9.15.9",
+  "description": "English/Russian UI translations for DeepSeek Harness and plugins, with safe adapters and community packs. / Английские и русские переводы интерфейса DeepSeek Harness и плагинов, безопасные адаптеры и пакеты сообщества.",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
