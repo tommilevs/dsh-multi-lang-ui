@@ -17,14 +17,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out trusted validator from the target branch
-        uses: actions/checkout@v4.4.0
+        uses: actions/checkout@v7.0.1
         with:
           ref: ${{ github.event.pull_request.base.sha }}
           path: trusted-validator
           persist-credentials: false
 
       - name: Check out contribution data only
-        uses: actions/checkout@v4.4.0
+        uses: actions/checkout@v7.0.1
         with:
           # PRs only receive read-only permissions here. The separate trusted workflow independently
           # resolves and validates the exact head before creating any review.

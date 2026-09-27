@@ -16,7 +16,7 @@ jobs:
       version: ${{ steps.package.outputs.version }}
     steps:
       - name: Check out source
-        uses: actions/checkout@v4.4.0
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
@@ -43,7 +43,7 @@ jobs:
       cancel-in-progress: false
     steps:
       - name: Check out source
-        uses: actions/checkout@v4.4.0
+        uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
           persist-credentials: false
